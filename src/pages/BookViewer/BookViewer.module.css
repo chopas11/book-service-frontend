@@ -14,7 +14,7 @@
     /*column-count: 1;*/
     /*columns-gap: 1em;*/
     height: 100%;
-    padding: 0 50px;
+
     /*height: 100%;*/
     /*overflow-y: scroll;*/
     color: #223c50;
@@ -22,8 +22,17 @@
     border: 1px solid black;
 }
 
+.wrapper-reader-padding {
+    padding: 0 50px;
+}
+
 .wrapper-reader div {
-    column-count: 2;
+    /* Число колонок (1, 2) */
+    /*column-count: 2;*/
+    /* Шрифт   */
+    /* Размерность шрифта   */
+    /* Жирность шрифта   */
+
 }
 
 .footer {

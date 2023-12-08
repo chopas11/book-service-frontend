@@ -7,7 +7,13 @@ const BookViewer = ({ bookText }) => {
     const screenHeight = window.innerHeight;
 
     // Data
-    const [fontSize, setFontSize] = useState(15);
+    const [fontSize, setFontSize] = useState(15); // Font
+    const [lineHeight, setLineHeight] = useState(1.5); // line-height
+    const [textAlign, setTextAlign] = useState("left"); // text-align
+    const [isPadding, setIsPadding] = useState(true); // padding 0 15px
+    const [columnCount, setColumnCount] = useState(1); // column-count
+
+
 
     // Event Listeners
 
@@ -69,10 +75,17 @@ const BookViewer = ({ bookText }) => {
             </div>
             <div id="content" className={s.content}>
                 <div
-                    className={s["wrapper-reader"]}
+                    className={`${s["wrapper-reader"]} ${isPadding ? s["wrapper-reader-padding"]: ''}`}
                     onMouseUp={handleTextSelection}
                     id="bookContainer"
-                    style={{ height: '90vh', overflow: 'hidden', fontSize: fontSize, breakInside: 'avoid'}}
+                    style={{
+                        height: '90vh',
+                        overflow: 'hidden',
+                        fontSize: fontSize,
+                        lineHeight: lineHeight,
+                        textAlign: "left",
+                        // columnCount: columnCount,
+                        breakInside: 'avoid'}}
                     dangerouslySetInnerHTML={{ __html: bookText }}
                 ></div>
             </div>
