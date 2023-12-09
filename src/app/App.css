@@ -1,0 +1,135 @@
+
+/*Variables*/
+html {
+  --accent-color: #dafda3;
+  --border-color: #162802;
+  --add-color-dark-1: #2c2d3b;
+  --add-color-light-1: #41a0aa;
+  --add-color-light-2: #cde8eb;
+  --add-color-light-3: #eaf1f2;
+  --background-color: #ffffff;
+  --headers-color: #02031A;
+  --text-color: #02031A;
+}
+/*Fonts*/
+
+/*Geologica*/
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../shared/assets/fonts/Geologica/Geologica-Thin.ttf");
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../shared/assets/fonts/Geologica/Geologica-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../shared/assets/fonts/Geologica/Geologica-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../shared/assets/fonts/Geologica/Geologica-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../shared/assets/fonts/Geologica/Geologica-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../shared/assets/fonts/Geologica/Geologica-Bold.ttf");
+}
+
+/*GolosText*/
+
+/*@font-face {*/
+/*  font-family: 'GolosText';*/
+/*  font-style: normal;*/
+/*  font-weight: 100;*/
+/*  src: url("../shared/assets/fonts/GolosText/GolosText-Thin.ttf");*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: 'GolosText';*/
+/*  font-style: normal;*/
+/*  font-weight: 300;*/
+/*  src: url("../shared/assets/fonts/GolosText/GolosText-Light.ttf");*/
+/*}*/
+
+@font-face {
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../shared/assets/fonts/GolosText/GolosText-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../shared/assets/fonts/GolosText/GolosText-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../shared/assets/fonts/GolosText/GolosText-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'GolosText';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../shared/assets/fonts/GolosText/GolosText-Bold.ttf");
+}
+
+/*Settings*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  color: var(--headers-color);
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--add-color-light-1)
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "GolosText", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}

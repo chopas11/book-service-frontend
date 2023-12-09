@@ -1,0 +1,15 @@
+/*Logo.tsx*/
+
+.logo {
+    font-family: GolosText;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.logo_dark {
+    color: #000000;
+}
+
+.logo_light {
+    color: var(--add-color-light-1);
+}

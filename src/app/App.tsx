@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css'
-import AppRouter from "../pages/router/AppRouter";
+import AppRouter from "./router/AppRouter";
 
-const App: React.FC= () => {
+const App: React.FC = () => {
 
   return (
       <AppRouter/>

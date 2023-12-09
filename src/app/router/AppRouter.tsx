@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import BookViewer from "../BookViewer/BookViewer";
-import Main from "../Main/Main";
+import BookViewer from "../../pages/BookViewer/BookViewer";
+import Main from "../../pages/Main/Main";
 
 
 const AppRouter: React.FC= (props) => {

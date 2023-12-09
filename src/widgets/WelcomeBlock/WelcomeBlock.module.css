@@ -1,0 +1,75 @@
+
+.welcomeBlock {
+    background: var(--accent-color);
+    border-radius: 50px;
+    margin-top: 40px;
+    padding: 0 80px;
+}
+
+.welcomeBlock_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcomeBlock_left {
+    position: relative;
+    width: 120%;
+    padding-top: 350px;
+}
+
+.welcomeBlock_left h1 {
+    font-size: 60px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Geologica;
+}
+
+.welcomeBlock_right {
+    display: flex;
+    padding-top: 80px;
+    gap: 10px;
+}
+
+.welcomeBlock_right p {
+    font-family: GolosText;
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.button {
+    font-family: GolosText;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    /*background: #ffffff;*/
+    padding: 10px 20px;
+    border-radius: 50px;
+    /*outline: none;*/
+    border: 0;
+    cursor: pointer;
+}
+
+.welcomeBlock_bottom {
+    padding: 40px 0;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeBlock_bottom div {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    background: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.welcomeBlock_bottom div:first-child {
+    height: 15px;
+    width: 15px;
+}
