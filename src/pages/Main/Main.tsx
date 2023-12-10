@@ -2,7 +2,10 @@ import React from 'react';
 import {Col, Row, } from 'antd';
 import Header from "../../widgets/Header/Header";
 import Footer from "../../widgets/Footer/Footer";
-import WelcomeBlock from "../../widgets/WelcomeBlock/WelcomeBlock";
+import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
+import AdvantagesWidget from "../../widgets/AdvantagesWidget/AdvantagesWidget";
+import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget";
+import HowToAuthorWidget from "../../widgets/HowToAuthorWidget/HowToAuthorWidget";
 
 const Main: React.FC = () => {
     return (
@@ -10,11 +13,10 @@ const Main: React.FC = () => {
             <Row>
                 <Col xxl={{ span: 16, offset: 4 }} xl={{ span: 16, offset: 4 }} xs={{ span: 22, offset: 1 }}>
                     <Header />
-                    <WelcomeBlock title="Станьте автором в один клик" />
-
-                    <h2>Наши преимущества</h2>
-                    Блоки пошли
-
+                    <WelcomeWidget title="Станьте автором в один клик" />
+                    <AdvantagesWidget />
+                    <ServicesWidget />
+                    <HowToAuthorWidget />
                     <Footer />
                 </Col>
             </Row>
