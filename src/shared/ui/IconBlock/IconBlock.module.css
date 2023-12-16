@@ -1,4 +1,9 @@
 
 .icon {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    display: flex;
+    /*background: var(--add-color-light-1);*/
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
 }

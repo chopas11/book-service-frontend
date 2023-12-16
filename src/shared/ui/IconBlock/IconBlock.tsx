@@ -1,14 +1,25 @@
-import React from 'react';
+// import React from 'react';
 
 import s from './IconBlock.module.css'
 
 interface IconBlockProps {
-    children: React.FC[],
+    size: string,
+    background?: string,
+    border?: string,
+    children: React.ReactNode,
 }
 
-const IconBlock:React.FC<IconBlockProps> = ({children}) => {
+const IconBlock:React.FC<IconBlockProps> = ({size, background = "transparent", border = "0", children}) => {
     return (
-        <div className={s.icon}>
+        <div
+            style={{
+                height: size,
+                width: size,
+                background: background,
+                border: border,
+            }}
+
+            className={s.icon}>
             {children}
         </div>
     );

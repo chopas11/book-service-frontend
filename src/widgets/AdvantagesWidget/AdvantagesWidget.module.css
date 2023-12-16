@@ -1,0 +1,22 @@
+
+.advantagesWidget {
+    margin-top: 150px;
+}
+
+.advantages {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.advantages div {
+    flex: 40%;
+}
+
+
+@media screen and (max-width: 576px)  {
+    .advantages div {
+        flex: 100%;
+    }
+}

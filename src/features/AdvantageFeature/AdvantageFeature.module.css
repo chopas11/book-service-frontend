@@ -1,4 +1,29 @@
 
-s.advantage {
+.advantage {
+    width: 100%;
+    border-radius: 50px;
+}
 
+.advantageLight {
+    background: var(--add-color-light-2);
+}
+
+.advantageDark {
+    background: var(--add-color-dark-1);
+}
+
+.advantageDark h3, .advantageDark p {
+    color: white;
+}
+
+.advantage_top {
+    padding: 20px 35px 80px 35px;
+}
+
+.advantage_top div {
+    float: right;
+}
+
+.advantage_bottom {
+    padding: 20px 35px;
 }

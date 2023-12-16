@@ -1,15 +1,23 @@
 
 .footer {
+    margin-top: 150px;
     background: var(--add-color-light-2);
     display: flex;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 80px;
+    padding: 20px 80px;
+}
+.footer div {
+    text-align: center;
 }
 
 .footer div ul {
     list-style: none;
 
+}
+
+.footer div ul li {
+    padding: 5px 0;
 }

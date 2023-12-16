@@ -38,19 +38,6 @@
     margin-bottom: 20px;
 }
 
-.button {
-    font-family: GolosText;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color);
-    /*background: #ffffff;*/
-    padding: 10px 20px;
-    border-radius: 50px;
-    /*outline: none;*/
-    border: 0;
-    cursor: pointer;
-}
-
 .welcomeBlock_bottom {
     padding: 40px 0;
     text-align: center;

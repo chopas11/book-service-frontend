@@ -1,0 +1,30 @@
+
+.button {
+    font-family: GolosText;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    /*outline: none;*/
+    border: 0;
+    cursor: pointer;
+}
+
+.buttonLight {
+    background: #ffffff;
+    color: var(--add-color-dark-1);
+}
+
+.buttonLight:hover {
+    background: var(--add-color-light-3);
+}
+
+.buttonDark {
+    background: var(--add-color-dark-1);
+    color: #ffffff;
+}
+
+.buttonDark:hover {
+    background: var(--add-color-light-1);
+    /*color: var(--add-color-dark-1);*/
+}
