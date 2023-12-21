@@ -43,7 +43,16 @@
 
 .serviceRight_icon {
     position: absolute;
-    bottom: 12px;
-    right: 20px;
+    bottom: 10px;
+    right: 15px;
+}
+
+@media screen and (max-width: 1920px)  {
+    .serviceLeft div {
+        font-size: 20px;
+    }
+    .serviceRight {
+        padding-left: 10px;
+    }
 }
 

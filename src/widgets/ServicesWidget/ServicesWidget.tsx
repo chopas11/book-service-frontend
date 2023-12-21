@@ -56,13 +56,13 @@ const ServicesWidget = () => {
 
             {/*<div className={s.services}>*/}
             <Row gutter={[12, 12]}>
-                <Col xl={{span: 6}}>
+                <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}}>
                     <h2>Услуги</h2>
                 </Col>
                 {
                     services.map(item => {
                         return (
-                            <Col xl={{span: 6}} key={item.id}>
+                            <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}} key={item.id}>
                                 <ServiceFeature title={item.title} description={item.description} price={item.price} active={false} />
                             </Col>
                         )

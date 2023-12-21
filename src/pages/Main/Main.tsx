@@ -13,7 +13,7 @@ const Main: React.FC = () => {
     return (
         <div className={s.mainPage}>
             <Row>
-                <Col xxl={{ span: 16, offset: 4 }} xl={{ span: 16, offset: 4 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 16, offset: 4 }} xl={{ span: 20, offset: 2 }} xs={{ span: 22, offset: 1 }}>
                     <Header />
                     <WelcomeWidget title="Станьте автором в один клик" description="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." />
                     <AdvantagesWidget />
