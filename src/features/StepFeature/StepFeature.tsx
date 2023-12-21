@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import s from "./StepFeature.module.css"
+import NumberBlock from "../../shared/ui/NumberBlock/NumberBlock";
 
 interface StepFeatureProps {
     number: number,
@@ -10,7 +11,7 @@ interface StepFeatureProps {
 const StepFeature:React.FC<StepFeatureProps> = ({number, text}) => {
     return (
         <div className={s.step}>
-            <div className={s.step_number}>{number}</div>
+            <NumberBlock number={number} />
             <div className={s.step_text}>
                 <p>{text}</p>
             </div>

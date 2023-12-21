@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                     <li><Link to="/faq">FAQ</Link></li>
                 </ul>
             </div>
-            <div className={s.headers_menu} onClick={() => console.log(123)}>
+            <div className={s.headers_menu} onClick={() => console.log("Нажатие на правое меню")}>
                 <IconBlock
                     size="50px"
                     border="1px solid #000"

@@ -6,17 +6,19 @@ interface ButtonProps {
     height?: string,
     width?: string,
     fontSize?: string,
+    callback: React.EventHandler<any>,
     children: React.ReactNode
 }
 
-const Button:React.FC<ButtonProps> = ({isDark, height, width, fontSize, children}) => {
+const Button:React.FC<ButtonProps> = ({isDark, height, width, fontSize, callback, children}) => {
     return (
         <button
             style={{
                 height,
                 width,
-                fontSize
+                fontSize,
             }}
+            onClick={callback}
             className={`${s.button} ${isDark ? s.buttonDark: s.buttonLight}`}
         >
             {children}

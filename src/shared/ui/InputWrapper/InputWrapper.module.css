@@ -1,0 +1,14 @@
+
+.inputWrapper {
+
+}
+
+.inputWrapper p {
+    font-family: GolosText;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    /*padding-left: 10px;*/
+}

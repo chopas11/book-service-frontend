@@ -1,0 +1,14 @@
+
+
+.input {
+    outline: none;
+    height: 40px;
+    width: 100%;
+    border: 0;
+    padding-left: 25px;
+    border-radius: 50px;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
