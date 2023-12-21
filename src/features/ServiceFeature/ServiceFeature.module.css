@@ -2,13 +2,13 @@
 .service {
     display: flex;
     border-radius: 32px;
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
     cursor: pointer;
     height: 100%;
 }
 
 .serviceLeft {
-    background: var(--add-color-light-2);
+    background: var(--blue-color);
     padding: 25px 12px;
     border-radius: 32px;
     /* offset-x | offset-y | blur-radius | color */
@@ -17,7 +17,7 @@
 
 .serviceLeft div {
     display: inline-block;
-    background: var(--accent-color);
+    background: var(--green-color);
     font-family: Geologica;
     font-size: 24px;
     text-transform: uppercase;

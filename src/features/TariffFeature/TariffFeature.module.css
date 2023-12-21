@@ -1,6 +1,6 @@
 
 .tariff {
-    background: var(--add-color-dark-1);
+    background: var(--dark-color);
     padding: 24px;
     color: white;
     border-radius: 48px;
@@ -11,7 +11,7 @@
 }
 
 .tariff_box {
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
     border-radius: 40px;
     text-align: center;
     padding-top: 45px;
@@ -27,7 +27,7 @@
 }
 
 .tariff_box p span {
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
 .tariff_box_center {
@@ -42,7 +42,7 @@
 .tariff_box_center span {
     font-family: GolosText;
     font-size: 32px;
-    color: var(--add-color-light-1);
+    color: var(--accent-color);
     font-weight: 700;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .tariff_conditions ul li::marker {
-    color: var(--add-color-light-1);
+    color: var(--accent-color);
     font-size: 2em;
 }
 

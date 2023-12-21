@@ -17,19 +17,19 @@
 
 .buttonLight {
     background: #ffffff;
-    color: var(--add-color-dark-1);
+    color: var(--dark-color);
 }
 
 .buttonLight:hover {
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
 }
 
 .buttonDark {
-    background: var(--add-color-dark-1);
+    background: var(--dark-color);
     color: #ffffff;
 }
 
 .buttonDark:hover {
-    background: var(--add-color-light-1);
+    background: var(--accent-color);
     /*color: var(--add-color-dark-1);*/
 }

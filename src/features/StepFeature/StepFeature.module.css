@@ -20,7 +20,7 @@
 }
 
 .step_text {
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
     border-radius: 32px;
     padding: 25px 40px;
 

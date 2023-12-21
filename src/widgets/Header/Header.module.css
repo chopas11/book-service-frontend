@@ -3,6 +3,8 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+    /*position: fixed;*/
+    z-index: 99;
 }
 
 /*Navbar*/
@@ -32,7 +34,7 @@
 }
 
 .navbar ul li a:hover {
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
 }
 
 .navbar ul li:not(:first-child):not(:last-child) {
@@ -62,6 +64,21 @@
 }
 
 .headers_menu div:hover {
-    background: var(--add-color-light-3);
+    background: var(--neutral-color);
+}
+
+.notice {
+    position: relative;
+}
+
+.notice::after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: var(--accent-color);
+    border-radius: 10px;
 }
 

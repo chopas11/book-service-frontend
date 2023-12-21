@@ -5,11 +5,11 @@
 }
 
 .advantageLight {
-    background: var(--add-color-light-2);
+    background: var(--blue-color);
 }
 
 .advantageDark {
-    background: var(--add-color-dark-1);
+    background: var(--dark-color);
 }
 
 .advantageDark h3, .advantageDark p {

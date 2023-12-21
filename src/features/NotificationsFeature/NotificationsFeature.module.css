@@ -1,0 +1,49 @@
+
+.notifications {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    padding: 30px;
+    background: var(--white-color);
+    border-radius: 32px;
+    box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.notification {
+    position: relative;
+    background: #d9d9d9;
+    padding: 20px;
+    border-radius: 32px;
+    width: 500px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.isRead::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.notification_trash {
+    float: right;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.notification_text span {
+    font-size: 10px;
+}

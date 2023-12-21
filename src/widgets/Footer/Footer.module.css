@@ -1,7 +1,7 @@
 
 .footer {
     margin-top: 150px;
-    background: var(--add-color-light-2);
+    background: var(--blue-color);
     display: flex;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
