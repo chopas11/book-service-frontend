@@ -1,0 +1,69 @@
+
+.tariff {
+    background: var(--add-color-dark-1);
+    padding: 24px;
+    color: white;
+    border-radius: 48px;
+}
+
+.chosen {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
+
+.tariff_box {
+    background: var(--add-color-light-3);
+    border-radius: 40px;
+    text-align: center;
+    padding-top: 45px;
+}
+
+.tariff_box h3 {
+    font-family: Geologica;
+    font-size: 30px;
+}
+
+.tariff_box p {
+    line-height: 2.5;
+}
+
+.tariff_box p span {
+    margin-left: 10px;
+}
+
+.tariff_box_center {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.tariff_box_center p {
+    font-weight: 500;
+}
+
+.tariff_box_center span {
+    font-family: GolosText;
+    font-size: 32px;
+    color: var(--add-color-light-1);
+    font-weight: 700;
+}
+
+.tariff_conditions {
+    padding: 24px;
+    /*text-align: center;*/
+}
+
+.tariff_conditions ul li {
+    font-size: 15px;
+    font-family: Geologica;
+    font-weight: 300;
+    /*line-height: 2;*/
+}
+
+.tariff_conditions ul li::marker {
+    color: var(--add-color-light-1);
+    font-size: 2em;
+}
+
+.tariff_conditions_center {
+    padding-top: 35px;
+    text-align: center;
+}

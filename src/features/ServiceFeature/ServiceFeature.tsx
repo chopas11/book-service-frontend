@@ -10,11 +10,12 @@ interface ServiceFeatureProps {
     description: string,
     price: number,
     active: boolean,
+    isChosen: boolean,
     callback: React.EventHandler<any>,
 }
-const ServiceFeature:React.FC<ServiceFeatureProps> = ({title, description, price, active, callback}) => {
+const ServiceFeature:React.FC<ServiceFeatureProps> = ({title, description, price, active, isChosen, callback}) => {
 
-    const [chosen] = useState(false);
+    // const [chosen] = useState(false);
 
     // const addServiceToCart = (title, description, price) => {
     //     if (active) {
@@ -48,7 +49,7 @@ const ServiceFeature:React.FC<ServiceFeatureProps> = ({title, description, price
                             !active ?
                                 <Icon icon="maki:arrow" />
                                 :
-                            chosen ?
+                            isChosen ?
                                 <Icon height={32} icon="mdi:success" />
                                 :
                                 <Icon height={32} icon="ic:round-plus" />

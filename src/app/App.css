@@ -4,7 +4,7 @@ html {
   --accent-color: #dafda3;
   --border-color: #162802;
   --add-color-dark-1: #2c2d3b;
-  --add-color-light-1: #41a0aa;
+  --add-color-light-1: #5bb9c4;
   --add-color-light-2: #cde8eb;
   --add-color-light-3: #eaf1f2;
   --background-color: #ffffff;
@@ -117,7 +117,7 @@ h3 {
 }
 
 p {
-  font-size: 15px;
+  font-size: 16px;
   font-family: GolosText;
   line-height: 1.2;
   font-weight: 400;

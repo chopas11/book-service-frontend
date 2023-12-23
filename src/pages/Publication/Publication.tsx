@@ -11,6 +11,8 @@ import Input from "../../shared/ui/Input/Input";
 import InputWrapper from "../../shared/ui/InputWrapper/InputWrapper";
 import Textarea from "../../shared/ui/Textarea/Textarea";
 import Select from "../../shared/ui/Select/Select";
+import TariffFeature from "../../features/TariffFeature/TariffFeature";
+import TextWrapper from "../../shared/ui/TextWrapper/TextWrapper";
 
 
 
@@ -21,6 +23,7 @@ const services = [
         title: "Неймер",
         description: "Он придумывает яркие, звучные и запоминающиеся комбинации.",
         price: 300,
+        // isChosen: false,
     },
     {
         id: 2,
@@ -73,6 +76,42 @@ const services = [
     },
 ];
 
+const tariffs = [
+    {
+        id: 1,
+        name: "Тариф 1",
+        bookPrice: 400,
+        royalty: 0.5,
+        conditions: [
+            "Доход с каждой купленной книги сразу вам на карту",
+            "Постоянная поддержка связи с автором",
+            "Запрет на скриншоты текста книги",
+        ]
+    },
+    {
+        id: 2,
+        name: "Тариф 2",
+        bookPrice: 500,
+        royalty: 0.4,
+        conditions: [
+            "Доход с каждой купленной книги сразу вам на карту",
+            "Постоянная поддержка связи с автором",
+            "Запрет на скриншоты текста книги",
+        ]
+    },
+    {
+        id: 3,
+        name: "Тариф 3",
+        bookPrice: 600,
+        royalty: 0.3,
+        conditions: [
+            "Доход с каждой купленной книги сразу вам на карту",
+            "Постоянная поддержка связи с автором",
+            "Запрет на скриншоты текста книги",
+        ]
+    },
+]
+
 const Publication: React.FC = () => {
 
     // Local State
@@ -83,13 +122,15 @@ const Publication: React.FC = () => {
     // const [bookGenres, setBookGenres] = useState([]);
     const [bookAddServices, setBookAddServices] = useState([]);
     const [price, setPrice] = useState(0);
+    const [tariff, setTariff] = useState(-1)
 
     //Pages of form
     const[publishPage] = useState(1);
 
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0)
-    }, [publishPage]);
+    // Временно отключим на время разработки
+    // useLayoutEffect(() => {
+    //     window.scrollTo(0, 0)
+    // }, [publishPage]);
 
     const addServices = (item: Object) => {
 
@@ -110,11 +151,20 @@ const Publication: React.FC = () => {
 
     }
 
+
+
     const uploadFile = (e) => {
         if (e.target.files)
             setBookFile(e.target.files[0]);
     }
 
+
+    const chooseTariff = (id) => {
+        console.log(id);
+        setTariff(id)
+    }
+
+    // Отправка формы
     const takePayment = () => {
         console.log(
             {
@@ -123,6 +173,7 @@ const Publication: React.FC = () => {
                 bookAnnotation,
                 bookFile,
                 // bookGenres,
+                tariff,
                 bookAddServices
             }
         )
@@ -139,22 +190,12 @@ const Publication: React.FC = () => {
                     <PublishStepFeature number={1}>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Введите название книги">
-                                <Input
-                                    type="text"
-                                    placeholder="Название"
-                                    value={bookName}
-                                    callback={e => setBookName(e.target.value)}
-                                />
+                                <Input type="text" placeholder="Название" value={bookName} callback={e => setBookName(e.target.value)} />
                             </InputWrapper>
                         </Col>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Ваше авторское имя">
-                                <Input
-                                    type="text"
-                                    placeholder="Николай Гоголь"
-                                    value={bookAuthor}
-                                    callback={e => setBookAuthor(e.target.value)}
-                                />
+                                <Input type="text" placeholder="Николай Гоголь" value={bookAuthor} callback={e => setBookAuthor(e.target.value)}/>
                             </InputWrapper>
                         </Col>
                         <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
@@ -180,6 +221,7 @@ const Publication: React.FC = () => {
                                                description={item.description}
                                                price={item.price}
                                                active={true}
+                                               isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
                                                callback={() => addServices(item)}
                                            />
                                        </Col>
@@ -217,6 +259,7 @@ const Publication: React.FC = () => {
                                                 description={item.description}
                                                 price={item.price}
                                                 active={true}
+                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
                                                 callback={() => addServices(item)}
                                             />
                                         </Col>
@@ -234,10 +277,7 @@ const Publication: React.FC = () => {
                     <PublishStepFeature number={3}>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Загрузите файл книги в PDF">
-                                <input
-                                    type="file"
-                                    onChange={e => uploadFile(e)}
-                                />
+                                <input type="file" onChange={e => uploadFile(e)} />
                             </InputWrapper>
                         </Col>
                     </PublishStepFeature>
@@ -257,6 +297,7 @@ const Publication: React.FC = () => {
                                                 description={item.description}
                                                 price={item.price}
                                                 active={true}
+                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
                                                 callback={() => addServices(item)}
                                             />
                                         </Col>
@@ -283,7 +324,14 @@ const Publication: React.FC = () => {
                                 if (item.step === 4)
                                     return (
                                         <Col xl={{ span: 8 }} >
-                                            <ServiceFeature  key={item.id} title={item.title} description={item.description} price={item.price} active={true} callback={() => addServices(item)}/>
+                                            <ServiceFeature
+                                                key={item.id}
+                                                title={item.title}
+                                                description={item.description}
+                                                price={item.price}
+                                                active={true}
+                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
+                                                callback={() => addServices(item)}/>
                                         </Col>
                                     )
                             })
@@ -330,6 +378,25 @@ const Publication: React.FC = () => {
                     {/*    callback={() => setPublishPage(1)}*/}
                     {/*>Вернуться</Button>*/}
 
+                    <h2>Выберите тариф</h2><br/>
+                    <Row gutter={[24,24]}>
+                        {
+                            tariffs.map(item => {
+                                return (
+                                    <Col xl={{ span: 8 }}>
+                                        <TariffFeature
+                                            name={item.name}
+                                            bookPrice={item.bookPrice}
+                                            royalty={item.royalty}
+                                            isChosen={tariff === item.id}
+                                            callback={() => chooseTariff(item.id)}
+                                        />
+                                    </Col>
+                                )
+                            })
+                        }
+                    </Row>
+
                     <h2>Услуги, которые вы выбрали</h2><br/>
                     <Row gutter={[12,12]}>
                         {
@@ -342,6 +409,7 @@ const Publication: React.FC = () => {
                                                 description={item.description}
                                                 price={item.price}
                                                 active={true}
+                                                isChosen={true}
                                                 callback={() => addServices(item)}
                                             />
                                         </Col>
@@ -352,8 +420,7 @@ const Publication: React.FC = () => {
 
 
                     <h2>К оплате</h2>
-                    <p>{price} рублей</p><br/>
-
+                    <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>
                     <Button
                         callback={() => takePayment()}
                         isDark={true}
