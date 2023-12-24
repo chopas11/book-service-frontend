@@ -10,7 +10,7 @@
 /*Navbar*/
 
 .navbar {
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--black-color);
     border-radius: 50px;
     height: 50px;
     display: flex;
