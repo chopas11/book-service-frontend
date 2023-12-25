@@ -282,7 +282,7 @@ const Publication: React.FC = () => {
                         </Col>
                     </PublishStepFeature>
                     {/**/}
-                    <Row gutter={16}>
+                    <Row gutter={[12, 12]}>
                         <Col xl={{ span: 6 }}>
                             <StarTextFeature text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="16px" />
                         </Col>
@@ -315,7 +315,7 @@ const Publication: React.FC = () => {
                         </Col>
                     </PublishStepFeature>
                     {/**/}
-                    <Row gutter={16}>
+                    <Row gutter={12}>
                         <Col xl={{ span: 4 }}>
 
                         </Col>
@@ -352,7 +352,7 @@ const Publication: React.FC = () => {
                         </Col>
                         <Col xl={{span:9}}>
                             <InputWrapper label="Выберите возрастное ограничение">
-                                <Button>0+</Button>
+                                <Button isDark={false} height="40px">0+</Button>
                                 <Button>6+</Button>
                                 <Button>12+</Button>
                                 <Button>16+</Button>
@@ -396,12 +396,10 @@ const Publication: React.FC = () => {
                             })
                         }
                     </Row>
-
+                        <br/>
                     <h2>Услуги, которые вы выбрали</h2><br/>
                     <Row gutter={[12,12]}>
-                        {
-                            bookAddServices.map(item => {
-                                // if (item.step === 1)
+                        { bookAddServices.length > 0 ? bookAddServices.map(item => {
                                     return (
                                         <Col xl={{ span: 6 }} >
                                             <ServiceFeature
@@ -414,18 +412,19 @@ const Publication: React.FC = () => {
                                             />
                                         </Col>
                                     )
-                            })
-                        }
+                            }) :
+                            "Вы еще не выбрали ничего"}
                     </Row>
 
 
-                    <h2>К оплате</h2>
-                    <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>
+                    <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2>
+                    { price > 0 && <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>}
+
                     <Button
                         callback={() => takePayment()}
                         isDark={true}
                         fontSize="12px"
-                    >Оплатить</Button>
+                    >{price > 0 ? "Перейти к оплате" : "Продолжить"}</Button>
                     {/*<button onClick={() => takePayment()}>Оплатить два</button>*/}
                     <Footer />
                 </Col>

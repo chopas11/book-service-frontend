@@ -27,6 +27,9 @@
 }
 
 .tariff_box p span {
+    float: right;
+    height: 20px;
+    line-height: 1;
     /*margin-left: 10px;*/
 }
 
