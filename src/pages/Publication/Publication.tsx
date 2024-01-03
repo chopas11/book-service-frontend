@@ -132,6 +132,11 @@ const Publication: React.FC = () => {
     //     window.scrollTo(0, 0)
     // }, [publishPage]);
 
+    /**
+     * add services into state.
+     * @addServices
+     * @param {Object} item - The title of the book.
+     */
     const addServices = (item: Object) => {
 
         if (bookAddServices.find(elem => elem.id === item.id)) {
