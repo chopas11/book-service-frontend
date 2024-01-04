@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import s from "./Button.module.css"
 
 interface ButtonProps {
@@ -6,7 +6,7 @@ interface ButtonProps {
     height?: string,
     width?: string,
     fontSize?: string,
-    callback: React.EventHandler<any>,
+    callback?: React.EventHandler<never>,
     children: React.ReactNode
 }
 

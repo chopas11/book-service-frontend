@@ -1,14 +1,14 @@
 // import React from 'react';
 
-import s from "./StepFeature.module.css"
-import NumberBlock from "../../shared/ui/NumberBlock/NumberBlock";
+import s from "./StepCard.module.css"
+import NumberBlock from "../NumberBlock/NumberBlock.tsx";
 
 interface StepFeatureProps {
     number: number,
     text: string,
 }
 
-const StepFeature:React.FC<StepFeatureProps> = ({number, text}) => {
+const StepCard:React.FC<StepFeatureProps> = ({number, text}) => {
     return (
         <div className={s.step}>
             <NumberBlock number={number} />
@@ -19,4 +19,4 @@ const StepFeature:React.FC<StepFeatureProps> = ({number, text}) => {
     );
 };
 
-export default StepFeature;
+export default StepCard;

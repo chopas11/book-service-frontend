@@ -1,5 +1,4 @@
-// import React from 'react';
-
+import React from 'react';
 import s from "./TariffFeature.module.css"
 import Button from "../../shared/ui/Button/Button";
 import TextWrapper from "../../shared/ui/TextWrapper/TextWrapper";
@@ -9,7 +8,7 @@ interface TariffFeatureProps {
     bookPrice: number,
     royalty: number,
     isChosen: boolean,
-    callback: React.EventHandler<any>,
+    callback: React.EventHandler<never>,
 }
 
 const TariffFeature: React.FC<TariffFeatureProps> = ({name, bookPrice, royalty, isChosen, callback}) => {

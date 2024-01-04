@@ -6,7 +6,7 @@ interface TextWrapperProps {
     color: string,
     background: string,
     fontSize: string,
-    children: string
+    children: string[]
 }
 
 const TextWrapper: React.FC<TextWrapperProps> = ({color, background, fontSize, children}) => {

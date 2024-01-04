@@ -1,5 +1,4 @@
-// import React from 'react';
-
+import React from 'react';
 import s from "./ProfileFeature.module.css"
 import image from "../../shared/assets/images/AvatarExample.png"
 import LogoutIcon from "../../shared/assets/IconPack/LogoutIcon/LogoutIcon";
@@ -11,7 +10,7 @@ interface ProfileFeatureProps {
 
 const ProfileFeature: React.FC<ProfileFeatureProps> = ({visible}) => {
 
-    const [isAuth, setIsAuth] = useState(true)
+    const [isAuth] = useState(true)
 
     return (
         <div

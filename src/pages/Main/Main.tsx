@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import {Col, Row, } from 'antd';
 import Header from "../../widgets/Header/Header";
 import Footer from "../../widgets/Footer/Footer";

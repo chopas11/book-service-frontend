@@ -53,32 +53,4 @@
     gap: 10px;
 }
 
-.headers_menu div {
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    line-height: 60px;
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.headers_menu div:hover {
-    background: var(--neutral-color);
-}
-
-.notice {
-    position: relative;
-}
-
-.notice::after {
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    content: "";
-    height: 6px;
-    width: 6px;
-    background: var(--accent-color);
-    border-radius: 10px;
-}
 

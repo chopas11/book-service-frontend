@@ -4,15 +4,9 @@ import Header from "../../widgets/Header/Header";
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import Footer from "../../widgets/Footer/Footer";
 import ServiceFeature from "../../features/ServiceFeature/ServiceFeature";
-import StarTextFeature from "../../features/StarTextFeature/StarTextFeature";
 import PublishStepFeature from "../../features/PublishStepFeature/PublishStepFeature";
-import Button from "../../shared/ui/Button/Button";
-import Input from "../../shared/ui/Input/Input";
-import InputWrapper from "../../shared/ui/InputWrapper/InputWrapper";
-import Textarea from "../../shared/ui/Textarea/Textarea";
-import Select from "../../shared/ui/Select/Select";
 import TariffFeature from "../../features/TariffFeature/TariffFeature";
-import TextWrapper from "../../shared/ui/TextWrapper/TextWrapper";
+import {Button, Input, InputWrapper, Select, StarText, Textarea} from "../../shared/ui";
 
 
 
@@ -156,20 +150,16 @@ const Publication: React.FC = () => {
 
     }
 
-
-
     const uploadFile = (e) => {
         if (e.target.files)
             setBookFile(e.target.files[0]);
     }
-
 
     const chooseTariff = (id) => {
         console.log(id);
         setTariff(id)
     }
 
-    // Отправка формы
     const takePayment = () => {
         console.log(
             {
@@ -210,7 +200,7 @@ const Publication: React.FC = () => {
                     {/**/}
                     <Row gutter={12}>
                         <Col xl={{ span: 6 }} >
-                            <StarTextFeature text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="14px"/>
+                            <StarText text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="14px"/>
                         </Col>
                         <Col xl={{ span: 2 }}>
 
@@ -275,7 +265,7 @@ const Publication: React.FC = () => {
 
                         </Col>
                         <Col xl={{ span: 6 }}>
-                            <StarTextFeature text="Выберите услугу, которая сделает это за вас" textSize="16px" />
+                            <StarText text="Выберите услугу, которая сделает это за вас" textSize="16px" />
                         </Col>
                     </Row>
                     {/**/}
@@ -289,7 +279,7 @@ const Publication: React.FC = () => {
                     {/**/}
                     <Row gutter={[12, 12]}>
                         <Col xl={{ span: 6 }}>
-                            <StarTextFeature text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="16px" />
+                            <StarText text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="16px" />
                         </Col>
                         {
                             services.map(item => {
@@ -345,7 +335,7 @@ const Publication: React.FC = () => {
 
                         </Col>
                         <Col xl={{ span: 6 }}>
-                            <StarTextFeature text="Если у вас нет обложки, мы можем сделать это за вас" textSize="16px" />
+                            <StarText text="Если у вас нет обложки, мы можем сделать это за вас" textSize="16px" />
                         </Col>
                     </Row>
                     {/**/}
@@ -390,6 +380,7 @@ const Publication: React.FC = () => {
                                 return (
                                     <Col xl={{ span: 8 }}>
                                         <TariffFeature
+                                            key={item.id}
                                             name={item.name}
                                             bookPrice={item.bookPrice}
                                             royalty={item.royalty}
@@ -408,6 +399,7 @@ const Publication: React.FC = () => {
                                     return (
                                         <Col xl={{ span: 6 }} >
                                             <ServiceFeature
+                                                key={item.id}
                                                 title={item.title}
                                                 description={item.description}
                                                 price={item.price}

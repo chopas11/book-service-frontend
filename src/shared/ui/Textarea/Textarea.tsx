@@ -1,15 +1,14 @@
-// import React from 'react';
-
+import React from 'react';
 import s from "./Textarea.module.css"
 
 interface TextareaProps {
     name: string,
     placeholder: string,
     value: string,
-    callback: React.EventHandler<any>,
+    callback: React.EventHandler<never>,
 }
 
-const Textarea: FC<TextareaProps> = ({name, placeholder, value, callback}) => {
+const Textarea: React.FC<TextareaProps> = ({name, placeholder, value, callback}) => {
     return (
         <textarea
             className={s.textarea}

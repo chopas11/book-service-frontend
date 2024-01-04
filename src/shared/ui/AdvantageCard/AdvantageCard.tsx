@@ -1,6 +1,6 @@
 // import React from 'react';
-import s from "./AdvantageFeature.module.css"
-import IconBlock from "../../shared/ui/IconBlock/IconBlock";
+import s from "./AdvantageCard.module.css"
+import IconBlock from "../IconBlock/IconBlock.tsx";
 
 interface AdvantageFeatureProps {
     icon: React.ReactNode,
@@ -9,7 +9,7 @@ interface AdvantageFeatureProps {
     isDark: boolean,
 }
 
-const AdvantageFeature:React.FC<AdvantageFeatureProps> = ({icon, title, description, isDark}) => {
+const AdvantageCard:React.FC<AdvantageFeatureProps> = ({icon, title, description, isDark}) => {
     return (
         <div
             className={`${s.advantage} ${isDark === true ? s.advantageDark : s.advantageLight}`}
@@ -25,4 +25,4 @@ const AdvantageFeature:React.FC<AdvantageFeatureProps> = ({icon, title, descript
     );
 };
 
-export default AdvantageFeature;
+export default AdvantageCard;

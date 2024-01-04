@@ -1,15 +1,14 @@
 import React from 'react';
-
 import s from "./Input.module.css"
 
 interface InputProps {
     type?: string,
     placeholder: string,
     value: string,
-    callback: React.EventHandler<any>,
+    callback: React.EventHandler<never>,
 }
 
-const Input :FC<InputProps> = ({type = "text", label = "", placeholder, value, callback}) => {
+const Input :React.FC<InputProps> = ({type = "text", placeholder, value, callback}) => {
     return (
         <input
             className={s.input}

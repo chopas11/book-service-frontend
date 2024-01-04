@@ -1,8 +1,7 @@
-// import React from 'react';
+import React from 'react';
 import s from "./ServiceFeature.module.css"
 import IconBlock from "../../shared/ui/IconBlock/IconBlock";
 import { Icon } from '@iconify/react';
-import {useState} from "react";
 
 
 interface ServiceFeatureProps {
@@ -11,7 +10,7 @@ interface ServiceFeatureProps {
     price: number,
     active: boolean,
     isChosen: boolean,
-    callback: React.EventHandler<any>,
+    callback: React.EventHandler<never>,
 }
 const ServiceFeature:React.FC<ServiceFeatureProps> = ({title, description, price, active, isChosen, callback}) => {
 

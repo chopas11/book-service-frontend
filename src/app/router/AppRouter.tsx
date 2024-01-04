@@ -5,7 +5,6 @@ import Main from "../../pages/Main/Main";
 import Publication from "../../pages/Publication/Publication";
 import Faq from "../../pages/FAQ/FAQ";
 import MyBooks from "../../pages/MyBooks/MyBooks";
-import Uikit from "../../pages/Uikit/Uikit";
 
 
 const AppRouter: React.FC= () => {
@@ -15,7 +14,6 @@ const AppRouter: React.FC= () => {
                 <Route path={'/publish'} element={<Publication/>}/>
                 <Route path={'/faq'} element={<Faq/>}/>
                 <Route path={'/books'} element={<MyBooks/>}/>
-                <Route path={'/uikit'} element={<Uikit/>}/>
                 {/*View книжки*/}
                 <Route path={'/view'} element={<BookViewer/>}/>
                 {/*<Route path={'/'}>*/}

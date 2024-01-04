@@ -1,9 +1,9 @@
 // import React from 'react';
 
 import s from "./HowToAuthorWidget.module.css"
-import StepFeature from "../../features/StepFeature/StepFeature";
 import Button from "../../shared/ui/Button/Button";
 import {Link} from "react-router-dom";
+import {StepCard} from "../../shared/ui";
 
 const steps = [
     {
@@ -28,7 +28,7 @@ const HowToAuthorWidget = () => {
                 {
                     steps.map(item => {
                         return (
-                            <StepFeature number={item.number} text={item.text} />
+                            <StepCard number={item.number} text={item.text} />
                         )
                     })
                 }

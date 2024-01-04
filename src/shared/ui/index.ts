@@ -1,4 +1,6 @@
-
+import AdvantageCard from "./AdvantageCard/AdvantageCard"
+import StepCard from "./StepCard/StepCard"
+import StarText from "./StarText/StarText"
 import Button from "./Button/Button"
 import IconBlock from "./IconBlock/IconBlock"
 import Input from "./Input/Input"
@@ -18,5 +20,8 @@ export {
     NumberBlock,
     Select,
     Textarea,
-    TextWrapper
+    TextWrapper,
+    AdvantageCard,
+    StepCard,
+    StarText,
 }

@@ -1,11 +1,11 @@
 // import React from 'react';
 
 import s from "./AdvantagesWidget.module.css"
-import AdvantageFeature from "../../features/AdvantageFeature/AdvantageFeature";
 import LockIcon from "../../shared/assets/IconPack/LockIcon/LockIcon";
 import TimeIcon from "../../shared/assets/IconPack/TimeIcon/TimeIcon";
 import SaleIcon from "../../shared/assets/IconPack/SaleIcon/SaleIcon";
 import FingerIcon from "../../shared/assets/IconPack/FingerIcon/FingerIcon";
+import {AdvantageCard} from "../../shared/ui";
 
 const advantages = [
     {
@@ -42,7 +42,7 @@ const AdvantagesWidget = () => {
             <div className={s.advantages}>
                 {advantages.map(item => {
                     return (
-                        <AdvantageFeature
+                        <AdvantageCard
                             icon={item.icon}
                             title={item.title}
                             description={item.description}

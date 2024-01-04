@@ -1,0 +1,23 @@
+
+.notifications_button {
+    border-radius: 50px;
+}
+
+.notifications_button:hover {
+    background: var(--neutral-color);
+}
+
+.isNotifications {
+    position: relative;
+}
+
+.isNotifications::after {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: var(--accent-color);
+    border-radius: 10px;
+}
