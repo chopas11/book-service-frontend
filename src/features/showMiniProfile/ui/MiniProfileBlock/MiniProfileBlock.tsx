@@ -1,14 +1,14 @@
 import React from 'react';
-import s from "./ProfileFeature.module.css"
-import image from "../../shared/assets/images/AvatarExample.png"
-import LogoutIcon from "../../shared/assets/IconPack/LogoutIcon/LogoutIcon";
+import s from "./MiniProfileBlock.module.css"
+import image from "../../../../shared/assets/images/AvatarExample.png"
+import LogoutIcon from "../../../../shared/assets/IconPack/LogoutIcon/LogoutIcon.tsx";
 import {useState} from "react";
 
 interface ProfileFeatureProps {
     visible: boolean,
 }
 
-const ProfileFeature: React.FC<ProfileFeatureProps> = ({visible}) => {
+const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
 
     const [isAuth] = useState(true)
 
@@ -38,4 +38,4 @@ const ProfileFeature: React.FC<ProfileFeatureProps> = ({visible}) => {
     );
 };
 
-export default ProfileFeature;
+export default MiniProfileBlock;

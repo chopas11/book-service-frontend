@@ -1,22 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {useState} from "react";
-import s from "./Header.module.css"
-import ProfileIcon from "../../shared/assets/IconPack/ProfileIcon/ProfileIcon";
-import ProfileFeature from "../../features/showMiniProfile/ProfileFeature";
 import ShowNotifications from "../../features/showNotifications/ui";
-import {IconBlock, Logo} from "../../shared/ui";
+import ShowMiniProfile from "../../features/showMiniProfile/ui";
+import {Logo} from "../../shared/ui";
+import s from "./Header.module.css"
 
 const Header: React.FC = () => {
-
-    const [isProfile, setIsProfile] = useState(false);
-    const toggleProfile = () => {
-        if (!isProfile)
-            console.log("Profile opened!")
-        else
-            console.log("Profile closed!")
-        setIsProfile(!isProfile);
-    }
 
     return (
         <div className={s.header}>
@@ -30,12 +19,7 @@ const Header: React.FC = () => {
             </div>
             <div className={s.headers_menu}>
                 <ShowNotifications />
-                <ProfileFeature visible={isProfile} />
-                <div onClick={() => toggleProfile()}>
-                    <IconBlock size="50px" border="1px solid #000">
-                        <ProfileIcon />
-                    </IconBlock>
-                </div>
+                <ShowMiniProfile />
             </div>
         </div>
     );

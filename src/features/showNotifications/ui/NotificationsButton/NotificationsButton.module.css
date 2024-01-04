@@ -1,6 +1,7 @@
 
 .notifications_button {
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .notifications_button:hover {

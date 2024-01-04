@@ -25,13 +25,11 @@ const HowToAuthorWidget = () => {
         <div className={s.howToAuthorWidget}>
             <h2>Как стать автором?</h2>
             <div className={s.steps}>
-                {
-                    steps.map(item => {
-                        return (
-                            <StepCard number={item.number} text={item.text} />
-                        )
-                    })
-                }
+                {steps.map(item => {
+                    return (
+                        <StepCard number={item.number} text={item.text} />
+                    )
+                })}
             </div>
             <div className={s.bottom}>
                 <Link to="/publish">

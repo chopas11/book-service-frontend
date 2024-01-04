@@ -1,0 +1,10 @@
+
+
+.miniProfile_button {
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.miniProfile_button:hover {
+    background: var(--neutral-color);
+}
