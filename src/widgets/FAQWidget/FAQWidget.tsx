@@ -9,11 +9,12 @@ import {Col, Row} from "antd";
 interface FAQWidgetProps {
     name: string,
     questions: Question[],
+    initialVisibility: boolean,
 }
 
-const FaqWidget: React.FC<FAQWidgetProps> = ({name, questions}) => {
+const FaqWidget: React.FC<FAQWidgetProps> = ({name, questions, initialVisibility}) => {
 
-    const [isQusetionVisible, setQusetionVisible] = useState(false);
+    const [isQusetionVisible, setQusetionVisible] = useState(initialVisibility);
 
 
     const toggleQuestions = () => {

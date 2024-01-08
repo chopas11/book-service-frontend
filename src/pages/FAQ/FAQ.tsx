@@ -2,7 +2,6 @@ import React from 'react';
 import Header from "../../widgets/Header/Header";
 import Footer from "../../widgets/Footer/Footer";
 import {Col, Row} from "antd";
-import {useEffect} from "react";
 import FaqWidget from "../../widgets/FAQWidget/FAQWidget.tsx";
 
 export enum QuestionsSection {
@@ -147,20 +146,21 @@ const questions: Question[] = [
 
 const Faq:React.FC = () => {
 
-    useEffect(() => {
-        document.title = 'FAQ';
-    }, []);
+    // useEffect(() => {
+    //     document.title = 'FAQ';
+    // }, []);
 
     return (
         <div>
             <Row>
-                <Col xxl={{ span: 16, offset: 4 }} xl={{ span: 16, offset: 4 }} xs={{ span: 22, offset: 1 }}>
+                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 20, offset: 2 }} xs={{ span: 22, offset: 1 }}>
+
                     <Header />
-                    <h2>Частые вопросы</h2>
-                    <FaqWidget name={QuestionsSection.PAYMENT} questions={questions} />
-                    <FaqWidget name={QuestionsSection.PUBLICATION} questions={questions} />
-                    <FaqWidget name={QuestionsSection.SERVICE} questions={questions} />
-                    <FaqWidget name={QuestionsSection.SUPPORT} questions={questions} />
+                    <h2 className="header_center">Частые вопросы</h2>
+                    <FaqWidget name={QuestionsSection.PAYMENT} questions={questions} initialVisibility={true} />
+                    <FaqWidget name={QuestionsSection.PUBLICATION} questions={questions} initialVisibility={false}/>
+                    <FaqWidget name={QuestionsSection.SERVICE} questions={questions} initialVisibility={false}/>
+                    <FaqWidget name={QuestionsSection.SUPPORT} questions={questions} initialVisibility={false}/>
                     <Footer />
                 </Col>
             </Row>

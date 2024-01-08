@@ -2,7 +2,7 @@ import {UserActionTypes, UserSchema} from "../types/userSchema.ts";
 
 const initialState:UserSchema = {
     user: undefined,
-    isAuth: false
+    isAuth: true
 }
 
 export interface UserAction {

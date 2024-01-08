@@ -6,7 +6,8 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 8000
+    port: 8000,
+    historyApiFallback: true,
   },
   preview: {
     port: 8080

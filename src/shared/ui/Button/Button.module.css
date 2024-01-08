@@ -1,5 +1,6 @@
 
 .button {
+    position: relative;
     font-family: GolosText;
     font-size: 16px;
     font-weight: 600;
