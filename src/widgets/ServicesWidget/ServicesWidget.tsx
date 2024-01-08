@@ -63,7 +63,12 @@ const ServicesWidget = () => {
                     services.map(item => {
                         return (
                             <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}} key={item.id}>
-                                <ServiceFeature title={item.title} description={item.description} price={item.price} active={false} />
+                                <ServiceFeature
+                                    title={item.title}
+                                    description={item.description}
+                                    price={item.price}
+                                    active={false}
+                                />
                             </Col>
                         )
                     })

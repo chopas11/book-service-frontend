@@ -6,7 +6,7 @@ import Footer from "../../widgets/Footer/Footer";
 import ServiceFeature from "../../features/ServiceFeature/ServiceFeature";
 import PublishStepFeature from "../../features/PublishStepFeature/PublishStepFeature";
 import TariffFeature from "../../features/TariffFeature/TariffFeature";
-import {Button, Input, InputWrapper, Select, StarText, Textarea} from "../../shared/ui";
+import {Button, Input, InputWrapper, Select, StarText, Textarea, TextWrapper} from "../../shared/ui";
 
 
 
@@ -195,6 +195,13 @@ const Publication: React.FC = () => {
                         </Col>
                         <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
                             <Button isDark={false} fontSize="12px">Добавить автора</Button>
+                        </Col>
+                        <Col xl={{span: 11}}></Col>
+                        <Col xl={{span: 2}}>
+                            Александр Никифоров
+                        </Col>
+                        <Col xl={{span: 2}}>
+                            Еще какой-то Никифоров
                         </Col>
                     </PublishStepFeature>
                     {/**/}

@@ -7,6 +7,7 @@
     background: var(--white-color);
     border-radius: 32px;
     box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);
+    z-index: 9999;
 }
 
 .visible {
