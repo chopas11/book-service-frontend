@@ -1,8 +1,13 @@
 import React from 'react';
 import s from "./MiniProfileBlock.module.css"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import image from "../../../../shared/assets/images/AvatarExample.png"
 import LogoutIcon from "../../../../shared/assets/IconPack/LogoutIcon/LogoutIcon.tsx";
-import {useState} from "react";
+import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
+import {useDispatch} from "react-redux";
+import {logout, setAuthData} from "../../../../entities/User/model/slice/userReducer.ts";
+import {Link} from "react-router-dom";
 
 interface ProfileFeatureProps {
     visible: boolean,
@@ -10,7 +15,9 @@ interface ProfileFeatureProps {
 
 const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
 
-    const [isAuth] = useState(true)
+    const dispatch = useDispatch()
+
+    const {isAuth} = useTypedSelector(state => state.user)
 
     return (
         <div
@@ -21,16 +28,16 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
                         <img src={image} alt="Avatar"/>
                         <span>Дарья, Автор</span>
                         <ul>
-                            <li>Мои книги</li>
+                            <li><Link to="/mybooks">Мои книги</Link></li>
                             <li>Статистика</li>
                             <li>История заказов</li>
                             <li>Настройки профиля</li>
                         </ul>
-                        <p>Выйти <LogoutIcon /></p>
+                        <p onClick={() => dispatch(logout())}>Выйти <LogoutIcon /></p>
                     </div>
                     :
                     <div>
-                        <p>Войти</p>
+                        <p onClick={() => dispatch(setAuthData())}>Войти</p>
                         <p>Регистрация</p>
                     </div>
             }

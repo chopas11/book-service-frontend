@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css'
-import AppRouter from "./router/AppRouter";
-import {store} from "./store";
+import AppRouter from "./providers/router/ui/AppRouter.tsx";
+import {store} from "./providers/store";
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
 

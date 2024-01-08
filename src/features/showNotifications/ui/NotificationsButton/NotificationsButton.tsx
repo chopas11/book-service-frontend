@@ -2,7 +2,7 @@ import React from 'react';
 import IconBlock from "../../../../shared/ui/IconBlock/IconBlock.tsx";
 import BellIcon from "../../../../shared/assets/IconPack/BellIcon/BellIcon.tsx";
 import s from "./NotificationsButton.module.css"
-import {useTypedSelector} from "../../../../app/hooks/useTypedSelector.ts";
+import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
 
 interface NotificationButtonProps {
     callback: React.EventHandler<never>,
