@@ -1,0 +1,30 @@
+
+.input_file {
+    position: relative;
+    display: inline-block;
+}
+
+.input_file_btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    background: white;
+    /*height: 40px;*/
+    padding: 8px 20px;
+    color: #02031A;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50px;
+
+}
+
+.input_file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}

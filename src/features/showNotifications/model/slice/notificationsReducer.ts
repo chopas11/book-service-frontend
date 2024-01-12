@@ -1,5 +1,6 @@
 
-import {INotification, NotificationsAction, NotificationsActionTypes, NotificationsState} from "../types";
+import {NotificationsAction, NotificationsActionTypes, NotificationsState} from "../types";
+import {INotification} from "../../../../entities/Notification/model/types/NotificationSchema.ts";
 
 const initialState:NotificationsState = {
     notifications: [

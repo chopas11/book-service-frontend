@@ -21,6 +21,26 @@ html {
   --default-gap: 12px;
 }
 
+/*html {*/
+/*  --green-color: #9f9ff1;*/
+/*  --accent-color: #555cf0;*/
+/*  --dark-color: #9f9ff1;*/
+/*  --neutral-color: #eaf1f2;*/
+/*  --black-color: #000000;*/
+/*  --white-color: #ffffff;*/
+/*  --blue-color: #36ce7d;*/
+
+/*  --background-color: #121212;*/
+
+/*  --headers-color: #02031A;*/
+/*  --headers-font: Geologica;*/
+
+/*  --text-color: #02031A;*/
+/*  --text-font: GolosText;*/
+
+/*  --default-gap: 12px;*/
+/*}*/
+
 /*Settings*/
 
 * {
@@ -34,6 +54,10 @@ h1, h2, h3, h4 {
   letter-spacing: -1px;
   color: var(--headers-color);
   margin-bottom: 5px;
+}
+
+h2 {
+  color: var(--white-color);
 }
 
 h1 {

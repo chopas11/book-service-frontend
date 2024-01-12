@@ -1,11 +1,5 @@
+import {INotification} from "../../../../entities/Notification/model/types/NotificationSchema.ts";
 
-// Notification Type
-export interface INotification {
-    id: number,
-    text: string,
-    time: Date,
-    isRead: boolean,
-}
 
 export interface NotificationsState {
     notifications: INotification[],

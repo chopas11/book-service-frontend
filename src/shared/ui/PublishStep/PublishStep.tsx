@@ -1,7 +1,7 @@
 // import React from 'react';
 
-import s from "./PublishStepFeature.module.css"
-import NumberBlock from "../../shared/ui/NumberBlock/NumberBlock";
+import s from "./PublishStep.module.css"
+import NumberBlock from "../NumberBlock/NumberBlock.tsx";
 import {Col, Row} from "antd";
 
 interface PublishStepFeatureProps {
@@ -9,7 +9,7 @@ interface PublishStepFeatureProps {
     children: React.ReactNode[],
 }
 
-const PublishStepFeature: React.FC<PublishStepFeatureProps> = ({number, children}) => {
+const PublishStep: React.FC<PublishStepFeatureProps> = ({number, children}) => {
     return (
         <div className={s.publishStep}>
             <Row gutter={35}>
@@ -23,4 +23,4 @@ const PublishStepFeature: React.FC<PublishStepFeatureProps> = ({number, children
     );
 };
 
-export default PublishStepFeature;
+export default PublishStep;

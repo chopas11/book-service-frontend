@@ -4,11 +4,11 @@ import Header from "../../widgets/Header/Header";
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import Footer from "../../widgets/Footer/Footer";
 import ServiceFeature from "../../features/ServiceFeature/ServiceFeature";
-import PublishStepFeature from "../../features/PublishStepFeature/PublishStepFeature";
+import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
 import TariffFeature from "../../features/TariffFeature/TariffFeature";
 import {Button, Input, InputWrapper, Select, StarText, Textarea, TextWrapper} from "../../shared/ui";
 
-
+import s from "./Publication.module.css"
 
 const services = [
     {
@@ -182,7 +182,7 @@ const Publication: React.FC = () => {
                     <Header />
                     <WelcomeWidget title="Публикация книги" description="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" />
                     {/**/}
-                    <PublishStepFeature number={1}>
+                    <PublishStep number={1}>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Введите название книги">
                                 <Input type="text" placeholder="Название" value={bookName} callback={e => setBookName(e.target.value)} />
@@ -203,7 +203,7 @@ const Publication: React.FC = () => {
                         <Col xl={{span: 2}}>
                             Еще какой-то Никифоров
                         </Col>
-                    </PublishStepFeature>
+                    </PublishStep>
                     {/**/}
                     <Row gutter={12}>
                         <Col xl={{ span: 6 }} >
@@ -233,7 +233,7 @@ const Publication: React.FC = () => {
 
                     </Row>
                     {/**/}
-                    <PublishStepFeature number={2}>
+                    <PublishStep number={2}>
                         <Col xl={{span: 22}}>
                             <InputWrapper label="Напишите аннтоацию для книги">
                             <Textarea
@@ -244,7 +244,7 @@ const Publication: React.FC = () => {
                             />
                             </InputWrapper>
                         </Col>
-                    </PublishStepFeature>
+                    </PublishStep>
                     {/**/}
                     <Row gutter={16}>
                         <Col xl={{ span: 2 }}>
@@ -276,13 +276,13 @@ const Publication: React.FC = () => {
                         </Col>
                     </Row>
                     {/**/}
-                    <PublishStepFeature number={3}>
+                    <PublishStep number={3}>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Загрузите файл книги в PDF">
                                 <input type="file" onChange={e => uploadFile(e)} />
                             </InputWrapper>
                         </Col>
-                    </PublishStepFeature>
+                    </PublishStep>
                     {/**/}
                     <Row gutter={[12, 12]}>
                         <Col xl={{ span: 6 }}>
@@ -308,17 +308,22 @@ const Publication: React.FC = () => {
                         }
                     </Row>
                     {/**/}
-                    <PublishStepFeature number={4}>
+                    <PublishStep number={4}>
                         <Col xl={{span: 9}}>
                             <InputWrapper label="Загрузите обложку книги в PDF, JPEG, JPG">
-                                <input type="file"/>
-                                <Button isDark={false} >Предпросмотр</Button>
+                                {/*<input type="file"/>*/}
+                                <label className={s.input_file}>
+                                    <input type="file" name="file"/>
+                                    <span className={s.input_file_btn}>Выберите файл</span>
+                                    {/*<span className="input-file-text">Максимум 10мб</span>*/}
+                                </label>
+                                <Button isDark={false}>Предпросмотр</Button>
                             </InputWrapper>
                         </Col>
-                    </PublishStepFeature>
+                    </PublishStep>
                     {/**/}
                     <Row gutter={12}>
-                        <Col xl={{ span: 4 }}>
+                        <Col xl={{span: 4}}>
 
                         </Col>
                         {
@@ -346,7 +351,7 @@ const Publication: React.FC = () => {
                         </Col>
                     </Row>
                     {/**/}
-                    <PublishStepFeature number={5}>
+                    <PublishStep number={5}>
                         <Col xl={{span: 12}}>
                             <InputWrapper label="Выберите жанр">
                                 <Select />
@@ -354,15 +359,15 @@ const Publication: React.FC = () => {
                         </Col>
                         <Col xl={{span:9}}>
                             <InputWrapper label="Выберите возрастное ограничение">
-                                <Button isDark={false} height="40px">0+</Button>
-                                <Button>6+</Button>
-                                <Button>12+</Button>
-                                <Button>16+</Button>
-                                <Button>18+</Button>
+                                <Button isDark={false} padding="0 11px" >0+</Button>
+                                <Button isDark={false} padding="0 11px">6+</Button>
+                                <Button isDark={false} padding="0 7px">12+</Button>
+                                <Button isDark={false} padding="0 7px">16+</Button>
+                                <Button isDark={false} padding="0 7px">18+</Button>
                             </InputWrapper>
 
                         </Col>
-                    </PublishStepFeature>
+                    </PublishStep>
 
                     {/*<Button*/}
                     {/*    isDark={true}*/}
