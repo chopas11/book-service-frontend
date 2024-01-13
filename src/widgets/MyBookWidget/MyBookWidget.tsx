@@ -43,8 +43,8 @@ const MyBookWidget: React.FC<MyBookWidgetProps> = ({book}) => {
                             </div>
                         </div>
                         <div className={s.myBook_add_bottom}>
-                            <Button isDark={false} height="44px">Подробнее</Button>
-                            <Button isDark={false} height="44px" width="44px" padding="0" top="2px"><EditIcon /></Button>
+                            <Button isDark={false} height="44px" fontSize="15px">Подробнее</Button>
+                            <Button isDark={false} height="44px" fontSize="15px" width="44px" padding="0" top="2px"><EditIcon /></Button>
                         </div>
                     </div>
                 </Col>

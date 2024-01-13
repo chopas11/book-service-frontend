@@ -38,7 +38,7 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = ({visible}) => {
                                 onClick={() => deleteNotification(item)}
                                 className={s.notification_trash}>
                                 <IconBlock size="16px">
-                                    <TrashIcon />
+                                    <TrashIcon color="var(--black-color)" />
                                 </IconBlock>
                             </div>
                             <div className={s.notification_text}>

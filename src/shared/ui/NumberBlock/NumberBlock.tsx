@@ -4,11 +4,12 @@ import s from "./NumberBlock.module.css"
 
 interface NumberBlockProps {
     number: number,
+    isInverted: boolean,
 }
 
-const NumberBlock: React.FC<NumberBlockProps> = ({number}) => {
+const NumberBlock: React.FC<NumberBlockProps> = ({number, isInverted}) => {
     return (
-        <div className={s.numberBlock}>
+        <div className={`${s.numberBlock} ${isInverted ? s.inverted : ""}`}>
             {number}
         </div>
     );

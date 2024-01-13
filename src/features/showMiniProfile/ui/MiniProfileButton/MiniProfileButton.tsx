@@ -13,8 +13,8 @@ const MiniProfileButton: React.FC<MiniProfileButtonProps> = ({callback}) => {
             className={s.miniProfile_button}
             onClick={callback}
         >
-            <IconBlock size="50px" border="1px solid #000">
-                <ProfileIcon/>
+            <IconBlock size="50px" border="1px solid var(--theme-color)">
+                <ProfileIcon color="var(--theme-color)"/>
             </IconBlock>
         </div>
     );

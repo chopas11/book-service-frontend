@@ -15,7 +15,6 @@ const TextWrapper: React.FC<TextWrapperProps> = ({color, background, fontSize, c
             className={s.textWrapper}
             style={{
                 color: color,
-                border: `1px solid ${color}`,
                 fontSize: fontSize,
                 background: background,
             }}

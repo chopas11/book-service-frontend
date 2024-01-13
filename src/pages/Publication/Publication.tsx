@@ -1,16 +1,22 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Col, Row} from "antd";
 import Header from "../../widgets/Header/Header";
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import Footer from "../../widgets/Footer/Footer";
-import ServiceFeature from "../../features/ServiceFeature/ServiceFeature";
+import ServiceCard from "../../shared/ui/ServiceCard/ServiceCard.tsx";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
-import TariffFeature from "../../features/TariffFeature/TariffFeature";
 import {Button, Input, InputWrapper, Select, StarText, Textarea, TextWrapper} from "../../shared/ui";
 
 import s from "./Publication.module.css"
+import ChooseTariff from "../../features/chooseTariff/ui";
+import ServicesList from "../../shared/ui/ServicesList/ServicesList.tsx";
+import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
+import servicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
 
-const services = [
+
+
+
+const services: IService[] = [
     {
         id: 1,
         step: 1,
@@ -70,42 +76,6 @@ const services = [
     },
 ];
 
-const tariffs = [
-    {
-        id: 1,
-        name: "Тариф 1",
-        bookPrice: 400,
-        royalty: 0.5,
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-    {
-        id: 2,
-        name: "Тариф 2",
-        bookPrice: 500,
-        royalty: 0.4,
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-    {
-        id: 3,
-        name: "Тариф 3",
-        bookPrice: 600,
-        royalty: 0.3,
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-]
-
 const Publication: React.FC = () => {
 
     // Local State
@@ -115,11 +85,11 @@ const Publication: React.FC = () => {
     const [bookFile, setBookFile] = useState<File>();
     // const [bookGenres, setBookGenres] = useState([]);
     const [bookAddServices, setBookAddServices] = useState([]);
-    const [price, setPrice] = useState(0);
-    const [tariff, setTariff] = useState(-1)
+    const [price, setPrice] = useState(100);
+    // const [tariff, setTariff] = useState(-1)
 
     //Pages of form
-    const[publishPage] = useState(1);
+    const[publishPage, setPublishPage] = useState(1);
 
     // Временно отключим на время разработки
     // useLayoutEffect(() => {
@@ -155,25 +125,6 @@ const Publication: React.FC = () => {
             setBookFile(e.target.files[0]);
     }
 
-    const chooseTariff = (id) => {
-        console.log(id);
-        setTariff(id)
-    }
-
-    const takePayment = () => {
-        console.log(
-            {
-                bookName,
-                bookAuthor,
-                bookAnnotation,
-                bookFile,
-                // bookGenres,
-                tariff,
-                bookAddServices
-            }
-        )
-    };
-
 
     return (
         <div>
@@ -181,236 +132,17 @@ const Publication: React.FC = () => {
                 <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 20, offset: 2 }} xs={{ span: 22, offset: 1 }}>
                     <Header />
                     <WelcomeWidget title="Публикация книги" description="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" />
-                    {/**/}
-                    <PublishStep number={1}>
-                        <Col xl={{span: 9}}>
-                            <InputWrapper label="Введите название книги">
-                                <Input type="text" placeholder="Название" value={bookName} callback={e => setBookName(e.target.value)} />
-                            </InputWrapper>
-                        </Col>
-                        <Col xl={{span: 9}}>
-                            <InputWrapper label="Ваше авторское имя">
-                                <Input type="text" placeholder="Николай Гоголь" value={bookAuthor} callback={e => setBookAuthor(e.target.value)}/>
-                            </InputWrapper>
-                        </Col>
-                        <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
-                            <Button isDark={false} fontSize="12px">Добавить автора</Button>
-                        </Col>
-                        <Col xl={{span: 11}}></Col>
-                        <Col xl={{span: 2}}>
-                            Александр Никифоров
-                        </Col>
-                        <Col xl={{span: 2}}>
-                            Еще какой-то Никифоров
-                        </Col>
-                    </PublishStep>
-                    {/**/}
-                    <Row gutter={12}>
-                        <Col xl={{ span: 6 }} >
-                            <StarText text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="14px"/>
-                        </Col>
-                        <Col xl={{ span: 2 }}>
 
-                        </Col>
-                        {
-                            services.map(item => {
-                               if (item.step === 1)
-                                   return (
-                                       <Col xl={{ span: 6 }} >
-                                           <ServiceFeature
-                                               key={item.id}
-                                               title={item.title}
-                                               description={item.description}
-                                               price={item.price}
-                                               active={true}
-                                               isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
-                                               callback={() => addServices(item)}
-                                           />
-                                       </Col>
-                                   )
-                            })
-                        }
+                    {publishPage === 2 ?
+                        <>
+                            <ChooseTariff />
 
-                    </Row>
-                    {/**/}
-                    <PublishStep number={2}>
-                        <Col xl={{span: 22}}>
-                            <InputWrapper label="Напишите аннтоацию для книги">
-                            <Textarea
-                                name="annotation"
-                                placeholder="Ваш текст"
-                                value={bookAnnotation}
-                                callback={e => setBookAnnotation(e.target.value)}
-                            />
-                            </InputWrapper>
-                        </Col>
-                    </PublishStep>
-                    {/**/}
-                    <Row gutter={16}>
-                        <Col xl={{ span: 2 }}>
-
-                        </Col>
-                        {
-                            services.map(item => {
-                                if (item.step === 2)
+                            <h2>Услуги, которые вы выбрали</h2><br/>
+                            <Row gutter={[12,12]}>
+                                { bookAddServices.length > 0 ? bookAddServices.map(item => {
                                     return (
                                         <Col xl={{ span: 6 }} >
-                                            <ServiceFeature
-                                                key={item.id}
-                                                title={item.title}
-                                                description={item.description}
-                                                price={item.price}
-                                                active={true}
-                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
-                                                callback={() => addServices(item)}
-                                            />
-                                        </Col>
-                                    )
-                            })
-                        }
-                        <Col xl={{ span: 2 }}>
-
-                        </Col>
-                        <Col xl={{ span: 6 }}>
-                            <StarText text="Выберите услугу, которая сделает это за вас" textSize="16px" />
-                        </Col>
-                    </Row>
-                    {/**/}
-                    <PublishStep number={3}>
-                        <Col xl={{span: 9}}>
-                            <InputWrapper label="Загрузите файл книги в PDF">
-                                <input type="file" onChange={e => uploadFile(e)} />
-                            </InputWrapper>
-                        </Col>
-                    </PublishStep>
-                    {/**/}
-                    <Row gutter={[12, 12]}>
-                        <Col xl={{ span: 6 }}>
-                            <StarText text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="16px" />
-                        </Col>
-                        {
-                            services.map(item => {
-                                if (item.step === 3)
-                                    return (
-                                        <Col xl={{ span: 6 }} >
-                                            <ServiceFeature
-                                                key={item.id}
-                                                title={item.title}
-                                                description={item.description}
-                                                price={item.price}
-                                                active={true}
-                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
-                                                callback={() => addServices(item)}
-                                            />
-                                        </Col>
-                                    )
-                            })
-                        }
-                    </Row>
-                    {/**/}
-                    <PublishStep number={4}>
-                        <Col xl={{span: 9}}>
-                            <InputWrapper label="Загрузите обложку книги в PDF, JPEG, JPG">
-                                {/*<input type="file"/>*/}
-                                <label className={s.input_file}>
-                                    <input type="file" name="file"/>
-                                    <span className={s.input_file_btn}>Выберите файл</span>
-                                    {/*<span className="input-file-text">Максимум 10мб</span>*/}
-                                </label>
-                                <Button isDark={false}>Предпросмотр</Button>
-                            </InputWrapper>
-                        </Col>
-                    </PublishStep>
-                    {/**/}
-                    <Row gutter={12}>
-                        <Col xl={{span: 4}}>
-
-                        </Col>
-                        {
-                            services.map(item => {
-                                if (item.step === 4)
-                                    return (
-                                        <Col xl={{ span: 8 }} >
-                                            <ServiceFeature
-                                                key={item.id}
-                                                title={item.title}
-                                                description={item.description}
-                                                price={item.price}
-                                                active={true}
-                                                isChosen={bookAddServices.find(elem => elem.id === item.id) !== undefined}
-                                                callback={() => addServices(item)}/>
-                                        </Col>
-                                    )
-                            })
-                        }
-                        <Col xl={{ span: 2 }}>
-
-                        </Col>
-                        <Col xl={{ span: 6 }}>
-                            <StarText text="Если у вас нет обложки, мы можем сделать это за вас" textSize="16px" />
-                        </Col>
-                    </Row>
-                    {/**/}
-                    <PublishStep number={5}>
-                        <Col xl={{span: 12}}>
-                            <InputWrapper label="Выберите жанр">
-                                <Select />
-                            </InputWrapper>
-                        </Col>
-                        <Col xl={{span:9}}>
-                            <InputWrapper label="Выберите возрастное ограничение">
-                                <Button isDark={false} padding="0 11px" >0+</Button>
-                                <Button isDark={false} padding="0 11px">6+</Button>
-                                <Button isDark={false} padding="0 7px">12+</Button>
-                                <Button isDark={false} padding="0 7px">16+</Button>
-                                <Button isDark={false} padding="0 7px">18+</Button>
-                            </InputWrapper>
-
-                        </Col>
-                    </PublishStep>
-
-                    {/*<Button*/}
-                    {/*    isDark={true}*/}
-                    {/*    callback={() => setPublishPage(2)}*/}
-                    {/*>Продолжить</Button>*/}
-
-                    {/*{*/}
-                    {/*    publishPage === 2 ?*/}
-                    {/*        <p>Вторая страница включена</p>*/}
-                    {/*        :*/}
-                    {/*        <p>Ничего</p>*/}
-                    {/*}*/}
-                    {/*<Button*/}
-                    {/*    isDark={true}*/}
-                    {/*    callback={() => setPublishPage(1)}*/}
-                    {/*>Вернуться</Button>*/}
-
-                    <h2>Выберите тариф</h2><br/>
-                    <Row gutter={[24,24]}>
-                        {
-                            tariffs.map(item => {
-                                return (
-                                    <Col xl={{ span: 8 }}>
-                                        <TariffFeature
-                                            key={item.id}
-                                            name={item.name}
-                                            bookPrice={item.bookPrice}
-                                            royalty={item.royalty}
-                                            isChosen={tariff === item.id}
-                                            callback={() => chooseTariff(item.id)}
-                                        />
-                                    </Col>
-                                )
-                            })
-                        }
-                    </Row>
-                        <br/>
-                    <h2>Услуги, которые вы выбрали</h2><br/>
-                    <Row gutter={[12,12]}>
-                        { bookAddServices.length > 0 ? bookAddServices.map(item => {
-                                    return (
-                                        <Col xl={{ span: 6 }} >
-                                            <ServiceFeature
+                                            <ServiceCard
                                                 key={item.id}
                                                 title={item.title}
                                                 description={item.description}
@@ -421,20 +153,101 @@ const Publication: React.FC = () => {
                                             />
                                         </Col>
                                     )
-                            }) :
-                            "Вы еще не выбрали ничего"}
-                    </Row>
+                                }) :
+                                    "Вы еще не выбрали ничего"}
+                            </Row>
 
 
-                    <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2>
-                    { price > 0 && <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>}
+                            <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2>
+                            { price > 0 && <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>}
+                            <Button isDark={true} callback={() => setPublishPage(1)}>Вернуться</Button>
+                            <Button callback={() => takePayment()} isDark={true} fontSize="12px">
+                                {price > 0 ? "Перейти к оплате" : "Продолжить"}</Button>
+                        </>
+                            :
+                        <>
+                            <PublishStep number={1}>
+                                    <Col xl={{span: 9}}>
+                                        <InputWrapper label="Введите название книги">
+                                            <Input type="text" placeholder="Название" value={bookName} callback={(e: Event) => setBookName(e.target.value)} />
+                                        </InputWrapper>
+                                    </Col>
+                                    <Col xl={{span: 9}}>
+                                        <InputWrapper label="Ваше авторское имя">
+                                            <Input type="text" placeholder="Николай Гоголь" value={bookAuthor} callback={e => setBookAuthor(e.target.value)}/>
+                                        </InputWrapper>
+                                    </Col>
+                                    <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
+                                        <Button isDark={false} fontSize="12px">Добавить автора</Button>
+                                    </Col>
+                                    <Col xl={{span: 11}}></Col>
+                                    <Col xl={{span: 2}}>
+                                        Александр Никифоров
+                                    </Col>
+                                </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={1} />
+                            <PublishStep number={2}>
+                                    <Col xl={{span: 22}}>
+                                        <InputWrapper label="Напишите аннтоацию для книги">
+                                            <Textarea
+                                                name="annotation"
+                                                placeholder="Ваш текст"
+                                                value={bookAnnotation}
+                                                callback={e => setBookAnnotation(e.target.value)}
+                                            />
+                                        </InputWrapper>
+                                    </Col>
+                                </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={2} />
+                            <PublishStep number={3}>
+                                    <Col xl={{span: 9}}>
+                                        <InputWrapper label="Загрузите файл книги в PDF">
+                                            {/*<input type="file" onChange={e => uploadFile(e)} />*/}
+                                        </InputWrapper>
+                                    </Col>
+                                </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={3} />
+                            <PublishStep number={4}>
+                                    <Col xl={{span: 9}}>
+                                        <InputWrapper label="Загрузите обложку книги в PDF, JPEG, JPG">
+                                            {/*<input type="file"/>*/}
+                                            <label className={s.input_file}>
+                                                <input type="file" name="file"/>
+                                                <span className={s.input_file_btn}>Выберите файл</span>
+                                                {/*<span className="input-file-text">Максимум 10мб</span>*/}
+                                            </label>
+                                            <Button isDark={false}>Предпросмотр</Button>
+                                        </InputWrapper>
+                                    </Col>
+                                </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={4} />
+                            <PublishStep number={5}>
+                                    <Col xl={{span: 12}}>
+                                        <InputWrapper label="Выберите жанр">
+                                            <Select />
+                                        </InputWrapper>
+                                    </Col>
+                                    <Col xl={{span:9}}>
+                                        <InputWrapper label="Выберите возрастное ограничение">
+                                            <Button isDark={false} padding="0 11px" >0+</Button>
+                                            <Button isDark={false} padding="0 11px">6+</Button>
+                                            <Button isDark={false} padding="0 7px">12+</Button>
+                                            <Button isDark={false} padding="0 7px">16+</Button>
+                                            <Button isDark={false} padding="0 7px">18+</Button>
+                                        </InputWrapper>
 
-                    <Button
-                        callback={() => takePayment()}
-                        isDark={true}
-                        fontSize="12px"
-                    >{price > 0 ? "Перейти к оплате" : "Продолжить"}</Button>
-                    {/*<button onClick={() => takePayment()}>Оплатить два</button>*/}
+                                    </Col>
+                                </PublishStep>
+                            <div className="button_center">
+                                <Button
+                                    width="300px"
+                                    height="60px"
+                                    fontSize="20px"
+                                    isDark={true}
+                                    callback={() => setPublishPage(2)}
+                                >Продолжить</Button>
+                            </div>
+                        </>}
                     <Footer />
                 </Col>
             </Row>

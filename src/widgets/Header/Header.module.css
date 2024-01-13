@@ -10,7 +10,7 @@
 /*Navbar*/
 
 .navbar {
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--theme-color);
     border-radius: 50px;
     height: 50px;
     display: flex;
@@ -21,7 +21,7 @@
     list-style: none;
     font-weight: 400;
     font-size: 16px;
-    font-family: GolosText;
+    font-family: var(--text-font);
 }
 
 .navbar ul li {
@@ -31,10 +31,13 @@
 .navbar ul li a {
     padding: 5px 20px;
     border-radius: 50px;
+    color: var(--theme-color);
 }
 
 .navbar ul li a:hover {
-    background: var(--neutral-color);
+    background: var(--accent-color);
+    color: var(--black-color);
+    transition: all 0.3s;
 }
 
 .navbar ul li:not(:first-child):not(:last-child) {

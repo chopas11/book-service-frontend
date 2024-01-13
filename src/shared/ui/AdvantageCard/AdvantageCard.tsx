@@ -15,7 +15,7 @@ const AdvantageCard:React.FC<AdvantageFeatureProps> = ({icon, title, description
             className={`${s.advantage} ${isDark === true ? s.advantageDark : s.advantageLight}`}
         >
             <div className={s.advantage_top}>
-                <IconBlock size="85px" background="#41a0aa" >{icon}</IconBlock>
+                <IconBlock size="85px" background="var(--black-color)" >{icon}</IconBlock>
             </div>
             <div className={s.advantage_bottom}>
                 <h3>{title}</h3>

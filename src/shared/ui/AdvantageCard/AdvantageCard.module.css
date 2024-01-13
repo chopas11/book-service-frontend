@@ -5,15 +5,15 @@
 }
 
 .advantageLight {
-    background: var(--blue-color);
+    background: var(--green-color);
 }
 
 .advantageDark {
-    background: var(--dark-color);
+    background: var(--lil-color);
 }
 
-.advantageDark h3, .advantageDark p {
-    color: white;
+.advantage h3, .advantage p {
+    color: var(--text-color);
 }
 
 .advantage_top {

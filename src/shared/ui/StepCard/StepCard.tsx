@@ -11,7 +11,7 @@ interface StepFeatureProps {
 const StepCard:React.FC<StepFeatureProps> = ({number, text}) => {
     return (
         <div className={s.step}>
-            <NumberBlock number={number} />
+            <NumberBlock number={number} isInverted={false} />
             <div className={s.step_text}>
                 <p>{text}</p>
             </div>

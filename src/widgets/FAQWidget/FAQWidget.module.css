@@ -4,7 +4,7 @@
 }
 
 .spoiler {
-    background: var(--dark-color);
+    background: var(--windows-color);
     /*height: 62px;*/
     border-radius: 50px;
     padding: 20px 30px;

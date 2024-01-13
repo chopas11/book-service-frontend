@@ -6,15 +6,15 @@ import {Col, Row} from "antd";
 
 interface PublishStepFeatureProps {
     number: number,
-    children: React.ReactNode[],
+    children: React.ReactNode | React.ReactNode[],
 }
 
 const PublishStep: React.FC<PublishStepFeatureProps> = ({number, children}) => {
     return (
-        <div className={s.publishStep}>
+        <div className={`${s.publishStep}`}>
             <Row gutter={35}>
                 <Col xl={{span: 2}}>
-                    <NumberBlock number={number} />
+                    <NumberBlock number={number} isInverted={true} />
                 </Col>
                 {children}
             </Row>

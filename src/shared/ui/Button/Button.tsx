@@ -23,7 +23,7 @@ const Button:React.FC<ButtonProps> = ({isDark, height, width, padding, top, font
                 top,
             }}
             onClick={callback}
-            className={`${s.button} ${isDark ? s.buttonDark: s.buttonLight}`}
+            className={`${s.button} ${isDark ? s.buttonDark: s.buttonBlack}`}
         >
             {children}
         </button>

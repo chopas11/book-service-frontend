@@ -17,21 +17,30 @@
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
 }
 
-.buttonLight {
-    background: #ffffff;
-    color: var(--dark-color);
+.buttonBlack {
+    background: var(--background-color);
+    color: var(--theme-color);
 }
 
-.buttonLight:hover {
-    background: var(--neutral-color);
+.buttonBlack:hover {
+    color: var(--accent-color);
+}
+
+.buttonBlack:focus {
+    background: var(--accent-color);
+    color: var(--black-color);
 }
 
 .buttonDark {
-    background: var(--dark-color);
-    color: #ffffff;
+    background: var(--windows-color);
+    color: var(--theme-color);
 }
 
 .buttonDark:hover {
+    color: var(--accent-color);
+}
+
+.buttonDark:focus {
     background: var(--accent-color);
-    /*color: var(--add-color-dark-1);*/
+    color: var(--black-color);
 }

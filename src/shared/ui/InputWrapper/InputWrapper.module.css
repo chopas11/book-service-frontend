@@ -4,10 +4,10 @@
 }
 
 .inputWrapper p {
-    font-family: GolosText;
+    font-family: var(--text-font);
     font-weight: 500;
     font-size: 15px;
-    color: white;
+    color: var(--black-color);
     text-transform: uppercase;
     margin-bottom: 10px;
     /*padding-left: 10px;*/

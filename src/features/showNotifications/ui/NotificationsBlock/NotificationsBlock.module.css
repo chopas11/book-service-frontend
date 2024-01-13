@@ -4,9 +4,9 @@
     right: 0;
     top: 100px;
     padding: 30px;
-    background: var(--white-color);
+    background: var(--windows-color);
     border-radius: 32px;
-    box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);
+    /*box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);*/
     z-index: 9999;
 }
 
@@ -20,7 +20,7 @@
 
 .notification {
     position: relative;
-    background: #d9d9d9;
+    background: var(--accent-color);
     padding: 20px;
     border-radius: 32px;
     width: 500px;
@@ -35,7 +35,7 @@
     content: "";
     height: 6px;
     width: 6px;
-    background: var(--accent-color);
+    background: var(--orange-color);
     border-radius: 10px;
 }
 

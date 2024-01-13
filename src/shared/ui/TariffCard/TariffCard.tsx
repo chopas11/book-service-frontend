@@ -1,9 +1,9 @@
 import React from 'react';
-import s from "./TariffFeature.module.css"
-import Button from "../../shared/ui/Button/Button";
-import TextWrapper from "../../shared/ui/TextWrapper/TextWrapper";
+import s from "./TariffCard.module.css"
+import Button from "../Button/Button.tsx";
+import TextWrapper from "../TextWrapper/TextWrapper.tsx";
 
-interface TariffFeatureProps {
+interface TariffCardProps {
     name: string,
     bookPrice: number,
     royalty: number,
@@ -11,13 +11,13 @@ interface TariffFeatureProps {
     callback: React.EventHandler<never>,
 }
 
-const TariffFeature: React.FC<TariffFeatureProps> = ({name, bookPrice, royalty, isChosen, callback}) => {
+const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChosen, callback}) => {
     return (
         <div className={`${s.tariff} ${isChosen ? s.chosen : ""}`}>
            <div className={s.tariff_box}>
                <h3>{name}</h3>
-               <p>Цена за книгу: <TextWrapper color="white" background="#5bb9c4" fontSize="20px">{String(bookPrice)}р</TextWrapper></p>
-               <p>Роялти с каждой продажи: <TextWrapper color="white" background="#5bb9c4" fontSize="20px">{String(royalty*100)}%</TextWrapper></p>
+               <p>Цена за книгу: <TextWrapper color="white" background="var(--black-color)" fontSize="20px">{String(bookPrice)}р</TextWrapper></p>
+               <p>Роялти с каждой продажи: <TextWrapper color="white" background="var(--black-color)" fontSize="20px">{String(royalty*100)}%</TextWrapper></p>
 
                <div className={s.tariff_box_center}>
                    <span>{bookPrice*royalty}р</span>
@@ -45,4 +45,4 @@ const TariffFeature: React.FC<TariffFeatureProps> = ({name, bookPrice, royalty, 
     );
 };
 
-export default TariffFeature;
+export default TariffCard;

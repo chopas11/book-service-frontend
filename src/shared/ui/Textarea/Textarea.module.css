@@ -8,6 +8,7 @@
     resize: vertical;
     max-height: 100px;
     outline: none;
+    background: var(--black-color);
 }
 
 .textarea:focus {

@@ -19,6 +19,6 @@
     content: "";
     height: 6px;
     width: 6px;
-    background: var(--accent-color);
+    background: var(--orange-color);
     border-radius: 10px;
 }

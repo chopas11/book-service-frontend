@@ -1,8 +1,7 @@
 
 .icon {
-    /*border: 1px solid red;*/
+    position: relative;
     display: flex;
-    /*background: var(--add-color-light-1);*/
     border-radius: 50px;
     justify-content: center;
     align-items: center;

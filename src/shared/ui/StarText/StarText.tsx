@@ -12,10 +12,10 @@ const StarText: React.FC<StarTextFeatureProps> = ({text, textSize}) => {
     return (
         <div className={s.starText}>
             <IconBlock size="40px">
-                <StarIcon />
+                <StarIcon color="var(--orange-color)" />
             </IconBlock>
             <div>
-                <p style={{textSize: textSize}}>{text}</p>
+                <p style={{fontSize: textSize, color: "var(--theme-color)"}}>{text}</p>
             </div>
         </div>
     );

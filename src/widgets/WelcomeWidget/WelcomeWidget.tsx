@@ -1,6 +1,5 @@
-// import React from 'react';
+import React from 'react';
 
-// import s from './WelcomeWidget.module.css'
 import s from '@/widgets/WelcomeWidget/WelcomeWidget.module.css'
 import StarIcon from "../../shared/assets/IconPack/StarIcon/StarIcon";
 import Button from "../../shared/ui/Button/Button";
@@ -21,7 +20,7 @@ const WelcomeWidget:React.FC<WelcomeBlockProps> = ({title, description}) => {
                 </div>
                 <div className={s.welcomeBlock_right}>
                     <IconBlock size="40px">
-                        <StarIcon />
+                        <StarIcon color="var(--orange-color)"/>
                     </IconBlock>
                     <div>
                         <p>{description}</p>

@@ -1,7 +1,8 @@
 
 .footer {
     margin-top: 150px;
-    background: var(--blue-color);
+    background: var(--windows-color);
+    color: var(--white-color);
     display: flex;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
@@ -11,6 +12,14 @@
 }
 .footer div {
     text-align: center;
+}
+
+.footer div a {
+    color: var(--white-color);
+}
+
+.footer div a:hover {
+    color: var(--accent-color);
 }
 
 .footer div ul {

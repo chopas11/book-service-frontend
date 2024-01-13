@@ -13,15 +13,15 @@ const FaqCard: React.FC<FaqCardProps> = ({question}) => {
     return (
         <div className={s.faqCard}>
             <div className={s.faqCard_name}>
-                <IconBlock size="40px" background="white">
-                    <ProfileIcon />
+                <IconBlock size="40px" background="var(--white-color)">
+                    <ProfileIcon color="var(--black-color)" />
                 </IconBlock>
                 <span>{question.author}, автор</span>
             </div>
             <p>{question.author_question}</p>
             <div className={s.faqCard_name}>
-                <IconBlock size="40px" background="white">
-                    <ProfileIcon/>
+                <IconBlock size="40px" background="var(--black-color)">
+                    <ProfileIcon color="var(--white-color)" />
                 </IconBlock>
                 <span>{question.operator}, оператор</span>
             </div>
