@@ -2,15 +2,25 @@
 .advantage {
     width: 100%;
     border-radius: 50px;
+    background: var(--lil-color);
 }
 
-.advantageLight {
+.advantage:first-child {
     background: var(--green-color);
 }
 
-.advantageDark {
-    background: var(--lil-color);
+.advantage:last-child {
+    background: var(--green-color);
 }
+
+
+/*.advantageLight {*/
+/*    background: var(--green-color);*/
+/*}*/
+
+/*.advantageDark {*/
+/*    background: var(--lil-color);*/
+/*}*/
 
 .advantage h3, .advantage p {
     color: var(--text-color);
@@ -26,4 +36,16 @@
 
 .advantage_bottom {
     padding: 20px 35px;
+}
+
+
+@media screen and (max-width: 992px)  {
+    .advantage:nth-child(odd) {
+        background: var(--green-color);
+    }
+
+    .advantage:nth-child(even) {
+        background: var(--lil-color);
+    }
+
 }

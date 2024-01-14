@@ -12,6 +12,8 @@ import ChooseTariff from "../../features/chooseTariff/ui";
 import ServicesList from "../../shared/ui/ServicesList/ServicesList.tsx";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
 import servicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
+import UploadBookFile from "../../features/uploadBookFile/ui/UploadBookFile.tsx";
+import UploadCover from "../../features/uploadCover/ui/UploadCover.tsx";
 
 
 
@@ -85,7 +87,7 @@ const Publication: React.FC = () => {
     const [bookFile, setBookFile] = useState<File>();
     // const [bookGenres, setBookGenres] = useState([]);
     const [bookAddServices, setBookAddServices] = useState([]);
-    const [price, setPrice] = useState(100);
+    const [price, setPrice] = useState(9000);
     // const [tariff, setTariff] = useState(-1)
 
     //Pages of form
@@ -157,9 +159,8 @@ const Publication: React.FC = () => {
                                     "Вы еще не выбрали ничего"}
                             </Row>
 
-
                             <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2>
-                            { price > 0 && <TextWrapper background="white" color="black" fontSize="20px">{price}р</TextWrapper>}
+                            { price > 0 && <TextWrapper background="var(--background-color)" border="1px solid var(--theme-color)" color="var(--theme-color)" fontSize="20px">{price}р</TextWrapper>}
                             <Button isDark={true} callback={() => setPublishPage(1)}>Вернуться</Button>
                             <Button callback={() => takePayment()} isDark={true} fontSize="12px">
                                 {price > 0 ? "Перейти к оплате" : "Продолжить"}</Button>
@@ -200,26 +201,12 @@ const Publication: React.FC = () => {
                                 </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={2} />
                             <PublishStep number={3}>
-                                    <Col xl={{span: 9}}>
-                                        <InputWrapper label="Загрузите файл книги в PDF">
-                                            {/*<input type="file" onChange={e => uploadFile(e)} />*/}
-                                        </InputWrapper>
-                                    </Col>
-                                </PublishStep>
+                                <UploadBookFile />
+                            </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={3} />
                             <PublishStep number={4}>
-                                    <Col xl={{span: 9}}>
-                                        <InputWrapper label="Загрузите обложку книги в PDF, JPEG, JPG">
-                                            {/*<input type="file"/>*/}
-                                            <label className={s.input_file}>
-                                                <input type="file" name="file"/>
-                                                <span className={s.input_file_btn}>Выберите файл</span>
-                                                {/*<span className="input-file-text">Максимум 10мб</span>*/}
-                                            </label>
-                                            <Button isDark={false}>Предпросмотр</Button>
-                                        </InputWrapper>
-                                    </Col>
-                                </PublishStep>
+                                <UploadCover />
+                            </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={4} />
                             <PublishStep number={5}>
                                     <Col xl={{span: 12}}>

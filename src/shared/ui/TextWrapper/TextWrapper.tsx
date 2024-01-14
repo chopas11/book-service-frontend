@@ -6,10 +6,11 @@ interface TextWrapperProps {
     color: string,
     background: string,
     fontSize: string,
+    border: string,
     children: string[]
 }
 
-const TextWrapper: React.FC<TextWrapperProps> = ({color, background, fontSize, children}) => {
+const TextWrapper: React.FC<TextWrapperProps> = ({color, background, border, fontSize, children}) => {
     return (
         <span
             className={s.textWrapper}
@@ -17,6 +18,7 @@ const TextWrapper: React.FC<TextWrapperProps> = ({color, background, fontSize, c
                 color: color,
                 fontSize: fontSize,
                 background: background,
+                border: border,
             }}
         >
             {children}

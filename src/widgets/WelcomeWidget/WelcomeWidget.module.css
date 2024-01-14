@@ -61,3 +61,9 @@
     height: 15px;
     width: 15px;
 }
+
+@media screen and (max-width: 992px)  {
+    .welcomeBlock_container {
+        display: block;
+    }
+}

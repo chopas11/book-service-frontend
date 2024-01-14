@@ -31,7 +31,7 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, price, acti
                     <IconBlock  size="48px" background="var(--background-color)" color="var(--theme-color)" >
                         {
                             !active ?
-                                <InlineIcon  height={24} icon="maki:arrow" color="black" />
+                                <InlineIcon  height={24} icon="maki:arrow"/>
                                 :
                             isChosen ?
                                 <InlineIcon  height={32} icon="mdi:success" />
