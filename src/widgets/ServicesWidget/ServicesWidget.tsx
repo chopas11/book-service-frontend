@@ -12,6 +12,29 @@ interface ServicesWidgetProps {
 
 const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step}) => {
 
+
+
+    /**
+     * add services into state.
+     * @addServices
+     * @param {Object} item - The title of the book.
+     */
+    // const addServices = (item: Object) => {
+    //
+    //     if (bookAddServices.find(elem => elem.id === item.id)) {
+    //         setBookAddServices(bookAddServices.filter( elem => {
+    //             return elem.id !== item.id
+    //         }));
+    //         setPrice(price - item.price);
+    //         console.log("Removing service", item)
+    //     } else {
+    //         setBookAddServices([...bookAddServices, item]);
+    //         setPrice(price + item.price);
+    //         console.log("Adding service", item)
+    //     }
+    // }
+
+
     if (isActive) {
         switch (step) {
             case 1:
