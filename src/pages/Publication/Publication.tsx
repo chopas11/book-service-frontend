@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Col, Row} from "antd";
 import Header from "../../widgets/Header/Header";
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
@@ -28,6 +28,17 @@ const Publication: React.FC = () => {
     // useLayoutEffect(() => {
     //     window.scrollTo(0, 0)
     // }, [publishPage]);
+
+    // useEffect(() => {
+    //     const handleBeforeUnload = (event) => {
+    //         event.preventDefault();
+    //         console.log(123)
+    //     };
+    //     window.addEventListener('beforeunload', handleBeforeUnload);
+    //     return () => {
+    //         window.removeEventListener('beforeunload', handleBeforeUnload);
+    //     };
+    // }, []);
 
     return (
         <div>

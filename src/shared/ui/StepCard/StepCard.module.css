@@ -5,6 +5,10 @@
     /*display: inline-block;*/
 }
 
+.step div:first-child {
+    flex: 0 0 78px;
+}
+
 .step_text {
     background: var(--blue-color);
     border-radius: 32px;

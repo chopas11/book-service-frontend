@@ -4,6 +4,7 @@ import s from "./HowToAuthorWidget.module.css"
 import Button from "../../shared/ui/Button/Button";
 import {Link} from "react-router-dom";
 import {StepCard} from "../../shared/ui";
+import {Col, Row} from "antd";
 
 const steps = [
     {
@@ -25,11 +26,15 @@ const HowToAuthorWidget = () => {
         <div className={s.howToAuthorWidget}>
             <h2>Как стать автором?</h2>
             <div className={s.steps}>
-                {steps.map(item => {
-                    return (
-                        <StepCard number={item.number} text={item.text} />
-                    )
-                })}
+                <Row gutter={[12, 12]}>
+                    {steps.map(item => {
+                        return (
+                            <Col xl={{span: 8}}>
+                                <StepCard number={item.number} text={item.text} />
+                            </Col>
+                        )
+                    })}
+                </Row>
             </div>
             <div className="button_center">
                 <Link to="/publish">
