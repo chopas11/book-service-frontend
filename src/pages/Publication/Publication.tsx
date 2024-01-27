@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Col, Row} from "antd";
-import Header from "../../widgets/Header/Header";
+
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
-import Footer from "../../widgets/Footer/Footer";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
 import {Button} from "../../shared/ui";
 
@@ -41,10 +39,7 @@ const Publication: React.FC = () => {
     // }, []);
 
     return (
-        <div>
-            <Row>
-                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 20, offset: 2 }} xs={{ span: 22, offset: 1 }}>
-                    <Header />
+        <>
                     <WelcomeWidget title="Публикация книги" description="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" />
 
                     {publishPage === 2 ?
@@ -86,10 +81,7 @@ const Publication: React.FC = () => {
                                 >Продолжить</Button>
                             </div>
                         </>}
-                    <Footer />
-                </Col>
-            </Row>
-        </div>
+        </>
     );
 };
 

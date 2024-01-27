@@ -35,18 +35,12 @@ const books: Array<Book> = [
 
 const MyBooks: React.FC = () => {
     return (
-        <div>
-            <Row>
-                <Col xxl={{ span: 18, offset: 3 }} xl={{ span: 20, offset: 2 }} xs={{ span: 22, offset: 1 }}>
-                    <Header />
-                    <h2 className="header_center">Опубликованные книги</h2>
-                    {books.map(book => {
-                        return <MyBookWidget book={book} />
-                    })}
-                    <Footer />
-                </Col>
-            </Row>
-        </div>
+        <>
+            <h2 className="header_center">Опубликованные книги</h2>
+            {books.map(book => {
+                return <MyBookWidget book={book} />
+            })}
+        </>
     );
 };
 

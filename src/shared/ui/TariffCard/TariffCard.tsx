@@ -18,7 +18,6 @@ const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChos
                <h3>{name}</h3>
                <p>Цена за книгу: <TextWrapper color="white" background="var(--black-color)" fontSize="20px">{String(bookPrice)}р</TextWrapper></p>
                <p>Роялти с каждой продажи: <TextWrapper color="white" background="var(--black-color)" fontSize="20px">{String(royalty*100)}%</TextWrapper></p>
-
                <div className={s.tariff_box_center}>
                    <span>{bookPrice*royalty}р</span>
                    <p>Прибыль с каждой продажи</p>
