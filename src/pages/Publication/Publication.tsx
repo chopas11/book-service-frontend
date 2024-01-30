@@ -2,18 +2,18 @@ import React, {useEffect, useState} from 'react';
 
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
-import {Button} from "../../shared/ui";
+import {Button, StarCard} from "../../shared/ui";
 
 import ChooseTariff from "../../features/chooseTariff/ui";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
 import UploadBookFile from "../../features/uploadBookFile/ui/UploadBookFile.tsx";
 import UploadCover from "../../features/uploadCover/ui/UploadCover.tsx";
-import PublishBook from "../../features/publishBook/ui/PublishBook.tsx";
+import PublishBook from "../../features/publication/ui/PublishBook.tsx";
 import SelectAge from "../../features/selectAge/ui/SelectAge.tsx";
 import SelectGenre from "../../features/selectGenre/ui/selectGenre.tsx";
-import AddAnnotation from "../../features/addAnnotation/ui/AddAnnotation.tsx";
+import UpdateDescription from "../../features/updateDescription/ui/updateDescription.tsx";
 import AddAuthors from "../../features/addAuthors/ui/AddAuthors.tsx";
-import AddBookName from "../../features/addBookName/ui/AddBookName.tsx";
+import UpdateTitle from "../../features/updateTitle/ui/UpdateTitle.tsx";
 import {services} from "../../entities/Service/model/mocks/services.ts"
 
 
@@ -40,7 +40,9 @@ const Publication: React.FC = () => {
 
     return (
         <>
-                    <WelcomeWidget title="Публикация книги" description="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" />
+            <WelcomeWidget title="Публикация книги">
+                <StarCard text="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" textSize="16px" textColor="#121212" />
+            </WelcomeWidget>
 
                     {publishPage === 2 ?
                         <>
@@ -51,12 +53,12 @@ const Publication: React.FC = () => {
                             :
                         <>
                             <PublishStep number={1}>
-                                    <AddBookName />
+                                    <UpdateTitle />
                                     <AddAuthors />
                                 </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={1} />
                             <PublishStep number={2}>
-                                <AddAnnotation />
+                                <UpdateDescription />
                             </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={2} />
                             <PublishStep number={3}>

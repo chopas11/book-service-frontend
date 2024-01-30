@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import s from "./HowToAuthorWidget.module.css"
-import Button from "../../shared/ui/Button/Button";
+import Button from "../../shared/ui/forms/Button/Button";
 import {Link} from "react-router-dom";
 import {StepCard} from "../../shared/ui";
 import {Col, Row} from "antd";

@@ -1,33 +1,21 @@
 
 .advantage {
-    width: 100%;
-    border-radius: 50px;
-    background: var(--lil-color);
+
 }
 
-.advantage:first-child {
-    background: var(--green-color);
-}
-
-.advantage:last-child {
-    background: var(--green-color);
-}
-
-
-/*.advantageLight {*/
+/*.advantage:first-child {*/
 /*    background: var(--green-color);*/
 /*}*/
 
-/*.advantageDark {*/
-/*    background: var(--lil-color);*/
+/*.advantage:last-child {*/
+/*    background: var(--green-color);*/
 /*}*/
-
 .advantage h3, .advantage p {
     color: var(--text-color);
 }
 
 .advantage_top {
-    padding: 20px 35px 80px 35px;
+    /*padding: 20px 35px 80px 35px;*/
 }
 
 .advantage_top div {
@@ -35,7 +23,7 @@
 }
 
 .advantage_bottom {
-    padding: 20px 35px;
+    /*padding: 20px 35px;*/
 }
 
 

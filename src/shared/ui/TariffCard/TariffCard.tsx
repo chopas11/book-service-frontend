@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./TariffCard.module.css"
-import Button from "../Button/Button.tsx";
+import Button from "../forms/Button/Button.tsx";
 import TextWrapper from "../TextWrapper/TextWrapper.tsx";
 
 interface TariffCardProps {

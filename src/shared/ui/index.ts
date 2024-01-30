@@ -1,14 +1,14 @@
 import AdvantageCard from "./AdvantageCard/AdvantageCard"
 import StepCard from "./StepCard/StepCard"
-import StarText from "./StarText/StarText"
-import Button from "./Button/Button"
+import StarCard from "./StarCard/StarCard.tsx"
+import Button from "./forms/Button/Button"
 import IconBlock from "./IconBlock/IconBlock"
-import Input from "./Input/Input"
-import InputWrapper from "./InputWrapper/InputWrapper"
+import Input from "./forms/Input/Input"
+import InputWrapper from "./forms/InputWrapper/InputWrapper"
 import Logo from "./Logo/Logo"
 import NumberBlock from "./NumberBlock/NumberBlock"
-import Select from "./Select/Select"
-import Textarea from "./Textarea/Textarea"
+import Select from "./forms/Select/Select"
+import Textarea from "./forms/Textarea/Textarea"
 import TextWrapper from "./TextWrapper/TextWrapper"
 
 export {
@@ -23,5 +23,5 @@ export {
     TextWrapper,
     AdvantageCard,
     StepCard,
-    StarText,
+    StarCard,
 }

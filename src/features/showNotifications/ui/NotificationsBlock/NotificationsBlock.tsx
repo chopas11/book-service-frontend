@@ -5,7 +5,8 @@ import TrashIcon from "../../../../shared/assets/IconPack/TrashIcon/TrashIcon.ts
 import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
 import {useDispatch} from "react-redux";
 import {deleteNotificationAction, getNotificationsAction} from "../../model/slice/notificationsReducer.ts";
-import {INotification} from "../../model/types";
+import {INotification} from "../../../../entities/Notification/model/types/NotificationSchema.ts";
+
 
 interface NotificationsFeatureProps {
     visible: boolean,

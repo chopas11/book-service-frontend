@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconBlock} from "../../../../shared/ui";
+import {Button, IconBlock} from "../../../../shared/ui";
 import ProfileIcon from "../../../../shared/assets/IconPack/ProfileIcon/ProfileIcon.tsx";
 import s from "./MiniProfileButton.module.css"
 
@@ -13,9 +13,11 @@ const MiniProfileButton: React.FC<MiniProfileButtonProps> = ({callback}) => {
             className={s.miniProfile_button}
             onClick={callback}
         >
-            <IconBlock size="50px" border="1px solid var(--theme-color)">
+            {/*<IconBlock size="50px" border="1px solid var(--theme-color)">*/}
+            <Button isDark={false} width="52px" height="52px" fontSize="16px" border="1px solid #fff" >
                 <ProfileIcon color="var(--theme-color)"/>
-            </IconBlock>
+            </Button>
+            {/*</IconBlock>*/}
         </div>
     );
 };

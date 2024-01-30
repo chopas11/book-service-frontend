@@ -12,25 +12,25 @@ const advantages = [
         icon: <LockIcon />,
         title: "Защита от пиратства",
         description: "Мы защищаем материалы на платформе от распространенных видов пиратства, чтобы вы не упускали прибыль.",
-        isDark: false,
+        bgColor: "#36ce7d",
     },
     {
         icon: <SaleIcon />,
         title: "Максимальная выручка",
         description: "Мы позволяем выбрать наиболее подходящую финансовую модель, чтобы вы могли получить максимальную выручку.",
-        isDark: true,
+        bgColor: "#9f9ff1",
     },
     {
         icon: <TimeIcon />,
         title: "Экономия времени",
         description: "Мы экономим ваше время, предлагая простую цепочку публикации - заполните поля, загрузите материал, выберите тариф.",
-        isDark: true,
+        bgColor: "#9f9ff1",
     },
     {
         icon: <FingerIcon />,
         title: "Целевая аудитория",
         description: "Мы предоставляем инструменты управления контентом, благодаря которым проще выйти на целевого читателя.",
-        isDark: false,
+        bgColor: "#36ce7d",
     },
 ]
 
@@ -46,7 +46,7 @@ const AdvantagesWidget = () => {
                             icon={item.icon}
                             title={item.title}
                             description={item.description}
-                            isDark={item.isDark}
+                            bgColor={item.bgColor}
                         />
                     )
                 })}

@@ -1,0 +1,5 @@
+
+.block {
+    display: block;
+    font-family: var(--text-font);
+}

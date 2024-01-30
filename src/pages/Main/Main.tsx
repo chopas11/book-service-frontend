@@ -3,8 +3,9 @@ import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import AdvantagesWidget from "../../widgets/AdvantagesWidget/AdvantagesWidget";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget";
 import HowToAuthorWidget from "../../widgets/HowToAuthorWidget/HowToAuthorWidget";
+import {Button, StarCard} from "../../shared/ui";
+import {Link} from "react-router-dom";
 
-// import s from "./Main.module.css"
 
 const Main: React.FC = () => {
 
@@ -67,7 +68,10 @@ const Main: React.FC = () => {
 
     return (
         <>
-            <WelcomeWidget title={welcomeData.title} description={welcomeData.description} />
+            <WelcomeWidget title={welcomeData.title}>
+                <StarCard text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." textSize="16px" />
+                <Link to="/publish"><Button isDark={false}>Подробнее</Button></Link>
+            </WelcomeWidget>
             <AdvantagesWidget />
             <ServicesWidget services={services} step={1} isActive={false} />
             <HowToAuthorWidget />

@@ -1,12 +1,5 @@
 
-.notifications_button {
-    border-radius: 50px;
-    cursor: pointer;
-}
 
-.notifications_button:hover {
-    background: var(--neutral-color);
-}
 
 .isNotifications {
     position: relative;

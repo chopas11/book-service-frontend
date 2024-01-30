@@ -1,13 +1,14 @@
 // import React from 'react';
 
 import s from "./TextWrapper.module.css"
+import React from "react";
 
 interface TextWrapperProps {
     color: string,
     background: string,
     fontSize: string,
     border: string,
-    children: string[]
+    children: React.ReactNode[] | React.ReactNode
 }
 
 const TextWrapper: React.FC<TextWrapperProps> = ({color, background, border, fontSize, children}) => {

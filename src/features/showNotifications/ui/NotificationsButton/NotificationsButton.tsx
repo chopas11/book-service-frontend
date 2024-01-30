@@ -1,8 +1,8 @@
 import React from 'react';
-import IconBlock from "../../../../shared/ui/IconBlock/IconBlock.tsx";
 import BellIcon from "../../../../shared/assets/IconPack/BellIcon/BellIcon.tsx";
 import s from "./NotificationsButton.module.css"
 import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
+import {Button} from "../../../../shared/ui";
 
 interface NotificationButtonProps {
     callback: React.EventHandler<never>,
@@ -15,11 +15,14 @@ const NotificationsButton: React.FC<NotificationButtonProps> = ({callback}) => {
 
     return (
         <div
-            className={`${isNotifications ? s.isNotifications : ""} ${s.notifications_button}`}
+            className={`${isNotifications ? s.isNotifications : ""}`}
             onClick={callback}>
-            <IconBlock size="50px" border="1px solid var(--theme-color)">
+            {/*<IconBlock size="50px" border="1px solid var(--theme-color)">*/}
+            <Button isDark={false} width="52px" height="52px" fontSize="16px" border="1px solid #fff" >
                 <BellIcon color="var(--theme-color)"/>
-            </IconBlock>
+            </Button>
+
+            {/*</IconBlock>*/}
         </div>
     );
 };

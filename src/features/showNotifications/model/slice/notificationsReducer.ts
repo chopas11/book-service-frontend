@@ -47,7 +47,7 @@ export const notificationsReducer = (state = initialState, action: Notifications
     }
 }
 
-// Actions
+// Action Creators
 export const getNotificationsAction = () => ({type: NotificationsActionTypes.GET_NOTIFICATIONS});
 export const readNotificationsAction = () => ({type: NotificationsActionTypes.READ_NOTIFICATIONS});
 export const deleteNotificationAction = (item: INotification) => ({type: NotificationsActionTypes.DELETE_NOTIFICATION, payload: item});

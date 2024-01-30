@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './styles/App.css'
 import AppRouter from "./providers/router/ui/AppRouter.tsx";
 import {store} from "./providers/store";
@@ -7,31 +7,40 @@ import {BrowserRouter} from "react-router-dom";
 import Header from "../widgets/Header/Header.tsx";
 import Footer from "../widgets/Footer/Footer.tsx";
 import {Col, Row} from "antd";
+import {useTypedSelector} from "../shared/hooks/useTypedSelector.ts";
 import Modal from "../shared/ui/Modal/Modal.tsx";
-import Authorization from "../features/authtorization/ui/Authorization.tsx";
+// import Authorization from "../features/authtorization/ui/Authorization.tsx";
 
 const App: React.FC = () => {
 
-    const [modal, setModal] = useState(true);
-
-  return (
+    return (
       <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <div className="wrapper">
-                    <Modal active={modal} callback={setModal} ><Authorization /></Modal>
-                    <Row>
-                        <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
-                            <Header/>
-                            <AppRouter/>
-                            <Footer />
-                        </Col>
-                    </Row>
-                </div>
+                <Layout />
             </BrowserRouter>
         </Provider>
       </React.StrictMode>
-);
+    );
 };
+
+
+const Layout: React.FC = () => {
+
+    const {active, path} = useTypedSelector(state => state.modal)
+
+    return (
+        <div className="wrapper">
+            <Modal active={active} path={path} />
+            <Row>
+                <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
+                    <Header/>
+                    <AppRouter/>
+                    <Footer/>
+                </Col>
+            </Row>
+        </div>
+    )
+}
 
 export default App

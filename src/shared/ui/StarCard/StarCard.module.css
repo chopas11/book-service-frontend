@@ -1,0 +1,9 @@
+
+.starText {
+    display: flex;
+    gap: 12px;
+}
+
+.starText div p {
+    line-height: 1.5;
+}
