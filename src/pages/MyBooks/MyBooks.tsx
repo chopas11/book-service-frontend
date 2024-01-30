@@ -1,7 +1,4 @@
-import React from 'react';
-import Header from "../../widgets/Header/Header";
-import Footer from "../../widgets/Footer/Footer";
-import {Col, Row} from "antd";
+import React, {useEffect} from 'react';
 import MyBookWidget from "../../widgets/MyBookWidget/MyBookWidget.tsx";
 import {Book} from "../../entities/Book/model/types/bookSchema.ts";
 
@@ -34,9 +31,14 @@ const books: Array<Book> = [
 ];
 
 const MyBooks: React.FC = () => {
+
+    useEffect(() => {
+        document.title = 'Мои книги';
+    }, []);
+
     return (
         <>
-            <h2 className="header_center">Опубликованные книги</h2>
+            <h2 className="header_center">Мои книги</h2>
             {books.map(book => {
                 return <MyBookWidget book={book} />
             })}

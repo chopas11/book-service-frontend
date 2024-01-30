@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FaqWidget from "../../widgets/FAQWidget/FAQWidget.tsx";
 
 export enum QuestionsSection {
@@ -143,9 +143,9 @@ const questions: Question[] = [
 
 const Faq:React.FC = () => {
 
-    // useEffect(() => {
-    //     document.title = 'FAQ';
-    // }, []);
+    useEffect(() => {
+        document.title = 'Частые Вопросы';
+    }, []);
 
     return (
             <>

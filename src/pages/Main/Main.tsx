@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import AdvantagesWidget from "../../widgets/AdvantagesWidget/AdvantagesWidget";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget";
@@ -65,6 +65,10 @@ const Main: React.FC = () => {
         step: 1,
     },
 ];
+
+    useEffect(() => {
+        document.title = 'StorySphere - Сервис для авторов';
+    }, []);
 
     return (
         <>

@@ -38,6 +38,10 @@ const Publication: React.FC = () => {
     //     };
     // }, []);
 
+    useEffect(() => {
+        document.title = 'Публикация';
+    }, []);
+
     return (
         <>
             <WelcomeWidget title="Публикация книги">
