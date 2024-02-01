@@ -21,9 +21,9 @@
 }
 
 .modal_content {
-    width: 30%;
+    width: 25%;
     background: var(--lil-color);
-    padding: 40px;
+    padding: 40px 150px;
     border-radius: 32px;
 }
 

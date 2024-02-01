@@ -33,10 +33,13 @@
 
 .serviceRight {
     /*padding: 40px 12px 12px 20px;*/
+    /*padding-left: 10px;*/
     min-width: 80px;
 }
 
 .serviceRight p {
+    padding-left: 15px;
+    padding-top: 20px;
     font-family: var(--headers-font);
     font-size: 18px;
     font-weight: 600;

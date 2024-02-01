@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import s from "./Modal.module.css"
 import {useDispatch} from "react-redux";
-import {toggle} from "../../../features/toggleModal/modal/slice/toggleModalReducer.ts";
-import {modalRoutes} from "../../../features/toggleModal/modal/routes/modalRoutes.tsx";
+import {toggle} from "../../../features/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalRoutes} from "../../../features/toggleModal/model/routes/modalRoutes.tsx";
 
 interface ModalProps {
     active: boolean,

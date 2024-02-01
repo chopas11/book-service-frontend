@@ -1,8 +1,8 @@
 import React from 'react';
 import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
 import {Navigate} from "react-router-dom";
-import {toggle} from "../../../../features/toggleModal/modal/slice/toggleModalReducer.ts";
-import {modalPath} from "../../../../features/toggleModal/modal/enums/modalPath.ts";
+import {toggle} from "../../../../features/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../../../features/toggleModal/model/enums/modalPath.ts";
 import {useDispatch} from "react-redux";
 
 interface RequireAuthProps {

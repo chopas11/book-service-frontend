@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Col} from "antd";
 import {Button, Input, InputWrapper} from "../../../shared/ui";
 import {useDispatch} from "react-redux";
-import {addAuthor, deleteAuthor} from "../../publication/model/slice/publicationReducer.ts";
+import {addAuthor, deleteAuthor} from "../../publishBook/model/slice/publicationReducer.ts";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 
 const AddAuthors: React.FC = () => {
@@ -14,8 +14,11 @@ const AddAuthors: React.FC = () => {
     const [newAuthor, setNewAuthor] = useState("");
 
     const addNewAuthor = () => {
-        dispatch(addAuthor(newAuthor));
-        setNewAuthor("");
+        if (newAuthor !== "") {
+            dispatch(addAuthor(newAuthor));
+            setNewAuthor("");
+        }
+
     }
 
     return (
@@ -26,14 +29,14 @@ const AddAuthors: React.FC = () => {
                 </InputWrapper>
             </Col>
             <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
-                <Button isDark={false} fontSize="12px" callback={() => addNewAuthor()}>Добавить автора</Button>
+                <Button isDark={false} fontSize="12px" padding="0 10px" callback={() => addNewAuthor()}>Добавить автора</Button>
             </Col>
             <Col xl={{span: 11}}></Col>
 
             {authors.map(author => {
                 return (
                     <Button isDark={false} fontSize="12px" border="0"
-                            width="100px" height="24px" callback={() => dispatch(deleteAuthor(author))}>{author}</Button>
+                            width="100px" height="24px" padding="0 10px" callback={() => dispatch(deleteAuthor(author))}>{author}</Button>
                 )
             })}
 

@@ -8,7 +8,7 @@ import ChooseTariff from "../../features/chooseTariff/ui";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
 import UploadBookFile from "../../features/uploadBookFile/ui/UploadBookFile.tsx";
 import UploadCover from "../../features/uploadCover/ui/UploadCover.tsx";
-import PublishBook from "../../features/publication/ui/PublishBook.tsx";
+import PublishBook from "../../features/publishBook/ui/PublishBook.tsx";
 import SelectAge from "../../features/selectAge/ui/SelectAge.tsx";
 import SelectGenre from "../../features/selectGenre/ui/selectGenre.tsx";
 import UpdateDescription from "../../features/updateDescription/ui/updateDescription.tsx";

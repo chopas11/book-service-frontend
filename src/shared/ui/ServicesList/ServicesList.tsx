@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col} from "antd";
-import ServiceCard from "../ServiceCard/ServiceCard.tsx";
+import ServiceCard from "./ServiceCard/ServiceCard.tsx";
 
 interface ServicesListProps {
     services: IService[],

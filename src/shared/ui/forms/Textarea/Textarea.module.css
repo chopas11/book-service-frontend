@@ -8,6 +8,7 @@
     resize: vertical;
     max-height: 100px;
     outline: none;
+    color: #f0f0f0;
     background: var(--black-color);
 }
 

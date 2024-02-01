@@ -41,7 +41,7 @@ export enum PublicationActionTypes {
     UPDATE_AGE = 'UPDATE_AGE',
     CHOOSE_TARIFF = 'CHOOSE_TARIFF',
     ADD_SERVICE = 'ADD_SERVICE',
-    DELETE_SERVICE = 'ADD_SERVICE',
+    DELETE_SERVICE = 'DELETE_SERVICE',
     PUBLICATION = 'PUBLICATION',
 }
 export interface PublicationAction {
@@ -99,9 +99,10 @@ export const publicationReducer = (state = initialStatePublication, action: Publ
 
         case PublicationActionTypes.PUBLICATION:
             console.log("Публикация книги!");
-            return {
-                ...initialStatePublication,
-            }
+            return state
+            // return {
+                // ...initialStatePublication,
+            // }
         default:
             return state
     }

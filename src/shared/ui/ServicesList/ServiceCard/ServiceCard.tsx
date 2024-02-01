@@ -2,7 +2,8 @@ import React, {useRef} from 'react';
 import s from "./ServiceCard.module.css"
 // import IconBlock from "../IconBlock/IconBlock.tsx";
 import {Icon, InlineIcon} from '@iconify/react';
-import {Button} from "../index.ts";
+import {Button} from "../../index.ts";
+import SuccessIcon from "../../../assets/IconPack/SuccessIcon/SuccessIcon.tsx";
 
 
 interface ServiceCardProps {
@@ -58,7 +59,7 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, price, acti
                             //     <InlineIcon  height={24} icon="maki:arrow"/>
                             //     :
                                 r ?
-                                    "1"
+                                    <SuccessIcon />
                                 :
                                 <InlineIcon  height={32} icon="ic:round-plus" />
                         }

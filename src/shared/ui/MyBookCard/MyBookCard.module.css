@@ -1,0 +1,10 @@
+
+.myBook {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+}
+
+.myBook_cover {
+    height: 100%;
+}

@@ -3,7 +3,7 @@ import {Input, InputWrapper} from "../../../shared/ui";
 import {Col} from "antd";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
-import {updateTitle} from "../../publication/model/slice/publicationReducer.ts";
+import {updateTitle} from "../../publishBook/model/slice/publicationReducer.ts";
 
 
 

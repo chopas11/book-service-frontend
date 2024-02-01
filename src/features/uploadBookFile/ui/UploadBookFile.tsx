@@ -5,7 +5,7 @@ import {Col} from "antd";
 import InputFile from "../../../shared/ui/forms/InputFile/InputFile.tsx";
 import {useDispatch} from "react-redux";
 // import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
-import {uploadFile} from "../../publication/model/slice/publicationReducer.ts";
+import {uploadFile} from "../../publishBook/model/slice/publicationReducer.ts";
 const UploadBookFile: React.FC = () => {
 
 

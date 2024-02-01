@@ -3,7 +3,7 @@ import {InputWrapper, Textarea} from "../../../shared/ui";
 import {Col} from "antd";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
-import {updateDescription} from "../../publication/model/slice/publicationReducer.ts";
+import {updateDescription} from "../../publishBook/model/slice/publicationReducer.ts";
 
 const UpdateDescription: React.FC = () => {
 
