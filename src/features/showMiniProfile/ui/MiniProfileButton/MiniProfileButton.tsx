@@ -14,7 +14,7 @@ const MiniProfileButton: React.FC<MiniProfileButtonProps> = ({callback}) => {
             onClick={callback}
         >
             {/*<IconBlock size="50px" border="1px solid var(--theme-color)">*/}
-            <Button isDark={false} width="52px" height="52px" fontSize="16px" border="1px solid #fff" >
+            <Button type='borders' size='lg' paddingX='15.5px'>
                 <ProfileIcon color="var(--theme-color)"/>
             </Button>
             {/*</IconBlock>*/}

@@ -50,15 +50,18 @@ const Publication: React.FC = () => {
 
                     {publishPage === 2 ?
                         <>
-                            <Button isDark={true} callback={() => setPublishPage(1)}>Вернуться</Button>
-                            <ChooseTariff />
-                            <PublishBook />
+                            <ChooseTariff/>
+                            <PublishBook/>
+                            <div className="button_center">
+                                <Button type='page' size='xl' paddingX='80px'
+                                        callback={() => setPublishPage(1)}>Вернуться Назад</Button>
+                            </div>
                         </>
-                            :
+                        :
                         <>
                             <PublishStep number={1}>
-                                    <UpdateTitle />
-                                    <AddAuthors />
+                                <UpdateTitle/>
+                                <AddAuthors />
                                 </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={1} />
                             <PublishStep number={2}>
@@ -78,13 +81,7 @@ const Publication: React.FC = () => {
                                     <SelectAge />
                                 </PublishStep>
                             <div className="button_center">
-                                <Button
-                                    width="300px"
-                                    height="60px"
-                                    fontSize="20px"
-                                    isDark={true}
-                                    callback={() => setPublishPage(2)}
-                                >Продолжить</Button>
+                                <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>
                             </div>
                         </>}
         </>

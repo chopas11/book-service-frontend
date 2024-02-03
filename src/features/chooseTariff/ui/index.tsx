@@ -8,7 +8,7 @@ const tariffs = [
         name: "Тариф 1",
         bookPrice: 400,
         royalty: 0.5,
-        color: "#36ce7d",
+        color: "green",
         conditions: [
             "Доход с каждой купленной книги сразу вам на карту",
             "Постоянная поддержка связи с автором",
@@ -20,7 +20,7 @@ const tariffs = [
         name: "Тариф 2",
         bookPrice: 500,
         royalty: 0.4,
-        color: "#9f9ff1",
+        color: "lil",
         conditions: [
             "Доход с каждой купленной книги сразу вам на карту",
             "Постоянная поддержка связи с автором",
@@ -32,7 +32,7 @@ const tariffs = [
         name: "Тариф 3",
         bookPrice: 600,
         royalty: 0.3,
-        color: "#c5fe65",
+        color: "accent",
         conditions: [
             "Доход с каждой купленной книги сразу вам на карту",
             "Постоянная поддержка связи с автором",
@@ -51,6 +51,7 @@ const ChooseTariff: React.FC = () => {
 
     return (
         <div>
+            <br/><br/>
             <h2>Выберите тариф</h2><br/>
             <Row gutter={[24, 24]}>
                 {

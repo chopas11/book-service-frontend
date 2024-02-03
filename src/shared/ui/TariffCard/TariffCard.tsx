@@ -30,7 +30,7 @@ const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChos
                           textSize="14px" textColor="#f0f0f0" starColor={color} />
             </div>
                 {/*<div className={s.tariff_conditions_center}>*/}
-                    <Button padding="0 10px" isDark={true} background={color} callback={callback}>
+                    <Button type={color} callback={callback}>
                         {
                             isChosen ?
                                 "Выбрано" :

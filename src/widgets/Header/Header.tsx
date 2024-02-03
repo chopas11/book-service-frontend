@@ -12,12 +12,9 @@ const Header: React.FC = () => {
             <Logo />
             <div className={s.navbar}>
                 <ul>
-                    <li><Link to="/">Главная</Link>
-                    </li>
-                    {/*<li><Link to="/"><Button isDark={false} width="52px" height="52px" fontSize="16px">Главная</Button></Link>*/}
-                    {/*</li>*/}
-                    <li><Link to="/publish">Публикация</Link></li>
-                    <li><Link to="/faq">FAQ</Link></li>
+                    <li><Link to="/"><Button size='sm'>Главная</Button></Link></li>
+                    <li><Link to="/publish"><Button size='sm'>Публикация</Button></Link></li>
+                    <li><Link to="/faq"><Button size='sm'>FAQ</Button></Link></li>
                 </ul>
             </div>
             <div className={s.headers_menu}>

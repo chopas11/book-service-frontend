@@ -4,6 +4,7 @@ import {Button, Input, InputWrapper} from "../../../shared/ui";
 import {useDispatch} from "react-redux";
 import {addAuthor, deleteAuthor} from "../../publishBook/model/slice/publicationReducer.ts";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
+import CrossIcon from "../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
 
 const AddAuthors: React.FC = () => {
 
@@ -29,14 +30,14 @@ const AddAuthors: React.FC = () => {
                 </InputWrapper>
             </Col>
             <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
-                <Button isDark={false} fontSize="12px" padding="0 10px" callback={() => addNewAuthor()}>Добавить автора</Button>
+                <Button callback={() => addNewAuthor()}>Добавить автора</Button>
             </Col>
-            <Col xl={{span: 11}}></Col>
+            <Col xl={{span: 2}}></Col>
+            <Col xl={{span: 9}}></Col>
 
             {authors.map(author => {
                 return (
-                    <Button isDark={false} fontSize="12px" border="0"
-                            width="100px" height="24px" padding="0 10px" callback={() => dispatch(deleteAuthor(author))}>{author}</Button>
+                    <Button type='accent' size='xs' callback={() => dispatch(deleteAuthor(author))}>{author} <CrossIcon /></Button>
                 )
             })}
 

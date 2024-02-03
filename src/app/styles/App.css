@@ -5,7 +5,7 @@ html {
   --black-color: #141b1f;
   --green-color: #36ce7d;
   --white-color: #ffffff;
-  --dark-color: #2c2d3b;
+  --dark-color: #25323a;
   --blue-color: #555cf0;
   --dark-blue-color: #3237ad;
   --lil-color: #a3a3f8;
@@ -73,6 +73,10 @@ html {
     text-align: center;
   }
 
+  .white {
+    color: var(--white-color)
+  }
+
   .header_center {
     text-align: center;
     margin: 120px 0 60px 0;
@@ -93,12 +97,12 @@ html {
 
   a {
     text-decoration: none;
-    color: var(--text-color);
+    /*color: var(--white-color);*/
   }
 
-  a:hover {
-    color: var(--accent-color)
-  }
+  /*a:hover {*/
+  /*  color: var(--accent-color)*/
+  /*}*/
 
   body {
     background: var(--background-color);

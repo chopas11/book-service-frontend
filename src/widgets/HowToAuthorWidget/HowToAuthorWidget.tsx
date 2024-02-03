@@ -38,7 +38,7 @@ const HowToAuthorWidget = () => {
             </div>
             <div className="button_center">
                 <Link to="/publish">
-                    <Button width="300px" height="60px" fontSize="20px" isDark={true}>
+                    <Button type='page' size='xl' paddingX='80px'>
                         Стать автором
                     </Button>
                 </Link>

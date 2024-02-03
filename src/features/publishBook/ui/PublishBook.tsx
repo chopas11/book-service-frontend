@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {publication} from "../model/slice/publicationReducer.ts";
 import {toggle} from "../../toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../toggleModal/model/enums/modalPath.ts";
+import {createNotificationAction} from "../../showNotifications/model/slice/notificationsReducer.ts";
 
 
 
@@ -12,11 +13,14 @@ const PublishBook: React.FC = () => {
     const dispatch = useDispatch()
 
     const takePayment = () => {
+
+        const message = 'Ваш заказ успешно создан. Оплатите выбранные услуги в разделе «Мои книги» в течение часа';
         dispatch((publication()))
+        dispatch(createNotificationAction(message))
         dispatch(toggle(modalPath.ORDER_VIEWER));
     }
 
-    const [price, setPrice] = useState(9000);
+    const [price, setPrice] = useState(100);
 
     return (
         <div><br/>
@@ -41,9 +45,9 @@ const PublishBook: React.FC = () => {
             {/*</Row>*/}
 
             <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2><br/>
-            {price > 0 && <TextWrapper background="var(--background-color)" border="1px solid var(--theme-color)"
-                                       color="var(--theme-color)" fontSize="20px">{price}р</TextWrapper>}
-            <Button padding="0 10px" callback={() => takePayment()} isDark={true} fontSize="12px">
+            {price > 0 &&
+                <TextWrapper color="var(--theme-color)" fontSize="20px">{price}р</TextWrapper>}
+            <Button type='borders' size='lg' callback={() => takePayment()}>
                 Создать книгу</Button>
         </div>
     );

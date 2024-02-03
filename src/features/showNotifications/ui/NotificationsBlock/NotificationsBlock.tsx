@@ -29,27 +29,34 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = ({visible}) => {
 
     return (
         <div className={`${s.notifications} ${visible ? s.visible : s.invisible}`}>
-            {notifications.map(item => {
-                    return (
-                        <div
-                            key={item.id}
-                            className={`${s.notification} ${!item.isRead ? s.isRead : ""}`}
-                        >
-                            <div
-                                onClick={() => deleteNotification(item)}
-                                className={s.notification_trash}>
-                                <IconBlock size="16px">
-                                    <TrashIcon color="var(--black-color)" />
-                                </IconBlock>
-                            </div>
-                            <div className={s.notification_text}>
-                                <p>{item.text}</p>
-                                <span>Сегодня</span>
-                            </div>
 
-                        </div>
-                    )
-                })}
+            {notifications.length ?
+                <>
+                    <h3 className='white'>Уведомления</h3>
+                    {notifications.map(item => {
+                                                  return (
+                                                  <div
+                                                  key={item.id}
+                                              className={`${s.notification} ${!item.isRead ? s.isRead : ""}`}
+                    >
+                    <div
+                        onClick={() => deleteNotification(item)}
+                        className={s.notification_trash}>
+                        <IconBlock size="16px">
+                            <TrashIcon color="var(--black-color)"/>
+                        </IconBlock>
+                    </div>
+                    <div className={s.notification_text}>
+                        <p>{item.text}</p>
+                        <span>{String(item.time.getDate())}.{String(item.time.getMonth())}.{String(item.time.getFullYear())}</span>
+                    </div>
+
+                    </div>
+                    )})}
+                </>
+                :
+                <div className={s.noNotifications}><p>Новых уведомлений нет</p></div>
+            }
         </div>
     );
 };

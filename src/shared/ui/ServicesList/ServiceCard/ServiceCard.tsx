@@ -1,7 +1,6 @@
 import React, {useRef} from 'react';
 import s from "./ServiceCard.module.css"
-// import IconBlock from "../IconBlock/IconBlock.tsx";
-import {Icon, InlineIcon} from '@iconify/react';
+import {InlineIcon} from '@iconify/react';
 import {Button} from "../../index.ts";
 import SuccessIcon from "../../../assets/IconPack/SuccessIcon/SuccessIcon.tsx";
 
@@ -52,19 +51,14 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, price, acti
             <div className={s.serviceRight}>
                 <p>{price}р</p>
                 <div className={s.serviceRight_icon}>
-                    {/*<IconBlock  size="48px" background="var(--background-color)" color="var(--theme-color)" >*/}
-                    <Button isDark={false} width="52px" height="52px" fontSize="16px"  >
-                        {
-                            // !active ?
-                            //     <InlineIcon  height={24} icon="maki:arrow"/>
-                            //     :
-                                r ?
-                                    <SuccessIcon />
-                                :
-                                <InlineIcon  height={32} icon="ic:round-plus" />
-                        }
-                    {/*</IconBlock>*/}
-                    </Button>
+                    {!active ?
+                        <Button type='primary' size='lg' paddingX='15px'><InlineIcon  height={20} icon="maki:arrow"/></Button>
+                    :
+                        r ?
+                            <Button type='primary' size='lg' paddingX='16px'><SuccessIcon /></Button>
+                            :
+                            <Button type='primary' size='lg' paddingX='9px'><InlineIcon  height={32} icon="ic:round-plus" /></Button>
+                    }
                 </div>
             </div>
 

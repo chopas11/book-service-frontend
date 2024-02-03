@@ -15,9 +15,11 @@ export interface User {
 export interface UserSchema {
     user?: User,
     isAuth: boolean,
+    balance: number,
 }
 
 export enum UserActionTypes {
     SET_AUTH_DATA = 'SET_AUTH_DATA',
     LOGOUT = 'LOGOUT',
+    DEPOSIT = 'DEPOSIT',
 }

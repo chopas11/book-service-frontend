@@ -74,7 +74,7 @@ const Main: React.FC = () => {
         <>
             <WelcomeWidget title={welcomeData.title}>
                 <StarCard text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." textSize="16px" />
-                <Link to="/publish"><Button isDark={false}>Подробнее</Button></Link>
+                <Link to="/publish"><Button>Подробнее</Button></Link>
             </WelcomeWidget>
             <AdvantagesWidget />
             <ServicesWidget services={services} step={1} isActive={false} />

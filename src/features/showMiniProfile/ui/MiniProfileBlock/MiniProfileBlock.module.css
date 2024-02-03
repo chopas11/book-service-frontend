@@ -4,8 +4,8 @@
     right: 0;
     top: 100px;
     padding: 30px;
-    background: var(--background-color);
-    box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);
+    background: var(--dark-color);
+    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
     border-radius: 32px;
     z-index: 9999;
 }
@@ -27,11 +27,13 @@
 }
 
 .profile_content ul > li {
-    cursor: pointer;
-    background: var(--accent-color);
-    padding: 2px 10px;
-    margin: 8px 0;
-    border-radius: 30px;
+    padding: 4px 0;
+}
+
+.profile_balance span {
+    color: var(--accent-color);
+    font-size: 24px;
+    font-weight: 500;
 }
 
 

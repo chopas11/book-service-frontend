@@ -30,15 +30,15 @@
 
 .navbar ul li a {
     padding: 5px 20px;
-    border-radius: 50px;
-    color: var(--theme-color);
+    /*border-radius: 50px;*/
+    /*color: var(--theme-color);*/
 }
 
-.navbar ul li a:hover {
-    background: var(--accent-color);
-    color: var(--black-color);
-    transition: all 0.3s;
-}
+/*.navbar ul li a:hover {*/
+/*    background: var(--accent-color);*/
+/*    color: var(--black-color);*/
+/*    transition: all 0.3s;*/
+/*}*/
 
 .navbar ul li:not(:first-child):not(:last-child) {
     padding: 25px;

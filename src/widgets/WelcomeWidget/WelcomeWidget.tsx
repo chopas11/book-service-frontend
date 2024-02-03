@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from '@/widgets/WelcomeWidget/WelcomeWidget.module.css'
+import s from './WelcomeWidget.module.css'
 
 
 interface WelcomeBlockProps {

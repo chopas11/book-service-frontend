@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 <ul>
                     <Link to="/"><li>Чат поддержки</li></Link>
                     <a href="https://yandex.ru/maps/213/moscow/?ll=37.712536%2C55.755135&mode=poi&poi%5Bpoint%5D=37.712182%2C55.755264&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160232684&z=18"><li>Юридический адрес</li></a>
-                    <li>© ООО «Название»</li>
+                    <li>© StorySphere.ru, {new Date().getFullYear()}</li>
                 </ul>
             </div>
             <div>
