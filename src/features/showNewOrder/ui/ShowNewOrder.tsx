@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux";
 import {toggle} from "../../toggleModal/model/slice/toggleModalReducer.ts";
 import MyBookCard from "../../../shared/ui/MyBookCard/MyBookCard.tsx";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
+import s from "./ShowNewOrder.module.css"
 
 const ShowNewOrder = () => {
 
@@ -18,8 +19,8 @@ const ShowNewOrder = () => {
     }
 
     return (
-        <div>
-            <h3>Ваш заказ успешно создан! </h3><br/>
+        <div className={s.newOrder}>
+            <h3 className='center'>Ваш заказ успешно создан! </h3><br/>
             <MyBookCard background="#555cf0" cover={cover}>
                 <h4>{title}</h4>
                 <p>

@@ -39,8 +39,6 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, price, acti
             className={s.service}
             // onClick={callback}
             ref={ref}
-            onClick={() => setR(!r)}
-
         >
             <div className={s.serviceLeft}>
                 <div>
@@ -55,9 +53,9 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, price, acti
                         <Button type='primary' size='lg' paddingX='15px'><InlineIcon  height={20} icon="maki:arrow"/></Button>
                     :
                         r ?
-                            <Button type='primary' size='lg' paddingX='16px'><SuccessIcon /></Button>
+                            <Button type='accent' size='lg' paddingX='16px' callback={() => setR(!r)}><SuccessIcon /></Button>
                             :
-                            <Button type='primary' size='lg' paddingX='9px'><InlineIcon  height={32} icon="ic:round-plus" /></Button>
+                            <Button type='primary' size='lg' paddingX='9px' callback={() => setR(!r)}><InlineIcon  height={32} icon="ic:round-plus" /></Button>
                     }
                 </div>
             </div>

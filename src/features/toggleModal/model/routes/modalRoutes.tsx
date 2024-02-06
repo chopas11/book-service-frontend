@@ -2,6 +2,7 @@ import ShowCover from "../../../showCover/ui/ShowCover.tsx";
 import Authorization from "../../../authtorization/ui/Authorization.tsx";
 import {modalPath} from "../enums/modalPath.ts";
 import ShowNewOrder from "../../../showNewOrder/ui/ShowNewOrder.tsx";
+import ShowPayment from "../../../showPayment/ui/ShowPayment.tsx";
 
 
 export const modalRoutes = [
@@ -15,7 +16,7 @@ export const modalRoutes = [
     },
     {
         path: modalPath.PAYMENT_VIEWER,
-        element: <ShowCover />,
+        element: <ShowPayment />,
     },
     {
         path: modalPath.AUTHORIZATION_VIEWER,

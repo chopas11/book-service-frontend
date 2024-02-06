@@ -37,7 +37,7 @@ const AddAuthors: React.FC = () => {
 
             {authors.map(author => {
                 return (
-                    <Button type='accent' size='xs' callback={() => dispatch(deleteAuthor(author))}>{author} <CrossIcon /></Button>
+                    <Button type='accent' size='xs' paddingX='12px' callback={() => dispatch(deleteAuthor(author))}>{author}&nbsp;<CrossIcon /></Button>
                 )
             })}
 

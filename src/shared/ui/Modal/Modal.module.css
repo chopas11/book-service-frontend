@@ -1,5 +1,6 @@
 
 .modal {
+    cursor: pointer;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -13,6 +14,7 @@
     opacity: 0;
     pointer-events: none;
     backdrop-filter: blur(5px);
+    transition: all 0.1s ease-out;
 }
 
 .modal.active {
@@ -20,11 +22,16 @@
     pointer-events: all;
 }
 
-.modal_content {
-    width: 25%;
+.modal_window {
+    cursor: default;
+    width: 27.5%;
     background: var(--lil-color);
-    padding: 40px 150px;
+    padding: 30px;
     border-radius: 32px;
+}
+
+.modal_top {
+    position: absolute;
 }
 
 

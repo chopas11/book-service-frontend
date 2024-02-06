@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 // import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 import {uploadFile} from "../../publishBook/model/slice/publicationReducer.ts";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
+import CrossIcon from "../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
 const UploadBookFile: React.FC = () => {
 
 
@@ -24,7 +25,7 @@ const UploadBookFile: React.FC = () => {
             </Col>
             <Col xl={{span: 2}}></Col>
             <Col xl={{span: 9}}>
-                {file ? <Button type='accent' size='xs'>{file.name}</Button> : ""}
+                {file ? <Button type='accent' size='xs' paddingX='12px'>{file.name} &nbsp; <CrossIcon /></Button> : ""}
             </Col>
         </>
 

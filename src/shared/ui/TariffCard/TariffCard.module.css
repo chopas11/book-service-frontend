@@ -8,6 +8,7 @@
 
 .chosen {
     background: #25323a;
+    transition: all 0.2s ease-out;
 }
 
 .tariff_box {

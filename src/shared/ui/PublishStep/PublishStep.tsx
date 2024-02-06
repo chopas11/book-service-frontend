@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 import s from "./PublishStep.module.css"
 import NumberBlock from "../NumberBlock/NumberBlock.tsx";

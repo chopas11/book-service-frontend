@@ -2,6 +2,7 @@
 .input_file {
     position: relative;
     display: inline-block;
+    margin: 10px 0;
 }
 
 .input_file_btn {
@@ -13,7 +14,6 @@
     /*outline: none;*/
     border: 0;
     cursor: pointer;
-    margin: 0 5px;
     background: var(--background-color);
     color: var(--theme-color);
 }

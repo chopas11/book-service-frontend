@@ -7,6 +7,7 @@ import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 
 import noCover from "../../../shared/assets/images/no-cover.png"
+import CrossIcon from "../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
 
 const ShowCover: React.FC = () => {
 
@@ -26,8 +27,8 @@ const ShowCover: React.FC = () => {
             <div className="center">
                 <br/>
                 <InputFile name="Загрузить новую" callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCover(e.currentTarget.files[0]))} />
-                <br/><br/>
-                <Button padding="0 10px" callback={() => dispatch(toggle())} isDark={false}>Назад</Button>
+                <br/>
+                {cover ? <Button type='accent' size='xs' paddingX='12px'>{cover.name} &nbsp;<CrossIcon /></Button> : ""}
             </div>
 
             {/*</InputWrapper>*/}
