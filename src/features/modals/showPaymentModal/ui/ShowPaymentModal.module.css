@@ -1,0 +1,16 @@
+
+.payment_balance {
+    float: right;
+    background: var(--black-color);
+    padding: 15px 40px 15px 15px;
+    border-radius: 24px;
+}
+
+.payment_balance p {
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.payment_content {
+    padding: 100px 60px 30px 60px;
+}

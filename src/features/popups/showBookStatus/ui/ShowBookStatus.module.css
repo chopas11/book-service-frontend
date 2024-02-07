@@ -1,0 +1,38 @@
+
+.status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    background: var(--dark-color);
+    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
+    border-radius: 32px;
+    z-index: 9999;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.status ul {
+    list-style: none;
+    line-height: 2;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.step1 {
+    color: var(--orange-color)
+}
+
+.step2 {
+    color: var(--lil-color)
+}
+
+.step4 {
+    color: var(--green-color)
+}

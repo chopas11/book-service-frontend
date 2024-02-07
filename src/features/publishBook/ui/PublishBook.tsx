@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {Button, TextWrapper} from "../../../shared/ui";
 import {useDispatch} from "react-redux";
 import {publication} from "../model/slice/publicationReducer.ts";
-import {toggle} from "../../toggleModal/model/slice/toggleModalReducer.ts";
-import {modalPath} from "../../toggleModal/model/enums/modalPath.ts";
-import {createNotificationAction} from "../../showNotifications/model/slice/notificationsReducer.ts";
+import {toggle} from "../../modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../modals/toggleModal/model/enums/modalPath.ts";
+import {createNotificationAction} from "../../popups/showNotifications/model/slice/notificationsReducer.ts";
 
 
 

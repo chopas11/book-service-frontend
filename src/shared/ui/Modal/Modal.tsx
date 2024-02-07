@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import s from "./Modal.module.css"
 import {useDispatch} from "react-redux";
-import {toggle} from "../../../features/toggleModal/model/slice/toggleModalReducer.ts";
-import {modalRoutes} from "../../../features/toggleModal/model/routes/modalRoutes.tsx";
+import {toggle} from "../../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalRoutes} from "../../../features/modals/toggleModal/model/routes/modalRoutes.tsx";
 import {Button} from "../index.ts";
 import ArrowIcon from "../../assets/IconPack/ArrowIcon/ArrowIcon.tsx";
 import BackIcon from "../../assets/IconPack/BackIcon/BackIcon.tsx";

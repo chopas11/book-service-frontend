@@ -2,8 +2,8 @@
 // import {titleReducer} from "../../../updateTitle/model/slice/titleReducer.ts";
 
 
-import {toggle} from "../../../toggleModal/model/slice/toggleModalReducer.ts";
-import {modalPath} from "../../../toggleModal/model/enums/modalPath.ts";
+import {toggle} from "../../../modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../../modals/toggleModal/model/enums/modalPath.ts";
 import {useDispatch} from "react-redux";
 
 export interface PublicationState {

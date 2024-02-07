@@ -4,8 +4,8 @@ import InputFile from "../../../shared/ui/forms/InputFile/InputFile.tsx";
 import {Col} from "antd";
 import {uploadCover} from "../../publishBook/model/slice/publicationReducer.ts";
 import {useDispatch} from "react-redux";
-import {toggle} from "../../toggleModal/model/slice/toggleModalReducer.ts";
-import {modalPath} from "../../toggleModal/model/enums/modalPath.ts";
+import {toggle} from "../../modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../modals/toggleModal/model/enums/modalPath.ts";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 import CrossIcon from "../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
 

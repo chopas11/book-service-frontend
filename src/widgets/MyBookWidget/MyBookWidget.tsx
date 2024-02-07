@@ -4,9 +4,10 @@ import {Button} from "../../shared/ui";
 import {Col, Row} from "antd";
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 import noCover from "../../shared/assets/images/no-cover.png";
-import {toggle} from "../../features/toggleModal/model/slice/toggleModalReducer.ts";
-import {modalPath} from "../../features/toggleModal/model/enums/modalPath.ts";
+import {toggle} from "../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../features/modals/toggleModal/model/enums/modalPath.ts";
 import {useDispatch} from "react-redux";
+import ShowBookStatus from "../../features/popups/showBookStatus/ui/ShowBookStatus.tsx";
 
 const MyBookWidget: React.FC = () => {
 
@@ -41,6 +42,7 @@ const MyBookWidget: React.FC = () => {
                 <Col lg={{span: 7}}>
                     <div className={s.myBook_add}>
                         <p>Статус: Ожидает оплаты</p>
+                        <ShowBookStatus visible={true} step={3} />
                         <Button callback={() => dispatch(toggle(modalPath.PAYMENT_VIEWER))}>Оплатить</Button>
                     </div>
                 </Col>

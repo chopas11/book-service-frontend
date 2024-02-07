@@ -1,0 +1,12 @@
+
+
+.balanceCard {
+    /*color: var(--accent-color);*/
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.balanceCard_paragraph {
+    position: absolute;
+    margin-left: 5px;
+}

@@ -9,7 +9,7 @@ import Footer from "../widgets/Footer/Footer.tsx";
 import {Col, Row} from "antd";
 import {useTypedSelector} from "../shared/hooks/useTypedSelector.ts";
 import Modal from "../shared/ui/Modal/Modal.tsx";
-// import Authorization from "../features/authtorization/ui/Authorization.tsx";
+// import ShowAuthModal from "../features/showAuthModal/ui/ShowAuthModal.tsx";
 
 const App: React.FC = () => {
 

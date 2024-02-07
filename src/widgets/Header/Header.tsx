@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import ShowNotifications from "../../features/showNotifications/ui";
-import ShowMiniProfile from "../../features/showMiniProfile/ui";
+import ShowNotifications from "../../features/popups/showNotifications/ui";
+import ShowMiniProfile from "../../features/popups/showMiniProfile/ui";
 import {Button, Logo} from "../../shared/ui";
 import s from "./Header.module.css"
 
