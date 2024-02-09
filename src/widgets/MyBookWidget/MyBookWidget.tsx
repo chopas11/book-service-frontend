@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from "./MyBookWidget.module.css"
 import {Button} from "../../shared/ui";
 import {Col, Row} from "antd";
@@ -7,13 +7,16 @@ import noCover from "../../shared/assets/images/no-cover.png";
 import {toggle} from "../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../features/modals/toggleModal/model/enums/modalPath.ts";
 import {useDispatch} from "react-redux";
-import ShowBookStatus from "../../features/popups/showBookStatus/ui/ShowBookStatus.tsx";
+import ShowBookStatus from "../../features/popups/showBookStatus/ui";
+import {Link} from "react-router-dom";
 
 const MyBookWidget: React.FC = () => {
 
 
     const dispatch = useDispatch()
-    const {title, authors, cover} = useTypedSelector(state => state.publication)
+    const {title, authors, cover, description} = useTypedSelector(state => state.publication)
+
+    const [status, setStatus] = useState(4);
 
     return (
         <div className={s.myBook}>
@@ -35,15 +38,16 @@ const MyBookWidget: React.FC = () => {
                         </div>
                         <div className={s.myBooks_about_description}>
                             <span>О книге</span>
-                            {/*<p>{book.description}</p>*/}
+                            <p>{description}</p>
                         </div>
                     </div>
                 </Col>
                 <Col lg={{span: 7}}>
                     <div className={s.myBook_add}>
-                        <p>Статус: Ожидает оплаты</p>
-                        <ShowBookStatus visible={true} step={3} />
-                        <Button callback={() => dispatch(toggle(modalPath.PAYMENT_VIEWER))}>Оплатить</Button>
+                        <ShowBookStatus step={status} />
+                        <br/><br/>
+                        {status === 1 ? <Button callback={() => dispatch(toggle(modalPath.PAYMENT_VIEWER))}>Оплатить</Button> : ""}
+                        {status === 4 ? <Link to="/edit"><Button>Редактировать</Button></Link> : ""}
                     </div>
                 </Col>
 

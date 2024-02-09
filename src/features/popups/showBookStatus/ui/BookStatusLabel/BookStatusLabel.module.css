@@ -1,0 +1,15 @@
+
+.bookStatusLabel {
+    display: inline-block;
+}
+
+.bookStatusLabel p {
+    color: var(--text-color);
+}
+
+.bookStatusLabel_label {
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 500;
+    cursor: pointer;
+}

@@ -1,12 +1,12 @@
 import React from 'react';
-import s from "./ShowBookStatus.module.css"
+import s from "./BookStatusBlock.module.css"
 
-interface ShowBookStatusProps {
+interface BookStatusBlockProps {
     visible: boolean,
     step: 1 | 2 | 3 | 4,
 }
 
-const ShowBookStatus: React.FC<ShowBookStatusProps> = ({visible, step}) => {
+const BookStatusBlock: React.FC<BookStatusBlockProps> = ({visible, step}) => {
     return (
         <div className={`${s.status} ${visible ? s.visible : s.invisible}`}>
             <ul>
@@ -19,4 +19,4 @@ const ShowBookStatus: React.FC<ShowBookStatusProps> = ({visible, step}) => {
     );
 };
 
-export default ShowBookStatus;
+export default BookStatusBlock;

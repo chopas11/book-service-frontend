@@ -59,6 +59,7 @@ const Publication: React.FC = () => {
                         </>
                         :
                         <>
+                            <br/><br/>
                             <PublishStep number={1}>
                                 <UpdateTitle/>
                                 <AddAuthors />

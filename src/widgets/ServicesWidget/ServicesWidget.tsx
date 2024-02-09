@@ -39,16 +39,19 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
         switch (step) {
             case 1:
                 return (
-                    <Row gutter={[12, 12]}>
-                        <Col xl={{ span: 6 }} >
-                            <StarCard text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="15px" textColor="#f0f0f0"/>
-                        </Col>
-                        <Col xl={{ span: 2 }}></Col>
-                        <ServicesList services={services} isActive={true} step={1} />
-                    </Row>
+                    <div className={s.servicesWidget}>
+                        <Row gutter={[12, 12]}>
+                            <Col xl={{ span: 6 }} >
+                                <StarCard text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="15px" textColor="#f0f0f0"/>
+                            </Col>
+                            <Col xl={{ span: 2 }}></Col>
+                            <ServicesList services={services} isActive={true} step={1} />
+                        </Row>
+                    </div>
                 )
             case 2:
                 return (
+                    <div className={s.servicesWidget}>
                     <Row gutter={[12, 12]}>
                         <Col xl={{ span: 2 }}></Col>
                         <ServicesList services={services} isActive={true} step={2} />
@@ -57,35 +60,40 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
                             <StarCard text="Выберите услугу, которая сделает это за вас" textSize="15px" textColor="#f0f0f0" />
                         </Col>
                     </Row>
+                    </div>
                 )
             case 3:
                 return (
+                    <div className={s.servicesWidget}>
                     <Row gutter={[12, 12]}>
                         <Col xl={{ span: 6 }}>
                             <StarCard text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="15px" textColor="#f0f0f0" />
                         </Col>
                         <ServicesList services={services} isActive={true} step={3} />
                     </Row>
+                    </div>
                 )
             case 4:
                 return (
+                    <div className={s.servicesWidget}>
                     <Row gutter={[12, 12]}>
                         <Col xl={{span: 4}}></Col>
                         <ServicesList services={services} isActive={true} step={4} />
                         <Col xl={{ span: 2 }}></Col>
                         <Col xl={{ span: 6 }}><StarCard text="Если у вас нет обложки, мы можем сделать это за вас" textSize="15px" textColor="#f0f0f0" /></Col>
                     </Row>
+                    </div>
                 )
         }
     } else {
         return (
             <div className={s.servicesWidget}>
-
+                <br/><br/><br/><br/>
                 <Row gutter={[12, 12]}>
                     <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}}>
                         <h2>Услуги</h2>
                     </Col>
-                    <ServicesList services={services} isActive={false} step={1} />
+                    <ServicesList services={services} isActive={false} step={1}/>
                 </Row>
             </div>
         );

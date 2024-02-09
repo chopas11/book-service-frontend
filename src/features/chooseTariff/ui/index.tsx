@@ -1,45 +1,7 @@
 import React, {useState} from 'react';
 import {Col, Row} from "antd";
 import TariffCard from "../../../shared/ui/TariffCard/TariffCard.tsx";
-
-const tariffs = [
-    {
-        id: 1,
-        name: "Тариф 1",
-        bookPrice: 400,
-        royalty: 0.5,
-        color: "green",
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-    {
-        id: 2,
-        name: "Тариф 2",
-        bookPrice: 500,
-        royalty: 0.4,
-        color: "lil",
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-    {
-        id: 3,
-        name: "Тариф 3",
-        bookPrice: 600,
-        royalty: 0.3,
-        color: "accent",
-        conditions: [
-            "Доход с каждой купленной книги сразу вам на карту",
-            "Постоянная поддержка связи с автором",
-            "Запрет на скриншоты текста книги",
-        ]
-    },
-]
+import {tariffs} from "../../../entities/Tariff/model/mocks/tariifs.tsx";
 
 const ChooseTariff: React.FC = () => {
 

@@ -13,7 +13,7 @@
 }
 
 .myBook_about_title {
-    background: var(--green-color);
+    background: var(--blue-color);
     margin-bottom: 10px;
     border-radius: 28px;
     padding: 20px 30px;
@@ -28,7 +28,6 @@
 }
 
 .myBooks_about_description {
-    background: var(--blue-color);
     border-radius: 32px;
     padding: 20px 30px;
 }

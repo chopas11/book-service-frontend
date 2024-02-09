@@ -4,9 +4,9 @@ import {uploadCover} from "../../../publishBook/model/slice/publicationReducer.t
 import {Button} from "../../../../shared/ui";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
-
 import noCover from "../../../../shared/assets/images/no-cover.png"
 import CrossIcon from "../../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
+import s from "./ShowCoverModal.module.css"
 
 const ShowCoverModal: React.FC = () => {
 
@@ -15,7 +15,7 @@ const ShowCoverModal: React.FC = () => {
     const {cover} = useTypedSelector(state => state.publication)
     console.log(cover)
     return (
-        <div>
+        <div className={s.coverModal}>
             <h3 className="center">Загрузка обложки</h3><br/>
             {cover ?
                 <img src={URL.createObjectURL(cover)} style={{width: "100%", borderRadius: "32px"}} alt="Img"/>
