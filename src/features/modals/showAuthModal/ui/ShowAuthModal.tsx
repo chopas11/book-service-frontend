@@ -21,10 +21,11 @@ const ShowAuthModal: React.FC = () => {
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin' : '*',
+                    'Access-Control-Allow-Origin' : 'http://localhost:9000',
                     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
                     'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
                     'Access-Control-Allow-Credentials': 'true',
+                    'Referrer-Policy': 'origin',
                 }
             });
         console.log(res)
