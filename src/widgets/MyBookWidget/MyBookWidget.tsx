@@ -16,7 +16,7 @@ const MyBookWidget: React.FC = () => {
     const dispatch = useDispatch()
     const {title, authors, cover, description} = useTypedSelector(state => state.publication)
 
-    const [status, setStatus] = useState(1);
+    const [status, setStatus] = useState(4);
 
     return (
         <div className={s.myBook}>

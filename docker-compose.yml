@@ -4,4 +4,8 @@ services:
     build: .
     ports:
       - "80:80"
+      - "443:443"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    restart: always
     container_name: book-service-frontend

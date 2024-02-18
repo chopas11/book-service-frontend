@@ -1,7 +1,5 @@
 import React from 'react';
 import s from "./MiniProfileBlock.module.css"
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import image from "../../../../../shared/assets/images/AvatarExample.png"
 import LogoutIcon from "../../../../../shared/assets/IconPack/LogoutIcon/LogoutIcon.tsx";
 import {useTypedSelector} from "../../../../../shared/hooks/useTypedSelector.ts";
@@ -9,8 +7,9 @@ import {useDispatch} from "react-redux";
 import {logout, setAuthData} from "../../../../../entities/User/model/slice/userReducer.ts";
 import {Link} from "react-router-dom";
 import {Button} from "../../../../../shared/ui";
-import ParagraphIcon from "../../../../../shared/assets/IconPack/ParagraphIcon/ParagraphIcon.tsx";
 import BalanceCard from "../../../../../shared/ui/BalanceCard/BalanceCard.tsx";
+import {toggle} from "../../../../modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../../../modals/toggleModal/model/enums/modalPath.ts";
 
 interface ProfileFeatureProps {
     visible: boolean,
@@ -48,9 +47,19 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
                         </div>
                     </div>
                     :
-                    <div>
-                        <p onClick={() => dispatch(setAuthData())}>Войти</p>
-                        <p>Регистрация</p>
+                    <div className={s.profile_content}>
+                        <ul>
+                            <li><Button type='accent' size='xs' paddingX='10px'
+                                        callback={() => dispatch(toggle(modalPath.AUTHORIZATION_VIEWER))}
+                            >
+                                Войти в систему
+                            </Button></li>
+                            <li><Button type='accent' size='xs' paddingX='10px'
+                                        callback={() => dispatch(toggle(modalPath.AUTHORIZATION_VIEWER))}
+                            >
+                                Регистрация
+                            </Button></li>
+                        </ul>
                     </div>
             }
         </div>

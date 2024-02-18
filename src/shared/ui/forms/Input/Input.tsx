@@ -3,15 +3,16 @@ import s from "./Input.module.css"
 
 interface InputProps {
     type?: string,
-    placeholder: string,
+    placeholder?: string,
     value: string,
-    callback: React.EventHandler<never>,
+    theme: 'dark' | 'light',
+    callback?: React.EventHandler<never>,
 }
 
-const Input :React.FC<InputProps> = ({type = "text", placeholder, value, callback}) => {
+const Input: React.FC<InputProps> = ({type = "text", placeholder = "", value, theme = "dark", callback}) => {
     return (
         <input
-            className={s.input}
+            className={`${s.input} ${theme === 'dark' ? s.dark : s.light}`}
             type={type}
             placeholder={placeholder}
             value={value}

@@ -7,6 +7,7 @@ import Edit from "../../../../pages/Edit/Edit.tsx";
 import Statistics from "../../../../pages/Statistics/Statistics.tsx";
 import History from "../../../../pages/History/History.tsx";
 import Profile from "../../../../pages/Profile/Profile.tsx";
+import NotFound from "../../../../pages/NotFound/NotFound.tsx";
 
 
 export type AppRouterProps = RouteProps & {
@@ -53,5 +54,9 @@ export const routes: AppRouterProps[] = [
         element: <Profile />,
         authOnly: true,
     },
+    {
+        path:  "*",
+        element: <NotFound />,
+    }
 
 ]

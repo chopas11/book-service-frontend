@@ -7,8 +7,17 @@
     border: 0;
     padding-left: 25px;
     border-radius: 50px;
+}
+
+.dark {
     background: var(--background-color);
     color: var(--theme-color);
+}
+
+.light {
+    background: var(--white-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .input:focus {
