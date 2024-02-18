@@ -14,21 +14,33 @@ const ShowAuthModal: React.FC = () => {
 
      async function auth() {
          // const req = 'http://31.129.101.169:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://31.129.101.169&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
-         const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://localhost:80&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
+         const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://localhost:8000/&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
          // const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=https://springone.io/authorized&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
 
-         const res = await axios.get(req,
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin' : 'http://localhost:9000',
-                    'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                    'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-                    'Access-Control-Allow-Credentials': 'true',
-                    'Referrer-Policy': 'origin',
-                }
-            });
-        console.log(res)
+        //  const res = await axios.get(req,
+        //     {
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //             'Access-Control-Allow-Origin' : 'http://localhost:9000',
+        //             'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        //             'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+        //             'Access-Control-Allow-Credentials': 'true',
+        //             'Access-Control-Request-Private-Network': 'true',
+        //             'Referrer-Policy': 'origin',
+        //         }
+        //     });
+
+
+
+         const headers = new Headers();
+         // headers.append('Authorization', 'Basic YWRtaW46cGFzc3dvcmQ=');
+
+         const res = await fetch(req, {
+             credentials: 'include', // для передачи basic
+             headers: headers,
+             mode: "no-cors",
+         });
+         console.log(res)
     }
 
     return (
@@ -44,7 +56,7 @@ const ShowAuthModal: React.FC = () => {
                 <Input theme="light" type="text" placeholder="Пароль" value={password} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updatePassword(e.currentTarget.value))} />
             </InputWrapper>
             <br/>
-            <Button callback={() => auth()} >Войти</Button>
+            <Button>Войти</Button>
         </div>
     );
 };
