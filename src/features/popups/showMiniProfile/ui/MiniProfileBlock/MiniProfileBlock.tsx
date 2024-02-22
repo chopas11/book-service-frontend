@@ -5,11 +5,12 @@ import LogoutIcon from "../../../../../shared/assets/IconPack/LogoutIcon/LogoutI
 import {useTypedSelector} from "../../../../../shared/hooks/useTypedSelector.ts";
 import {useDispatch} from "react-redux";
 import {logout, setAuthData} from "../../../../../entities/User/model/slice/userReducer.ts";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import {Button} from "../../../../../shared/ui";
 import BalanceCard from "../../../../../shared/ui/BalanceCard/BalanceCard.tsx";
 import {toggle} from "../../../../modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../../../modals/toggleModal/model/enums/modalPath.ts";
+import axios from "axios";
 
 interface ProfileFeatureProps {
     visible: boolean,
@@ -23,7 +24,7 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
 
     function auth() {
         // const req = 'http://31.129.101.169:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://31.129.101.169&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
-        const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=http://localhost:8000/&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
+        // const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=browser-client&scope=openid&redirect_uri=http://localhost:8000&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
         // const req = 'http://localhost:9000/oauth2/authorize?response_type=code&client_id=client&scope=openid&redirect_uri=https://springone.io/authorized&code_challenge=c478361e6869af25970682a2c53967adbc8a46e9429efdc64b96351cfd52e13f&code_challenge_method=S256';
 
         //  const res = await axios.get(req,
@@ -39,19 +40,94 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
         //         }
         //     });
 
-
-
-        const headers = new Headers();
+        // const headers = new Headers();
         // headers.append('Authorization', 'Basic YWRtaW46cGFzc3dvcmQ=');
-        window.location.href = req;
+        // window.location.href = req;
         // const res = await fetch(req, {
-        //     method: 'GET',
-        //     redirect: 'follow',
-        //     credentials: 'include', // для передачи basic
         //     headers: headers,
         //     mode: "no-cors",
         // });
         // console.log(res)
+
+        const codeVerifier = generateRandomString(64);
+        window.localStorage.setItem('code_verifier', codeVerifier);
+
+        Promise.resolve()
+            .then(() => {
+                return generateCodeChallenge(codeVerifier);
+            })
+            .then(function (codeChallenge) {
+                const args = new URLSearchParams({
+                    response_type: 'code',
+                    client_id: 'browser-client',
+                    redirect_uri: 'http://storysphere.ru',
+                    state: '1234zyx',
+                    code_challenge: codeChallenge,
+                    code_challenge_method: 'S256',
+                    scope: 'openid',
+                });
+                window.location = 'http://storysphere.ru:9000/oauth2/authorize?' + args;
+            })
+
+
+
+    }
+
+    async function generateCodeChallenge (codeVerifier) {
+        const digest = await crypto.subtle.digest(
+            'SHA-256',
+            new TextEncoder().encode(codeVerifier)
+        );
+        return btoa(String.fromCharCode(...new Uint8Array(digest)))
+            .replace(/=/g, '')
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_');
+    }
+
+    const generateRandomString = (length) => {
+        let text = '';
+        const possible =
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        for (let i = 0; i < length; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+
+        return text;
+    }
+    const [searchParams, setSearchParams] = useSearchParams();
+
+     function getToken () {
+         if (searchParams.get("code") !== null) {
+             let formData = new FormData();
+             formData.append('grant_type', 'authorization_code');
+             formData.append('code', searchParams.get("code"));
+             formData.append('redirect_uri', 'http://storysphere.ru');
+             formData.append('client_id', 'browser-client');
+             formData.append(
+                 'code_verifier',
+                 window.localStorage.getItem('code_verifier')
+             );
+
+             axios
+                 .post(
+                     'http://storysphere.ru:9000/oauth2/token',
+                     formData,
+
+                     {
+                         headers: {
+                             'Content-type': 'application/url-form-encoded',
+                             Authorization: 'Basic ' + btoa('browser-client:secret'),
+                         },
+                     }
+                 )
+                 .then((resp) => {
+                     console.log(resp.data);
+                     window.sessionStorage.setItem('_a', resp.data.access_token);
+                 });
+         }
+
+
     }
 
     return (
@@ -88,7 +164,8 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
                                 Войти в систему
                             </Button></li>
                             <li><Button type='accent' size='xs' paddingX='10px'
-                                        callback={() => dispatch(toggle(modalPath.AUTHORIZATION_VIEWER))}
+                                        // callback={() => dispatch(toggle(modalPath.AUTHORIZATION_VIEWER))}
+                                        callback={() => getToken()}
                             >
                                 Регистрация
                             </Button></li>

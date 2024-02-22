@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './styles/App.css'
 import AppRouter from "./providers/router/ui/AppRouter.tsx";
 import {store} from "./providers/store";
 import {Provider} from "react-redux";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, useParams, useSearchParams} from "react-router-dom";
 import Header from "../widgets/Header/Header.tsx";
 import Footer from "../widgets/Footer/Footer.tsx";
 import {Col, Row} from "antd";
@@ -28,6 +28,51 @@ const App: React.FC = () => {
 const Layout: React.FC = () => {
 
     const {active, path} = useTypedSelector(state => state.modal)
+
+    const params = useParams();
+    // получаем параметры строки запроса
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    // useEffect(() => {
+    //     console.log("Useeffect in Layout")
+    //     console.log(searchParams.get("code"), " 111")
+    //
+    //     if (searchParams.get("code") !== null) {
+    //         //
+    //         const details = {
+    //             'grant_type' : 'authorization_code',
+    //             'code': searchParams.get("code"),
+    //             'client_id': 'browser-client',
+    //             'client_secret': 'secret',
+    //             'redirect_uri': 'https://localhost:8000/',
+    //             'code_verifier': window.sessionStorage.getItem('code_verifier'),
+    //             // 'Authorization': 'Basic Y2xpZW50OnNlY3JldA==',
+    //             // 'connection': 'keep-alive',
+    //         };
+    //
+    //         let formBody = [];
+    //         for (const property in details) {
+    //             // const encodedKey = encodeURIComponent(property);
+    //             // const encodedValue = encodeURIComponent(details[property]);
+    //             formBody.push(property + "=" + details[property]);
+    //         }
+    //         formBody = formBody.join("&");
+    //         const res = fetch('http://localhost:9000/oauth2/token', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/url-form-encoded'
+    //             },
+    //             mode: "no-cors",
+    //             body: formBody
+    //         })
+    //         console.log(res);
+    //         //
+    //     }
+    //
+    //
+    //
+    //
+    // }, [searchParams]);
 
     return (
         <div className="wrapper">
