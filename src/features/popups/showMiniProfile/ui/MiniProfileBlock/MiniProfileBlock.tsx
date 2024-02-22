@@ -60,13 +60,13 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
                 const args = new URLSearchParams({
                     response_type: 'code',
                     client_id: 'browser-client',
-                    redirect_uri: 'http://storysphere.ru',
+                    redirect_uri: 'http://127.0.0.1:8000',
                     state: '1234zyx',
                     code_challenge: codeChallenge,
                     code_challenge_method: 'S256',
                     scope: 'openid',
                 });
-                window.location = 'http://storysphere.ru:9000/oauth2/authorize?' + args;
+                window.location = 'http://127.0.0.1:9000/oauth2/authorize?' + args;
             })
 
 
@@ -102,7 +102,7 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
              let formData = new FormData();
              formData.append('grant_type', 'authorization_code');
              formData.append('code', searchParams.get("code"));
-             formData.append('redirect_uri', 'http://storysphere.ru');
+             formData.append('redirect_uri', 'http://127.0.0.1:8000');
              formData.append('client_id', 'browser-client');
              formData.append(
                  'code_verifier',
@@ -111,7 +111,7 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
 
              axios
                  .post(
-                     'http://storysphere.ru:9000/oauth2/token',
+                     'http://127.0.0.1:9000/oauth2/token',
                      formData,
 
                      {
