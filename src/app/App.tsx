@@ -2,13 +2,15 @@ import React, {useEffect} from 'react';
 import './styles/App.css'
 import AppRouter from "./providers/router/ui/AppRouter.tsx";
 import {store} from "./providers/store";
-import {Provider} from "react-redux";
+import {Provider, useDispatch} from "react-redux";
 import {BrowserRouter, useParams, useSearchParams} from "react-router-dom";
 import Header from "../widgets/Header/Header.tsx";
 import Footer from "../widgets/Footer/Footer.tsx";
 import {Col, Row} from "antd";
 import {useTypedSelector} from "../shared/hooks/useTypedSelector.ts";
 import Modal from "../shared/ui/Modal/Modal.tsx";
+import axios from "axios";
+import {setAuthData} from "../entities/User/model/slice/userReducer.ts";
 // import ShowAuthModal from "../features/showAuthModal/ui/ShowAuthModal.tsx";
 
 const App: React.FC = () => {
@@ -28,51 +30,49 @@ const App: React.FC = () => {
 const Layout: React.FC = () => {
 
     const {active, path} = useTypedSelector(state => state.modal)
-
+    const dispatch = useDispatch()
     const params = useParams();
     // получаем параметры строки запроса
     const [searchParams, setSearchParams] = useSearchParams();
 
-    // useEffect(() => {
-    //     console.log("Useeffect in Layout")
-    //     console.log(searchParams.get("code"), " 111")
+    useEffect(() => {
+        console.log("Useeffect in Layout")
+        console.log(searchParams.get("code"), " 111")
+
+        if (searchParams.get("code") !== null) {
+            let formData = new FormData();
+            formData.append('grant_type', 'authorization_code');
+            formData.append('code', searchParams.get("code"));
+            formData.append('redirect_uri', 'https://storysphere.ru');
+            formData.append('client_id', 'client');
+            formData.append(
+                'code_verifier',
+                window.localStorage.getItem('code_verifier')
+            );
+
+            axios
+                .post(
+                    'http://storysphere.ru:9000/oauth2/token',
+                    formData,
+
+                    {
+                        headers: {
+                            'Content-type': 'application/url-form-encoded',
+                            Authorization: 'Basic ' + btoa('client:secret'),
+                        },
+                    }
+                )
+                .then((resp) => {
+                    console.log(resp.data);
+                    window.sessionStorage.setItem('_a', resp.data.access_token);
+                    if (resp.data.access_token) {
+                        dispatch(setAuthData());
+                    }
+                });
+        }
+
     //
-    //     if (searchParams.get("code") !== null) {
-    //         //
-    //         const details = {
-    //             'grant_type' : 'authorization_code',
-    //             'code': searchParams.get("code"),
-    //             'client_id': 'browser-client',
-    //             'client_secret': 'secret',
-    //             'redirect_uri': 'https://localhost:8000/',
-    //             'code_verifier': window.sessionStorage.getItem('code_verifier'),
-    //             // 'Authorization': 'Basic Y2xpZW50OnNlY3JldA==',
-    //             // 'connection': 'keep-alive',
-    //         };
-    //
-    //         let formBody = [];
-    //         for (const property in details) {
-    //             // const encodedKey = encodeURIComponent(property);
-    //             // const encodedValue = encodeURIComponent(details[property]);
-    //             formBody.push(property + "=" + details[property]);
-    //         }
-    //         formBody = formBody.join("&");
-    //         const res = fetch('http://localhost:9000/oauth2/token', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/url-form-encoded'
-    //             },
-    //             mode: "no-cors",
-    //             body: formBody
-    //         })
-    //         console.log(res);
-    //         //
-    //     }
-    //
-    //
-    //
-    //
-    // }, [searchParams]);
+    }, [searchParams]);
 
     return (
         <div className="wrapper">

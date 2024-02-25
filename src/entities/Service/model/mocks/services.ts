@@ -5,7 +5,6 @@ export const services: IService[] = [
         title: "Неймер",
         description: "Он придумывает яркие, звучные и запоминающиеся комбинации.",
         price: 300,
-        // isChosen: false,
     },
     {
         id: 2,

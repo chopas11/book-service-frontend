@@ -59,14 +59,14 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
             .then(function (codeChallenge) {
                 const args = new URLSearchParams({
                     response_type: 'code',
-                    client_id: 'browser-client',
-                    redirect_uri: 'http://127.0.0.1:8000',
+                    client_id: 'client',
+                    redirect_uri: 'https://storysphere.ru',
                     state: '1234zyx',
                     code_challenge: codeChallenge,
                     code_challenge_method: 'S256',
                     scope: 'openid',
                 });
-                window.location = 'http://127.0.0.1:9000/oauth2/authorize?' + args;
+                window.location = 'http://storysphere.ru:9000/oauth2/authorize?' + args;
             })
 
 
@@ -102,8 +102,8 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
              let formData = new FormData();
              formData.append('grant_type', 'authorization_code');
              formData.append('code', searchParams.get("code"));
-             formData.append('redirect_uri', 'http://127.0.0.1:8000');
-             formData.append('client_id', 'browser-client');
+             formData.append('redirect_uri', 'https://storysphere.ru');
+             formData.append('client_id', 'client');
              formData.append(
                  'code_verifier',
                  window.localStorage.getItem('code_verifier')
@@ -111,13 +111,13 @@ const MiniProfileBlock: React.FC<ProfileFeatureProps> = ({visible}) => {
 
              axios
                  .post(
-                     'http://127.0.0.1:9000/oauth2/token',
+                     'http://storysphere.ru/oauth2/token',
                      formData,
 
                      {
                          headers: {
                              'Content-type': 'application/url-form-encoded',
-                             Authorization: 'Basic ' + btoa('browser-client:secret'),
+                             Authorization: 'Basic ' + btoa('client:secret'),
                          },
                      }
                  )
