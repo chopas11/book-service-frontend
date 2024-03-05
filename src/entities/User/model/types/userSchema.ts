@@ -19,6 +19,7 @@ export interface UserSchema {
 }
 
 export enum UserActionTypes {
+    CHECK_ACCESS_TOKEN = 'CHECK_ACCESS_TOKEN',
     SET_AUTH_DATA = 'SET_AUTH_DATA',
     LOGOUT = 'LOGOUT',
     DEPOSIT = 'DEPOSIT',

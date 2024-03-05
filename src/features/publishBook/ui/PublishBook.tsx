@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Button, TextWrapper} from "../../../shared/ui";
 import {useDispatch} from "react-redux";
-import {publication} from "../model/slice/publicationReducer.ts";
 import {toggle} from "../../modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../modals/toggleModal/model/enums/modalPath.ts";
 import {createNotificationAction} from "../../popups/showNotifications/model/slice/notificationsReducer.ts";
+// import {publicationService} from "../model/services/PublicationService.ts";
 
 
 
@@ -15,12 +15,14 @@ const PublishBook: React.FC = () => {
     const takePayment = () => {
 
         const message = 'Ваш заказ успешно создан. Оплатите выбранные услуги в разделе «Мои книги» в течение часа';
-        dispatch((publication()))
         dispatch(createNotificationAction(message))
+        // dispatch((publicationService()))
         dispatch(toggle(modalPath.ORDER_VIEWER));
+
+
     }
 
-    const [price, setPrice] = useState(100);
+    const [price] = useState(100);
 
     return (
         <div><br/>
