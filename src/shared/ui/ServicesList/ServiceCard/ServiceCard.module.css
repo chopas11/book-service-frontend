@@ -15,17 +15,17 @@
     /*box-shadow: 4px 0px 20px rgba(22, 76, 82, 16%);*/
 }
 
-.serviceLeft div {
-    display: inline-block;
-    background: var(--green-color);
-    font-family: var(--headers-font);
-    font-size: 24px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 8px 20px;
-    border-radius: 50px;
+/*.serviceLeft div {*/
+/*    display: inline-block;*/
+/*    background: var(--green-color);*/
+/*    font-family: var(--headers-font);*/
+/*    font-size: 24px;*/
+/*    text-transform: uppercase;*/
+/*    font-weight: 600;*/
+/*    padding: 8px 20px;*/
+/*    border-radius: 50px;*/
 
-}
+/*}*/
 
 .serviceLeft p {
     margin-top: 30px;

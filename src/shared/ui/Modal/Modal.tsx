@@ -1,19 +1,22 @@
 import React, {useEffect} from 'react';
 import s from "./Modal.module.css"
 import {useDispatch} from "react-redux";
-import {toggle} from "../../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {hide, toggle} from "../../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalRoutes} from "../../../features/modals/toggleModal/model/routes/modalRoutes.tsx";
 import {Button} from "../index.ts";
-import ArrowIcon from "../../assets/IconPack/ArrowIcon/ArrowIcon.tsx";
 import BackIcon from "../../assets/IconPack/BackIcon/BackIcon.tsx";
+import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 
 interface ModalProps {
     active: boolean,
     path: string,
+    props: never,
     // children: React.ReactNode[] | React.ReactNode,
 }
 
-const Modal: React.FC<ModalProps> = ({active, path}) => {
+const Modal: React.FC = () => {
+
+    const {active, path} = useTypedSelector(state => state.modal)
 
     useEffect(() => {
         if (active) {
@@ -29,12 +32,17 @@ const Modal: React.FC<ModalProps> = ({active, path}) => {
 
     const dispatch = useDispatch()
 
+    const toogleModal = () => {
+        console.log("Нажали на модал враппер")
+        dispatch(hide())
+    }
+
 
     return (
-        <div onClick={() => dispatch(toggle())} className={`${s.modal} ${active ? s.active : ""}`}>
+        <div onClick={() => toogleModal()} className={`${s.modal} ${active ? s.active : ""}`}>
             <div onClick={(e) => e.stopPropagation()} className={s.modal_window}>
                 <div className={s.modal_top}>
-                    <Button size='lg' paddingX='12.5px' callback={() => dispatch(toggle())}><BackIcon /></Button>
+                    <Button size='lg' paddingX='12.5px' callback={() => dispatch(hide())}><BackIcon /></Button>
                 </div>
                 <ModalRouter path={path} />
             </div>

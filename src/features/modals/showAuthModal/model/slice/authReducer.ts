@@ -1,4 +1,4 @@
-import {AuthAction, AuthActionTypes, AuthState} from "../../../../popups/showNotifications/model/types/auth.ts";
+import {AuthAction, AuthActionTypes, AuthState} from "../types/auth.ts";
 
 
 const initialState:AuthState = {

@@ -7,10 +7,19 @@ interface IconBlockProps {
     background?: string,
     border?: string,
     color?: string,
+    fontSize?: string,
     children: React.ReactNode,
 }
 
-const IconBlock:React.FC<IconBlockProps> = ({size, background = "transparent", border = "0", color = "white", children}) => {
+const IconBlock:React.FC<IconBlockProps> = (
+    {
+        size,
+        background = "transparent",
+        border = "0",
+        color = "white",
+        fontSize = '16px',
+        children
+    }) => {
     return (
         <div
             style={{
@@ -18,6 +27,7 @@ const IconBlock:React.FC<IconBlockProps> = ({size, background = "transparent", b
                 width: size,
                 background: background,
                 color: color,
+                fontSize: fontSize,
                 border: border,
             }}
 

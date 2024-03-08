@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Col} from "antd";
 import {Button, Input, InputWrapper} from "../../../shared/ui";
 import {useDispatch} from "react-redux";
-import {addAuthor, deleteAuthor} from "../../publishBook/model/slice/publicationReducer.ts";
+import {addAuthorAction, deleteAuthorAction} from "../../publishBook/model/slice/publicationReducer.ts";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 import CrossIcon from "../../../shared/assets/IconPack/CrossIcon/CrossIcon.tsx";
 
@@ -10,13 +10,13 @@ const AddAuthors: React.FC = () => {
 
     const dispatch = useDispatch()
 
-    const {authors} = useTypedSelector(state => state.publication)
+    const {authors} = useTypedSelector(state => state.publication.publication)
 
     const [newAuthor, setNewAuthor] = useState("");
 
     const addNewAuthor = () => {
         if (newAuthor !== "") {
-            dispatch(addAuthor(newAuthor));
+            dispatch(addAuthorAction(newAuthor));
             setNewAuthor("");
         }
 
@@ -37,7 +37,7 @@ const AddAuthors: React.FC = () => {
 
             {authors.map(author => {
                 return (
-                    <Button type='accent' size='xs' paddingX='12px' callback={() => dispatch(deleteAuthor(author))}>{author}&nbsp;<CrossIcon /></Button>
+                    <Button type='accent' size='xs' paddingX='12px' callback={() => dispatch(deleteAuthorAction(author))}>{author}&nbsp;<CrossIcon /></Button>
                 )
             })}
 

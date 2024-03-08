@@ -1,14 +1,15 @@
 import React from 'react';
 import s from "./BookStatusBlock.module.css"
 
+
 interface BookStatusBlockProps {
-    visible: boolean,
+    visible?: boolean,
     step: 1 | 2 | 3 | 4,
 }
 
-const BookStatusBlock: React.FC<BookStatusBlockProps> = ({visible, step}) => {
+const BookStatusBlock: React.FC<BookStatusBlockProps> = ({step}) => {
     return (
-        <div className={`${s.status} ${visible ? s.visible : s.invisible}`}>
+        <div className={s.status}>
             <ul>
                 <li className={`${step === 1 ? s.step1 : ""}`}>Ожидает оплаты</li>
                 <li className={`${step === 2 ? s.step2 : ""}`}>В модерации</li>

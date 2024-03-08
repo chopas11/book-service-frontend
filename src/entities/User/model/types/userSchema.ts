@@ -12,9 +12,12 @@ export interface User {
     account_type?: number,
 }
 
+export type UserRole = 'author' | 'reader' | 'all'
+
 export interface UserSchema {
     user?: User,
     isAuth: boolean,
+    role: UserRole,
     balance: number,
 }
 
@@ -23,4 +26,6 @@ export enum UserActionTypes {
     SET_AUTH_DATA = 'SET_AUTH_DATA',
     LOGOUT = 'LOGOUT',
     DEPOSIT = 'DEPOSIT',
+    PURCHASE = 'PURCHASE',
+    CHANGE_ROLE = 'CHANGE_ROLE',
 }

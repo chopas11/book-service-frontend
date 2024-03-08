@@ -1,18 +1,8 @@
 import React, {useEffect} from 'react';
 import MyBookWidget from "../../widgets/MyBookWidget/MyBookWidget.tsx";
-import {Book} from "../../entities/Book/model/types/bookSchema.ts";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
 
-const books: Array<Book> = [
-    {
-        id: 1,
-        title: "Дивный мир",
-        authorList: ["Алексей Владимирович Платонов"],
-        bookStatus: "Опубликована",
-        price: 300,
-        description: "Мы позволяем выбрать наиболее подходящую финансовую модель, чтобы вы могли получить максимальную выручку. Мы позволяем выбрать наиболее подходящую финансовую модель, чтобы вы могли получить максимальную выручку. Мы позволяем выбрать наиболее подходящую финансовую модель, чтобы вы могли получить максимальную выручку.",
-    },
-];
 
 const MyBooks: React.FC = () => {
 
@@ -20,12 +10,18 @@ const MyBooks: React.FC = () => {
         document.title = 'Мои книги';
     }, []);
 
+    const {orders} = useTypedSelector(state => state.order)
+
     return (
         <>
             <h2 className="header_center">Мои книги</h2>
-            {/*{books.map(book => {*/}
-                return <MyBookWidget />
-            {/*})}*/}
+            {
+                orders.length > 0 ?
+                orders.map(order => {
+                    return <MyBookWidget order={order} />
+                }) : <h2> У вас еще ничего нет(</h2>
+            }
+
         </>
     );
 };

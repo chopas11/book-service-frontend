@@ -2,11 +2,13 @@
 export interface ToggleModalState {
     active: boolean,
     path: string,
+    props: number
 }
 
 const initialStateToggleModal: ToggleModalState = {
     active: false,
     path: "",
+    props: 0,
 }
 
 export interface ToggleModalAction {
@@ -16,6 +18,7 @@ export interface ToggleModalAction {
 
 export enum ToggleModalActionTypes {
     TOGGLE = 'TOGGLE',
+    HIDE = 'HIDE',
 }
 
 export const toggleModalReducer = (state = initialStateToggleModal, action: ToggleModalAction): ToggleModalState => {
@@ -23,7 +26,14 @@ export const toggleModalReducer = (state = initialStateToggleModal, action: Togg
         case ToggleModalActionTypes.TOGGLE:
             return {
                 active: !state.active,
-                path: action.payload,
+                path: action.payload.path,
+                props: action.payload.props
+            }
+        case ToggleModalActionTypes.HIDE:
+            return {
+                ...state,
+                active: false,
+                path: '',
             }
         default:
             return state
@@ -31,4 +41,10 @@ export const toggleModalReducer = (state = initialStateToggleModal, action: Togg
 
 }
 
-export const toggle = (path: string) => ({type: ToggleModalActionTypes.TOGGLE, payload: path});
+interface Props {
+    path: string
+    props?: Array<number>
+}
+
+export const toggle = (props: Props) => ({type: ToggleModalActionTypes.TOGGLE, payload: props});
+export const hide = () => ({type: ToggleModalActionTypes.HIDE});

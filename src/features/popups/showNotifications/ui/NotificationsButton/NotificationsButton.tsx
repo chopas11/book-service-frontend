@@ -5,7 +5,7 @@ import {useTypedSelector} from "../../../../../shared/hooks/useTypedSelector.ts"
 import {Button} from "../../../../../shared/ui";
 
 interface NotificationButtonProps {
-    callback: React.EventHandler<never>,
+    callback?: React.EventHandler<never>,
 }
 
 const NotificationsButton: React.FC<NotificationButtonProps> = ({callback}) => {

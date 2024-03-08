@@ -1,0 +1,139 @@
+
+/*.profile_avatar {*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/* Кривые блоки НАЧАЛО */
+.profile_block {
+    position: relative;
+    background: var(--lil-color);
+    /*border: 32px solid var(--black-color);*/
+    /*border-radius: 32px;*/
+    /*height: 150px;*/
+    /*padding: 20px;*/
+}
+
+.profile_up {
+    position: absolute;
+    height: 32px;
+    width: 100%;
+    background: var(--black-color);
+}
+.profile_left {
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    background: var(--black-color);
+}
+
+.profile_right {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 32px;
+    background: var(--black-color);
+}
+
+.profile_down {
+    position: absolute;
+    bottom: 0;
+    height: 32px;
+    width: 100%;
+    background: var(--black-color);
+}
+
+.profile_block_transparent {
+    background: var(--black-color);
+    height: 100%;
+    border-radius: 32px;
+    width: 100%;
+    display: inline-block;
+}
+
+.profile_block_inside {
+    background: var(--lil-color);
+    /*border-radius: 32px;*/
+    border-radius: 32px 32px 24px 32px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+}
+
+.profile_block_inside2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: var(--lil-color);
+    /*border-radius: 32px;*/
+    border-radius: 32px 32px 24px 32px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+}
+
+.profile_block_inside2 div {
+    padding: 24px;
+}
+
+.profile_block_inside2 div span {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.profile_block_inside div {
+    padding: 24px;
+}
+
+.profile_block_right {
+    background: var(--lil-color);
+    height: 80px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    width: 100%;
+    display: inline-block;
+}
+
+.profile_block_left {
+    background: var(--lil-color);
+    /*height: 80px;*/
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    width: 100%;
+    display: inline-block;
+}
+
+.profile_block_left > div {
+    padding: 24px;
+}
+
+.profile_block_bottom {
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    height: calc(100% - 80px);
+    width: 100%;
+    background: var(--lil-color);
+}
+
+.profile_block_up {
+    position: relative;
+    top: 0;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    height: calc(100% - 80px);
+    width: 100%;
+    background: var(--lil-color);
+}
+
+.profile_block_up > div {
+    padding: 24px;
+}
+
+.profile_block_bottom div {
+    padding: 24px;
+}
+/* Кривые блоки КОНЕЦ */

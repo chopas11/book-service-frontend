@@ -1,0 +1,13 @@
+
+.roleList_block {
+    min-width: 150px;
+}
+
+.roleList_block ul {
+    /*padding: 20px 0;*/
+    list-style: none;
+}
+
+.roleList_block ul > li {
+    padding: 4px 0;
+}

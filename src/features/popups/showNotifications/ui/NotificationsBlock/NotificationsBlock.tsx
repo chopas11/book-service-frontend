@@ -9,10 +9,10 @@ import {INotification} from "../../../../../entities/Notification/model/types/No
 
 
 interface NotificationsFeatureProps {
-    visible: boolean,
+
 }
 
-const NotificationsBlock: React.FC<NotificationsFeatureProps> = ({visible}) => {
+const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
 
     // Redux State
     const {notifications} = useTypedSelector(state => state.notifications)
@@ -28,7 +28,7 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = ({visible}) => {
     }
 
     return (
-        <div className={`${s.notifications} ${visible ? s.visible : s.invisible}`}>
+        <div className={s.notifications}>
 
             {notifications.length ?
                 <>

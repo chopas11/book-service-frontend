@@ -8,8 +8,12 @@ import {Col, Row} from "antd";
 import ShowCoverModal from "../../features/modals/showCoverModal/ui/ShowCoverModal.tsx";
 import {Link} from "react-router-dom";
 import ChooseTariffMini from "../../features/chooseTariffMini/ui/ChooseTariffMini.tsx";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
 const Edit: React.FC = () => {
+
+    // const {orders} = useTypedSelector(state => state.order)
+
     return (
         <>
             <h2 className="header_center">Редактирование</h2>

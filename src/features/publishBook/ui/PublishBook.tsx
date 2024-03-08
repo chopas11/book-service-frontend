@@ -4,7 +4,10 @@ import {useDispatch} from "react-redux";
 import {toggle} from "../../modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../modals/toggleModal/model/enums/modalPath.ts";
 import {createNotificationAction} from "../../popups/showNotifications/model/slice/notificationsReducer.ts";
-// import {publicationService} from "../model/services/PublicationService.ts";
+import {Col, Row} from "antd";
+import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
+import ServiceCard from "../../../shared/ui/ServicesList/ServiceCard/ServiceCard.tsx";
+import {publicationService} from "../model/services/PublicationService.ts";
 
 
 
@@ -12,43 +15,42 @@ const PublishBook: React.FC = () => {
 
     const dispatch = useDispatch()
 
+    const {publication, services, tariff} = useTypedSelector(state => state.publication)
+
     const takePayment = () => {
 
         const message = 'Ваш заказ успешно создан. Оплатите выбранные услуги в разделе «Мои книги» в течение часа';
         dispatch(createNotificationAction(message))
-        // dispatch((publicationService()))
-        dispatch(toggle(modalPath.ORDER_VIEWER));
-
+        dispatch(publicationService({publication, services, tariff}))
+        dispatch(toggle({path: modalPath.ORDER_VIEWER}));
 
     }
 
-    const [price] = useState(100);
+    const price = services.reduce((acc, service) => acc + service.price, 0)
 
     return (
         <div><br/>
-            {/*<h2>Услуги, которые вы выбрали</h2><br/>*/}
-            {/*<Row gutter={[12, 12]}>*/}
-            {/*    {bookAddServices.length > 0 ? bookAddServices.map(item => {*/}
-            {/*            return (*/}
-            {/*                <Col xl={{span: 6}}>*/}
-            {/*                    <ServiceCard*/}
-            {/*                        key={item.id}*/}
-            {/*                        title={item.title}*/}
-            {/*                        description={item.description}*/}
-            {/*                        price={item.price}*/}
-            {/*                        active={true}*/}
-            {/*                        isChosen={true}*/}
-            {/*                        callback={() => addServices(item)}*/}
-            {/*                    />*/}
-            {/*                </Col>*/}
-            {/*            )*/}
-            {/*        }) :*/}
-            {/*        "Вы еще не выбрали ничего"}*/}
-            {/*</Row>*/}
+            <h2>Услуги, которые вы выбрали</h2><br/>
+            <Row gutter={[12, 12]}>
+                {services.length > 0 ? services.map(item => {
+                        return (
+                            <Col xl={{span: 6}}>
+                                <ServiceCard
+                                    key={item.id}
+                                    service={item}
+                                    active={true}
+                                />
+                            </Col>
+                        )
+                    }) :
+                    "Вы еще не выбрали ничего"}
+            </Row>
 
             <h2>{price > 0 ? "К оплате" : "Перейти к оформлению"}</h2><br/>
             {price > 0 &&
-                <TextWrapper color="var(--theme-color)" fontSize="20px">{price}р</TextWrapper>}
+                <TextWrapper color="var(--white-color)" background="var(--black-color)" fontSize="20px">
+                    {price} р
+                </TextWrapper>}
             <Button type='borders' size='lg' callback={() => takePayment()}>
                 Создать книгу</Button>
         </div>

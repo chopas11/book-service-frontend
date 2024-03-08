@@ -14,7 +14,7 @@
 .tariff_box {
     position: relative;
     background: var(--blue-color);
-    border-radius: 40px;;
+    border-radius: 40px;
     /*text-align: center;*/
     padding: 30px;
 }
@@ -25,7 +25,8 @@
 }
 
 .tariff_box p {
-    line-height: 3;
+    margin: 20px 0;
+    /*line-height: 3;*/
 }
 
 .tariff_box p span {

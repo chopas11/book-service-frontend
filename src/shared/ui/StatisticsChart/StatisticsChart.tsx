@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     ComposedChart,
     Line,
@@ -12,16 +12,20 @@ import s from "./StatisticsChart.module.css"
 import {graphData} from "./mocks.ts"
 import {Button} from "../index.ts";
 import ArrowIcon from "../../assets/IconPack/ArrowIcon/ArrowIcon.tsx";
+import TogglePopup from "../../../features/popups/togglePopup/TogglePopup.tsx";
 
 interface StatisticsGraphProps {
     type: "popularity" | 'show' | 'sales',
-    timeSpan: "day" | "week" | "month" | "year",
+    timeSpan?: "day" | "week" | "month" | "year",
     data: graphData[],
 
 
 }
 
-const StatisticsChart: React.FC<StatisticsGraphProps> = ({type, timeSpan, data = []}) => {
+const StatisticsChart: React.FC<StatisticsGraphProps> = ({type, data = []}) => {
+
+
+    const [range, setRange] = useState('day')
 
     return (
         <div className={s.statistics_graph}>
@@ -30,13 +34,15 @@ const StatisticsChart: React.FC<StatisticsGraphProps> = ({type, timeSpan, data =
                 type === "show" ? "График показов:" :
                 "График покупок:"
             } &nbsp;
-                  <Button size="xs" paddingX="10px"> {
-                    timeSpan === "day" ? "За день"  :
-                        timeSpan === "week" ? "За неделю" :
-                            timeSpan === "month" ? "За месяц" :
-                                "За год"
-                } &nbsp; <ArrowIcon />
-                </Button>
+                <TogglePopup feature={<StatisticsRange callback={setRange} />}>
+                    <Button size="xs" paddingX="10px"> {
+                        range === "day" ? "За день"  :
+                            range === "week" ? "За неделю" :
+                                range === "month" ? "За месяц" :
+                                    "За год"
+                    } &nbsp; <ArrowIcon />
+                    </Button>
+                </TogglePopup>
             </p>
 
             <ResponsiveContainer width="100%" height={300}>
@@ -71,3 +77,22 @@ const StatisticsChart: React.FC<StatisticsGraphProps> = ({type, timeSpan, data =
 };
 
 export default StatisticsChart;
+
+
+interface StatisticsRangeProps {
+    // range: string
+    callback: React.EventHandler<never>,
+}
+
+const StatisticsRange:React.FC<StatisticsRangeProps> = ({callback}) => {
+    return (
+        <div className={s.range}>
+            <ul>
+                <li onClick={() => callback('day')}>За день</li>
+                <li onClick={() => callback('week')}>За неделю</li>
+                <li onClick={() => callback('month')}>За месяц</li>
+                <li onClick={() => callback('year')}>За год</li>
+            </ul>
+        </div>
+    )
+}

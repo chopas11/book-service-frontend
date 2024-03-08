@@ -1,16 +1,16 @@
 import React from 'react';
-import s from "./StarCard.module.css"
-import IconBlock from "../IconBlock/IconBlock.tsx";
-import StarIcon from "../../assets/IconPack/StarIcon/StarIcon.tsx";
+import s from "./Hint.module.css"
+import IconBlock from "../../IconBlock/IconBlock.tsx";
+import StarIcon from "../../../assets/IconPack/StarIcon/StarIcon.tsx";
 
-interface StarCardFeatureProps {
+interface HintProps {
     text: string,
     textSize?: string,
     textColor?: string,
     starColor?: string,
 }
 
-const StarCard: React.FC<StarCardFeatureProps> = ({text, textSize = "16px", textColor = "var(--text-color)", starColor = "var(--orange-color)"}) => {
+const Hint: React.FC<HintProps> = ({text, textSize = "16px", textColor = "var(--text-color)", starColor = "var(--orange-color)"}) => {
     return (
         <div className={s.starText}>
             <IconBlock size="40px">
@@ -23,4 +23,4 @@ const StarCard: React.FC<StarCardFeatureProps> = ({text, textSize = "16px", text
     );
 };
 
-export default StarCard;
+export default Hint;

@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
-import BookStatusLabel from "./BookStatusLabel/BookStatusLabel.tsx";
+import React from 'react';
 import BookStatusBlock from "./BookStatusBlock/BookStatusBlock.tsx";
+import TogglePopup from "../../togglePopup/TogglePopup.tsx";
+import BookStatusLabel from "./BookStatusLabel/BookStatusLabel.tsx";
 
 interface ShowBookStatusProps {
     step: 1 | 2 | 3 | 4,
@@ -8,21 +9,11 @@ interface ShowBookStatusProps {
 
 const ShowBookStatus: React.FC<ShowBookStatusProps> = ({step}) => {
 
-    const [isShowBookStatus, setShowBookStatus] = useState(false);
-
-    const toggleBookStatus = () => {
-        if (!isShowBookStatus)
-            console.log("Profile opened!")
-        else
-            console.log("Profile closed!")
-        setShowBookStatus(!isShowBookStatus);
-    }
 
     return (
-        <>
-            <BookStatusLabel step={step} callback={() => toggleBookStatus()} />
-            <BookStatusBlock step={step} visible={isShowBookStatus} />
-        </>
+        <TogglePopup feature={<BookStatusBlock step={step} />}>
+            <BookStatusLabel step={step} />
+        </TogglePopup>
     );
 };
 

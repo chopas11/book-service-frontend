@@ -29,7 +29,6 @@ const App: React.FC = () => {
 
 const Layout: React.FC = () => {
 
-    const {active, path} = useTypedSelector(state => state.modal)
     const dispatch = useDispatch()
     // получаем параметры строки запроса
     const [searchParams] = useSearchParams();
@@ -57,7 +56,7 @@ const Layout: React.FC = () => {
 
     return (
         <div className="wrapper">
-            <Modal active={active} path={path} />
+            <Modal />
             <Row>
                 <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
                     <Header/>

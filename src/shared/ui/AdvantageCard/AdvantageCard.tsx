@@ -15,8 +15,8 @@ const AdvantageCard:React.FC<AdvantageFeatureProps> = ({icon, title, description
         <div className={s.advantage}>
             <Block bgColor={bgColor} color="#121212" padding="45px 30px" bdRadius="48px">
             <div className={s.advantage_top}>
-                {/*<IconBlock size="85px" background="var(--black-color)" >{icon}</IconBlock>*/}
-                {icon}
+                <IconBlock size="85px" background="var(--black-color)" color={bgColor} >{icon}</IconBlock>
+                {/*{icon}*/}
             </div>
             <div className={s.advantage_bottom}>
                 <h3>{title}</h3>

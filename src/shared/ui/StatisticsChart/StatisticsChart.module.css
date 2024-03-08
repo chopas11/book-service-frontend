@@ -11,3 +11,14 @@
     margin: 20px;
     font-size: 16px;
 }
+
+.range {
+    min-width: 100px;
+}
+
+.range ul {
+    list-style: none;
+    line-height: 2;
+    color: var(--white-color);
+    cursor: pointer;
+}

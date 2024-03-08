@@ -2,8 +2,8 @@ import {
     USER_LOCALSTORAGE_ACCESS_TOKEN_KEY,
     USER_SESSIONSTORAGE_CODE_VERIFIER_KEY
 } from "../../../../shared/const/localStorageConsts.ts";
-import {API_URI, REDIRECT_URI} from "../../../../shared/const/apiConsts.ts";
-import {$api} from "../../../../shared/api/api.ts";
+import {API_AUTH_SERVER_URI, REDIRECT_URI} from "../../../../shared/const/apiConsts.ts";
+import {$authApi} from "../../../../shared/api/api.ts";
 import {checkAccessTokenAction, logoutAction, setAuthDataAction} from "../slice/userReducer.ts";
 
 
@@ -13,7 +13,7 @@ export const logout = () => {
         const formData = new FormData();
         formData.append('token', String(localStorage.getItem(USER_LOCALSTORAGE_ACCESS_TOKEN_KEY)));
 
-        $api.post('/oauth2/revoke',
+        $authApi.post('/oauth2/revoke',
             formData,
             {
                 withCredentials: true,
@@ -42,7 +42,7 @@ export const checkAccessToken = () => {
         const formData = new FormData();
         formData.append('token', String(localStorage.getItem(USER_LOCALSTORAGE_ACCESS_TOKEN_KEY)));
 
-        $api.post('/oauth2/introspect',
+        $authApi.post('/oauth2/introspect',
             formData,
             {
                 withCredentials: true,
@@ -58,6 +58,7 @@ export const checkAccessToken = () => {
                 if (res.data.active === true) {
                     dispatch(checkAccessTokenAction(true));
                 } else {
+                    localStorage.removeItem(USER_LOCALSTORAGE_ACCESS_TOKEN_KEY);
                     dispatch(checkAccessTokenAction(false));
                 }
             })
@@ -80,7 +81,7 @@ export const getAccessToken = (authorizationCode: string) => {
         formData.append('client_id', 'client');
         formData.append('code_verifier', String(sessionStorage.getItem(USER_SESSIONSTORAGE_CODE_VERIFIER_KEY)));
 
-        $api.post(
+        $authApi.post(
             '/oauth2/token',
             formData,
 
@@ -128,7 +129,7 @@ export const getAuthCode = () => {
                 code_challenge_method: 'S256',
                 scope: 'openid',
             });
-            window.location = API_URI + '/oauth2/authorize?' + args;
+            window.location = API_AUTH_SERVER_URI + '/oauth2/authorize?' + args;
         })
 }
 

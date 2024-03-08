@@ -21,19 +21,21 @@ interface BlockProps {
     /**
      * Children Components
      */
+    margin?: string,
     children: React.ReactNode | React.ReactNode[]
 }
 
 /**
  * Block UI Component
  */
-const Block: React.FC<BlockProps> = ({bgColor, color, padding, bdRadius, children}) => {
+const Block: React.FC<BlockProps> = ({bgColor, color, padding, bdRadius, margin = "0", children}) => {
     return (
         <div style={{
             backgroundColor: bgColor,
             color: color,
             padding: padding,
             borderRadius: bdRadius,
+            margin: margin
         }}
              className={s.block}
         >

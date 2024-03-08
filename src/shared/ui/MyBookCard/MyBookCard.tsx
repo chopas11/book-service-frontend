@@ -5,14 +5,12 @@ import s from "./MyBookCard.module.css"
 
 interface MyBookCardProps {
     cover: File | null,
-    background: string,
     children: React.ReactNode[] | React.ReactNode,
 }
 
-const MyBookCard: React.FC<MyBookCardProps> = ({cover, background, children}) => {
+const MyBookCard: React.FC<MyBookCardProps> = ({cover, children}) => {
     return (
-        <div className={s.myBook} style={{background: background}}>
-            <Row gutter={15}>
+            <Row gutter={24}>
                 <Col lg={{span: 6}}>
                     <div className={s.myBook_cover}>
                         {cover ?
@@ -26,7 +24,6 @@ const MyBookCard: React.FC<MyBookCardProps> = ({cover, background, children}) =>
                     {children}
                 </Col>
             </Row>
-        </div>
     );
 };
 

@@ -1,14 +1,6 @@
 
 .status {
-    position: absolute;
-    display: inline-block;
-    /*right: 0;*/
-    top: 50px;
-    padding: 25px;
-    background: var(--dark-color);
-    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
-    border-radius: 32px;
-    z-index: 9999;
+    min-width: 140px;
 }
 
 .visible {

@@ -4,10 +4,9 @@ import s from "./BookStatusLabel.module.css"
 
 interface BookStatusLabelProps {
     step: 1 | 2 | 3 | 4,
-    callback: React.EventHandler<never>,
 }
 
-const BookStatusLabel: React.FC<BookStatusLabelProps> = ({step, callback}) => {
+const BookStatusLabel: React.FC<BookStatusLabelProps> = ({step}) => {
 
     const statusLabel = step === 1 ?
         "Ожидает оплаты" :
@@ -18,10 +17,7 @@ const BookStatusLabel: React.FC<BookStatusLabelProps> = ({step, callback}) => {
                 "Опубликована"
 
     return (
-        <div className={s.bookStatusLabel}>
-            <p>Статус:</p>
-            <p className={s.bookStatusLabel_label} onClick={callback}>{statusLabel} <ArrowIcon/></p>
-        </div>
+        <div className={s.bookStatusLabel}>{statusLabel} <ArrowIcon/></div>
     );
 };
 

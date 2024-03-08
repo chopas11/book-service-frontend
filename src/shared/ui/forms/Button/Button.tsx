@@ -6,7 +6,7 @@ interface ButtonProps {
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
     // icon-where
     paddingX?: string | 0,
-    bdRadius?: 'full' | '10px';
+    bdRadius?: 'full' | '12px';
     callback?: React.EventHandler<never>,
     children: React.ReactNode
 }
@@ -43,7 +43,7 @@ const Button:React.FC<ButtonProps> = (
             break;
         case 'xl':
             height = "64px";
-            fontSize = "20px";
+            fontSize = "18px";
             break;
     }
 

@@ -3,8 +3,9 @@ import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import AdvantagesWidget from "../../widgets/AdvantagesWidget/AdvantagesWidget";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget";
 import HowToAuthorWidget from "../../widgets/HowToAuthorWidget/HowToAuthorWidget";
-import {Button, StarCard} from "../../shared/ui";
+import {Button, Hint} from "../../shared/ui";
 import {Link} from "react-router-dom";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
 
 const Main: React.FC = () => {
@@ -13,6 +14,7 @@ const Main: React.FC = () => {
         title: "Станьте автором в один клик",
         description: "Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу.",
     }
+
 
     const services = [
     {
@@ -70,15 +72,29 @@ const Main: React.FC = () => {
         document.title = 'StorySphere - Сервис для авторов';
     }, []);
 
+    const {role} = useTypedSelector(state => state.user)
+
     return (
         <>
-            <WelcomeWidget title={welcomeData.title}>
-                <StarCard text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." textSize="16px" />
-                <Link to="/publish"><Button>Подробнее</Button></Link>
-            </WelcomeWidget>
-            <AdvantagesWidget />
-            <ServicesWidget services={services} step={1} isActive={false} />
-            <HowToAuthorWidget />
+            {
+                role === 'author' ?
+                <>
+                    <WelcomeWidget title={welcomeData.title}>
+                        <Hint text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." textSize="16px" />
+                        <Link to="/publish"><Button>Подробнее</Button></Link>
+                    </WelcomeWidget>
+                    <AdvantagesWidget />
+                    <ServicesWidget services={services} step={1} isActive={false} />
+                    <HowToAuthorWidget />
+                </> :
+                <>
+                <WelcomeWidget title="-30% на комиксы и мангу">
+                <Hint text="Только с 29 февраля по 4 марта" textSize="16px" />
+                <Link to="/catalog"><Button>В каталог</Button></Link>
+                </WelcomeWidget>
+                {/*<HowToAuthorWidget />*/}
+                </>
+            }
         </>
     );
 };

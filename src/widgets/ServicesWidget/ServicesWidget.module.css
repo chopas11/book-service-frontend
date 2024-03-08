@@ -2,15 +2,3 @@
 .servicesWidget {
     margin-bottom: 100px;
 }
-
-
-.services {
-    margin-top: 35px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.services div {
-    flex: 20%;
-}

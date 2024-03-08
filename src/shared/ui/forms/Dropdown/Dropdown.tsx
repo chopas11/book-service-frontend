@@ -1,8 +1,8 @@
 import React from 'react';
 
-import s from "./Select.module.css"
+import s from "./Dropdown.module.css"
 
-const Select = () => {
+const Dropdown = () => {
     return (
         <select className={s.select} name="" id="">
             <option value="">Выберите до трех жанров</option>
@@ -13,4 +13,4 @@ const Select = () => {
     );
 };
 
-export default Select;
+export default Dropdown;

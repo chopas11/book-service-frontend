@@ -1,7 +1,7 @@
 // import React from 'react';
-
 import s from "./StepCard.module.css"
 import NumberBlock from "../NumberBlock/NumberBlock.tsx";
+import React from "react";
 
 interface StepFeatureProps {
     number: number,

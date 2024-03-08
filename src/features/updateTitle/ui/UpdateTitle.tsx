@@ -3,7 +3,7 @@ import {Input, InputWrapper} from "../../../shared/ui";
 import {Col} from "antd";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
-import {updateTitle} from "../../publishBook/model/slice/publicationReducer.ts";
+import {updateTitleAction} from "../../publishBook/model/slice/publicationReducer.ts";
 
 
 
@@ -11,12 +11,12 @@ const UpdateTitle: React.FC = () => {
 
     // Redux
     const dispatch = useDispatch()
-    const {title} = useTypedSelector(state => state.publication)
+    const {title} = useTypedSelector(state => state.publication.publication)
 
     return (
         <Col xl={{span: 9}}>
             <InputWrapper label="Введите название книги">
-                <Input type="text" placeholder="Название" value={title} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updateTitle(e.currentTarget.value))} />
+                <Input theme="dark" type="text" placeholder="Название" value={title} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updateTitleAction(e.currentTarget.value))} />
             </InputWrapper>
         </Col>
     );

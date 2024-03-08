@@ -1,13 +1,36 @@
 
 .profile {
-    position: absolute;
-    right: 0;
-    top: 100px;
-    padding: 30px;
-    background: var(--dark-color);
-    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
-    border-radius: 32px;
-    z-index: 9999;
+    min-width: 130px;
+}
+
+.profile_content_auth {
+    width: 180px;
+}
+
+.profile_top {
+    /*height: 40px;*/
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile_top div {
+    font-size: 16px;
+    color: var(--white-color);
+}
+
+.profile_logout {
+    cursor: pointer;
+    margin: 12px 0;
+    display: inline-block;
+}
+
+.profile_logout p {
+    color: var(--white-color);
+}
+
+.profile_balance p {
+    color: #b5b6ba;
 }
 
 .visible {
@@ -17,12 +40,8 @@
 .invisible {
     display: none;
 }
-
-.profile_content {
-
-}
-
 .profile_content ul {
+    padding: 20px 0;
     list-style: none;
 }
 

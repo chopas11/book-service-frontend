@@ -2,7 +2,7 @@ export const tariffs = [
     {
         id: 0,
         name: "Тариф 1",
-        bookPrice: 400,
+        publicationPrice: 400,
         royalty: 0.5,
         color: "green",
         conditions: [
@@ -14,7 +14,7 @@ export const tariffs = [
     {
         id: 1,
         name: "Тариф 2",
-        bookPrice: 500,
+        publicationPrice: 500,
         royalty: 0.4,
         color: "lil",
         conditions: [
@@ -26,7 +26,7 @@ export const tariffs = [
     {
         id: 2,
         name: "Тариф 3",
-        bookPrice: 600,
+        publicationPrice: 600,
         royalty: 0.3,
         color: "accent",
         conditions: [

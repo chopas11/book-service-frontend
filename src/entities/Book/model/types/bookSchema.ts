@@ -1,17 +1,11 @@
 
 
-export interface Book {
-    id: number,
-    title: string,
-    authorList: Array<string>,
-    cover?: string,
-    pages?: number,
-    age?: number,
-    file?: string,
-    bookStatus: string,
-    price: number,
-    description: string,
-    genreList?: Array<string>,
-    tagsList?: Array<string>,
-    ISBN?: string,
+export interface IBook {
+    "title": string,
+    "authors": Array<string>,
+    "description": string,
+    "publicationFile": File | null,
+    "coverImage": File | null,
+    "geners": Array<string>,
 }
+

@@ -1,10 +1,10 @@
 import React from 'react';
-import {Button, IconBlock} from "../../../../../shared/ui";
+import {Button} from "../../../../../shared/ui";
 import ProfileIcon from "../../../../../shared/assets/IconPack/ProfileIcon/ProfileIcon.tsx";
 import s from "./MiniProfileButton.module.css"
 
 interface MiniProfileButtonProps {
-    callback: React.EventHandler<never>,
+    callback?: React.EventHandler<never>,
 }
 
 const MiniProfileButton: React.FC<MiniProfileButtonProps> = ({callback}) => {

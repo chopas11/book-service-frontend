@@ -1,15 +1,6 @@
 
 .notifications {
-    position: absolute;
     width: 500px;
-    right: 0;
-    top: 100px;
-    padding: 30px;
-    background: var(--dark-color);
-    border-radius: 32px;
-    /* offset-x | offset-y | blur-radius | spread-radius | color */
-    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
-    z-index: 9999;
 }
 
 .visible {

@@ -1,6 +1,6 @@
 import React from 'react';
 import InputFile from "../../../../shared/ui/forms/InputFile/InputFile.tsx";
-import {uploadCover} from "../../../publishBook/model/slice/publicationReducer.ts";
+import {uploadCoverAction} from "../../../publishBook/model/slice/publicationReducer.ts";
 import {Button} from "../../../../shared/ui";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../../../shared/hooks/useTypedSelector.ts";
@@ -12,21 +12,21 @@ const ShowCoverModal: React.FC = () => {
 
     // Redux
     const dispatch = useDispatch()
-    const {cover} = useTypedSelector(state => state.publication)
-    console.log(cover)
+    const {coverImage} = useTypedSelector(state => state.publication.publication)
+    // console.log(coverImage)
     return (
         <div className={s.coverModal}>
             <h3 className="center">Загрузка обложки</h3><br/>
-            {cover ?
-                <img src={URL.createObjectURL(cover)} style={{width: "100%", borderRadius: "32px"}} alt="Img"/>
+            {coverImage ?
+                <img src={URL.createObjectURL(coverImage)} style={{width: "100%", borderRadius: "32px"}} alt="Img"/>
                 :
                 <img src={noCover} style={{width: "100%", borderRadius: "32px"}} alt="Img"/>
             }
             <div className="center">
                 <br/>
-                <InputFile name="Загрузить новую" callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCover(e.currentTarget.files[0]))} />
+                <InputFile name="Загрузить новую" callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCoverAction(e.currentTarget.files[0]))} />
                 <br/>
-                {cover ? <Button type='accent' size='xs' paddingX='12px'>{cover.name} &nbsp;<CrossIcon /></Button> : ""}
+                {coverImage ? <Button type='accent' size='xs' paddingX='12px'>{coverImage.name} &nbsp;<CrossIcon /></Button> : ""}
             </div>
         </div>
     );

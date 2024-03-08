@@ -13,7 +13,7 @@ const AppRouter: React.FC = () => {
                         path={route.path}
                         element={
                             route.authOnly ? (
-                                <RequireAuth>
+                                <RequireAuth routeRole={route.role}>
                                     {route.element}
                                 </RequireAuth>
                             ) : route.element

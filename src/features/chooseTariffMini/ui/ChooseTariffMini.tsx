@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, InputWrapper, StarCard} from "../../../shared/ui";
+import {Button, InputWrapper, Hint} from "../../../shared/ui";
 import {Col} from "antd";
 import {tariffs} from "../../../entities/Tariff/model/mocks/tariifs.tsx";
 
@@ -21,7 +21,7 @@ const ChooseTariffMini: React.FC = () => {
                 })}
             </InputWrapper>
             <br/>
-            <StarCard text={tariffs[tariff].conditions.map(condition => condition)} />
+            <Hint text={tariffs[tariff].conditions.map(condition => condition)} />
         </Col>
     );
 };
