@@ -6,6 +6,7 @@ import HowToAuthorWidget from "../../widgets/HowToAuthorWidget/HowToAuthorWidget
 import {Button, Hint} from "../../shared/ui";
 import {Link} from "react-router-dom";
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
+import BooksWidget from "../../widgets/BooksWidget/BooksWidget.tsx";
 
 
 const Main: React.FC = () => {
@@ -73,6 +74,7 @@ const Main: React.FC = () => {
     }, []);
 
     const {role} = useTypedSelector(state => state.user)
+    const {books} = useTypedSelector(state => state.book)
 
     return (
         <>
@@ -85,16 +87,19 @@ const Main: React.FC = () => {
                     </WelcomeWidget>
                     <AdvantagesWidget />
                     <ServicesWidget services={services} step={1} isActive={false} />
-                    <HowToAuthorWidget />
+
                 </> :
                 <>
-                <WelcomeWidget title="-30% на комиксы и мангу">
-                <Hint text="Только с 29 февраля по 4 марта" textSize="16px" />
-                <Link to="/catalog"><Button>В каталог</Button></Link>
-                </WelcomeWidget>
-                {/*<HowToAuthorWidget />*/}
+                    <WelcomeWidget title="-30% на комиксы и мангу">
+                    <Hint text="Только с 29 февраля по 4 марта" textSize="16px" />
+                    <Link to="/catalog"><Button>В каталог</Button></Link>
+                    </WelcomeWidget>
+                    <BooksWidget books={books} title="Вам понравится" label="На основе ваших предпочтений" />
+                    <BooksWidget books={books} title="Новинки" label="Опубликованы менее недели назад" />
+                    <BooksWidget books={books} title="топ 10 за последний месяц" label="Выбор наших пользователей" />
                 </>
             }
+            <HowToAuthorWidget />
         </>
     );
 };

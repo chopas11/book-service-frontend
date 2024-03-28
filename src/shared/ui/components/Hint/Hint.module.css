@@ -7,3 +7,9 @@
 .starText div p {
     line-height: 1.5;
 }
+
+@media screen and (max-width: 576px)  {
+    .starText div p {
+        font-size: 8px;
+    }
+}

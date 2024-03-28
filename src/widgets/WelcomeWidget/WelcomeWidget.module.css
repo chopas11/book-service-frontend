@@ -41,8 +41,23 @@
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 992px)  {
+@media screen and (max-width: 576px)  {
+    .welcomeBlock {
+        padding: 0;
+        border-radius: 24px;
+    }
     .welcomeBlock_container {
+        padding: 12px 24px;
         display: block;
+    }
+
+    .welcomeBlock_left {
+        padding: 0;
+        width: 100%;
+    }
+
+    .welcomeBlock_left h1 {
+        line-height: 1.25;
+        font-size: 24px;
     }
 }

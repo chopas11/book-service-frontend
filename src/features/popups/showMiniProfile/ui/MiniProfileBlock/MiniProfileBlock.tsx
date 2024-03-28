@@ -47,8 +47,8 @@ const MiniProfileBlock: React.FC = () => {
                                             <ul>
                                                 <li><Link to="/mybooks"><Button type='accent' size='xs' paddingX='10px'>Мои
                                                     книги</Button></Link></li>
-                                                <li><Link to="/catalog"><Button type='accent' size='xs'
-                                                                                   paddingX='10px'>Каталог</Button></Link>
+                                                <li><Link to="/collections"><Button type='accent' size='xs'
+                                                                                   paddingX='10px'>Подборки</Button></Link>
                                                 </li>
                                                 <li><Link to="/history"><Button type='accent' size='xs' paddingX='10px'>История
                                                     покупок</Button></Link></li>

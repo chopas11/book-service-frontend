@@ -30,3 +30,13 @@
 .footer div ul li {
     padding: 5px 0;
 }
+
+@media screen and (max-width: 992px)  {
+    .footer {
+        padding: 24px 24px 0 24px;
+    }
+
+    .footer_list {
+        display: none;
+    }
+}

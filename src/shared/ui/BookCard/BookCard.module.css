@@ -1,0 +1,50 @@
+
+.book {
+    padding: 20px;
+    border-radius: 24px;
+    /*width: 100%;*/
+    background: var(--dark-color);
+
+}
+
+.book_img {
+    position: relative;
+}
+
+.book_img > img {
+    width: 100%;
+    border-radius: 24px;
+}
+
+.book_labels {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}
+
+.book_labels > div {
+    margin: 0 3px;
+}
+
+.book_description {
+    margin-top: 24px;
+}
+
+.book_description > h3 {
+    color: #F0F0F0;
+}
+
+.book_description > p {
+    color: #b3b7ba;
+    margin-bottom: 12px;
+}
+
+.book_description > span {
+    color: var(--lil-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.book_buttons {
+    margin-top: 24px;
+}

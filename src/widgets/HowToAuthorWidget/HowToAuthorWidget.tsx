@@ -5,8 +5,9 @@ import Button from "../../shared/ui/forms/Button/Button";
 import {Link} from "react-router-dom";
 import {StepCard} from "../../shared/ui";
 import {Col, Row} from "antd";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
-const steps = [
+const stepsAuthor = [
     {
         id: 1,
         number: 1,
@@ -24,19 +25,59 @@ const steps = [
     },
 ];
 
+const stepsReader = [
+    {
+        id: 1,
+        number: 1,
+        text: "Переключитесь на аккаунт автора в шапке сайта",
+    },
+    {
+        id: 2,
+        number: 2,
+        text: "Ознакомьтесь с информацией на главной странице",
+    },
+    {
+        id: 3,
+        number: 3,
+        text: "Перейдите в раздел “Публикация” и следуйте пошаговой инструкции.",
+    },
+];
+
+
+
 const HowToAuthorWidget = () => {
+
+    const {role} = useTypedSelector(state => state.user)
+
     return (
         <div className={s.howToAuthorWidget}>
-            <h2>Как стать автором?</h2>
+            <h2>
+                {
+                role === 'author' ?
+                    "Как стать автором?" :
+                    "Вы можете стать автором"
+                }
+            </h2>
             <div className={s.steps}>
                 <Row gutter={[12, 12]}>
-                    {steps.map(item => {
-                        return (
-                            <Col xl={{span: 8}}>
-                                <StepCard key={item.id} number={item.number} text={item.text} />
-                            </Col>
-                        )
-                    })}
+                    {
+                        role === 'author' ?
+                            stepsAuthor.map(item => {
+                                return (
+                                    <Col xl={{span: 8}}>
+                                        <StepCard key={item.id} number={item.number} text={item.text} />
+                                    </Col>
+                                )
+                            }) :
+                            stepsReader.map(item => {
+                                return (
+                                    <Col xl={{span: 8}}>
+                                        <StepCard key={item.id} number={item.number} text={item.text} />
+                                    </Col>
+                                )
+                            })
+
+                    }
                 </Row>
             </div>
             <div className="button_center">

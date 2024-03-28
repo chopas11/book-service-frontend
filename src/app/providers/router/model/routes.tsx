@@ -9,6 +9,8 @@ import Orders from "../../../../pages/Orders/Orders.tsx";
 import Profile from "../../../../pages/Profile/Profile.tsx";
 import NotFound from "../../../../pages/NotFound/NotFound.tsx";
 import Catalog from "../../../../pages/Catalog/Catalog.tsx";
+import Book from "../../../../pages/Book/Book.tsx";
+import Cart from "../../../../pages/Cart/Cart.tsx";
 
 
 export type AppRouterProps = RouteProps & {
@@ -69,9 +71,22 @@ export const routes: AppRouterProps[] = [
         authOnly: true,
         role: RoleTypes.ALL_ROLE
     },
+    // Reader Block
     {
         path: "/catalog",
         element: <Catalog />,
+        authOnly: true,
+        role: RoleTypes.ALL_ROLE
+    },
+    {
+        path: "/book/:id",
+        element: <Book />,
+        authOnly: true,
+        role: RoleTypes.ALL_ROLE
+    },
+    {
+        path: "/cart",
+        element: <Cart />,
         authOnly: true,
         role: RoleTypes.ALL_ROLE
     },

@@ -6,10 +6,11 @@ import {Button, Logo} from "../../shared/ui";
 import s from "./Header.module.css"
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 import ShowRoleList from "../../features/popups/showRoleList/ui";
+import ShowCart from "../../features/showCart/ui/ShowCart.tsx";
 
 const Header: React.FC = () => {
 
-    const {role} = useTypedSelector(state => state.user)
+    const {isAuth, role} = useTypedSelector(state => state.user)
 
     return (
         <div className={s.header}>
@@ -27,6 +28,10 @@ const Header: React.FC = () => {
                 </ul>
             </div>
             <div className={s.headers_menu}>
+                {
+                    isAuth && role === 'reader' ?
+                        <ShowCart /> : ""
+                }
                 <ShowNotifications/>
                 <ShowMiniProfile />
                 <ShowRoleList />
