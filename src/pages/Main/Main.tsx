@@ -74,7 +74,7 @@ const Main: React.FC = () => {
     }, []);
 
     const {role} = useTypedSelector(state => state.user)
-    const {books} = useTypedSelector(state => state.book)
+    const {catalogBooks} = useTypedSelector(state => state.book)
 
     return (
         <>
@@ -94,9 +94,9 @@ const Main: React.FC = () => {
                     <Hint text="Только с 29 февраля по 4 марта" textSize="16px" />
                     <Link to="/catalog"><Button>В каталог</Button></Link>
                     </WelcomeWidget>
-                    <BooksWidget books={books} title="Вам понравится" label="На основе ваших предпочтений" />
-                    <BooksWidget books={books} title="Новинки" label="Опубликованы менее недели назад" />
-                    <BooksWidget books={books} title="топ 10 за последний месяц" label="Выбор наших пользователей" />
+                    <BooksWidget books={catalogBooks} title="Вам понравится" label="На основе ваших предпочтений" />
+                    <BooksWidget books={catalogBooks} title="Новинки" label="Опубликованы менее недели назад" />
+                    <BooksWidget books={catalogBooks} title="топ 10 за последний месяц" label="Выбор наших пользователей" />
                 </>
             }
             <HowToAuthorWidget />

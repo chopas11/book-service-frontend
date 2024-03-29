@@ -1,17 +1,16 @@
-import {BookActionTypes, BookSchema} from "../types/bookSchema.ts";
+import {BookActionTypes, BookSchema, IBook} from "../types/bookSchema.ts";
 import book1 from "../../../../shared/assets/images/book1.png";
 import book2 from "../../../../shared/assets/images/book2.png";
 import book3 from "../../../../shared/assets/images/book3.png";
 import book4 from "../../../../shared/assets/images/book4.png";
-
 const initialState: BookSchema = {
-    books: [
+    catalogBooks: [
         {
             id: 1111,
             title: "Зеленый павильон",
             description: "Description",
             authors: ["Ирина Нахова"],
-            price: 500,
+            price: 550,
             coverImage: book1,
             geners: ["Творчество"],
             publicationFile: null,
@@ -21,7 +20,7 @@ const initialState: BookSchema = {
             title: "Моби-Дик",
             description: "Description",
             authors: ["Герман Мельвиль"],
-            price: 500,
+            price: 540,
             coverImage: book2,
             geners: ["Фантастика"],
             publicationFile: null,
@@ -31,7 +30,7 @@ const initialState: BookSchema = {
             title: "Марк Твен",
             description: "Description",
             authors: ["Неизвестный автор"],
-            price: 500,
+            price: 530,
             coverImage: book3,
             geners: ["Биография"],
             publicationFile: null,
@@ -41,12 +40,14 @@ const initialState: BookSchema = {
             title: "Война и Мир",
             description: "Description",
             authors: ["Дмитрий Чухров",],
-            price: 500,
+            price: 520,
             coverImage: book4,
             geners: ["Манга"],
             publicationFile: null,
         },
     ],
+    cartBooks: [],
+    myBooks: [],
 }
 
 export interface BookAction {
@@ -56,8 +57,37 @@ export interface BookAction {
 
 export const BookReducer = (state = initialState, action: BookAction) :BookSchema => {
     switch (action.type) {
+
+        case BookActionTypes.TOOGLE_IN_CART:
+
+            if (state.cartBooks.filter(book => book.id === action.payload.id).length === 0) {
+                return {
+                    ...state,
+                    cartBooks: [...state.cartBooks, action.payload],
+                }
+            } else {
+                return {
+                    ...state,
+                    cartBooks: state.cartBooks.filter(book => book.id !== action.payload.id)
+                }
+            }
+
+        case BookActionTypes.CLEAR_CART:
+            return {
+                ...state,
+                cartBooks: [],
+            }
+
+        case BookActionTypes.ADD_MYBOOKS:
+            return {
+                ...state,
+                myBooks: [...state.myBooks, ...state.cartBooks]
+            }
         default:
             return state
     }
 }
 
+export const toogleInCartAction = (book: IBook) => ({type: BookActionTypes.TOOGLE_IN_CART, payload: book});
+export const ClearCartAction = () => ({type: BookActionTypes.CLEAR_CART});
+export const addMyBooksAction = () => ({type: BookActionTypes.ADD_MYBOOKS});

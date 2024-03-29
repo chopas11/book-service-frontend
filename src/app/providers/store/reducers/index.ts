@@ -17,7 +17,6 @@ export const rootReducer = combineReducers({
     modal: toggleModalReducer,
     order: OrderReducer,
     book: BookReducer,
-    cart: CartReducer,
 
 })
 

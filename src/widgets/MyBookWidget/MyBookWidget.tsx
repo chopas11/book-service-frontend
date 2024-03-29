@@ -19,12 +19,9 @@ const MyBookWidget: React.FC<MyBookWidgetProps> = ({order}) => {
 
 
     const dispatch = useDispatch()
-
     const payment = () => {
         dispatch(toggle({path: modalPath.PAYMENT_VIEWER, props: [order.services.reduce((acc, service) => acc + service.price, 0), order.id] }));
-
     }
-
 
     return (
         <>

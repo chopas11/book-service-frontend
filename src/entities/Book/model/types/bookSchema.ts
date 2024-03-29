@@ -12,10 +12,14 @@ export interface IBook {
 }
 
 export interface BookSchema {
-    books: IBook[]
+    catalogBooks: IBook[],
+    cartBooks: IBook[],
+    myBooks: IBook[],
 }
 
 export enum BookActionTypes {
-
+    TOOGLE_IN_CART = "TOOGLE_IN_CART",
+    CLEAR_CART = "CLEAR_CART",
+    ADD_MYBOOKS = "ADD_MYBOOKS",
 }
 

@@ -7,7 +7,7 @@ import {useTypedSelector} from "../../../shared/hooks/useTypedSelector.ts";
 
 const ShowCart:React.FC = () => {
 
-    const {books} = useTypedSelector(state => state.cart)
+    const {cartBooks} = useTypedSelector(state => state.book)
 
     return (
         <div className={s.cart}>
@@ -15,8 +15,8 @@ const ShowCart:React.FC = () => {
                 <Button type='borders' size='lg' paddingX='10px'>
                     <CartIcon/>
                 </Button>
-                <div className={`${books.length ? s.isCart : s.notCart}`}>
-                    {books.length}
+                <div className={`${cartBooks.length ? s.isCart : s.notCart}`}>
+                    {cartBooks.length}
                 </div>
             </Link>
 

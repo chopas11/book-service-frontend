@@ -7,18 +7,33 @@ import {useDispatch} from "react-redux";
 import {purchaseMoney} from "../../../../entities/User/model/slice/userReducer.ts";
 import {hide} from "../../toggleModal/model/slice/toggleModalReducer.ts";
 import {changeOrderStatusAction} from "../../../../entities/Order/model/slice/orderReducer.ts";
+import {addMyBooksAction, ClearCartAction} from "../../../../entities/Book/model/slice/bookReducer.ts";
+import {useNavigate} from "react-router-dom";
+
 
 const ShowPaymentModal: React.FC = () => {
 
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {balance} = useTypedSelector(state => state.user)
+    const {role, balance} = useTypedSelector(state => state.user)
     const {orders} = useTypedSelector(state => state.order)
     const {props} = useTypedSelector(state => state.modal)
 
     const takePurchase = () => {
         dispatch(purchaseMoney(props[0]))
-        dispatch(changeOrderStatusAction(orders.filter(order => order.id === props[1])[0].id ))
-        dispatch(hide())
+
+        if (role === 'reader') {
+            console.log('Деньги списались с акка читателя');
+            dispatch(addMyBooksAction())
+            dispatch(ClearCartAction())
+            dispatch(hide())
+            navigate('/mybooks')
+        } else {
+            console.log('Деньги списались с акка автора');
+            dispatch(changeOrderStatusAction(orders.filter(order => order.id === props[1])[0].id ))
+            dispatch(hide())
+        }
+
     }
 
     return (

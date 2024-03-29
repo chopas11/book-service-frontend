@@ -45,7 +45,7 @@ export const routes: AppRouterProps[] = [
         path: "/mybooks",
         element: <MyBooks />,
         authOnly: true,
-        role: RoleTypes.AUTHOR_ROLE
+        role: RoleTypes.ALL_ROLE
     },
     {
         path: "/edit/:id",

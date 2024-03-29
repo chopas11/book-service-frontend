@@ -12,7 +12,7 @@ import {Col, Row} from "antd";
 
 const Catalog:React.FC = () => {
 
-    const {books} = useTypedSelector(state => state.book)
+    const {catalogBooks} = useTypedSelector(state => state.book)
 
     return (
         <>
@@ -33,7 +33,7 @@ const Catalog:React.FC = () => {
                     </TogglePopup>
                 </Col>
             </Row>
-            <BooksWidget books={books} />
+            <BooksWidget books={catalogBooks} />
 
         </>
     );
