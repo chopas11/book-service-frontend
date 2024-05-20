@@ -7,6 +7,7 @@ import {Button, Hint} from "../../shared/ui";
 import {Link} from "react-router-dom";
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 import BooksWidget from "../../widgets/BooksWidget/BooksWidget.tsx";
+import { Carousel } from 'antd';
 
 
 const Main: React.FC = () => {
@@ -78,25 +79,48 @@ const Main: React.FC = () => {
 
     return (
         <>
+            <Carousel autoplay speed={500} autoplaySpeed={10000}>
+                <div>
+                    <WelcomeWidget title="Станьте автором в один клик">
+                        <Hint
+                            text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу."
+                            textSize="16px"/>
+                        <Link to="/publish"><Button>Стать автором</Button></Link>
+                    </WelcomeWidget>
+                </div>
+                <div>
+                    <WelcomeWidget title="Скидка 10% на первую покупку">
+                        <Hint text="По промокоду ДУШНИЛА до 30 июня" textSize="16px"/>
+                        <Link to="/catalog"><Button>Перейти каталог</Button></Link>
+                    </WelcomeWidget>
+                </div>
+                <div>
+                    <WelcomeWidget title="Книги от популярных блогеров">
+                        <Hint text="Известные блогеры выбирают наш сервис для публикации своих книг"
+                              textSize="16px"/>
+                        <Link to="/catalog"><Button>Перейти к разделу</Button></Link>
+                    </WelcomeWidget>
+                </div>
+                <div>
+                    <WelcomeWidget title="Топ комиксов - рекомендуем!">
+                        <Hint text="Мы собрали для вас список лучших комиксов, которые должен прочитать каждый"
+                              textSize="16px"/>
+                        <Link to="/catalog"><Button>Перейти к разделу</Button></Link>
+                    </WelcomeWidget>
+                </div>
+            </Carousel>
             {
                 role === 'author' ?
                 <>
-                    <WelcomeWidget title={welcomeData.title}>
-                        <Hint text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." textSize="16px" />
-                        <Link to="/publish"><Button>Подробнее</Button></Link>
-                    </WelcomeWidget>
                     <AdvantagesWidget />
                     <ServicesWidget services={services} step={1} isActive={false} />
 
                 </> :
                 <>
-                    <WelcomeWidget title="-30% на комиксы и мангу">
-                    <Hint text="Только с 29 февраля по 4 марта" textSize="16px" />
-                    <Link to="/catalog"><Button>В каталог</Button></Link>
-                    </WelcomeWidget>
-                    <BooksWidget books={catalogBooks} title="Вам понравится" label="На основе ваших предпочтений" />
-                    <BooksWidget books={catalogBooks} title="Новинки" label="Опубликованы менее недели назад" />
-                    <BooksWidget books={catalogBooks} title="топ 10 за последний месяц" label="Выбор наших пользователей" />
+                    <BooksWidget books={catalogBooks} title="Вам понравится" label="На основе ваших предпочтений"/>
+                    <BooksWidget books={catalogBooks} title="Новинки" label="Опубликованы менее недели назад"/>
+                    <BooksWidget books={catalogBooks} title="топ 10 за последний месяц"
+                                 label="Выбор наших пользователей"/>
                 </>
             }
             <HowToAuthorWidget />

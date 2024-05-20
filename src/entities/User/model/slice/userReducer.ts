@@ -3,7 +3,7 @@ import {UserActionTypes, UserRole, UserSchema} from "../types/userSchema.ts";
 const initialState:UserSchema = {
     user: undefined,
     isAuth: false,
-    role: 'reader',
+    role: 'author',
     balance: 10000,
 }
 

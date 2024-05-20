@@ -13,7 +13,7 @@ interface AdvantageFeatureProps {
 const AdvantageCard:React.FC<AdvantageFeatureProps> = ({icon, title, description, bgColor}) => {
     return (
         <div className={s.advantage}>
-            <Block bgColor={bgColor} color="#121212" padding="45px 30px" bdRadius="48px">
+            <Block bgColor={bgColor} color="#121212" padding="25px 15px" bdRadius="24px">
             <div className={s.advantage_top}>
                 <IconBlock size="55px" background="var(--black-color)" color={bgColor} >{icon}</IconBlock>
                 {/*{icon}*/}

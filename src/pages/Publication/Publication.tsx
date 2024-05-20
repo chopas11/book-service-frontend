@@ -33,46 +33,82 @@ const Publication: React.FC = () => {
 
     return (
         <>
-            <WelcomeWidget title="Публикация книги">
-                <Hint text="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" textSize="16px" textColor="#121212" />
-            </WelcomeWidget>
-            {publishPage === 2 ?
-                <>
-                    <ChooseTariff/>
-                    <PublishBook/>
-                    <div className="button_center">
-                        <Button type='page' size='xl' paddingX='80px'
-                                callback={() => setPublishPage(1)}>Вернуться Назад</Button>
-                    </div>
-                </>
-                :
-                <>
-                    <br/><br/>
-                    <PublishStep number={1}>
-                        <UpdateTitle/>
-                        <AddAuthors />
-                    </PublishStep>
-                    <ServicesWidget services={services} isActive={true} step={1} />
-                    <PublishStep number={2}>
-                        <UpdateDescription />
-                    </PublishStep>
-                    <ServicesWidget services={services} isActive={true} step={2} />
-                    <PublishStep number={3}>
-                        <UploadBookFile />
-                    </PublishStep>
-                    <ServicesWidget services={services} isActive={true} step={3} />
-                    <PublishStep number={4}>
-                        <UploadCover />
-                    </PublishStep>
-                    <ServicesWidget services={services} isActive={true} step={4} />
-                    <PublishStep number={5}>
-                        <SelectGenre />
-                        <SelectAge />
-                    </PublishStep>
-                    <div className="button_center">
-                        <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>
-                    </div>
-                </>
+            {/*<WelcomeWidget title="Публикация книги">*/}
+            {/*    <Hint text="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" textSize="16px" textColor="#121212" />*/}
+            {/*</WelcomeWidget>*/}
+            {/*{publishPage === 2 ?*/}
+            {/*    <>*/}
+            {/*        <ChooseTariff/>*/}
+            {/*        <PublishBook/>*/}
+            {/*        <div className="button_center">*/}
+            {/*            <Button type='page' size='xl' paddingX='80px'*/}
+            {/*                    callback={() => setPublishPage(1)}>Вернуться Назад</Button>*/}
+            {/*        </div>*/}
+            {/*    </>*/}
+            {/*    :*/}
+            {/*    <>*/}
+            {/*        <br/><br/>*/}
+            {/*        <PublishStep number={1}>*/}
+            {/*            <UpdateTitle/>*/}
+            {/*            <AddAuthors />*/}
+            {/*        </PublishStep>*/}
+            {/*        <ServicesWidget services={services} isActive={true} step={1} />*/}
+            {/*        <PublishStep number={2}>*/}
+            {/*            <UpdateDescription />*/}
+            {/*        </PublishStep>*/}
+            {/*        <ServicesWidget services={services} isActive={true} step={2} />*/}
+            {/*        <PublishStep number={3}>*/}
+            {/*            <UploadBookFile />*/}
+            {/*        </PublishStep>*/}
+            {/*        <ServicesWidget services={services} isActive={true} step={3} />*/}
+            {/*        <PublishStep number={4}>*/}
+            {/*            <UploadCover />*/}
+            {/*        </PublishStep>*/}
+            {/*        <ServicesWidget services={services} isActive={true} step={4} />*/}
+            {/*        <PublishStep number={5}>*/}
+            {/*            <SelectGenre />*/}
+            {/*            <SelectAge />*/}
+            {/*        </PublishStep>*/}
+            {/*        <div className="button_center">*/}
+            {/*            <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>*/}
+            {/*        </div>*/}
+            {/*    </>*/}
+            {/*}*/}
+
+            {
+                publishPage === 1 ?
+                    <>
+                                <PublishStep number={1}>
+                                    <UpdateTitle/>
+                                    <AddAuthors />
+                                </PublishStep>
+                                <ServicesWidget services={services} isActive={true} step={1} />
+                                <div className="button_center">
+                                    <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>
+                                </div>
+                    </> :
+                    publishPage === 2 ?
+                        <>
+                            <div className="button_center">
+                                <Button type='page' size='xl' paddingX='80px'
+                                        callback={() => setPublishPage(3)}>Продолжить</Button>
+                            </div>
+                            <div className="button_center">
+                                <Button type='page' size='xl' paddingX='80px'
+                                        callback={() => setPublishPage(1)}>Назадк 1</Button>
+                            </div>
+                        </>
+                        :
+                    publishPage === 3 ?
+                        <>
+                            <div className="button_center">
+                                <Button type='page' size='xl' paddingX='80px'
+                                        callback={() => setPublishPage(4)}>Продолжить</Button>
+                            </div>
+                        </> :
+                        <>
+                            4
+                        </>
             }
         </>
     );

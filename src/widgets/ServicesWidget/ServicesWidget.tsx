@@ -66,7 +66,7 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
     } else {
         return (
             <div className={s.servicesWidget}>
-                <br/><br/><br/><br/>
+                <br/><br/>
                 <Row gutter={[12, 12]}>
                     <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}}>
                         <h2>Услуги</h2>

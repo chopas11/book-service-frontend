@@ -17,7 +17,7 @@ const Hint: React.FC<HintProps> = ({text, textSize = "16px", textColor = "var(--
                 <StarIcon color={starColor} />
             </IconBlock>
             <div>
-                <p style={{fontSize: textSize, color: textColor}}>{text}</p>
+                <p style={{color: textColor}}>{text}</p>
             </div>
         </div>
     );

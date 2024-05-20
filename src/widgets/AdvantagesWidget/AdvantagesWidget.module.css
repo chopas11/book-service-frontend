@@ -20,3 +20,9 @@
         flex: 100%;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .advantagesWidget {
+        margin-top: 20px;
+    }
+}

@@ -43,6 +43,11 @@
 }
 
 @media screen and (max-width: 576px)  {
+    .header {
+        display: none;
+        /*position: fixed;*/
+        /*bottom: 0;*/
+    }
     .navbar {
         display: none;
     }

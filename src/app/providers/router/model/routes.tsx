@@ -32,63 +32,63 @@ export const routes: AppRouterProps[] = [
     {
         path: "/publish",
         element: <Publication />,
-        authOnly: true,
-        role: RoleTypes.AUTHOR_ROLE
+        // authOnly: true,
+        // role: RoleTypes.AUTHOR_ROLE
     },
     {
         path: "/faq",
         element: <Faq />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     {
         path: "/mybooks",
         element: <MyBooks />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     {
         path: "/edit/:id",
         element: <Edit />,
-        authOnly: true,
-        role: RoleTypes.AUTHOR_ROLE
+        // authOnly: true,
+        // role: RoleTypes.AUTHOR_ROLE
     },
     {
         path: "/statistics",
         element: <Statistics />,
-        authOnly: true,
-        role: RoleTypes.AUTHOR_ROLE
+        // authOnly: true,
+        // role: RoleTypes.AUTHOR_ROLE
     },
     {
         path: "/history",
         element: <Orders />,
-        authOnly: true,
-        role: RoleTypes.AUTHOR_ROLE
+        // authOnly: true,
+        // role: RoleTypes.AUTHOR_ROLE
     },
     {
         path: "/profile",
         element: <Profile />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     // Reader Block
     {
         path: "/catalog",
         element: <Catalog />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     {
         path: "/book/:id",
         element: <Book />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     {
         path: "/cart",
         element: <Cart />,
-        authOnly: true,
-        role: RoleTypes.ALL_ROLE
+        // authOnly: true,
+        // role: RoleTypes.ALL_ROLE
     },
     {
         path:  "*",

@@ -14,3 +14,9 @@
 .lil {
     background: var(--lil-color);
 }
+
+
+
+@media screen and (max-width: 576px) {
+
+}

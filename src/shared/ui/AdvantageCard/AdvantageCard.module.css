@@ -21,6 +21,9 @@
 
 
 @media screen and (max-width: 576px)  {
+    .advantage {
+        /*border-radius: ;*/
+    }
     .advantage_bottom {
         padding: 40px 50px 0 0;
     }

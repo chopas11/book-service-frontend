@@ -3,7 +3,7 @@ import React from 'react';
 const Book:React.FC = () => {
     return (
         <div>
-            Book
+            <h1>Book Reading</h1>
         </div>
     );
 };

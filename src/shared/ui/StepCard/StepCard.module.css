@@ -15,3 +15,15 @@
     padding: 25px 40px;
 
 }
+
+@media screen and (max-width: 576px) {
+    .step_text {
+        background: transparent;
+        padding: 0 5px;
+    }
+
+    .step_text p {
+        color: var(--white-color);
+        font-size: 14px;
+    }
+}

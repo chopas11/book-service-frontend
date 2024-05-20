@@ -48,3 +48,13 @@
 .book_buttons {
     margin-top: 24px;
 }
+
+@media screen and (max-width: 576px)  {
+    .book {
+        padding: 0;
+        border-radius: 24px;
+        /*width: 100%;*/
+        background: transparent;
+
+    }
+}

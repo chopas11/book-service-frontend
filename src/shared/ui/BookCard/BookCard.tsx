@@ -9,6 +9,8 @@ import {IBook} from "../../../entities/Book/model/types/bookSchema.ts";
 import {useDispatch} from "react-redux";
 import {useTypedSelector} from "../../hooks/useTypedSelector.ts";
 import {toogleInCartAction} from "../../../entities/Book/model/slice/bookReducer.ts";
+import {toggle} from "../../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../../features/modals/toggleModal/model/enums/modalPath.ts";
 
 interface BookCardProps {
     book: IBook,
@@ -20,9 +22,17 @@ const BookCard:React.FC<BookCardProps> = ({book,}) => {
 
     const {cartBooks} = useTypedSelector(state => state.book)
 
+    const toggleInCart = (e: Event) => {
+        e.stopPropagation()
+        dispatch(toogleInCartAction(book));
+    }
+
     return (
 
-            <div className={s.book}>
+            <div
+                className={s.book}
+                onClick={() => dispatch(toggle({path: modalPath.DESCRIPTION_VIEWER}))}
+            >
                 {/*<Link to={"/book/" + book.id}>*/}
                     <div className={s.book_img}>
                         <div className={s.book_labels}>
@@ -40,8 +50,8 @@ const BookCard:React.FC<BookCardProps> = ({book,}) => {
                 <div className={s.book_buttons}>
                     {
                         cartBooks.find(item => item.id === book.id) ?
-                            <Button type="borders" callback={() => dispatch(toogleInCartAction(book))}>В корзине</Button> :
-                            <Button type="lil" callback={() => dispatch(toogleInCartAction(book))}>Купить</Button>
+                            <Button type="borders" callback={(e) => toggleInCart(e)}>В корзине</Button> :
+                            <Button type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
                     }
 
                     <Button type="borders" paddingX="10px"><HeartIcon /></Button>
