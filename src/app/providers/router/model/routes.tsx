@@ -6,11 +6,12 @@ import MyBooks from "../../../../pages/MyBooks/MyBooks.tsx";
 import Edit from "../../../../pages/Edit/Edit.tsx";
 import Statistics from "../../../../pages/Statistics/Statistics.tsx";
 import Orders from "../../../../pages/Orders/Orders.tsx";
-import Profile from "../../../../pages/Profile/Profile.tsx";
+import EditProfile from "../../../../pages/EditProfile/EditProfile.tsx";
 import NotFound from "../../../../pages/NotFound/NotFound.tsx";
 import Catalog from "../../../../pages/Catalog/Catalog.tsx";
 import Book from "../../../../pages/Book/Book.tsx";
 import Cart from "../../../../pages/Cart/Cart.tsx";
+import Profile from "../../../../pages/Profile/Profile.tsx";
 
 
 export type AppRouterProps = RouteProps & {
@@ -66,10 +67,14 @@ export const routes: AppRouterProps[] = [
         // role: RoleTypes.AUTHOR_ROLE
     },
     {
-        path: "/profile",
-        element: <Profile />,
+        path: "/editprofile",
+        element: <EditProfile />,
         // authOnly: true,
         // role: RoleTypes.ALL_ROLE
+    },
+    {
+        path: "profile",
+        element: <Profile />,
     },
     // Reader Block
     {

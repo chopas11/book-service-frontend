@@ -78,37 +78,63 @@ const Publication: React.FC = () => {
             {
                 publishPage === 1 ?
                     <>
-                                <PublishStep number={1}>
+                                <PublishStep number={1} name="Общая информация">
                                     <UpdateTitle/>
                                     <AddAuthors />
                                 </PublishStep>
                                 <ServicesWidget services={services} isActive={true} step={1} />
                                 <div className="button_center">
-                                    <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>
+                                    <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(2)}>Продолжить</Button>
                                 </div>
+
                     </> :
                     publishPage === 2 ?
                         <>
+                            <PublishStep number={2} name="Описание книги">
+                                <UpdateDescription />
+                            </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={2} />
                             <div className="button_center">
-                                <Button type='page' size='xl' paddingX='80px'
-                                        callback={() => setPublishPage(3)}>Продолжить</Button>
-                            </div>
-                            <div className="button_center">
-                                <Button type='page' size='xl' paddingX='80px'
-                                        callback={() => setPublishPage(1)}>Назадк 1</Button>
+                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(3)}>Продолжить</Button>
                             </div>
                         </>
                         :
                     publishPage === 3 ?
                         <>
+                            <PublishStep number={3} name="Файл книги">
+                                <UploadBookFile />
+                            </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={3} />
                             <div className="button_center">
-                                <Button type='page' size='xl' paddingX='80px'
-                                        callback={() => setPublishPage(4)}>Продолжить</Button>
+                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(4)}>Продолжить</Button>
                             </div>
                         </> :
+                        publishPage === 4 ?
                         <>
-                            4
-                        </>
+                            <PublishStep number={4} name="Обложка книги">
+                                <UploadCover />
+                            </PublishStep>
+                            <ServicesWidget services={services} isActive={true} step={4} />
+                            <div className="button_center">
+                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(5)}>Продолжить</Button>
+                            </div>
+                        </> :
+                        publishPage === 5 ?
+                            <>
+                                <PublishStep number={5} name="Возрастное ограничение и жанр">
+                                    <SelectGenre />
+                                    <SelectAge />
+                                </PublishStep>
+                                <div className="button_center">
+                                    <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(6)}>Продолжить</Button>
+                                </div>
+                            </>
+                            :
+                            <>
+                                <ChooseTariff/>
+                                <PublishBook/>
+                                {/*<br/><br/><br/><br/><br/>*/}
+                            </>
             }
         </>
     );

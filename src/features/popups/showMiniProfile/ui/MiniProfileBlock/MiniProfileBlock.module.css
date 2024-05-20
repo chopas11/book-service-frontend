@@ -19,13 +19,13 @@
     color: var(--white-color);
 }
 
-.profile_logout {
+.profile_edit {
     cursor: pointer;
     margin: 12px 0;
     display: inline-block;
 }
 
-.profile_logout p {
+.profile_edit p {
     color: var(--white-color);
 }
 

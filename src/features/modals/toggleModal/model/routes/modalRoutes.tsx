@@ -1,5 +1,5 @@
 import ShowCoverModal from "../../../showCoverModal/ui/ShowCoverModal.tsx";
-import ShowAuthModal from "../../../showAuthModal/ui/ShowAuthModal.tsx";
+import ShowRegistrationModal from "../../../showRegistrationModal/ui/ShowRegistrationModal.tsx";
 import {modalPath} from "../enums/modalPath.ts";
 import ShowOrderModal from "../../../showOrderModal/ui/ShowOrderModal.tsx";
 import ShowPaymentModal from "../../../showPaymentModal/ui/ShowPaymentModal.tsx";
@@ -20,8 +20,8 @@ export const modalRoutes = [
         element: <ShowPaymentModal />,
     },
     {
-        path: modalPath.AUTHORIZATION_VIEWER,
-        element: <ShowAuthModal />,
+        path: modalPath.REGISTRATION_VIEWER,
+        element: <ShowRegistrationModal />,
     },
     {
         path: modalPath.DESCRIPTION_VIEWER,

@@ -5,7 +5,7 @@ interface ButtonProps {
     type?: 'primary' | 'page' | 'green' | 'lil' | 'accent' | 'borders' | 'transparentPrimary' | 'transparentAccent',
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
     // icon-where
-    paddingX?: string | 0,
+    paddingX?: 'full' |string | 0,
     bdRadius?: 'full' | '12px';
     callback?: React.EventHandler<never>,
     children: React.ReactNode
@@ -46,14 +46,23 @@ const Button:React.FC<ButtonProps> = (
             fontSize = "18px";
             break;
     }
-
-    let style = {
-        paddingLeft: paddingX,
-        paddingRight: paddingX,
-        borderRadius: bdRadius,
-        height,
-        fontSize,
-    };
+    let style = {};
+    if (paddingX === 'full') {
+        style = {
+            borderRadius: bdRadius,
+            width: '100%',
+            height,
+            fontSize,
+        };
+    } else {
+        style = {
+            paddingLeft: paddingX,
+            paddingRight: paddingX,
+            borderRadius: bdRadius,
+            height,
+            fontSize,
+        };
+    }
 
     switch (type) {
         case 'primary':

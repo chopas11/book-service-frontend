@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Col, Row} from "antd";
+import {Carousel, Col, Row} from "antd";
 import TariffCard from "../../../shared/ui/TariffCard/TariffCard.tsx";
 import {tariffs} from "../../../entities/Tariff/model/mocks/tariifs.tsx";
 import {useDispatch} from "react-redux";
@@ -19,10 +19,12 @@ const ChooseTariff: React.FC = () => {
         <div>
             <br/><br/>
             <h2>Выберите тариф</h2><br/>
-            <Row gutter={[24, 24]}>
+            {/*<Row gutter={[24, 24]}>*/}
+                <Carousel arrows speed={200}>
                 {
                     tariffs.map(item => {
                         return (
+                            <div>
                             <Col xl={{span: 8}}>
                                 <TariffCard
                                     key={item.id}
@@ -34,10 +36,12 @@ const ChooseTariff: React.FC = () => {
                                     color={item.color}
                                 />
                             </Col>
+                            </div>
                         )
                     })
                 }
-            </Row>
+                </Carousel>
+            {/*</Row>*/}
         </div>
     );
 };

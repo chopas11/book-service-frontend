@@ -1,130 +1,98 @@
 import React from 'react';
-import s from "./Profile.module.css"
 import {Col, Row} from "antd";
-import Block from "../../shared/ui/Block/Block.tsx";
-import {Button, Input, InputWrapper} from "../../shared/ui";
-import avatar from "../../shared/assets/images/profile-example.png"
-import ArrowIcon from "../../shared/assets/IconPack/ArrowIcon/ArrowIcon.tsx";
+import image from "../../shared/assets/images/AvatarExample.png";
+import {Link, useNavigate} from "react-router-dom";
+import {Button} from "../../shared/ui";
+import LogoutIcon from "../../shared/assets/IconPack/LogoutIcon/LogoutIcon.tsx";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
+import s from "./Profile.module.css"
+import PublicationIcon from "../../shared/assets/IconPack/PublicationIcon/PublicationIcon.tsx";
+import {useDispatch} from "react-redux";
+import {getAuthCode, logout} from "../../entities/User/model/services/userService.ts";
+import {changeRole} from "../../entities/User/model/slice/userReducer.ts";
+import {toggle} from "../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../features/modals/toggleModal/model/enums/modalPath.ts";
 
 const Profile: React.FC = () => {
+
+    const dispatch = useDispatch()
+    const {isAuth, role} = useTypedSelector(state => state.user)
+
+    const changeUserRole = (role) => {
+        dispatch(changeRole(role));
+    }
+
     return (
-        <>
-            <h2 className="header_center">Настройка профиля</h2>
-            {/**/}
-            <div style={{display: 'flex', gap: "24px"}}>
-                <Block bgColor="var(--lil-color)" bdRadius="32px" padding="24px">
-                    <InputWrapper label="Добавьте фото профиля">
-                        <div style={{display: 'flex', gap: "12px", alignItems: "end", padding: "0 40px 0 0"}}>
-                            <img className={s.profile_avatar} src={avatar} alt="Profile"/>
-                            <Button size="sm">Удалить</Button>
-                        </div>
-                    </InputWrapper>
-                </Block>
-                <Block bgColor="var(--lil-color)" bdRadius="32px" padding="24px">
-                    <InputWrapper label="Ваша цель">
-                        <Row gutter={[12, 12]}>
-                            <Col><Button bdRadius="12px" size="md">Рисовать мангу</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Делать комиксы</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Публиковать журналы</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Писать для души</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Продавать материал подписчикам</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Рассказывать о себе</Button></Col>
-                            <Col><Button bdRadius="12px" size="md">Продавать материал подписчикам</Button></Col>
-                        </Row>
-                    </InputWrapper>
-                    <br/>
-                    <div className="center"><Button type="transparentPrimary" size="sm"><ArrowIcon /></Button></div>
-                </Block>
-            </div>
-            <br/>
-            {/*    */}
-            <div className={s.profile_block}>
-                <div className={s.profile_up}></div>
-                <div className={s.profile_left}></div>
-                <div className={s.profile_right}></div>
-                <div className={s.profile_down}></div>
-                <div className={s.profile_block_up}>
-                    <div>
-                        <Row gutter={[12, 12]}>
-                            <Col xl={{span: 6}}>
-                                <InputWrapper label="Фамилия">
-                                    <Input theme="dark" type="text" placeholder="Иванов" />
-                                </InputWrapper>
-                            </Col>
-                            <Col xl={{span: 6}}>
-                                <InputWrapper label="Имя">
-                                    <Input theme="dark" type="text" placeholder="Иван" />
-                                </InputWrapper>
-                            </Col>
-                            <Col xl={{span: 6}}>
-                                <InputWrapper label="Отчетво">
-                                    <Input theme="dark" type="text" placeholder="Иванович" />
-                                </InputWrapper>
-                            </Col>
-                            <Col xl={{span: 6}}>
-                                <InputWrapper label="Автор">
-                                    <Input theme="dark" type="text" placeholder="Иванушка" />
-                                </InputWrapper>
-                            </Col>
-                        </Row>
-                    </div>
-                </div>
-                <Row gutter={[0, 0]}>
-                    <Col xl={{span: 8}}>
-                        <div className={s.profile_block_left}>
-                            <div>
-                                <Row gutter={[12, 12]}>
-                                    <Col xl={{span: 19}}>
-                                        <InputWrapper label="Ваша почта">
-                                            <Input theme="dark" type="text" placeholder="ivan@example.com" />
-                                        </InputWrapper>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col xl={{span: 16}}>
-                        <div className={s.profile_block_transparent}>
-                            <div className={s.profile_block_inside2}>
+        <div className={s.profile}>
+            {
+                isAuth ?
+                    <Row>
+                        <Col xs={{span: 21}}>
+                            <div className={s.profile_navbar}>
                                 <div>
-                                    <span>Пароль</span>
-                                    <Button>Изменить</Button>
+                                    <img src={image} alt="Avatar"/>
+                                </div>
+                                <div>
+                                    <p>Дарья Формина</p>
+                                    <span>{role === 'author' ? "Автор" : "Читатель"}</span>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
-                </Row>
-            </div>
-            {/**/}
-            {/*<div className={s.profile_block}>*/}
-            {/*    <div className={s.profile_up}></div>*/}
-            {/*    <div className={s.profile_left}></div>*/}
-            {/*    <div className={s.profile_right}></div>*/}
-            {/*    <div className={s.profile_down}></div>*/}
-            {/*    <Row gutter={[0, 0]}>*/}
-            {/*        <Col xl={{span: 8}}>*/}
-            {/*            <div className={s.profile_block_transparent}>*/}
-            {/*                <div className={s.profile_block_inside}>*/}
-            {/*                    <div>*/}
-            {/*                        123*/}
-            {/*                    </div>*/}
-            {/*                </div>*/}
-            {/*            </div>*/}
-            {/*        </Col>*/}
-            {/*        <Col xl={{span: 16}}>*/}
-            {/*            <div className={s.profile_block_right}></div>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*    <div className={s.profile_block_bottom}>*/}
-            {/*        <div>*/}
-            {/*            123*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            <div className="button_center">
-                <Button type='page' size='xl' paddingX='80px' callback={() => 0}>Сохранить изменения</Button>
-            </div>
-        </>
+                        </Col>
+                        <Col xs={{span: 3}}>
+                            <div className={s.profile_edit}>
+                                <Link to="/editprofile"><Button type='primary' paddingX="8px"><PublicationIcon /></Button></Link>
+                            </div>
+                        </Col>
+                        <Col xs={{span: 24}}>
+                            {
+                                role === 'author' ?
+                                    <ul className={s.profile_list}>
+                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Мои
+                                            книги</Button></Link></li>
+                                        <li><Link to="/statistics"><Button type='page' size='md'
+                                                                           paddingX='full'>Статистика</Button></Link>
+                                        </li>
+                                        <li><Link to="/history"><Button type='page' size='md' paddingX='full'>История
+                                            заказов</Button></Link></li>
+                                        <li><Link to="/faq"><Button type='page' size='md' paddingX='full'>Частые вопросы
+                                        </Button></Link></li>
+                                        <li><Button callback={() => dispatch(logout())} type='borders' size='md' paddingX='full'> <LogoutIcon/>
+                                        </Button></li>
+                                    </ul> :
+                                    <ul className={s.profile_list}>
+                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Мои
+                                            книги</Button></Link></li>
+                                        <li><Link to="/collections"><Button type='page' size='md' paddingX='full'>Подборки</Button></Link>
+                                        </li>
+                                        <li><Link to="/history"><Button type='page' size='md' paddingX='full'>История
+                                            покупок</Button></Link></li>
+                                        <li><Link to="/faq"><Button type='page' size='md' paddingX='full'>Частые вопросы
+                                        </Button></Link></li>
+                                        <li><Button callback={() => dispatch(logout())} type='borders' size='md' paddingX='full'> <LogoutIcon/>
+                                        </Button></li>
+                                    </ul>
+                            }
+                            <div className={s.profile_changeRole}>
+                                {
+                                    role === 'author' ? <Button callback={() => changeUserRole('reader')} type='lil' size='md' paddingX='full'>Стать читателем</Button>
+                                        : <Button callback={() => changeUserRole('author')} type='lil' size='md' paddingX='full'>Стать автором</Button>
+                                }
+
+
+                            </div>
+                        </Col>
+                    </Row> :
+                    <>
+                        <h2 className="header_center">Профиль</h2>
+                        <ul className={s.profile_list}>
+                            <li><Button callback={() => getAuthCode()} type='page' size='md' paddingX='full'>Войти в
+                                систему</Button></li>
+                            <li><Button callback={() => dispatch(toggle({path: modalPath.REGISTRATION_VIEWER}))} type='lil' size='md' paddingX='full'>Создать новый аккаунт</Button>
+                            </li>
+                        </ul>
+                    </>
+            }
+        </div>
     );
 };
 

@@ -1,6 +1,7 @@
 
 .numberBlock {
     /*border: 1px solid var(--text-color);*/
+    display: block;
     font-size: 48px;
     font-weight: 600;
     flex-basis: 275px;

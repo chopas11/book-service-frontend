@@ -6,7 +6,7 @@ import {toggleModalReducer} from "../../../../features/modals/toggleModal/model/
 import {OrderReducer} from "../../../../entities/Order/model/slice/orderReducer.ts";
 import {BookReducer} from "../../../../entities/Book/model/slice/bookReducer.ts";
 import {CartReducer} from "../../../../entities/Cart/model/slice/cartReducer.ts";
-// import {authReducer} from "../../../../features/modals/showAuthModal/model/slice/authReducer.ts";
+// import {authReducer} from "../../../../features/modals/showRegistrationModal/model/slice/authReducer.ts";
 
 
 export const rootReducer = combineReducers({

@@ -9,6 +9,8 @@ import {Button} from "../../../../../shared/ui";
 import BalanceCard from "../../../../../shared/ui/BalanceCard/BalanceCard.tsx";
 import {getAuthCode, logout} from "../../../../../entities/User/model/services/userService.ts";
 import {Col, Row} from "antd";
+import {modalPath} from "../../../../modals/toggleModal/model/enums/modalPath.ts";
+import {toggle} from "../../../../modals/toggleModal/model/slice/toggleModalReducer.ts";
 
 
 const MiniProfileBlock: React.FC = () => {
@@ -41,7 +43,7 @@ const MiniProfileBlock: React.FC = () => {
                                                 </li>
                                                 <li><Link to="/history"><Button type='accent' size='xs' paddingX='10px'>История
                                                     заказов</Button></Link></li>
-                                                <li><Link to="/profile"><Button type='accent' size='xs' paddingX='10px'>Настройка
+                                                <li><Link to="/editprofile"><Button type='accent' size='xs' paddingX='10px'>Настройка
                                                     профиля</Button></Link></li>
                                             </ul> :
                                             <ul>
@@ -52,7 +54,7 @@ const MiniProfileBlock: React.FC = () => {
                                                 </li>
                                                 <li><Link to="/history"><Button type='accent' size='xs' paddingX='10px'>История
                                                     покупок</Button></Link></li>
-                                                <li><Link to="/profile"><Button type='accent' size='xs' paddingX='10px'>Настройки</Button></Link></li>
+                                                <li><Link to="/editprofile"><Button type='accent' size='xs' paddingX='10px'>Настройки</Button></Link></li>
                                             </ul>
                                     }
 
@@ -76,7 +78,7 @@ const MiniProfileBlock: React.FC = () => {
                             >
                                 Войти в систему
                             </Button></li>
-                            <li><Button type='accent' size='xs' paddingX='10px'
+                            <li><Button callback={() => dispatch(toggle({path: modalPath.REGISTRATION_VIEWER}))} type='accent' size='xs' paddingX='10px'
                             >Регистрация</Button></li>
                         </ul>
                     </div>

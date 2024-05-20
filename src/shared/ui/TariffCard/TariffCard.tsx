@@ -25,8 +25,8 @@ const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChos
         <div className={`${s.tariff} ${isChosen ? s.chosen : ""}`}>
            <div className={s.tariff_box}>
                <h3>{name}</h3>
-               <p>Цена за книгу: <TextWrapper background="var(--green-color)" size='md' weight='bold'>{String(bookPrice)}р</TextWrapper></p>
-               <p>Роялти с каждой продажи: <TextWrapper background="var(--green-color)" size='md' weight='bold'>{String(royalty*100)}%</TextWrapper></p>
+               <p>Цена за книгу: <TextWrapper background={tariffColor} size='md' weight='bold'>{String(bookPrice)}р</TextWrapper></p>
+               <p>Роялти с каждой продажи: <TextWrapper background={tariffColor} size='md' weight='bold'>{String(royalty*100)}%</TextWrapper></p>
                <div className={s.tariff_box_center}>
                    <span>{bookPrice*royalty}р</span>
                    <p>Прибыль с каждой продажи</p>
@@ -37,13 +37,14 @@ const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChos
                       textSize="14px" textColor="#f0f0f0" starColor={tariffColor} />
             </div>
                 {/*<div className={s.tariff_conditions_center}>*/}
-                    <Button type={color} callback={callback}>
+                    <Button type={color} callback={callback} paddingX="full">
                         {
                             isChosen ?
                                 "Выбрано" :
                                 "Выбрать"
                         }
                     </Button>
+            <br/><br/>
                 {/*</div>*/}
             {/*</div>*/}
 

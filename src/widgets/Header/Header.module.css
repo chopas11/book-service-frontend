@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 10px;
     z-index: 99;
 }
 
@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 576px)  {
     .header {
-        display: none;
+        /*display: none;*/
         /*position: fixed;*/
         /*bottom: 0;*/
     }

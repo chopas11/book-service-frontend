@@ -51,7 +51,7 @@ const PublishBook: React.FC = () => {
                 <TextWrapper color="var(--white-color)" background="var(--black-color)" fontSize="20px">
                     {price} р
                 </TextWrapper>}
-            <Button type='borders' size='lg' callback={() => takePayment()}>
+            <Button type='page' size='lg' paddingX="full" callback={() => takePayment()}>
                 Создать книгу</Button>
         </div>
     );

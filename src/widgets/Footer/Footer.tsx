@@ -11,10 +11,12 @@ import HomeIcon from "../../shared/assets/IconPack/HomeIcon/HomeIcon.tsx";
 import CatalogIcon from "../../shared/assets/IconPack/CatalogIcon/CatalogIcon.tsx";
 import CartIcon from "../../shared/assets/IconPack/CartIcon/CartIcon.tsx";
 import PublicationIcon from "../../shared/assets/IconPack/PublicationIcon/PublicationIcon.tsx";
+import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
 const Footer: React.FC = () => {
 
     const location = useLocation();
+    const {role} = useTypedSelector(state => state.user)
 
     useEffect(() => {
         console.log(location.pathname);
@@ -44,38 +46,40 @@ const Footer: React.FC = () => {
             {/*    <a className={s.footer_a} href="https://t.me/am_nikiforov"><Icon height={24} icon="ic:baseline-telegram"/></a>*/}
             {/*    <a className={s.footer_a} href="https://vk.com/"><Icon height={24} icon="ri:vk-fill"/></a>*/}
             {/*</div>*/}
-        {/*    */}
-        {/*    <div className={s.footer_mobileMenu}>*/}
-                <div className={s.footer_mobile}>
-                    <ul>
-                        <Link to="/">
-                            <li className={location.pathname === '/' ? s.mobile_active : ''}>
-                                <HomeIcon/> <span>Главная</span>
-                            </li>
-                        </Link>
-                        <Link to="/catalog">
-                            <li className={location.pathname === '/catalog' ? s.mobile_active : ''}>
-                                <CatalogIcon/> <span>Каталог</span>
-                            </li>
-                        </Link>
-                        <Link to="/publish">
-                            <li className={location.pathname === '/publish' ? s.mobile_active : ''}>
-                                <PublicationIcon/><span>Публикация</span>
-                            </li>
-                        </Link>
-                        <Link to="/cart">
-                            {/*<li className={location.pathname === '/cart' ? s.mobile_active : ''}><CartIcon/> <span>Корзина</span></li>*/}
-                        </Link>
-                        <Link to="/profile">
-                            <li className={location.pathname === '/profile' ? s.mobile_active : ''}>
-                                <ProfileIcon/> <span>Профиль</span>
-                            </li>
-                        </Link>
+            <div className={s.footer_mobile}>
+                <ul>
+                    <Link to="/">
+                        <li className={location.pathname === '/' ? s.mobile_active : ''}>
+                            <HomeIcon/> <span>Главная</span>
+                        </li>
+                    </Link>
+                    <Link to="/catalog">
+                        <li className={location.pathname === '/catalog' ? s.mobile_active : ''}>
+                            <CatalogIcon/> <span>Каталог</span>
+                        </li>
+                    </Link>
+                    {
+                        role === 'author' ?
+                            <Link to="/publish">
+                                <li className={location.pathname === '/publish' ? s.mobile_active : ''}>
+                                    <PublicationIcon/><span>Публикация</span>
+                                </li>
+                            </Link> :
+                            <Link to="/cart">
+                                <li className={location.pathname === '/cart' ? s.mobile_active : ''}>
+                                    <CartIcon/> <span>Корзина</span>
+                                </li>
+                            </Link>
+                    }
 
 
-                    </ul>
-                </div>
-            {/*</div>*/}
+                    <Link to="/profile">
+                        <li className={location.pathname === '/profile' ? s.mobile_active : ''}>
+                            <ProfileIcon/> <span>Профиль</span>
+                        </li>
+                    </Link>
+                </ul>
+            </div>
         </div>
     );
 };
