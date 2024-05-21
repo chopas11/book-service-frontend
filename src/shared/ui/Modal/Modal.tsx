@@ -42,7 +42,7 @@ const Modal: React.FC = () => {
         <div onClick={() => toogleModal()} className={`${s.modal} ${active ? s.active : ""}`}>
             <div onClick={(e) => e.stopPropagation()} className={s.modal_window}>
                 <div className={s.modal_top}>
-                    <Button size='lg' paddingX='12.5px' callback={() => dispatch(hide())}><BackIcon /></Button>
+                    <Button size='lg' paddingX='12.5px' type='page' callback={() => dispatch(hide())}><BackIcon /></Button>
                 </div>
                 <ModalRouter path={path} />
             </div>

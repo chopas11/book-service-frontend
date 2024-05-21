@@ -24,20 +24,23 @@ const AddAuthors: React.FC = () => {
 
     return (
         <>
-            <Col xl={{span: 9}}>
+            <Col xl={{span: 9}} xs={{span: 24}}>
                 <InputWrapper label="Ваше авторское имя">
                     <Input type="text" placeholder="Николай Гоголь" value={newAuthor} callback={(e: React.FormEvent<HTMLInputElement>) => setNewAuthor(e.currentTarget.value)}/>
                 </InputWrapper>
             </Col>
-            <Col xl={{span: 4}} style={{paddingTop: "28px"}}>
+            <Col xl={{span: 4}} style={{paddingTop: "12px"}}>
                 <Button callback={() => addNewAuthor()}>Добавить автора</Button>
             </Col>
-            <Col xl={{span: 2}}></Col>
-            <Col xl={{span: 9}}></Col>
+            <Col xl={{span: 2}} xs={{span: 0}}></Col>
+            <Col xl={{span: 9}} xs={{span: 24}} style={{paddingTop: "12px"}}></Col>
+
+
+
 
             {authors.map(author => {
                 return (
-                    <Button type='accent' size='xs' paddingX='12px' callback={() => dispatch(deleteAuthorAction(author))}>{author}&nbsp;<CrossIcon /></Button>
+                    <Col> <Button type='accent' size='xs' paddingX='12px' callback={() => dispatch(deleteAuthorAction(author))}>{author}&nbsp;<CrossIcon /></Button> </Col>
                 )
             })}
 

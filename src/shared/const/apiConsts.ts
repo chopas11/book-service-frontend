@@ -1,6 +1,6 @@
 
 export const API_AUTH_SERVER_URI = 'http://localhost:9000';
-// export const API_URI = 'https:
+// export const API_AUTH_SERVER_URI = 'https:
 // id.storysphere.ru';
 
 export const API_PUBLICATION_SERVICE_URI = 'http://localhost:10000';

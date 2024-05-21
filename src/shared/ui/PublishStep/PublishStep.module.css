@@ -3,8 +3,10 @@
     /*margin-top: 100px;*/
     margin-bottom: 25px;
     /*background: var(--green-color);*/
-    padding: 45px 35px;
-    border-radius: 54px;
+    /*padding: 45px 35px;*/
+    padding: 12px 24px;
+    /*border-radius: 54px;*/
+    border-radius: 32px;
 }
 
 .green {

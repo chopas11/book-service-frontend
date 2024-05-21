@@ -23,13 +23,13 @@ const ShowOrderModal:React.FC = () => {
 
     return (
         <div className={s.newOrder}>
-            <h3 className='center'>Ваш заказ успешно создан! </h3><br/>
+            <h2 className='center'>Ваш заказ успешно создан! </h2><br/>
             <MyBookCard background="#555cf0" cover={coverImage}>
                 <BookNameCard title={title} authors={authors} />
             </MyBookCard>
             <Hint text="Теперь вам надо оплатить выбранные услуги в разделе «Мои книги» в течение часа"
-                  textSize="12px" textColor="#121212" /><br/>
-            <Button callback={() => goToMyBooks()} isDark={false} padding="0 10px">Перейти в «Мои книги»</Button>
+                  textSize="12px" textColor="var(--white-color)" /><br/>
+            <Button type='lil' callback={() => goToMyBooks()} isDark={false} paddingX="full">Перейти в «Мои книги»</Button>
         </div>
     );
 };

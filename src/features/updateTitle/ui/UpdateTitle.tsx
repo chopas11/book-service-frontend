@@ -14,7 +14,7 @@ const UpdateTitle: React.FC = () => {
     const {title} = useTypedSelector(state => state.publication.publication)
 
     return (
-        <Col xl={{span: 9}}>
+        <Col xl={{span: 9}} xs={{span: 24}}>
             <InputWrapper label="Введите название книги">
                 <Input theme="dark" type="text" placeholder="Название" value={title} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updateTitleAction(e.currentTarget.value))} />
             </InputWrapper>

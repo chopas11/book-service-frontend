@@ -31,7 +31,7 @@ const BookCard:React.FC<BookCardProps> = ({book,}) => {
 
             <div
                 className={s.book}
-                onClick={() => dispatch(toggle({path: modalPath.DESCRIPTION_VIEWER}))}
+                // onClick={() => dispatch(toggle({path: modalPath.DESCRIPTION_VIEWER}))}
             >
                 {/*<Link to={"/book/" + book.id}>*/}
                     <div className={s.book_img}>
@@ -43,19 +43,20 @@ const BookCard:React.FC<BookCardProps> = ({book,}) => {
                     </div>
                 {/*</Link>*/}
                 <div className={s.book_description}>
+                    <span>{book.price}р</span>
                     <h3>{book.title}</h3>
                     <p>{book.authors.map(author => author + ", ")}</p>
-                    <span>{book.price}р</span>
+
                 </div>
                 <div className={s.book_buttons}>
                     {
                         cartBooks.find(item => item.id === book.id) ?
-                            <Button type="borders" callback={(e) => toggleInCart(e)}>В корзине</Button> :
-                            <Button type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
+                            <Link to='/cart'><Button paddingX="full" type="borders">В корзине</Button></Link> :
+                            <Button paddingX="full" type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
                     }
 
-                    <Button type="borders" paddingX="10px"><HeartIcon /></Button>
-                    <Button type="borders" paddingX="12px"><BookMarkIcon /></Button>
+                    {/*<Button type="borders" paddingX="10px"><HeartIcon /></Button>*/}
+                    {/*<Button type="borders" paddingX="12px"><BookMarkIcon /></Button>*/}
                 </div>
             </div>
     );

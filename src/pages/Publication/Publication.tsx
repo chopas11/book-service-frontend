@@ -84,7 +84,7 @@ const Publication: React.FC = () => {
                                 </PublishStep>
                                 <ServicesWidget services={services} isActive={true} step={1} />
                                 <div className="button_center">
-                                    <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(2)}>Продолжить</Button>
+                                    <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(2)}>Продолжить</Button>
                                 </div>
 
                     </> :
@@ -95,7 +95,7 @@ const Publication: React.FC = () => {
                             </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={2} />
                             <div className="button_center">
-                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(3)}>Продолжить</Button>
+                                <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(3)}>Продолжить</Button>
                             </div>
                         </>
                         :
@@ -106,7 +106,7 @@ const Publication: React.FC = () => {
                             </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={3} />
                             <div className="button_center">
-                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(4)}>Продолжить</Button>
+                                <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(4)}>Продолжить</Button>
                             </div>
                         </> :
                         publishPage === 4 ?
@@ -116,7 +116,7 @@ const Publication: React.FC = () => {
                             </PublishStep>
                             <ServicesWidget services={services} isActive={true} step={4} />
                             <div className="button_center">
-                                <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(5)}>Продолжить</Button>
+                                <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(5)}>Продолжить</Button>
                             </div>
                         </> :
                         publishPage === 5 ?
@@ -126,7 +126,7 @@ const Publication: React.FC = () => {
                                     <SelectAge />
                                 </PublishStep>
                                 <div className="button_center">
-                                    <Button type='page' size='xl' paddingX='full' callback={() => setPublishPage(6)}>Продолжить</Button>
+                                    <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(6)}>Продолжить</Button>
                                 </div>
                             </>
                             :

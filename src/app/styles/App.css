@@ -124,4 +124,7 @@ html {
   h2 {
     font-size: 24px;
   }
+  .header_center {
+    margin: 60px 0 24px 0;
+  }
 }

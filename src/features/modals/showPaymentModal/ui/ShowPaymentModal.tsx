@@ -56,7 +56,7 @@ const ShowPaymentModal: React.FC = () => {
                     text="Доход с каждой купленной книги сразу вам на карту, постоянная поддержка связи с автором, запрет на скриншоты текста книги"
                     textSize="12px" textColor="#fff" starColor="var(--accent-color)"/>
                 <br/>
-                <Button callback={() => takePurchase()}>Оплатить</Button>
+                <Button type='lil' paddingX='full' callback={() => takePurchase()}>Оплатить</Button>
             </div>
         </div>
     );

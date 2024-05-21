@@ -57,4 +57,12 @@
         background: transparent;
 
     }
+    .book_description {
+        margin-top: 6px;
+    }
+
+    .book_description span {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
 }

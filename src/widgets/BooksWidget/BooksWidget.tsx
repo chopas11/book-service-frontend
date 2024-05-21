@@ -34,7 +34,7 @@ const BooksWidget:React.FC<BooksWidgetProps> = (
                 {
                     books.map(book => {
                         return (
-                            <Col xl={{span: 6}}>
+                            <Col xxl={{span: 6}} xs={{span: 12}} lg={{span: 8}}>
                                 <BookCard book={book}/>
                             </Col>
                         )

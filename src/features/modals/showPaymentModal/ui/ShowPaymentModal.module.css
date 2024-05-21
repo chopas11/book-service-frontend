@@ -12,5 +12,10 @@
 }
 
 .payment_content {
-    padding: 100px 60px 30px 60px;
+    /*padding: 100px 60px 30px 60px;*/
+    padding: 50px 0 0 0;
+}
+
+.payment_content p {
+    color: var(--white-color);
 }
