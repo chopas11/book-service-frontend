@@ -24,7 +24,7 @@
 
 .modal_window {
     cursor: default;
-    width: 33%;
+    width: 50%;
     background: var(--lil-color);
     padding: 30px;
     border-radius: 32px;
@@ -34,14 +34,26 @@
     position: absolute;
 }
 
+@media screen and (max-width: 1200px) {
+    .modal_window {
+        width: 60%;
+    }
+}
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
+    .modal_window {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
 
     .modal {
         background: transparent;
         backdrop-filter: none;
         align-items: baseline;
-        height: calc(100% - 100px);
+        /*height: calc(100% - 100px);*/
 
     }
 

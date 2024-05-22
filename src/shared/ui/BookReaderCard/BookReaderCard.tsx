@@ -6,12 +6,28 @@ import {Button, TextWrapper} from "../index.ts";
 import s from "../BookCard/BookCard.module.css";
 import RateIcon from "../../assets/IconPack/RateIcon/RateIcon.tsx";
 import {Link} from "react-router-dom";
+import {toogleInCartAction} from "../../../entities/Book/model/slice/bookReducer.ts";
+import {useDispatch} from "react-redux";
+import {toggle} from "../../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
+import {modalPath} from "../../../features/modals/toggleModal/model/enums/modalPath.ts";
 
 interface BookReaderCardProps {
     book: IBook,
 }
 
 const BookReaderCard:React.FC<BookReaderCardProps> = ({book}) => {
+
+    const dispatch = useDispatch();
+
+    const toggleInCart = (e: Event) => {
+        e.stopPropagation()
+        dispatch(toogleInCartAction(book));
+    }
+
+    const payment = () => {
+        dispatch(toggle({path: modalPath.PAYMENT_VIEWER, props: [book.price] }));
+    }
+
     return (
         <Block bgColor="var(--dark-color)" color="var(--white-color)" padding="12px" bdRadius="24px">
             <Row>
@@ -31,7 +47,8 @@ const BookReaderCard:React.FC<BookReaderCardProps> = ({book}) => {
                         <p>{book.authors.map(author => author + " ")}</p>
                         <span>{book.price}р</span>
                     </div>
-                    <Link to={"/book/" + book.id}><Button type="lil">Читать</Button></Link>
+                    <Button type="lil" callback={() => payment()}>Купить</Button>
+                    <Button type="lil" callback={(e) => toggleInCart(e)}>Убрать из корзины</Button>
 
                 </Col>
             </Row>

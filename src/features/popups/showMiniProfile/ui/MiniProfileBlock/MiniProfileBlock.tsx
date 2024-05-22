@@ -24,51 +24,58 @@ const MiniProfileBlock: React.FC = () => {
             {
                 isAuth ?
                     <div className={s.profile_content}>
-                        <Row>
-                            <Col xl={{span: 21}}>
                                 <div className={s.profile_content_auth}>
-                                    <div className={s.profile_top}>
-                                        <div>
-                                            <img src={image} alt="Avatar"/>
-                                        </div>
-                                        <div>Дарья</div>
+
+                                        <Row>
+                                            <Col flex={"auto"}>
+                                                <Link to={"/editprofile"}>
+                                                    <div className={s.profile_top}>
+                                                        <div>
+                                                            <img src={image} alt="Avatar"/>
+                                                        </div>
+                                                        <div className={s.profile_top_description}>
+                                                            <p>Дарья</p>
+                                                            <span>{role === 'author' ? "Автор" : "Читатель"}</span>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </Col>
+                                            <Col flex={"20px"}>
+                                                <div className={s.profile_logout}>
+                                                    <Button type={"borders"} paddingX={"11px"} callback={() => dispatch(logout())} ><LogoutIcon/></Button>
+                                                </div>
+                                            </Col>
+                                        </Row>
+
                                     </div>
                                     {
                                         role === 'author' ?
                                             <ul>
-                                                <li><Link to="/mybooks"><Button type='accent' size='xs' paddingX='10px'>Мои
+                                                <li><Link to="/mybooks"><Button type='accent' size='xs' paddingX='10px'>Опубликованные
                                                     книги</Button></Link></li>
                                                 <li><Link to="/statistics"><Button type='accent' size='xs'
                                                                                    paddingX='10px'>Статистика</Button></Link>
                                                 </li>
                                                 <li><Link to="/history"><Button type='accent' size='xs' paddingX='10px'>История
                                                     заказов</Button></Link></li>
-                                                <li><Link to="/editprofile"><Button type='accent' size='xs' paddingX='10px'>Настройка
-                                                    профиля</Button></Link></li>
+                                                <li><Link to="/faq"><Button type='accent' size='xs' paddingX='10px'>Частые
+                                                    вопросы</Button></Link></li>
                                             </ul> :
                                             <ul>
-                                                <li><Link to="/mybooks"><Button type='accent' size='xs' paddingX='10px'>Мои
+                                            <li><Link to="/mybooks"><Button type='accent' size='xs' paddingX='10px'>Купленные
                                                     книги</Button></Link></li>
                                                 <li><Link to="/collections"><Button type='accent' size='xs'
                                                                                    paddingX='10px'>Подборки</Button></Link>
                                                 </li>
                                                 <li><Link to="/history"><Button type='accent' size='xs' paddingX='10px'>История
                                                     покупок</Button></Link></li>
-                                                <li><Link to="/editprofile"><Button type='accent' size='xs' paddingX='10px'>Настройки</Button></Link></li>
+                                                <li><Link to="/faq"><Button type='accent' size='xs' paddingX='10px'>Частые вопросы</Button></Link></li>
                                             </ul>
                                     }
 
                                     <div className={s.profile_balance}>
                                         <p>Баланс: <BalanceCard balance={balance}/></p>
                                     </div>
-                                </div>
-                            </Col>
-                            <Col xl={{span: 3}}>
-                                <div className={s.profile_logout}>
-                                    <p onClick={() => dispatch(logout())}><LogoutIcon/></p>
-                                </div>
-                            </Col>
-                        </Row>
                     </div>
                     :
                     <div className={s.profile_content}>

@@ -49,14 +49,24 @@ const BookCard:React.FC<BookCardProps> = ({book,}) => {
 
                 </div>
                 <div className={s.book_buttons}>
-                    {
-                        cartBooks.find(item => item.id === book.id) ?
-                            <Link to='/cart'><Button paddingX="full" type="borders">В корзине</Button></Link> :
-                            <Button paddingX="full" type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
-                    }
 
-                    {/*<Button type="borders" paddingX="10px"><HeartIcon /></Button>*/}
-                    {/*<Button type="borders" paddingX="12px"><BookMarkIcon /></Button>*/}
+                    <div className="desktop_visibility">
+                        {
+                            cartBooks.find(item => item.id === book.id) ?
+                                <Link to='/cart'><Button type="borders">В корзине</Button></Link> :
+                                <Button type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
+                        }
+                        <Button type="borders" paddingX="10px"><HeartIcon /></Button>
+                        <Button type="borders" paddingX="12px"><BookMarkIcon /></Button>
+                    </div>
+                    <div className="mobile_visibility">
+                        {
+                            cartBooks.find(item => item.id === book.id) ?
+                                <Link to='/cart'><Button paddingX="full" type="borders">В корзине</Button></Link> :
+                                <Button paddingX="full" type="lil" callback={(e) => toggleInCart(e)}>Купить</Button>
+                        }
+                    </div>
+
                 </div>
             </div>
     );

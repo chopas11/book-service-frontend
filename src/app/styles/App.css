@@ -117,7 +117,23 @@ html {
     line-height: 1.5;
   }
 
+  .mobile_visibility {
+    display: none;
+  }
+
+  .desktop_visibility {
+    display: block;
+  }
+
 @media screen and (max-width: 576px)  {
+
+  .mobile_visibility {
+    display: block;
+  }
+  .desktop_visibility {
+    display: none;
+  }
+
   h1, h2, h3, h4 {
     text-transform: none;
   }

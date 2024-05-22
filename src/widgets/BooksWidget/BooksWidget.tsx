@@ -18,7 +18,7 @@ const BooksWidget:React.FC<BooksWidgetProps> = (
     }) => {
     return (
         <div style={{marginTop: "12px"}}>
-            <Row gutter={[24, 24]}>
+            <Row gutter={[10, 12]}>
                 {
                     title ?
                         <Col xl={{span: 18}}>

@@ -21,13 +21,13 @@ const Header: React.FC = () => {
                 <div className={s.navbar}>
                     <ul>
                         <li><Link to="/"><Button size='sm'>Главная</Button></Link></li>
+                        <li><Link to="/catalog"><Button size='sm'>Каталог</Button></Link></li>
                         {
                             role === 'author' ?
                                 <li><Link to="/publish"><Button size='sm'>Публикация</Button></Link></li> :
-                                <li><Link to="/catalog"><Button size='sm'>Каталог</Button></Link></li>
-                        }
+                                <li><Link to="/cart"><Button size='sm'>Корзина</Button></Link></li>
 
-                        <li><Link to="/faq"><Button size='sm'>FAQ</Button></Link></li>
+                        }
                     </ul>
                 </div>
                 {/*<Input theme="dark" />*/}
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                         <Input value={""} placeholder={"Поиск"} theme={"dark"} />
                     </Col>
                     <Col flex={"50px"}>
-                        <Button type="page" size='lg' paddingX={"14px"} ><BellIcon /></Button>
+                        <Button type="page" size='md' paddingX={"10px"} ><BellIcon /></Button>
                     </Col>
                 </Row>
             </div>

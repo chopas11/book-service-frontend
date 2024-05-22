@@ -46,6 +46,25 @@
     display: none;
 }
 
+@media screen and (max-width: 992px)  {
+    .navbar ul li:not(:first-child):not(:last-child) {
+        padding: 0;
+    }
+    .navbar ul li:first-child, .navbar ul li:last-child {
+        padding: 0;
+    }
+    .navbar ul li a {
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 768px)  {
+    .navbar {
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 576px)  {
     .header {

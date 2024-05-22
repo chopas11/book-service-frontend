@@ -12,7 +12,7 @@ const UpdateDescription: React.FC = () => {
     const {description} = useTypedSelector(state => state.publication.publication)
 
     return (
-        <Col xl={{span: 22}}>
+        <Col xl={{span: 22}} xs={{span: 24}}>
             <InputWrapper label="Напишите описание для книги">
                 <Textarea
                     name="annotation"

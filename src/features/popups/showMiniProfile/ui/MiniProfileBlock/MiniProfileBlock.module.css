@@ -14,9 +14,12 @@
     gap: 12px;
 }
 
-.profile_top div {
-    font-size: 16px;
+.profile_top_description p {
     color: var(--white-color);
+}
+
+.profile_top_description span {
+    font-size: 12px;
 }
 
 .profile_edit {

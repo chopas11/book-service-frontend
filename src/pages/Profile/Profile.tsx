@@ -47,7 +47,7 @@ const Profile: React.FC = () => {
                             {
                                 role === 'author' ?
                                     <ul className={s.profile_list}>
-                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Мои
+                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Опубликованные
                                             книги</Button></Link></li>
                                         <li><Link to="/statistics"><Button type='page' size='md'
                                                                            paddingX='full'>Статистика</Button></Link>
@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
                                         </Button></li>
                                     </ul> :
                                     <ul className={s.profile_list}>
-                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Мои
+                                        <li><Link to="/mybooks"><Button type='page' size='md' paddingX='full'>Купленные
                                             книги</Button></Link></li>
                                         <li><Link to="/collections"><Button type='page' size='md' paddingX='full'>Подборки</Button></Link>
                                         </li>

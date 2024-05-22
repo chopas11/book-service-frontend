@@ -53,9 +53,9 @@ const HowToAuthorWidget = () => {
         <div className={s.howToAuthorWidget}>
             <h2>
                 {
-                role === 'author' ?
-                    "Как стать автором?" :
-                    "Вы можете стать автором"
+                    role === 'author' ?
+                        "Как стать автором?" :
+                        "Вы можете стать автором"
                 }
             </h2>
             <div className={s.steps}>
@@ -65,14 +65,14 @@ const HowToAuthorWidget = () => {
                             stepsAuthor.map(item => {
                                 return (
                                     <Col xl={{span: 8}}>
-                                        <StepCard key={item.id} number={item.number} text={item.text} />
+                                        <StepCard key={item.id} number={item.number} text={item.text}/>
                                     </Col>
                                 )
                             }) :
                             stepsReader.map(item => {
                                 return (
                                     <Col xl={{span: 8}}>
-                                        <StepCard key={item.id} number={item.number} text={item.text} />
+                                        <StepCard key={item.id} number={item.number} text={item.text}/>
                                     </Col>
                                 )
                             })
@@ -80,9 +80,16 @@ const HowToAuthorWidget = () => {
                     }
                 </Row>
             </div>
-            <div className="button_center">
+            <div className="button_center desktop_visibility">
                 <Link to="/publish">
                     <Button type='page' size='xl' paddingX='80px'>
+                        Стать автором
+                    </Button>
+                </Link>
+            </div>
+            <div className="button_center mobile_visibility">
+                <Link to="/publish">
+                    <Button type='page'  size='lg' paddingX='full'>
                         Стать автором
                     </Button>
                 </Link>

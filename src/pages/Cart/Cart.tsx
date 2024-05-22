@@ -4,7 +4,6 @@ import {Button} from "../../shared/ui";
 import {useDispatch} from "react-redux";
 import {toggle} from "../../features/modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {modalPath} from "../../features/modals/toggleModal/model/enums/modalPath.ts";
-import BookReaderCard from "../../shared/ui/BookReaderCard/BookReaderCard.tsx";
 import BookReaderList from "../../shared/ui/BookReaderList/BookReaderList.tsx";
 
 const Cart:React.FC = () => {
@@ -19,9 +18,13 @@ const Cart:React.FC = () => {
     return (
         <div>
             <h2 className="header_center">Корзина</h2>
-            <BookReaderList books={cartBooks} />
-            <div className="button_center">
+            <BookReaderList books={cartBooks}/>
+            <div className="button_center desktop_visibility">
                 <Button type='page' size='xl' paddingX='80px' callback={() => payment()}
+                >Оформить заказ</Button>
+            </div>
+            <div className="button_center mobile_visibility">
+                <Button type='page' size='lg' paddingX='full' callback={() => payment()}
                 >Оформить заказ</Button>
             </div>
         </div>

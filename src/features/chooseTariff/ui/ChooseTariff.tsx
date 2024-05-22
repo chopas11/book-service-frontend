@@ -19,13 +19,12 @@ const ChooseTariff: React.FC = () => {
         <div>
             <br/><br/>
             <h2>Выберите тариф</h2><br/>
-            {/*<Row gutter={[24, 24]}>*/}
-                <Carousel arrows speed={200}>
+            <Row gutter={[24, 24]}>
+            {/*    <Carousel arrows speed={200}>*/}
                 {
                     tariffs.map(item => {
                         return (
-                            <div>
-                            <Col xl={{span: 8}}>
+                            <Col xl={{span: 8}} md={{span: 12}}>
                                 <TariffCard
                                     key={item.id}
                                     name={item.name}
@@ -36,12 +35,11 @@ const ChooseTariff: React.FC = () => {
                                     color={item.color}
                                 />
                             </Col>
-                            </div>
                         )
                     })
                 }
-                </Carousel>
-            {/*</Row>*/}
+                {/*</Carousel>*/}
+            </Row>
         </div>
     );
 };
