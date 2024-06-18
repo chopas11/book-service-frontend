@@ -24,7 +24,7 @@ const ShowCoverModal: React.FC = () => {
             }
             <div className="center">
                 <br/>
-                <InputFile color="lil" name="Загрузить новую" callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCoverAction(e.currentTarget.files[0]))} />
+                <InputFile color="dark" name="Загрузить новую" callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCoverAction(e.currentTarget.files[0]))} />
                 <br/>
                 {coverImage ? <Button type='accent' size='xs' paddingX='12px'>{coverImage.name} &nbsp;<CrossIcon /></Button> : ""}
             </div>

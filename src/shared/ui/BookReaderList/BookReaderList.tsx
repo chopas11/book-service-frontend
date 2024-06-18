@@ -5,17 +5,18 @@ import {Col, Row} from "antd";
 import {Link} from "react-router-dom";
 
 interface BookReaderListProps {
-    books: IBook[]
+    books: IBook[],
+    mode: 'cart' | 'mybooks',
 }
 
-const BookReaderList:React.FC<BookReaderListProps> = ({books}) => {
+const BookReaderList:React.FC<BookReaderListProps> = ({books, mode}) => {
     return (
         <Row gutter={[12, 12]}>
             { books.length > 0 ?
                 books.map(book => {
                     return (
                         <Col md={{span: 12}} xs={{span: 24}}>
-                            <BookReaderCard book={book} />
+                            <BookReaderCard book={book} mode={mode} />
                         </Col>
 
                     )

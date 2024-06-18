@@ -1,12 +1,30 @@
 
+/*.select {*/
+/*    width: 100%;*/
+/*    height: 40px;*/
+/*    border-radius: 50px;*/
+/*    padding: 0 10px;*/
+/*    outline: none;*/
+/*}*/
 .select {
     width: 100%;
-    height: 40px;
+    background-color: var(--background-color);
+    color: white;
+    border: none;
     border-radius: 50px;
-    padding: 0 10px;
-    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-.textarea:focus {
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+.select option {
+    background-color: var(--background-color);
+    color: white;
+}
+
+.select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }

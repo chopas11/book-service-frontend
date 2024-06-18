@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
@@ -23,9 +23,9 @@ const Publication: React.FC = () => {
     const[publishPage, setPublishPage] = useState(1);
 
     // Временно отключим на время разработки
-    // useLayoutEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [publishPage]);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    }, [publishPage]);
 
     useEffect(() => {
         document.title = 'Публикация';

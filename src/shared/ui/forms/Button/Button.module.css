@@ -60,6 +60,21 @@
     color: var(--text-color);
 }
 
+/* white */
+.white {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+.white:hover {
+    background: #cccccc;
+    color: var(--text-color);
+}
+.white:active {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+
 /* lil */
 .lil {
     background: var(--lil-color);

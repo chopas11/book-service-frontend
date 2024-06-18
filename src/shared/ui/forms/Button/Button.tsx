@@ -2,7 +2,7 @@ import React from 'react';
 import s from "./Button.module.css"
 
 interface ButtonProps {
-    type?: 'primary' | 'page' | 'green' | 'lil' | 'accent' | 'borders' | 'transparentPrimary' | 'transparentAccent',
+    type?: 'primary' | 'page' | 'green' | 'lil' | 'accent' | 'borders' | 'transparentPrimary' | 'transparentAccent' | 'white',
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
     // icon-where
     paddingX?: 'full' |string | 0,
@@ -87,6 +87,14 @@ const Button:React.FC<ButtonProps> = (
                     style={style}
                     onClick={callback}
                     className={`${s.button} ${s.green} `}
+                >{children}</button>
+            )
+        case 'white':
+            return (
+                <button
+                    style={style}
+                    onClick={callback}
+                    className={`${s.button} ${s.white} `}
                 >{children}</button>
             )
         case 'lil':

@@ -13,9 +13,10 @@ import {modalPath} from "../../../features/modals/toggleModal/model/enums/modalP
 
 interface BookReaderCardProps {
     book: IBook,
+    mode: 'cart' | 'mybooks',
 }
 
-const BookReaderCard:React.FC<BookReaderCardProps> = ({book}) => {
+const BookReaderCard:React.FC<BookReaderCardProps> = ({book, mode}) => {
 
     const dispatch = useDispatch();
 
@@ -45,10 +46,18 @@ const BookReaderCard:React.FC<BookReaderCardProps> = ({book}) => {
                     <div className={s.book_description}>
                         <h3>{book.title}</h3>
                         <p>{book.authors.map(author => author + " ")}</p>
-                        <span>{book.price}р</span>
+                        {mode === "cart" ? <span>{book.price}р</span> : ""}
+                        <br/>
+                        {
+                            mode === 'mybooks' ?
+                                <Link to={"/book/" + book.id}><Button type="lil">Читать</Button></Link> :
+                                <><Button type="lil" callback={() => payment()}>Купить</Button>
+                                    <Button type="lil" callback={(e) => toggleInCart(e)}>Убрать из корзины</Button></>
+                        }
                     </div>
-                    <Button type="lil" callback={() => payment()}>Купить</Button>
-                    <Button type="lil" callback={(e) => toggleInCart(e)}>Убрать из корзины</Button>
+
+
+
 
                 </Col>
             </Row>

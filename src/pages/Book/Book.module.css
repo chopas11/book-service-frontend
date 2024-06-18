@@ -1,0 +1,63 @@
+
+.header {
+    /*height: 50px;*/
+    /*box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);*/
+    /*margin-bottom: 10px;*/
+}
+
+.header h3 {
+    color: var(--white-color);
+}
+
+.content {
+    margin: 10px 0;
+    /*height: calc(100vh - 400px);*/
+
+}
+
+.wrapper-reader {
+    /*column-count: 1;*/
+    /*columns-gap: 1em;*/
+    height: 100px;
+
+    /*height: 100%;*/
+    /*overflow-y: scroll;*/
+    color: var(--white-color);
+    background: var(--background-color);
+    /*border: 1px solid black;*/
+}
+
+.wrapper-reader a, .wrapper-reader h1 {
+    color: var(--white-color);
+}
+
+.wrapper-reader-padding {
+    padding: 0 50px;
+}
+
+.wrapper-reader div {
+    /* Число колонок (1, 2) */
+    /*column-count: 2;*/
+    /* Шрифт   */
+    /* Размерность шрифта   */
+    /* Жирность шрифта   */
+
+}
+
+.slider {
+    position: relative;
+}
+
+.slider span {
+    color: var(--white-color);
+    position: absolute;
+    top: -30px;
+}
+
+.slider span:first-child {
+    left: 0;
+}
+
+.slider span:last-child {
+    right: 0;
+}

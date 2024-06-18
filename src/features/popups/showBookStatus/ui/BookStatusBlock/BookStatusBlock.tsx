@@ -12,8 +12,8 @@ const BookStatusBlock: React.FC<BookStatusBlockProps> = ({step}) => {
         <div className={s.status}>
             <ul>
                 <li className={`${step === 1 ? s.step1 : ""}`}>Ожидает оплаты</li>
-                <li className={`${step === 2 ? s.step2 : ""}`}>В модерации</li>
-                <li className={`${step === 3 ? s.step2 : ""}`}>Обработка</li>
+                <li className={`${step === 2 ? s.step2 : ""}`}>Обработка</li>
+                <li className={`${step === 3 ? s.step2 : ""}`}>В модерации</li>
                 <li className={`${step === 4 ? s.step4 : ""}`}>Опубликована</li>
             </ul>
         </div>

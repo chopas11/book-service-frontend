@@ -17,7 +17,9 @@ const MyBooks: React.FC = () => {
 
     return (
         <>
-            <h2 className="header_center">Мои книги</h2>
+            {role === "author" ? <h2 className="header_center">Мои публикации</h2> :
+                <h2 className="header_center">Мои книги</h2>}
+
             {
                 role === "author" ?
                     orders.length > 0 ?
@@ -25,7 +27,7 @@ const MyBooks: React.FC = () => {
                             return <MyBookWidget order={order} />
                         }) : <h2> У вас еще ничего нет(</h2>
                     :
-                    <BookReaderList books={myBooks} />
+                    <BookReaderList books={myBooks} mode={'mybooks'} />
             }
 
         </>

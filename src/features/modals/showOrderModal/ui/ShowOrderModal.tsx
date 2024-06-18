@@ -29,7 +29,7 @@ const ShowOrderModal:React.FC = () => {
             </MyBookCard>
             <Hint text="Теперь вам надо оплатить выбранные услуги в разделе «Мои книги» в течение часа"
                   textSize="12px" textColor="var(--white-color)" /><br/>
-            <Button type='lil' callback={() => goToMyBooks()} isDark={false} paddingX="full">Перейти в «Мои книги»</Button>
+            <Button type='primary' callback={() => goToMyBooks()} isDark={false} paddingX="full">Перейти в «Мои книги»</Button>
         </div>
     );
 };

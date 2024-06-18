@@ -18,7 +18,7 @@ const Cart:React.FC = () => {
     return (
         <div>
             <h2 className="header_center">Корзина</h2>
-            <BookReaderList books={cartBooks}/>
+            <BookReaderList books={cartBooks} mode={'cart'}/>
             <div className="button_center desktop_visibility">
                 <Button type='page' size='xl' paddingX='80px' callback={() => payment()}
                 >Оформить заказ</Button>
