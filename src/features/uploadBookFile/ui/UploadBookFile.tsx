@@ -16,10 +16,14 @@ const UploadBookFile: React.FC = () => {
 
     return (
         <>
-            <Col xl={{span: 22}}>
+            <Col xl={{span: 6}}>
                 <InputWrapper label="Загрузите файл книги" >
                     <InputFile callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadFileAction(e.currentTarget.files[0]))} />
                 </InputWrapper>
+            </Col>
+            <Col xl={{span: 16}}>
+                <p>В формате DOCX, FB2, PDF</p>
+                <p>Объем файла до 140 мб</p>
             </Col>
             <Col xl={{span: 2}}></Col>
             <Col xl={{span: 9}}>

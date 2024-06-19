@@ -42,8 +42,26 @@ html {
     padding: 0;
   }
 
+  body {
+    height: 100vh;
+  }
+
+
   .wrapper {
     /*margin: 0 0 110px 0;*/
+    height: 100vh;
+  }
+
+  .container {
+    height: 100vh;
+  }
+
+  .wrap {
+    min-height: 100%;
+  }
+
+  .main {
+    padding-bottom: 180px;
   }
 
   h1, h2, h3, h4 {

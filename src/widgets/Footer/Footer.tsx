@@ -5,12 +5,6 @@ import Logo from "../../shared/ui/Logo/Logo";
 import {Icon} from "@iconify/react";
 import React, {useEffect} from "react";
 import {Link, useLocation} from "react-router-dom";
-import {Col, Row} from "antd";
-import ProfileIcon from "../../shared/assets/IconPack/ProfileIcon/ProfileIcon.tsx";
-import HomeIcon from "../../shared/assets/IconPack/HomeIcon/HomeIcon.tsx";
-import CatalogIcon from "../../shared/assets/IconPack/CatalogIcon/CatalogIcon.tsx";
-import CartIcon from "../../shared/assets/IconPack/CartIcon/CartIcon.tsx";
-import PublicationIcon from "../../shared/assets/IconPack/PublicationIcon/PublicationIcon.tsx";
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 
 const Footer: React.FC = () => {

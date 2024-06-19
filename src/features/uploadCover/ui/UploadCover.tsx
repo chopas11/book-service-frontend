@@ -18,12 +18,16 @@ const UploadCover: React.FC = () => {
 
     return (
         <>
-            <Col xl={{span: 22}}>
-                <InputWrapper label="Загрузите обложку книги в PDF, JPEG, JPG" >
+            <Col xl={{span: 8}}>
+                <InputWrapper label="Загрузите обложку книги" >
                     <InputFile callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(uploadCoverAction(e.currentTarget.files[0]))} />
                     <Button callback={() => dispatch(toggle({path: modalPath.COVER_VIEWER}))} isDark={false}>Предпросмотр</Button>
                     {/*{cover ? <Button type='accent' size='xs'>{cover.name}</Button> : ""}*/}
                 </InputWrapper>
+            </Col>
+            <Col xl={{span: 14}}>
+                <p>JPG PNG, He менее 500x625 px</p>
+                <p>Объем файла до 40 мб</p>
             </Col>
             <Col xl={{span: 2}}></Col>
             <Col xl={{span: 9}}>

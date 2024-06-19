@@ -1,6 +1,9 @@
 
 .footer {
-    margin-top: 150px;
+    /*margin-top: 150px;*/
+    margin-top: -140px;
+    /*Минус Высота футера*/
+    height: 100px;
     background: var(--windows-color);
     color: var(--white-color);
     display: flex;

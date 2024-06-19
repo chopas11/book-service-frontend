@@ -57,10 +57,14 @@ const Layout: React.FC = () => {
     return (
         <div className="wrapper">
             <Modal />
-            <Row>
+            <Row className="container">
                 <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
-                    <Header/>
-                    <AppRouter/>
+                    <div className="wrap">
+                        <Header/>
+                        <div className="main">
+                            <AppRouter/>
+                        </div>
+                    </div>
                     <Footer/>
                 </Col>
             </Row>

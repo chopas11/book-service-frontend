@@ -117,7 +117,7 @@ const Book = () => {
                     <Col md={{span: 4}}><Link to={"/mybooks/"}><Button type="white">К моим книгам</Button></Link></Col>
                     <Col md={{span: 16}}>
                         <div className='center'>
-                            <h2>Заголовок книги</h2>
+                            <h2>МОБИ-ДИК</h2>
                             {/*<h3>Глава 2</h3>*/}
                         </div>
                     </Col>
