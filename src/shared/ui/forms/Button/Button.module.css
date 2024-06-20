@@ -8,7 +8,7 @@
     border-radius: 50px;
     border: 0;
     cursor: pointer;
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
 .button:hover {

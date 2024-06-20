@@ -20,6 +20,11 @@
     /*border: 1px solid var(--text-color);*/
 }
 
+.page {
+    background: var(--dark-color);
+    color: var(--theme-color);
+}
+
 .input:focus {
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
 }

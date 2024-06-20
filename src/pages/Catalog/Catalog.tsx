@@ -19,7 +19,7 @@ const Catalog:React.FC = () => {
             <h2 className="header_center">Каталог</h2>
             <Row>
                 <Col xl={{span: 17}}>
-                    {/*<Input theme="dark" />*/}
+                    <Input theme="page" placeholder={"Поиск..."} />
                 </Col>
                 <Col xl={{span: 7}}>
                     <TogglePopup feature={<p>Жанр</p>}>
