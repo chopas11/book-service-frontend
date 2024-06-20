@@ -32,13 +32,13 @@ const BooksWidget:React.FC<BooksWidgetProps> = (
                         </Col> : ""
                 }
                 {
-                    books.map(book => {
+                    books.length > 0 ? books.map(book => {
                         return (
                             <Col xxl={{span: 6}} xs={{span: 12}} lg={{span: 8}}>
                                 <BookCard book={book}/>
                             </Col>
                         )
-                    })
+                    }) : <><p style={{color: 'white', marginTop: '10px'}}>Ничего не найдено</p></>
                 }
             </Row>
         </div>
