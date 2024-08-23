@@ -53,7 +53,7 @@ const HowToAuthorWidget = () => {
         <div className={s.howToAuthorWidget}>
             <h2>
                 {
-                    role === 'author' ?
+                    role === 'guest' ?
                         "Как стать автором?" :
                         "Вы можете стать автором"
                 }
@@ -61,7 +61,7 @@ const HowToAuthorWidget = () => {
             <div className={s.steps}>
                 <Row gutter={[12, 12]}>
                     {
-                        role === 'author' ?
+                        role === 'guest' ?
                             stepsAuthor.map(item => {
                                 return (
                                     <Col xl={{span: 8}}>
@@ -79,20 +79,6 @@ const HowToAuthorWidget = () => {
 
                     }
                 </Row>
-            </div>
-            <div className="button_center desktop_visibility">
-                <Link to="/publish">
-                    <Button type='page' size='xl' paddingX='80px'>
-                        Стать автором
-                    </Button>
-                </Link>
-            </div>
-            <div className="button_center mobile_visibility">
-                <Link to="/publish">
-                    <Button type='page'  size='lg' paddingX='full'>
-                        Стать автором
-                    </Button>
-                </Link>
             </div>
         </div>
     );

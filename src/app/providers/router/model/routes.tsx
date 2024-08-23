@@ -12,6 +12,7 @@ import Catalog from "../../../../pages/Catalog/Catalog.tsx";
 import Book from "../../../../pages/Book/Book.tsx";
 import Cart from "../../../../pages/Cart/Cart.tsx";
 import Profile from "../../../../pages/Profile/Profile.tsx";
+import PrivacyPolicy from "../../../../pages/PrivacyPolicy/PrivacyPolicy.tsx";
 
 
 export type AppRouterProps = RouteProps & {
@@ -94,6 +95,12 @@ export const routes: AppRouterProps[] = [
         element: <Cart />,
         authOnly: true,
         role: RoleTypes.READER_ROLE
+    },
+    {
+        path: "/privacypolicy",
+        element: <PrivacyPolicy />,
+        authOnly: false,
+        role: RoleTypes.ALL_ROLE
     },
     {
         path:  "*",

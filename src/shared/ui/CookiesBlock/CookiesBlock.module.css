@@ -1,0 +1,38 @@
+
+.cookies_block {
+    padding: 40px 80px 40px 80px;
+    background: rgba(20, 27, 21, 0.9);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 150px;
+    z-index: 999;
+    /*position: relative;*/
+    /*filter: blur(1px);*/
+}
+
+.cookies_block h3 {
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.cookies_block p {
+    color: var(--white-color);
+    line-height: 1.5;
+    padding-bottom: 5px;
+}
+
+.cookies_block_buttons {
+    height: 100%;
+    display: flex;
+    /*justify-content: center; !* Центрирование по горизонтали *!*/
+    align-items: center; /* Центрирование по вертикали */
+}
+
+@media screen and (max-width: 992px) {
+    .cookies_block {
+        padding: 20px;
+        width: 95%;
+        height: 300px;
+    }
+}

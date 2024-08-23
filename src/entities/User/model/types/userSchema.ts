@@ -12,7 +12,7 @@ export interface User {
     account_type?: number,
 }
 
-export type UserRole = 'author' | 'reader' | 'all'
+export type UserRole = 'author' | 'reader' | 'all' | 'guest'
 
 export interface UserSchema {
     user?: User,

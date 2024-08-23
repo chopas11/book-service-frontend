@@ -7,16 +7,17 @@ interface ServicesListProps {
     services: IService[],
     step: number,
     isActive: boolean,
+    span: number,
 }
 
-const ServicesList: React.FC<ServicesListProps> = ({services, isActive, step}) => {
+const ServicesList: React.FC<ServicesListProps> = ({services, isActive, step, span = 6}) => {
     return (
         <>
             {
                 services.map(service => {
-                    if (service.step === step)
+                    // if (service.step === step)
                         return (
-                            <Col xl={{ span: 6 }} >
+                            <Col xl={{ span }} >
                                 <ServiceCard
                                     key={service.id}
                                     service={service}

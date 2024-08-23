@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React from 'react';
 
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
@@ -15,21 +15,16 @@ import UpdateDescription from "../../features/updateDescription/ui/updateDescrip
 import AddAuthors from "../../features/addAuthors/ui/AddAuthors.tsx";
 import UpdateTitle from "../../features/updateTitle/ui/UpdateTitle.tsx";
 import {services} from "../../entities/Service/model/mocks/services.ts"
+import {usePageName} from "../../shared/hooks/usePageName.ts";
+import {usePages} from "../../shared/hooks/usePages.ts";
 
 
 const Publication: React.FC = () => {
 
-    //Pages of form
-    const[publishPage, setPublishPage] = useState(1);
+    usePageName('Публикация');
+    const {currentPage, nextPage, prevPage} = usePages(6);
 
-    // Временно отключим на время разработки
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0)
-    }, [publishPage]);
 
-    useEffect(() => {
-        document.title = 'Публикация';
-    }, []);
 
     return (
         <>
@@ -37,13 +32,13 @@ const Publication: React.FC = () => {
             <WelcomeWidget title="Публикация книги">
                 <Hint text="Пройдитесь по всем этапам, следуйте рекомендациям и опубликуйте книгу!" textSize="16px" textColor="#121212" />
             </WelcomeWidget>
-            {publishPage === 2 ?
+            {currentPage === 2 ?
                 <>
                     <ChooseTariff/>
                     <PublishBook/>
                     <div className="button_center">
                         <Button type='page' size='xl' paddingX='80px'
-                                callback={() => setPublishPage(1)}>Вернуться Назад</Button>
+                                callback={() => prevPage()}>Вернуться Назад</Button>
                     </div>
                 </>
                 :
@@ -71,14 +66,14 @@ const Publication: React.FC = () => {
                         <SelectAge />
                     </PublishStep>
                     <div className="button_center">
-                        <Button type='page' size='xl' paddingX='80px' callback={() => setPublishPage(2)}>Продолжить</Button>
+                        <Button type='page' size='xl' paddingX='80px' callback={() => nextPage()}>Продолжить</Button>
                     </div>
                 </>
             }
         </div>
             <div className="mobile_visibility">
             {
-                publishPage === 1 ?
+                currentPage === 1 ?
                     <>
                         <div className="header_center">
                             <h2>Общая информация</h2>
@@ -89,11 +84,11 @@ const Publication: React.FC = () => {
                                 </PublishStep>
                                 <ServicesWidget services={services} isActive={true} step={1} />
                                 <div className="button_center">
-                                    <Button type='page' size='lg' paddingX='full' callback={() => setPublishPage(2)}>Продолжить</Button>
+                                    <Button type='page' size='lg' paddingX='full' callback={() => nextPage()}>Продолжить</Button>
                                 </div>
 
                     </> :
-                    publishPage === 2 ?
+                    currentPage === 2 ?
                         <>
                             <div className="header_center">
                                 <h2>Описание книги</h2>
@@ -104,11 +99,11 @@ const Publication: React.FC = () => {
                             <ServicesWidget services={services} isActive={true} step={2}/>
                             <div className="button_center">
                                 <Button type='page' size='lg' paddingX='full'
-                                        callback={() => setPublishPage(3)}>Продолжить</Button>
+                                        callback={() => nextPage()}>Продолжить</Button>
                             </div>
                         </>
                         :
-                        publishPage === 3 ?
+                        currentPage === 3 ?
                             <>
                                 <div className="header_center">
                                     <h2>Файл книги</h2>
@@ -119,10 +114,10 @@ const Publication: React.FC = () => {
                                 <ServicesWidget services={services} isActive={true} step={3}/>
                                 <div className="button_center">
                                     <Button type='page' size='lg' paddingX='full'
-                                            callback={() => setPublishPage(4)}>Продолжить</Button>
+                                            callback={() => nextPage()}>Продолжить</Button>
                                 </div>
                             </> :
-                            publishPage === 4 ?
+                            currentPage === 4 ?
                                 <>
                                     <div className="header_center">
                                         <h2>Обложка книги</h2>
@@ -133,10 +128,10 @@ const Publication: React.FC = () => {
                                     <ServicesWidget services={services} isActive={true} step={4}/>
                                     <div className="button_center">
                                         <Button type='page' size='lg' paddingX='full'
-                                                callback={() => setPublishPage(5)}>Продолжить</Button>
+                                                callback={() => nextPage()}>Продолжить</Button>
                                     </div>
                                 </> :
-                                publishPage === 5 ?
+                                currentPage === 5 ?
                                     <>
                                         <div className="header_center">
                                             <h2>Возрастное ограничение и жанр</h2>
@@ -147,7 +142,7 @@ const Publication: React.FC = () => {
                                         </PublishStep>
                                         <div className="button_center">
                                             <Button type='page' size='lg' paddingX='full'
-                                                    callback={() => setPublishPage(6)}>Продолжить</Button>
+                                                    callback={() => nextPage()}>Продолжить</Button>
                                         </div>
                                     </>
                                     :

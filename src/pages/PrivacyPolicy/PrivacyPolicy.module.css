@@ -1,0 +1,8 @@
+
+.privacypolicy {
+    line-height: 1.75;
+}
+
+.privacypolicy h1, .privacypolicy h2, .privacypolicy h3, .privacypolicy p, .privacypolicy ul li {
+    color: var(--white-color);
+}

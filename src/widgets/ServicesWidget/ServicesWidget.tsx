@@ -8,7 +8,7 @@ import {IService} from "../../entities/Service/model/types/ServiceSchema.ts";
 interface ServicesWidgetProps {
     services: IService[],
     isActive: boolean,
-    step: number,
+    step?: number,
 }
 
 const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step}) => {
@@ -68,10 +68,11 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
             <div className={s.servicesWidget}>
                 <br/><br/>
                 <Row gutter={[12, 12]}>
-                    <Col xl={{span: 6}} lg={{span: 8}} md={{span: 12}}>
+                    <Col xl={{span: 4}} lg={{span: 8}} md={{span: 12}}>
                         <h2>Услуги</h2>
                     </Col>
-                    <ServicesList services={services} isActive={false} step={1}/>
+                    <ServicesList services={services.slice(0, 2)} isActive={false} span={8} />
+                    <ServicesList services={services.slice(2)} isActive={false} />
                 </Row>
             </div>
         );

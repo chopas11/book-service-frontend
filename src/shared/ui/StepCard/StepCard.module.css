@@ -2,6 +2,7 @@
 .step {
     display: flex;
     gap: var(--default-gap);
+    height: 100%;
     /*display: inline-block;*/
 }
 
@@ -10,7 +11,7 @@
 }
 
 .step_text {
-    background: var(--lil-color);
+    background: var(--blue-color);
     border-radius: 32px;
     padding: 25px 40px;
 

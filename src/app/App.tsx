@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './styles/App.css'
 import AppRouter from "./providers/router/ui/AppRouter.tsx";
 import {store} from "./providers/store";
@@ -12,6 +12,8 @@ import Modal from "../shared/ui/Modal/Modal.tsx";
 import {checkAccessToken, getAccessToken} from "../entities/User/model/services/userService.ts";
 import {USER_LOCALSTORAGE_ACCESS_TOKEN_KEY} from "../shared/const/localStorageConsts.ts";
 import defaults from "./defaults.json"
+import CookiesBlock from "../shared/ui/CookiesBlock/CookiesBlock.tsx";
+import Loader from "../shared/ui/Loader/Loader.tsx";
 
 
 const App: React.FC = () => {
@@ -34,6 +36,7 @@ const Layout: React.FC = () => {
     // получаем параметры строки запроса
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
 
     const dataFetch = useRef(false)
 
@@ -54,24 +57,37 @@ const Layout: React.FC = () => {
             navigate('/');
         }
 
+        return () => {
+            setLoading(false);
+        }
+
 
     }, [searchParams]);
 
+
+
+
     return (
-        <div className="wrapper">
-            <Modal />
-            <Row className="container">
-                <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
-                    <div className="wrap">
-                        <Header/>
-                        <div className="main">
-                            <AppRouter/>
-                        </div>
-                    </div>
-                    <Footer/>
-                </Col>
-            </Row>
-        </div>
+                <div className="wrapper">
+                    {
+                        loading ? <Loader /> :
+                            <>
+                                <Modal/>
+                                {localStorage.getItem('acceptCookies') !== 'true' ? <CookiesBlock/> : ""}
+                                <Row className="container">
+                                    <Col xxl={{span: 18, offset: 3}} xl={{span: 20, offset: 2}} xs={{span: 22, offset: 1}}>
+                                        <div className="wrap">
+                                            <Header/>
+                                            <div className="main">
+                                                <AppRouter/>
+                                            </div>
+                                        </div>
+                                        <Footer/>
+                                    </Col>
+                                </Row>
+                            </>
+                    }
+                </div>
     )
 }
 

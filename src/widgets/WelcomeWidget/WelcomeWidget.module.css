@@ -1,9 +1,10 @@
 
 .welcomeBlock {
-    background: var(--lil-color);
+    background: url("../../shared/assets/images/main2.png");
+    background-size: cover;
     border-radius: 50px;
     margin-top: 40px;
-    padding: 100px 20px;
+    padding: 80px 20px;
 }
 
 .welcomeBlock_container {
