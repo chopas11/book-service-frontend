@@ -11,6 +11,7 @@ import {useTypedSelector} from "../shared/hooks/useTypedSelector.ts";
 import Modal from "../shared/ui/Modal/Modal.tsx";
 import {checkAccessToken, getAccessToken} from "../entities/User/model/services/userService.ts";
 import {USER_LOCALSTORAGE_ACCESS_TOKEN_KEY} from "../shared/const/localStorageConsts.ts";
+import defaults from "./defaults.json"
 
 
 const App: React.FC = () => {
@@ -37,6 +38,8 @@ const Layout: React.FC = () => {
     const dataFetch = useRef(false)
 
     useEffect(() => {
+
+        console.log("Version:", defaults.version);
 
         if (dataFetch.current)
             return
