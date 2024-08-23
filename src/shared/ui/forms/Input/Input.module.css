@@ -1,0 +1,30 @@
+
+
+.input {
+    outline: none;
+    height: 42px;
+    width: calc(100% - 25px);
+    border: 0;
+    padding-left: 25px;
+    border-radius: 50px;
+}
+
+.dark {
+    background: var(--background-color);
+    color: var(--theme-color);
+}
+
+.light {
+    background: var(--white-color);
+    color: var(--text-color);
+    /*border: 1px solid var(--text-color);*/
+}
+
+.page {
+    background: var(--dark-color);
+    color: var(--theme-color);
+}
+
+.input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}

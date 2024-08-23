@@ -1,0 +1,19 @@
+
+.numberBlock {
+    /*border: 1px solid var(--text-color);*/
+    display: block;
+    font-size: 48px;
+    font-weight: 600;
+    flex-basis: 275px;
+    width: 78px;
+    height: 78px;
+    text-align: center;
+    border-radius: 50px;
+    background: var(--green-color);
+    color: var(--text-color);
+}
+
+.inverted {
+    background: var(--background-color);
+    color: var(--green-color);
+}

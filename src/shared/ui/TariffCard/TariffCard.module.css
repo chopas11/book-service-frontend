@@ -1,0 +1,77 @@
+
+.tariff {
+    /*background: var(--green-color);*/
+    padding: 24px;
+    color: white;
+    border-radius: 48px;
+}
+
+.chosen {
+    background: #25323a;
+    transition: all 0.2s ease-out;
+}
+
+.tariff_box {
+    position: relative;
+    background: var(--blue-color);
+    border-radius: 40px;
+    /*text-align: center;*/
+    padding: 30px;
+}
+
+.tariff_box h3 {
+    font-family: var(--headers-font);
+    font-size: 30px;
+}
+
+.tariff_box p {
+    margin: 20px 0;
+    /*line-height: 3;*/
+}
+
+.tariff_box p span {
+    float: right;
+    height: 20px;
+    line-height: 1;
+    /*margin-left: 10px;*/
+}
+
+.tariff_box_center {
+    position: relative;
+    padding: 50px 50% 20px 0;
+    /*width: 100%;*/
+}
+
+.tariff_box_center p {
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.tariff_box_center span {
+    font-family: GolosText;
+    font-size: 32px;
+    color: var(--black-color);
+    font-weight: 700;
+}
+
+.tariff_conditions {
+    padding: 24px 0;
+    /*text-align: center;*/
+}
+
+.tariff_conditions ul li {
+    font-size: 15px;
+    font-family: var(--headers-font);
+    font-weight: 300;
+    color: var(--black-color);
+}
+
+.tariff_conditions ul li::marker {
+    color: var(--black-color);
+    font-size: 2em;
+}
+
+.tariff_conditions_center {
+    padding-top: 35px;
+    text-align: center;
+}

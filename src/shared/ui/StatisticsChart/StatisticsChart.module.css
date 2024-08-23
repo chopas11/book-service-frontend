@@ -1,0 +1,24 @@
+
+.statistics_graph {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #4c5073;
+    border-radius: 24px;
+    /*padding: 0 20px 10px 0;*/
+}
+
+.statistics_graph p {
+    margin: 20px;
+    font-size: 16px;
+}
+
+.range {
+    min-width: 100px;
+}
+
+.range ul {
+    list-style: none;
+    line-height: 2;
+    color: var(--white-color);
+    cursor: pointer;
+}

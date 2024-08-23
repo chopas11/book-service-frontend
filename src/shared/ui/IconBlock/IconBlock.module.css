@@ -1,0 +1,8 @@
+
+.icon {
+    position: relative;
+    display: flex;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}

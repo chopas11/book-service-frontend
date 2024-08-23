@@ -1,0 +1,16 @@
+/*Logo.tsx*/
+
+.logo {
+    font-family: var(--text-font);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--theme-color);
+}
+
+/*.logo_dark {*/
+/*    color: #000000;*/
+/*}*/
+
+/*.logo_light {*/
+/*    color: var(--accent-color);*/
+/*}*/

@@ -1,0 +1,146 @@
+
+.button {
+    position: relative;
+    font-family: var(--text-font);
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.button:hover {
+    transition: all 0.2s;
+}
+
+.button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
+/* Primary */
+.primary {
+    background: var(--background-color);
+    color: var(--white-color);
+}
+.primary:hover {
+    background: var(--dark-color);
+    color: var(--accent-color);
+}
+.primary:active {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Page */
+.page {
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+.page:hover {
+    background: #3d5260;
+    color: var(--accent-color);
+}
+.page:active {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* green */
+.green {
+    background: var(--green-color);
+    color: var(--text-color);
+}
+.green:hover {
+    background: #40f494;
+    color: var(--text-color);
+}
+.green:active {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+
+/* white */
+.white {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+.white:hover {
+    background: #cccccc;
+    color: var(--text-color);
+}
+.white:active {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+
+/* lil */
+.lil {
+    background: var(--lil-color);
+    color: var(--text-color);
+}
+.lil:hover {
+    background: #BEA8FF;
+    color: var(--text-color);
+}
+.lil:active {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+
+/* accent */
+.accent {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+.accent:hover {
+    background: #D6FF91;
+    color: var(--text-color);
+}
+.accent:active {
+    background: var(--white-color);
+    color: var(--text-color);
+}
+
+/* borders */
+.borders {
+    background: transparent;
+    border: 1px solid var(--white-color);
+    color: var(--white-color);
+}
+.borders:hover {
+    background: var(--dark-color);
+    border: 1px solid var(--dark-color);
+    color: var(--accent-color);
+}
+.borders:active {
+    background: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    color: var(--text-color);
+}
+
+/* transparentPrimary */
+.transparentPrimary {
+    background: transparent;
+    color: var(--text-color);
+}
+.transparentPrimary:hover {
+    color: var(--dark-color);
+}
+.transparentPrimary:active {
+    color: var(--white-color);
+}
+
+/* transparentAccent */
+.transparentAccent {
+    background: transparent;
+    color: var(--accent-color);
+}
+.transparentAccent:hover {
+    color: #D6FF91;
+}
+.transparentAccent:active {
+    color: var(--white-color);
+}
+

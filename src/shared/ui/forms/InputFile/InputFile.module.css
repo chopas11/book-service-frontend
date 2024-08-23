@@ -1,0 +1,42 @@
+
+.input_file {
+    position: relative;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.input_file_btn {
+    font-family: var(--text-font);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 50px;
+    /*outline: none;*/
+    border: 0;
+    cursor: pointer;
+    /*background: var(--background-color);*/
+    color: var(--theme-color);
+}
+
+.input_file_btn:hover {
+    color: var(--accent-color);
+}
+
+.input_file_btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
+
+.input_file_btn:active {
+    background: var(--accent-color);
+    color: var(--black-color);
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+}
+
+.input_file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}

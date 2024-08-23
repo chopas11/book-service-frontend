@@ -1,0 +1,43 @@
+
+.profile {
+    margin-top: 20px;
+
+}
+
+.profile_navbar {
+    display: flex;
+    grid-gap: 10px;
+}
+
+.profile_navbar div p {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile_navbar div span {
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.profile_list {
+    margin-top: 20px;
+}
+
+.profile_list li {
+    padding: 3px 0;
+}
+
+.profile_list li:last-child {
+    padding: 10px 0;
+}
+
+
+.profile_edit p {
+    font-size: 18px;
+    color: var(--white-color);
+}
+
+.profile_changeRole {
+    margin-top: 60px;
+}

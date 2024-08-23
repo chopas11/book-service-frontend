@@ -1,0 +1,21 @@
+
+.spoiler {
+    background: var(--windows-color);
+    /*height: 62px;*/
+    border-radius: 50px;
+    padding: 20px 30px;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.spoiler p {
+    color: var(--white-color);
+    font-size: 20px;
+    display: inline;
+}
+
+.spoiler .spoilerButton {
+    float: right;
+    position: relative;
+}
+

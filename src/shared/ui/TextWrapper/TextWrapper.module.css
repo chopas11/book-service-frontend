@@ -1,0 +1,8 @@
+
+.textWrapper {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 10px 12px;
+    /*margin: 0 10px;*/
+    font-weight: 500;
+}

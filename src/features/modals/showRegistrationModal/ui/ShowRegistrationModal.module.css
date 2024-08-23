@@ -1,0 +1,34 @@
+
+.regModal {
+    padding: 0 60px;
+    text-align: center;
+}
+
+.regModal p {
+    color: var(--white-color);
+}
+
+.regModal span {
+    color: var(--white-color);
+}
+
+.regModal > ul {
+    list-style: none;
+}
+
+.regModal > ul > li {
+    padding: 4px 0;
+}
+
+.regModal > ul > li:last-child {
+    padding-bottom: 20px;
+}
+
+
+
+@media screen and (max-width: 576px)  {
+    .regModal {
+        padding: 10px 0 0 0;
+    }
+
+}

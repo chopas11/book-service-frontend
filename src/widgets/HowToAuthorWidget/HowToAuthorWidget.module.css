@@ -1,0 +1,17 @@
+
+.howToAuthorWidget {
+    margin-top: 150px;
+}
+
+.steps {
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 576px) {
+    .howToAuthorWidget {
+        margin-top: 30px;
+    }
+}
+
+
+

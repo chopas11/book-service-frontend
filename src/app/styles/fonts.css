@@ -1,0 +1,74 @@
+/*Fonts*/
+
+/*Geologica*/
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 100;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-Thin.ttf");
+}
+
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../shared/assets/fonts/Geologica/Geologica-Bold.ttf");
+}
+
+/*GolosText*/
+
+@font-face {
+    font-family: 'GolosText';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../shared/assets/fonts/GolosText/GolosText-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'GolosText';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../shared/assets/fonts/GolosText/GolosText-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'GolosText';
+    font-style: normal;
+    font-weight: 600;
+    src: url("../../shared/assets/fonts/GolosText/GolosText-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: 'GolosText';
+    font-style: normal;
+    font-weight: 700;
+    src: url("../../shared/assets/fonts/GolosText/GolosText-Bold.ttf");
+}

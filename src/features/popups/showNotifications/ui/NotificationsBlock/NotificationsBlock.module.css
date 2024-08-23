@@ -1,0 +1,54 @@
+
+.notifications {
+    width: 500px;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.notification {
+    position: relative;
+    background: var(--accent-color);
+    padding: 20px;
+    border-radius: 32px;
+    cursor: pointer;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.isRead::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: var(--orange-color);
+    border-radius: 10px;
+}
+
+.notification_trash {
+    float: right;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.notification_text span {
+    font-size: 10px;
+}
+
+.noNotifications {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.noNotifications p {
+    color: #b3b7ba;
+    font-size: 20px;
+    font-weight: 500;
+}
