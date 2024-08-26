@@ -7,7 +7,7 @@ interface BookNameCardProps {
     bgColor?: string
 }
 
-const BookNameCard: React.FC<BookNameCardProps> = ({title, authors, bgColor = 'blue'}) => {
+const BookNameCard: React.FC<BookNameCardProps> = ({title, authors, bgColor = 'blocks-blue-active'}) => {
     return (
         <div
             style={{

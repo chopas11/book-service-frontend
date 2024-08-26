@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import s from "./NotificationsBlock.module.css"
-import {IconBlock} from "../../../../../shared/ui";
+import {Button, IconBlock} from "../../../../../shared/ui";
 import TrashIcon from "../../../../../shared/assets/IconPack/TrashIcon/TrashIcon.tsx";
 import {useTypedSelector} from "../../../../../shared/hooks/useTypedSelector.ts";
 import {useDispatch} from "react-redux";
@@ -32,7 +32,8 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
 
             {notifications.length ?
                 <>
-                    <h3 className='white'>Уведомления</h3>
+                    <h3>Уведомления</h3>
+                    <br/>
                     {notifications.map(item => {
                                                   return (
                                                   <div
@@ -43,7 +44,7 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
                         onClick={() => deleteNotification(item)}
                         className={s.notification_trash}>
                         <IconBlock size="16px">
-                            <TrashIcon color="var(--black-color)"/>
+                            <TrashIcon color="var(--alternate-color)"/>
                         </IconBlock>
                     </div>
                     <div className={s.notification_text}>
@@ -53,6 +54,8 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
 
                     </div>
                     )})}
+                    <br/>
+                    <Button type='accent' size='lg' paddingX='full'>Очистить все</Button>
                 </>
                 :
                 <div className={s.noNotifications}><p>Новых уведомлений нет</p></div>

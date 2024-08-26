@@ -14,6 +14,6 @@
 }
 
 .inverted {
-    background: var(--background-color);
-    color: var(--green-color);
+    background: var(--blocks-input-color);
+    color: var(--alternate-color);
 }

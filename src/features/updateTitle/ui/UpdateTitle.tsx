@@ -16,7 +16,7 @@ const UpdateTitle: React.FC = () => {
     return (
         <Col xl={{span: 9}} xs={{span: 24}}>
             <InputWrapper label="Введите название книги">
-                <Input theme="dark" type="text" placeholder="Название" value={title} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updateTitleAction(e.currentTarget.value))} />
+                <Input theme="blocks" type="text" placeholder="Название" value={title} callback={(e: React.FormEvent<HTMLInputElement>) => dispatch(updateTitleAction(e.currentTarget.value))} />
             </InputWrapper>
         </Col>
     );

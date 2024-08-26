@@ -5,19 +5,16 @@ import StarIcon from "../../../assets/IconPack/StarIcon/StarIcon.tsx";
 
 interface HintProps {
     text: string,
-    textSize?: string,
-    textColor?: string,
-    starColor?: string,
 }
 
-const Hint: React.FC<HintProps> = ({text, textSize = "16px", textColor = "var(--text-color)", starColor = "var(--orange-color)"}) => {
+const Hint: React.FC<HintProps> = ({text}) => {
     return (
         <div className={s.starText}>
             <IconBlock size="40px">
-                <StarIcon color={starColor} />
+                <StarIcon />
             </IconBlock>
             <div>
-                <p style={{color: textColor}}>{text}</p>
+                <p>{text}</p>
             </div>
         </div>
     );

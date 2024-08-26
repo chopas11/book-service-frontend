@@ -126,7 +126,7 @@
     border-bottom-right-radius: 32px;
     height: calc(100% - 80px);
     width: 100%;
-    background: var(--lil-color);
+    background: var(--blocks-lil-color);
 }
 
 .profile_block_up > div {

@@ -1,5 +1,6 @@
 
 .icon {
+    padding: 10px;
     position: relative;
     display: flex;
     border-radius: 50px;

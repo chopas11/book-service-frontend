@@ -12,7 +12,7 @@ const ShowCart:React.FC = () => {
     return (
         <div className={s.cart}>
             <Link to="/cart">
-                <Button type='borders' size='lg' paddingX='10px'>
+                <Button type='primary' size='lg' paddingX='10px'>
                     <CartIcon/>
                 </Button>
                 <div className={`${cartBooks.length ? s.isCart : s.notCart}`}>

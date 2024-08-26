@@ -2,29 +2,29 @@
 
 .input {
     outline: none;
-    height: 42px;
+    /*height: 42px;*/
     width: calc(100% - 25px);
     border: 0;
     padding-left: 25px;
     border-radius: 50px;
 }
 
-.dark {
-    background: var(--background-color);
-    color: var(--theme-color);
+.primary {
+    box-shadow: var(--box-shadow);
+    background: var(--primary-color);
+    border: px solid var(--primary-color);
+    color: var(--alternate-color);
 }
 
-.light {
-    background: var(--white-color);
-    color: var(--text-color);
-    /*border: 1px solid var(--text-color);*/
+.blocks {
+    /*box-shadow: var(--box-shadow);*/
+    background: var(--blocks-input-color);
+    border: px solid var(--blocks-input-color);
+    color: var(--alternate-color);
 }
 
-.page {
-    background: var(--dark-color);
-    color: var(--theme-color);
-}
 
-.input:focus {
+
+    .input:focus {
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
 }

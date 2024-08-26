@@ -4,22 +4,23 @@
     margin-top: -140px;
     /*Минус Высота футера*/
     height: 100px;
-    background: var(--windows-color);
-    color: var(--white-color);
+    background: var(--page-color);
+    color: var(--alternate-color);
     display: flex;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
+    box-shadow: var(--page-box-shadow);
 }
 .footer div {
     text-align: center;
 }
 
-.footer div a {
-    color: var(--white-color);
-}
+/*.footer div a {*/
+/*    color: var(--white-color);*/
+/*}*/
 
 .footer div a:hover {
     color: var(--accent-color);

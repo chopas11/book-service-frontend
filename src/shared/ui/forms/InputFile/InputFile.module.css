@@ -8,18 +8,20 @@
 .input_file_btn {
     font-family: var(--text-font);
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     padding: 12px 20px;
     border-radius: 50px;
     /*outline: none;*/
     border: 0;
     cursor: pointer;
-    /*background: var(--background-color);*/
-    color: var(--theme-color);
+    background: var(--accent-color);
+    color: var(--primary-color);
 }
 
 .input_file_btn:hover {
-    color: var(--accent-color);
+    background: var(--accent-hover-color);
+    color: var(--primary-color);
+    transition: all 0.2s;
 }
 
 .input_file_btn:focus {
@@ -27,8 +29,8 @@
 }
 
 .input_file_btn:active {
-    background: var(--accent-color);
-    color: var(--black-color);
+    background: var(--primary-color);
+    color: var(--alternate-color);
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
 }
 

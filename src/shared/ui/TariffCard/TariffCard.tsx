@@ -25,16 +25,21 @@ const TariffCard: React.FC<TariffCardProps> = ({name, bookPrice, royalty, isChos
         <div className={`${s.tariff} ${isChosen ? s.chosen : ""}`}>
            <div className={s.tariff_box}>
                <h3>{name}</h3>
-               <p>Цена за книгу: <TextWrapper background={tariffColor} size='md' weight='bold'>{String(bookPrice)}р</TextWrapper></p>
-               <p>Роялти с каждой продажи: <TextWrapper background={tariffColor} size='md' weight='bold'>{String(royalty*100)}%</TextWrapper></p>
+               <div className={s.tariff_box_flex}>
+                   <div><p>Цена за книгу</p></div>
+                   <div><TextWrapper background={tariffColor} size='md' weight='bold'>{String(bookPrice)}р</TextWrapper></div>
+               </div>
+               <div className={s.tariff_box_flex}>
+                   <div><p>Роялти с каждой продажи:</p></div>
+                   <div><TextWrapper background={tariffColor} size='md' weight='bold'>{String(royalty*100)}%</TextWrapper></div>
+               </div>
                <div className={s.tariff_box_center}>
                    <span>{bookPrice*royalty}р</span>
                    <p>Прибыль с каждой продажи</p>
                </div>
            </div>
             <div className={s.tariff_conditions}>
-                <Hint text="Доход с каждой купленной книги сразу вам на карту, постоянная поддержка связи с автором, запрет на скриншоты текста книги"
-                      textSize="14px" textColor="#f0f0f0" starColor={tariffColor} />
+                <Hint text="Доход с каждой купленной книги сразу вам на карту, постоянная поддержка связи с автором, запрет на скриншоты текста книги"/>
             </div>
                 {/*<div className={s.tariff_conditions_center}>*/}
                     <Button type={color} callback={callback} paddingX="full">

@@ -38,11 +38,22 @@ const Layout: React.FC = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
 
+    // const getSystemTheme = () => {
+    //     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // };
+
+    // const [theme, setTheme] = useState(getSystemTheme());
+
     const dataFetch = useRef(false)
+
+    const {theme} = useTypedSelector(state => state.global)
 
     useEffect(() => {
 
         console.log("Version:", defaults.version);
+
+        document.documentElement.setAttribute('data-theme', theme);
+
 
         if (dataFetch.current)
             return
@@ -62,7 +73,7 @@ const Layout: React.FC = () => {
         }
 
 
-    }, [searchParams]);
+    }, [searchParams, theme]);
 
 
 

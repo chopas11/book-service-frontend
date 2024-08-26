@@ -26,11 +26,11 @@ const AddAuthors: React.FC = () => {
         <>
             <Col xl={{span: 9}} xs={{span: 24}}>
                 <InputWrapper label="Ваше авторское имя">
-                    <Input type="text" placeholder="Николай Гоголь" value={newAuthor} callback={(e: React.FormEvent<HTMLInputElement>) => setNewAuthor(e.currentTarget.value)}/>
+                    <Input theme="blocks" placeholder="Николай Гоголь" value={newAuthor} callback={(e: React.FormEvent<HTMLInputElement>) => setNewAuthor(e.currentTarget.value)}/>
                 </InputWrapper>
             </Col>
-            <Col xl={{span: 4}} style={{paddingTop: "12px"}}>
-                <Button callback={() => addNewAuthor()}>Добавить автора</Button>
+            <Col xl={{span: 4}} style={{paddingTop: "30px"}}>
+                <Button type="accent" callback={() => addNewAuthor()}>Добавить автора</Button>
             </Col>
             <Col xl={{span: 2}} xs={{span: 0}}></Col>
             <Col xl={{span: 9}} xs={{span: 24}} style={{paddingTop: "12px"}}></Col>

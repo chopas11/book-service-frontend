@@ -18,7 +18,7 @@ const NotificationsButton: React.FC<NotificationButtonProps> = ({callback}) => {
             className={`${isNotifications ? s.isNotifications : ""}`}
             onClick={callback}>
             {/*<IconBlock size="50px" border="1px solid var(--theme-color)">*/}
-            <Button type='borders' size='lg' paddingX='12.5px'>
+            <Button type='primary' size='lg' paddingX='12.5px'>
                 <BellIcon/>
             </Button>
 

@@ -12,7 +12,7 @@ const EditProfile: React.FC = () => {
             <h2 className="header_center">Настройка профиля</h2>
             {/**/}
             <div style={{display: 'flex', gap: "24px"}}>
-                <Block bgColor="var(--lil-color)" bdRadius="32px" padding="24px">
+                <Block bgColor="var(--blocks-lil-color)" bdRadius="32px" padding="24px">
                     <InputWrapper label="Добавьте фото профиля">
                         <div style={{display: 'flex', gap: "12px", alignItems: "end", padding: "0 40px 0 0"}}>
                             <img className={s.profile_avatar} src={avatar} alt="EditProfile"/>
@@ -20,7 +20,7 @@ const EditProfile: React.FC = () => {
                         </div>
                     </InputWrapper>
                 </Block>
-                <Block bgColor="var(--lil-color)" bdRadius="32px" padding="24px">
+                <Block bgColor="var(--blocks-lil-color)" bdRadius="32px" padding="24px">
                     <InputWrapper label="Ваша цель">
                         <Row gutter={[12, 12]}>
                             <Col><Button bdRadius="12px" size="md">Рисовать мангу</Button></Col>
@@ -48,22 +48,22 @@ const EditProfile: React.FC = () => {
                         <Row gutter={[12, 12]}>
                             <Col xl={{span: 6}}>
                                 <InputWrapper label="Фамилия">
-                                    <Input theme="dark" type="text" placeholder="Иванов" />
+                                    <Input theme="blocks" type="text" placeholder="Иванов" />
                                 </InputWrapper>
                             </Col>
                             <Col xl={{span: 6}}>
                                 <InputWrapper label="Имя">
-                                    <Input theme="dark" type="text" placeholder="Иван" />
+                                    <Input theme="blocks" type="text" placeholder="Иван" />
                                 </InputWrapper>
                             </Col>
                             <Col xl={{span: 6}}>
                                 <InputWrapper label="Отчетво">
-                                    <Input theme="dark" type="text" placeholder="Иванович" />
+                                    <Input theme="blocks" type="text" placeholder="Иванович" />
                                 </InputWrapper>
                             </Col>
                             <Col xl={{span: 6}}>
                                 <InputWrapper label="Автор">
-                                    <Input theme="dark" type="text" placeholder="Иванушка" />
+                                    <Input theme="blocks" type="text" placeholder="Иванушка" />
                                 </InputWrapper>
                             </Col>
                         </Row>

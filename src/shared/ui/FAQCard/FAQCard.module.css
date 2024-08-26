@@ -1,6 +1,6 @@
 
 .faqCard {
-    background: var(--lil-color);
+    background: var(--blocks-lil-color);
     border-radius: 32px;
     padding: 0 20px 20px 20px;
 }
@@ -11,4 +11,8 @@
     line-height: 2.5;
     gap: 10px;
     padding: 20px 0 0 0;
+}
+
+.faqCard_name svg {
+    color: var(--alternate-color);
 }

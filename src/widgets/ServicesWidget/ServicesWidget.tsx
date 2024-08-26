@@ -20,7 +20,7 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
                     <div className={s.servicesWidget}>
                         <Row gutter={[12, 12]}>
                             <Col xl={{ span: 6 }} >
-                                <Hint text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" textSize="15px" textColor="#f0f0f0"/>
+                                <Hint text="Если у вас нет идей, вы можете воспользововаться услугами нашего сервиса" />
                             </Col>
                             <Col xl={{ span: 2 }}></Col>
                             <ServicesList services={services} isActive={true} step={1} />
@@ -35,7 +35,7 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
                         <ServicesList services={services} isActive={true} step={2} />
                         <Col xl={{ span: 2 }}></Col>
                         <Col xl={{ span: 6 }}>
-                            <Hint text="Выберите услугу, которая сделает это за вас" textSize="15px" textColor="#f0f0f0" />
+                            <Hint text="Выберите услугу, которая сделает это за вас" />
                         </Col>
                     </Row>
                     </div>
@@ -45,7 +45,7 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
                     <div className={s.servicesWidget}>
                     <Row gutter={[12, 12]}>
                         <Col xl={{ span: 6 }}>
-                            <Hint text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" textSize="15px" textColor="#f0f0f0" />
+                            <Hint text="Можете доверить нам проверку правильности вашей книги на текстовые ошибки и вёрстку" />
                         </Col>
                         <ServicesList services={services} isActive={true} step={3} />
                     </Row>
@@ -58,7 +58,7 @@ const ServicesWidget: React.FC<ServicesWidgetProps> = ({services, isActive, step
                         <Col xl={{span: 4}}></Col>
                         <ServicesList services={services} isActive={true} step={4} />
                         <Col xl={{ span: 2 }}></Col>
-                        <Col xl={{ span: 6 }}><Hint text="Если у вас нет обложки, мы можем сделать это за вас" textSize="15px" textColor="#f0f0f0" /></Col>
+                        <Col xl={{ span: 6 }}><Hint text="Если у вас нет обложки, мы можем сделать это за вас" /></Col>
                     </Row>
                     </div>
                 )

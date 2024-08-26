@@ -8,8 +8,9 @@
 /*}*/
 .select {
     width: 100%;
-    background-color: var(--background-color);
-    color: white;
+    height: 42px;
+    background-color: var(--blocks-input-color);
+    color: var(--alternate-color);
     border: none;
     border-radius: 50px;
     padding: 10px;
@@ -20,8 +21,8 @@
 }
 
 .select option {
-    background-color: var(--background-color);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--alternate-color);
 }
 
 .select:focus {

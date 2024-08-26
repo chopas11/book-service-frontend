@@ -4,5 +4,5 @@
 }
 
 .privacypolicy h1, .privacypolicy h2, .privacypolicy h3, .privacypolicy p, .privacypolicy ul li {
-    color: var(--white-color);
+    color: var(--alternate-color);
 }

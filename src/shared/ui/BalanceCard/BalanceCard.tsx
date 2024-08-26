@@ -9,7 +9,7 @@ interface BalanceCardProps {
 
 const BalanceCard: React.FC<BalanceCardProps> = ({balance, color = "var(--accent-color)"}) => {
     return (
-        <span style={{color}} className={s.balanceCard}>{balance} <span className={s.balanceCard_paragraph}><ParagraphIcon/></span></span>
+        <span style={{color}} className={s.balanceCard}>{balance} <ParagraphIcon/></span>
     );
 };
 

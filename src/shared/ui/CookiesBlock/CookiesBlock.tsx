@@ -24,7 +24,7 @@ const CookiesBlock:React.FC = () => {
                             сайте используются технологии cookie.</p>
                         <p>Продолжая пользоваться с сайтом, вы соглашаетесь с размещением cookie-файлов на вашем
                             устройстве на
-                            условиях, изложенных в <Link to="/privacypolicy" target='_blank'>Политике конфиденциальности.</Link> </p>
+                            условиях, изложенных в <Link to="/privacypolicy">Политике конфиденциальности.</Link> </p>
                     </div>
                 </Col>
                 <Col xl={{span: 2}} sm={{span: 0}}>
@@ -34,7 +34,7 @@ const CookiesBlock:React.FC = () => {
                     <div className={s.cookies_block_buttons}>
                         <div>
                             <Button type={'accent'} callback={() => acceptCookies()}>Принять</Button>
-                            <Link to="/privacypolicy" target='_blank'><Button type={'white'}>Подробнее</Button></Link>
+                            <Link to="/privacypolicy"><Button type={'white'}>Подробнее</Button></Link>
                         </div>
                     </div>
                 </Col>

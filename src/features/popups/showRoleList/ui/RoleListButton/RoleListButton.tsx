@@ -8,7 +8,7 @@ const RoleListButton: React.FC = () => {
 
     return (
         <div>
-            <Button type="borders" size="lg">{role === 'author' ? "Автор" : "Читатель"}</Button>
+            <Button type="page" size="lg">{role === 'author' ? "Автор" : "Читатель"}</Button>
         </div>
     );
 };

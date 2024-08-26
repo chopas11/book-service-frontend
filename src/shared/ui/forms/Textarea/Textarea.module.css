@@ -8,8 +8,9 @@
     resize: vertical;
     max-height: 100px;
     outline: none;
-    color: #f0f0f0;
-    background: var(--black-color);
+    color: var(--alternate-color);
+    background: var(--blocks-input-color);
+    border: 1px solid var(--blocks-input-color);
 }
 
 .textarea:focus {

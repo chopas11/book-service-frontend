@@ -1,9 +1,7 @@
 import React from 'react';
-
 import WelcomeWidget from "../../widgets/WelcomeWidget/WelcomeWidget";
 import PublishStep from "../../shared/ui/PublishStep/PublishStep.tsx";
 import {Button, Hint} from "../../shared/ui";
-
 import ChooseTariff from "../../features/chooseTariff/ui/ChooseTariff.tsx";
 import ServicesWidget from "../../widgets/ServicesWidget/ServicesWidget.tsx";
 import UploadBookFile from "../../features/uploadBookFile/ui/UploadBookFile.tsx";
@@ -23,8 +21,6 @@ const Publication: React.FC = () => {
 
     usePageName('Публикация');
     const {currentPage, nextPage, prevPage} = usePages(6);
-
-
 
     return (
         <>

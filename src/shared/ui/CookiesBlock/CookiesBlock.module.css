@@ -1,8 +1,9 @@
 
 .cookies_block {
     padding: 40px 80px 40px 80px;
-    background: rgba(20, 27, 21, 0.9);
+    background: var(--primary-color);
     position: fixed;
+    opacity: 0.9;
     width: 100%;
     bottom: 0;
     height: 150px;
@@ -12,12 +13,12 @@
 }
 
 .cookies_block h3 {
-    color: var(--white-color);
+    color: var(--alternate-color);
     text-transform: uppercase;
 }
 
 .cookies_block p {
-    color: var(--white-color);
+    color: var(--alternate-color);
     line-height: 1.5;
     padding-bottom: 5px;
 }

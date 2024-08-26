@@ -22,7 +22,7 @@ export const OrderReducer = (state = initialState, action: OrderAction) :OrderSc
             return {
                 ...state,
                 orders: state.orders.map(order => {
-                        if (order.id === action.payload) return {...order, status: 2}
+                        if (order.id === action.payload) return {...order, status: 4}
                         else return order
                     })
             }

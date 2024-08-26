@@ -21,7 +21,7 @@ interface TextWrapperProps {
 
 const TextWrapper: React.FC<TextWrapperProps> = (
     {
-        color = "var(--text-color)",
+        color = "var(--dark-color)",
         background = "var(--accent-color)",
         size = 'sm',
         // border = 0,

@@ -2,13 +2,13 @@
 .service {
     display: flex;
     border-radius: 32px;
-    background: var(--dark-blue-color);
+    background: var(--services-dark-blue-color);
     cursor: pointer;
     height: 100%;
 }
 
 .serviceLeft {
-    background: var(--blue-color);
+    background: var(--services-blue-color);
     padding: 25px 12px;
     border-radius: 32px;
     /* offset-x | offset-y | blur-radius | color */

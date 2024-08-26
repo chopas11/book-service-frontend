@@ -5,14 +5,18 @@ interface InputProps {
     type?: string,
     placeholder?: string,
     value: string,
-    theme: 'dark' | 'light' | 'page',
+    theme: 'blocks' | 'primary'
+    height?: number,
     callback?: React.EventHandler<never>,
 }
 
-const Input: React.FC<InputProps> = ({type = "text", placeholder = "", value, theme = "dark", callback}) => {
+const Input: React.FC<InputProps> = ({type = "text", placeholder = "", value, theme = "dark", height = 42, callback}) => {
     return (
         <input
-            className={`${s.input} ${theme === 'dark' ? s.dark : theme === 'light' ? s.light : s.page}`}
+            style={{
+                height,
+            }}
+            className={`${s.input} ${theme === 'blocks' ? s.blocks : theme === 'primary' ? s.primary : s.page}`}
             type={type}
             placeholder={placeholder}
             value={value}

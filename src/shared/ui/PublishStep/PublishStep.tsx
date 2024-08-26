@@ -6,16 +6,23 @@ import {Col, Row} from "antd";
 
 interface PublishStepFeatureProps {
     number: number,
-    name: string,
-    bgColor?: "var(--green-color)" | "var(--lil-color)",
+    name?: string,
+    bgColor?: "green" | "lil",
     children: React.ReactNode | React.ReactNode[],
 
 }
 
-const PublishStep: React.FC<PublishStepFeatureProps> = ({number, name, bgColor = "var(--green-color)", children}) => {
+const PublishStep: React.FC<PublishStepFeatureProps> = ({number, bgColor = "green", children}) => {
+    let bg;
+    if (bgColor === "green") {
+        bg = 'var(--blocks-green-color)';
+    } else if (bgColor === "lil") {
+        bg = 'var(--blocks-lil-color)';
+    }
+
     return (
         <>
-            <div className={`${s.publishStep}`} style={{background: bgColor}}>
+            <div className={`${s.publishStep}`} style={{background: bg}}>
                 <Row gutter={35}>
                     <Col xl={{span: 2}} xs={{span: 0}}>
                         <NumberBlock number={number} isInverted={true} />

@@ -1,6 +1,6 @@
 
 .spoiler {
-    background: var(--windows-color);
+    background: var(--page-color);
     /*height: 62px;*/
     border-radius: 50px;
     padding: 20px 30px;
@@ -9,9 +9,13 @@
 }
 
 .spoiler p {
-    color: var(--white-color);
+    color: var(--alternate-color);
     font-size: 20px;
     display: inline;
+}
+
+.spoiler span {
+    color: var(--alternate-color);
 }
 
 .spoiler .spoilerButton {

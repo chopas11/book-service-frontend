@@ -11,8 +11,8 @@
     right: 0;
     margin-top: 5px;
     padding: 25px;
-    background: var(--dark-color);
-    box-shadow: 0 4px 8px rgba(22, 76, 82, 0.16);
+    background: var(--background-color);
+    box-shadow: var(--page-box-shadow);
     border-radius: 32px;
     z-index: 9999;
 }

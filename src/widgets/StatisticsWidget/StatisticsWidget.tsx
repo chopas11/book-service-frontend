@@ -15,7 +15,7 @@ interface StatisticsWidgetProps {
 
 const StatisticsWidget: React.FC<StatisticsWidgetProps> = ({order}) => {
     return (
-        <Block bgColor="var(--lil-color)" color="var(--text-color)" padding="20px" bdRadius="24px" margin="12px 0">
+        <Block bgColor="var(--blocks-lil-color)" color="var(--alternate-color)" padding="20px" bdRadius="24px" margin="12px 0">
             <MyBookCard cover={order.publication.coverImage}>
                 <Row gutter={[12, 24]}>
                     <Col lg={{span: 14}}>
@@ -43,7 +43,7 @@ const StatisticsWidget: React.FC<StatisticsWidgetProps> = ({order}) => {
                         </InputWrapper>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <Button>Повысить статистику</Button>
+                        <Button type='accent'>Повысить статистику</Button>
                     </Col>
                 </Row>
             </MyBookCard>

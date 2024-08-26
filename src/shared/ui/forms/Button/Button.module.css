@@ -20,25 +20,28 @@
 }
 /* Primary */
 .primary {
-    background: var(--background-color);
-    color: var(--white-color);
+    box-shadow: var(--box-shadow);
+    background: var(--primary-color);
+    border: px solid var(--primary-color);
+    color: var(--alternate-color);
 }
 .primary:hover {
-    background: var(--dark-color);
+    background: var(--primary-hover-color);
     color: var(--accent-color);
 }
 .primary:active {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 /* Page */
 .page {
-    background: var(--dark-color);
-    color: var(--white-color);
+    box-shadow: var(--box-shadow);
+    background: var(--page-color);
+    color: var(--alternate-color);
 }
 .page:hover {
-    background: #3d5260;
+    background: var(--page-hover-color);
     color: var(--accent-color);
 }
 .page:active {
@@ -63,15 +66,16 @@
 /* white */
 .white {
     background: var(--white-color);
-    color: var(--text-color);
+    color: var(--black-color);
+    box-shadow: var(--box-shadow);
 }
 .white:hover {
     background: #cccccc;
-    color: var(--text-color);
+    /*color: var(--text-color);*/
 }
 .white:active {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 
@@ -92,11 +96,11 @@
 /* accent */
 .accent {
     background: var(--accent-color);
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 .accent:hover {
-    background: #D6FF91;
-    color: var(--text-color);
+    background: var(--accent-hover-color);
+    color: var(--primary-color);
 }
 .accent:active {
     background: var(--white-color);

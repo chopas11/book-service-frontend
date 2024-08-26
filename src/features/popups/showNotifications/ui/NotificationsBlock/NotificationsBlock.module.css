@@ -3,6 +3,11 @@
     width: 500px;
 }
 
+.notifications h3 {
+    padding-left: 10px;
+    color: var(--alternate-color);
+}
+
 .visible {
     display: block;
 }
@@ -13,12 +18,18 @@
 
 .notification {
     position: relative;
-    background: var(--accent-color);
+    background: var(--primary-color);
     padding: 20px;
     border-radius: 32px;
     cursor: pointer;
     line-height: 1;
     margin-bottom: 4px;
+}
+
+
+
+.notification p {
+    color: var(--alternate-color);
 }
 
 .isRead::after {

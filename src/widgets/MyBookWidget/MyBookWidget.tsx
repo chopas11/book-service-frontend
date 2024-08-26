@@ -25,7 +25,7 @@ const MyBookWidget: React.FC<MyBookWidgetProps> = ({order}) => {
 
     return (
         <>
-            <Block bgColor="var(--lil-color)" color="var(--text-color)" padding="20px" bdRadius="24px" margin="12px 0">
+            <Block bgColor="var(--blocks-lil-color)" color="var(--text-color)" padding="20px" bdRadius="24px" margin="12px 0">
                 <MyBookCard cover={order.publication.coverImage}>
                     <Row>
                         <Col lg={{span: 14}}>

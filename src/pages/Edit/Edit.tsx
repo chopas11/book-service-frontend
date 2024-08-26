@@ -17,21 +17,21 @@ const Edit: React.FC = () => {
     return (
         <>
             <h2 className="header_center">Редактирование</h2>
-            <PublishStep number={1} bgColor="var(--lil-color)">
+            <PublishStep number={1} bgColor="lil">
                 <UpdateTitle/>
                 <AddAuthors/>
             </PublishStep>
-            <PublishStep number={2} bgColor="var(--lil-color)">
+            <PublishStep number={2} bgColor="lil">
                 <UpdateDescription/>
             </PublishStep>
             <Row gutter={20}>
                 <Col xl={{span: 10}}>
-                    <PublishStep number={3} bgColor="var(--lil-color)">
+                    <PublishStep number={3} bgColor="lil">
                         <ShowCoverModal />
                     </PublishStep>
                 </Col>
                 <Col xl={{span: 14}}>
-                    <PublishStep number={4} bgColor="var(--lil-color)">
+                    <PublishStep number={4} bgColor="lil">
                         <ChooseTariffMini />
                         Здесь еще должен быть блок с подсказкой насчет выбора тарифа
                     </PublishStep>
