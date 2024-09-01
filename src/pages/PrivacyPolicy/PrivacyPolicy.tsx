@@ -4,162 +4,170 @@ import s from './PrivacyPolicy.module.css';
 const PrivacyPolicy:React.FC = () => {
     return (
         <div className={s.privacypolicy}>
-            <h2 className="header_center">Политика конфиденциальности StorySphere.ru</h2>
+            <h2 className="header_center">Privacy Policy of StorySphere.ru</h2>
 
-            <h2>1. Введение</h2>
+            <h2>1. Introduction</h2>
             <p>
-                Настоящая Политика конфиденциальности (далее — «Политика») регулирует обработку персональных данных
-                пользователей интернет-сайта StorySphere.ru (далее — «Сайт»), осуществляемую ООО «StorySphere» (далее —
-                «Компания»). Компания придает важное значение защите персональных данных и соблюдению законодательства
-                Российской Федерации в области обработки персональных данных.
+                This Privacy Policy (hereinafter referred to as the "Policy") governs the processing of personal data
+                of users of the StorySphere.ru website (hereinafter referred to as the "Site"), carried out by LLC
+                "StorySphere"
+                (hereinafter referred to as the "Company"). The Company attaches great importance to the protection of
+                personal
+                data and compliance with the legislation in the field of personal data
+                processing.
             </p>
             <br/>
-            <h2>2. Персональные данные, подлежащие обработке</h2>
+            <h2>2. Personal Data Subject to Processing</h2>
 
-            <h3>2.1. Обрабатываемые данные</h3>
+            <h3>2.1. Processed Data</h3>
             <p>
-                В рамках использования Сайта Компания может осуществлять обработку следующих категорий персональных
-                данных пользователей:
+                As part of using the Site, the Company may process the following categories of personal data of users:
             </p>
             <ul>
-                <li><strong>Идентификационные данные</strong>: фамилия, имя, отчество.</li>
-                <li><strong>Контактные данные</strong>: адрес электронной почты, номер телефона.</li>
-                <li><strong>Платежные данные</strong>: информация о транзакциях, история покупок.</li>
-                <li><strong>Технические данные</strong>: IP-адрес, файлы cookie, данные о браузере и устройстве
-                    пользователя.
-                </li>
-                <li><strong>Данные об использовании Сайта</strong>: история просмотров, предпочтения, данные о
-                    взаимодействии с Сайтом.
+                <li><strong>Identification Data</strong>: surname, first name, middle name.</li>
+                <li><strong>Contact Data</strong>: email address, phone number.</li>
+                <li><strong>Payment Data</strong>: transaction information, purchase history.</li>
+                <li><strong>Technical Data</strong>: IP address, cookies, data on the user's browser and device.</li>
+                <li><strong>Site Usage Data</strong>: browsing history, preferences, data on interactions with the Site.
                 </li>
             </ul>
             <br/>
 
-            <h3>2.2. Способы сбора данных</h3>
+            <h3>2.2. Methods of Data Collection</h3>
             <p>
-                Персональные данные могут быть получены непосредственно от пользователя при регистрации на Сайте,
-                совершении покупок, подписке на рассылки, а также автоматически при использовании Сайта.
+                Personal data may be obtained directly from the user during registration on the Site, making purchases,
+                subscribing to newsletters, as well as automatically when using the Site.
             </p>
 
             <br/>
-            <h2>3. Цели обработки персональных данных</h2>
+            <h2>3. Purposes of Personal Data Processing</h2>
             <p>
-                Компания осуществляет обработку персональных данных в следующих целях:
+                The Company processes personal data for the following purposes:
             </p>
             <ul>
-                <li><strong>Предоставление услуг</strong>: регистрация и ведение учетной записи пользователя, выполнение
-                    заказов, предоставление рекомендаций и персонализированных предложений.
+                <li><strong>Service Provision</strong>: user registration and account management, order fulfillment,
+                    providing recommendations and personalized offers.
                 </li>
-                <li><strong>Связь с пользователем</strong>: направление информационных сообщений, ответ на запросы
-                    пользователей.
+                <li><strong>User Communication</strong>: sending informational messages, responding to user inquiries.
                 </li>
-                <li><strong>Обеспечение безопасности</strong>: предотвращение мошенничества, обеспечение безопасности
-                    данных пользователей.
+                <li><strong>Security Assurance</strong>: fraud prevention, ensuring the security of user data.
                 </li>
-                <li><strong>Анализ и улучшение Сайта</strong>: проведение статистических и маркетинговых исследований,
-                    анализ поведения пользователей для улучшения функциональности Сайта.
+                <li><strong>Site Analysis and Improvement</strong>: conducting statistical and marketing research,
+                    analyzing
+                    user behavior to improve the functionality of the Site.
                 </li>
             </ul>
 
             <br/>
-            <h2>4. Основания для обработки персональных данных</h2>
+            <h2>4. Legal Grounds for Personal Data Processing</h2>
             <p>
-                Обработка персональных данных осуществляется на следующих законных основаниях:
+                Personal data processing is carried out on the following legal grounds:
             </p>
             <ul>
-                <li>Согласие субъекта персональных данных на обработку его персональных данных.</li>
-                <li>Заключение и исполнение договора, стороной которого является субъект персональных данных.</li>
-                <li>Соблюдение требований законодательства Российской Федерации.</li>
-                <li>Осуществление прав и законных интересов Компании или третьих лиц, при условии, что такие действия не
-                    нарушают права и свободы субъекта персональных данных.
+                <li>User's consent to the processing of their personal data.</li>
+                <li>The conclusion and performance of a contract to which the user is a party.</li>
+                <li>Compliance with the requirements of the legislation of the Russian Federation.</li>
+                <li>The exercise of the rights and legitimate interests of the Company or third parties, provided that
+                    such actions
+                    do not violate the rights and freedoms of the user.
                 </li>
             </ul>
 
             <br/>
-            <h2>5. Передача персональных данных третьим лицам</h2>
+            <h2>5. Transfer of Personal Data to Third Parties</h2>
             <p>
-                Компания вправе передавать персональные данные пользователей третьим лицам в следующих случаях:
+                The Company is entitled to transfer users' personal data to third parties in the following cases:
             </p>
             <ul>
-                <li><strong>Исполнение обязательств перед пользователями</strong>: в целях выполнения заказов и
-                    предоставления услуг.
+                <li><strong>Performance of obligations to users</strong>: for the purpose of fulfilling orders and
+                    providing services.
                 </li>
-                <li><strong>Исполнение требований законодательства</strong>: по запросу уполномоченных государственных
-                    органов в случаях, предусмотренных законодательством Российской Федерации.
+                <li><strong>Compliance with legal requirements</strong>: upon request of authorized government bodies in
+                    cases
+                    provided for by the legislation of the Russian Federation.
                 </li>
-                <li><strong>Использование сторонних сервисов</strong>: привлечение подрядчиков и поставщиков услуг для
-                    выполнения задач, связанных с функционированием Сайта, при условии соблюдения ими конфиденциальности
-                    и безопасности персональных данных.
+                <li><strong>Use of third-party services</strong>: engaging contractors and service providers to perform
+                    tasks related
+                    to the operation of the Site, provided that they comply with confidentiality and personal data
+                    security obligations.
                 </li>
             </ul>
 
             <br/>
-            <h2>6. Сроки обработки и хранения персональных данных</h2>
+            <h2>6. Duration of Personal Data Processing and Storage</h2>
             <p>
-                Персональные данные обрабатываются и хранятся в течение срока, необходимого для достижения целей их
-                обработки, либо в течение срока, предусмотренного законодательством Российской Федерации. По достижении
-                целей обработки или истечении установленных сроков данные подлежат удалению или обезличиванию.
+                Personal data is processed and stored for the period necessary to achieve the purposes of its
+                processing,
+                or for the period specified by the legislation of the Russian Federation. Upon achievement of the
+                processing purposes
+                or expiration of the specified periods, the data is subject to deletion or anonymization.
             </p>
 
             <br/>
-            <h2>7. Права пользователей</h2>
+            <h2>7. User Rights</h2>
             <p>
-                Пользователи имеют право на:
+                Users have the right to:
             </p>
             <ul>
-                <li><strong>Доступ к своим персональным данным</strong>: получение информации о факте обработки, целях,
-                    категориях обрабатываемых данных, сроках хранения.
+                <li><strong>Access their personal data</strong>: obtain information about the fact of processing,
+                    purposes,
+                    categories of processed data, storage periods.
                 </li>
-                <li><strong>Исправление персональных данных</strong>: требование об изменении неточных или устаревших
-                    данных.
+                <li><strong>Correct personal data</strong>: request the correction of inaccurate or outdated data.
                 </li>
-                <li><strong>Удаление персональных данных</strong>: право на «забвение» в случае, если данные больше не
-                    требуются для целей их обработки.
+                <li><strong>Delete personal data</strong>: right to be "forgotten" if the data is no longer required for
+                    the purposes of processing.
                 </li>
-                <li><strong>Ограничение обработки</strong>: право ограничить обработку данных в определенных случаях.
+                <li><strong>Restrict processing</strong>: right to restrict data processing in certain cases.
                 </li>
-                <li><strong>Отзыв согласия</strong>: право на отзыв ранее предоставленного согласия на обработку данных.
+                <li><strong>Withdraw consent</strong>: right to withdraw previously given consent to data processing.
                 </li>
-                <li><strong>Возражение против обработки данных</strong>: право возражать против обработки данных на
-                    основании законных интересов Компании.
+                <li><strong>Object to data processing</strong>: right to object to data processing based on the
+                    legitimate
+                    interests of the Company.
                 </li>
             </ul>
 
             <br/>
-            <h2>8. Защита персональных данных</h2>
+            <h2>8. Personal Data Protection</h2>
             <p>
-                Компания принимает все необходимые организационные и технические меры для защиты персональных данных
-                пользователей от несанкционированного доступа, изменения, раскрытия или уничтожения. В числе таких мер —
-                использование современных методов шифрования, организация внутреннего контроля и аудита.
+                The Company takes all necessary organizational and technical measures to protect users' personal data
+                from
+                unauthorized access, alteration, disclosure, or destruction. Such measures include the use of modern
+                encryption
+                methods, internal control, and audit organization.
             </p>
 
             <br/>
-            <h2>9. Политика в отношении детей</h2>
+            <h2>9. Children's Policy</h2>
             <p>
-                Сайт и услуги Компании не предназначены для использования лицами, не достигшими возраста 16 лет.
-                Компания сознательно не собирает персональные данные несовершеннолетних. В случае получения информации о
-                сборе таких данных они будут немедленно удалены.
+                The Site and Company services are not intended for use by individuals under the age of 16. The Company
+                does not
+                knowingly collect personal data of minors. If information about the collection of such data is received,
+                it will be
+                immediately deleted.
             </p>
 
             <br/>
-            <h2>10. Изменения в Политике конфиденциальности</h2>
+            <h2>10. Changes to the Privacy Policy</h2>
             <p>
-                Компания оставляет за собой право вносить изменения в настоящую Политику. Обновленная версия Политики
-                вступает в силу с момента ее публикации на Сайте. Пользователям рекомендуется регулярно проверять
-                настоящую Политику на предмет изменений.
+                The Company reserves the right to make changes to this Policy. The updated version of the Policy comes
+                into force
+                from the moment it is published on the Site. Users are encouraged to regularly check this Policy for
+                changes.
             </p>
 
             <br/>
-            <h2>11. Контактная информация</h2>
+            <h2>11. Contact Information</h2>
             <p>
-                По всем вопросам, связанным с настоящей Политикой, обработкой персональных данных, а также для
-                реализации своих прав, пользователи могут обращаться по следующим контактам:
+                For any questions related to this Policy, the processing of personal data, or to exercise their rights,
+                users may contact the following contacts:
             </p>
             <ul>
-                <li><strong>Электронная почта</strong>: <a href="mailto:info@storysphere.ru">info@storysphere.ru</a>
-                </li>
-                <li><strong>Почтовый адрес</strong>: 123456, г. Москва, ул. Авиамоторная, 8А, кабинет 209</li>
+                <li><strong>Email</strong>: <a href="mailto:info@storysphere.ru">info@storysphere.ru</a></li>
+                <li><strong>Postal Address</strong>: 123456, Moscow, Aviamotornaya St., 8A, office 209</li>
             </ul>
-            <p>Дата последнего обновления: 23.08.2024</p>
+            <p>Last updated: 23.08.2024</p>
             <br/>
         </div>
     );

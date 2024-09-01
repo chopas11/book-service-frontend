@@ -6,12 +6,14 @@ import {Input, Logo} from "../../shared/ui";
 import s from "./Header.module.css"
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
 import ShowCart from "../../features/showCart/ui/ShowCart.tsx";
+import {useTranslation} from "react-i18next";
 
 
 const Header: React.FC = () => {
 
     const {isAuth, role} = useTypedSelector(state => state.user)
     const [search, setSearch] = useState('');
+    const { t } = useTranslation();
 
     return (
         <>
@@ -19,7 +21,7 @@ const Header: React.FC = () => {
                 <div className={s.header_logo}>
                     <Logo/>
                 </div>
-                <Input height={50} placeholder={'Поиск'} value={search} theme={'primary'} callback={(e: React.FormEvent<HTMLInputElement>) => setSearch(e.currentTarget.value)} />
+                <Input height={50} placeholder={t('search')} value={search} theme={'primary'} callback={(e: React.FormEvent<HTMLInputElement>) => setSearch(e.currentTarget.value)} />
                 <div className={s.headers_menu}>
                     <ShowNotifications/>
                     {

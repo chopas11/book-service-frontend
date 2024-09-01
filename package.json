@@ -15,9 +15,12 @@
   "dependencies": {
     "antd": "^5.12.1",
     "axios": "^1.6.3",
+    "i18next": "^23.14.0",
+    "i18next-http-backend": "^2.6.1",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^15.0.1",
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.18.0",
     "recharts": "^2.12.2",

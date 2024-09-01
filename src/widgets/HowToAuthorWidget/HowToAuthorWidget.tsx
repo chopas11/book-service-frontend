@@ -1,83 +1,50 @@
 // import React from 'react';
 
 import s from "./HowToAuthorWidget.module.css"
-import Button from "../../shared/ui/forms/Button/Button";
-import {Link} from "react-router-dom";
 import {StepCard} from "../../shared/ui";
 import {Col, Row} from "antd";
-import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
-
-const stepsAuthor = [
-    {
-        id: 1,
-        number: 1,
-        text: "Убедитесь, что текст для книги/журнала/комикса окончательно готов, проверьте качество фотоконтента и соберите всё в один файл",
-    },
-    {
-        id: 2,
-        number: 2,
-        text: "Перейдите на страницу публикации и пройдитесь по всем шагам, выберите необходимые услуги и нажмите «Далее»",
-    },
-    {
-        id: 3,
-        number: 3,
-        text: "Отслеживайте статус публикации в разделе «Мои книги», оплатите выбранные услуги, отредактируйте описание книги, если это необходимо",
-    },
-];
-
-const stepsReader = [
-    {
-        id: 1,
-        number: 1,
-        text: "Переключитесь на аккаунт автора в шапке сайта",
-    },
-    {
-        id: 2,
-        number: 2,
-        text: "Ознакомьтесь с информацией на главной странице",
-    },
-    {
-        id: 3,
-        number: 3,
-        text: "Перейдите в раздел “Публикация” и следуйте пошаговой инструкции.",
-    },
-];
-
+import {useTranslation} from "react-i18next";
 
 
 const HowToAuthorWidget = () => {
 
-    const {role} = useTypedSelector(state => state.user)
+
+    const { t } = useTranslation();
+
+    const stepsAuthor = [
+        {
+            id: 1,
+            number: 1,
+            text: t('howToAuthorWidget_text1'),
+        },
+        {
+            id: 2,
+            number: 2,
+            text: t('howToAuthorWidget_text2'),
+        },
+        {
+            id: 3,
+            number: 3,
+            text: t('howToAuthorWidget_text3'),
+        },
+    ];
+
 
     return (
         <div className={s.howToAuthorWidget}>
-            <h2>
-                {
-                    role === 'guest' ?
-                        "Как стать автором?" :
-                        "Вы можете стать автором"
-                }
-            </h2>
+            <h2>{t('howToAuthorWidget_title')}</h2>
             <div className={s.steps}>
                 <Row gutter={[12, 12]}>
                     {
-                        role === 'guest' ?
                             stepsAuthor.map(item => {
                                 return (
                                     <Col xl={{span: 8}}>
                                         <StepCard key={item.id} number={item.number} text={item.text}/>
                                     </Col>
                                 )
-                            }) :
-                            stepsReader.map(item => {
-                                return (
-                                    <Col xl={{span: 8}}>
-                                        <StepCard key={item.id} number={item.number} text={item.text}/>
-                                    </Col>
-                                )
                             })
-
                     }
+
                 </Row>
             </div>
         </div>
