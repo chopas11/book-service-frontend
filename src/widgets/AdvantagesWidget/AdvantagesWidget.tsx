@@ -6,43 +6,47 @@ import TimeIcon from "../../shared/assets/IconPack/TimeIcon/TimeIcon";
 import SaleIcon from "../../shared/assets/IconPack/SaleIcon/SaleIcon";
 import FingerIcon from "../../shared/assets/IconPack/FingerIcon/FingerIcon";
 import {AdvantageCard} from "../../shared/ui";
-
-const advantages = [
-    {
-        id: 1,
-        icon: <LockIcon />,
-        title: "Защита от пиратства",
-        description: "Мы защищаем материалы на платформе от распространенных видов пиратства, чтобы вы не упускали прибыль.",
-        bgColor: "var(--green-color)",
-    },
-    {
-        id: 2,
-        icon: <SaleIcon />,
-        title: "Максимальная выручка",
-        description: "Мы позволяем выбрать наиболее подходящую финансовую модель, чтобы вы могли получить максимальную выручку.",
-        bgColor: "var(--lil-color)",
-    },
-    {
-        id: 3,
-        icon: <TimeIcon />,
-        title: "Экономия времени",
-        description: "Мы экономим ваше время, предлагая простую цепочку публикации - заполните поля, загрузите материал, выберите тариф.",
-        bgColor: "var(--lil-color)",
-    },
-    {
-        id: 4,
-        icon: <FingerIcon />,
-        title: "Целевая аудитория",
-        description: "Мы предоставляем инструменты управления контентом, благодаря которым проще выйти на целевого читателя.",
-        bgColor: "var(--green-color)",
-    },
-]
+import {useTranslation} from "react-i18next";
 
 
 const AdvantagesWidget = () => {
+
+    const { t } = useTranslation();
+
+    const advantages = [
+        {
+            id: 1,
+            icon: <LockIcon />,
+            title: t('advantagesWidget_antiPiracyProtection'),
+            description: t('advantagesWidget_text1'),
+            bgColor: "var(--green-color)",
+        },
+        {
+            id: 2,
+            icon: <SaleIcon />,
+            title: t('advantagesWidget_maxRevenue'),
+            description: t('advantagesWidget_text2'),
+            bgColor: "var(--lil-color)",
+        },
+        {
+            id: 3,
+            icon: <TimeIcon />,
+            title: t('advantagesWidget_savingTime'),
+            description: t('advantagesWidget_text3'),
+            bgColor: "var(--lil-color)",
+        },
+        {
+            id: 4,
+            icon: <FingerIcon />,
+            title: t('advantagesWidget_targetAudience'),
+            description: t('advantagesWidget_text4'),
+            bgColor: "var(--green-color)",
+        },
+    ]
+
     return (
         <div className={s.advantagesWidget}>
-            <h2>Наши преимущества</h2>
+            <h2>{t('advantagesWidget_ourAdvantages')}</h2>
             <div className={s.advantages}>
                 {advantages.map(item => {
                     return (

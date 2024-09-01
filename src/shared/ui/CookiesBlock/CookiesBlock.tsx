@@ -3,9 +3,11 @@ import s from "./CookiesBlock.module.css"
 import {Button} from "../index.ts";
 import {Col, Row} from "antd";
 import {Link, useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const CookiesBlock:React.FC = () => {
 
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const acceptCookies = () => {
@@ -18,13 +20,9 @@ const CookiesBlock:React.FC = () => {
             <Row>
                 <Col xl={{span: 16}} sm={{span: 24}}>
                     <div>
-                        <h3>Мы используем файлы cookie</h3><br/>
-                        <p>Для обеспечения оптимальной работы анализа, использования и улучшения пользовательского опыта
-                            на
-                            сайте используются технологии cookie.</p>
-                        <p>Продолжая пользоваться с сайтом, вы соглашаетесь с размещением cookie-файлов на вашем
-                            устройстве на
-                            условиях, изложенных в <Link to="/privacypolicy">Политике конфиденциальности.</Link> </p>
+                        <h3>{t('cookiesBlock_title')}</h3><br/>
+                        <p>{t('cookiesBlock_text1')}</p>
+                        <p>{t('cookiesBlock_text2')} <Link to="/privacypolicy">{t('privacyPolicy')}</Link> </p>
                     </div>
                 </Col>
                 <Col xl={{span: 2}} sm={{span: 0}}>
@@ -33,8 +31,8 @@ const CookiesBlock:React.FC = () => {
                 <Col xl={{span: 6}} sm={{span: 24}}>
                     <div className={s.cookies_block_buttons}>
                         <div>
-                            <Button type={'accent'} callback={() => acceptCookies()}>Принять</Button>
-                            <Link to="/privacypolicy"><Button type={'white'}>Подробнее</Button></Link>
+                            <Button type={'accent'} callback={() => acceptCookies()}>{t('accept')}</Button>
+                            <Link to="/privacypolicy"><Button type={'white'}>{t('more')}</Button></Link>
                         </div>
                     </div>
                 </Col>

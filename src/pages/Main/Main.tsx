@@ -9,22 +9,26 @@ import {usePageName} from "../../shared/hooks/usePageName.ts";
 import {Button, Hint} from "../../shared/ui";
 import {Link} from "react-router-dom";
 
+import { useTranslation } from 'react-i18next';
+
 
 
 const Main: React.FC = () => {
 
-    usePageName('Главная');
+
+    const { t } = useTranslation();
+    usePageName(t('footerList_item3'));
 
     return (
         <>
-            <WelcomeWidget title="Станьте автором в один клик">
-                <Hint text="Мы предлагаем профессиональные услуги, которые помогают тысячам писателей оформлять, издавать и продвигать книгу." />
-                <Link to="/publish"><Button>Стать автором</Button></Link>
+            <WelcomeWidget title={t('welcomeWidget_title')}>
+                <Hint text={t('welcomeWidget_hint')} />
+                <Link to="/publish"><Button>{t('becomeAnAutor')}</Button></Link>
             </WelcomeWidget>
             <AdvantagesWidget />
             <ServicesExamplesWidget />
             <HowToAuthorWidget />
-            <CenterButton link={'/publish'} text={'Стать автором'} />
+            <CenterButton link={'/publish'} text={t('becomeAnAutor')} />
         </>
     );
 };

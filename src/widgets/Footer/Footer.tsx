@@ -6,9 +6,11 @@ import {Icon} from "@iconify/react";
 import React, {useEffect} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {useTypedSelector} from "../../shared/hooks/useTypedSelector.ts";
+import {useTranslation} from "react-i18next";
 
 const Footer: React.FC = () => {
 
+    const { t } = useTranslation();
     const location = useLocation();
     const {role} = useTypedSelector(state => state.user)
 
@@ -23,16 +25,16 @@ const Footer: React.FC = () => {
             </div>
             <div className={s.footer_list}>
                 <ul>
-                    <Link to="/"><li>Чат поддержки</li></Link>
-                    <a href="https://yandex.ru/maps/213/moscow/?ll=37.712536%2C55.755135&mode=poi&poi%5Bpoint%5D=37.712182%2C55.755264&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160232684&z=18"><li>Юридический адрес</li></a>
+                    <Link to="/"><li>{t('footerList_item1')}</li></Link>
+                    <a href="https://yandex.ru/maps/213/moscow/?ll=37.712536%2C55.755135&mode=poi&poi%5Bpoint%5D=37.712182%2C55.755264&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160232684&z=18"><li>{t('footerList_item2')}</li></a>
                     <li>© StorySphere.ru, {new Date().getFullYear()}</li>
                 </ul>
             </div>
             <div className={s.footer_list}>
                 <ul>
-                    <Link to="/"><li>Главная</li></Link>
-                    <Link to="/publish"><li>Публикация</li></Link>
-                    <Link to="/faq"><li>FAQ</li></Link>
+                    <Link to="/"><li>{t('footerList_item3')}</li></Link>
+                    <Link to="/publish"><li>{t('footerList_item4')}</li></Link>
+                    <Link to="/faq"><li>{t('footerList_item5')}</li></Link>
                 </ul>
             </div>
             <div className={s.footer_social}>

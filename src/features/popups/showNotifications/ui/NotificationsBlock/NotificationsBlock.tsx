@@ -6,6 +6,7 @@ import {useTypedSelector} from "../../../../../shared/hooks/useTypedSelector.ts"
 import {useDispatch} from "react-redux";
 import {deleteNotificationAction, getNotificationsAction} from "../../model/slice/notificationsReducer.ts";
 import {INotification} from "../../../../../entities/Notification/model/types/NotificationSchema.ts";
+import {useTranslation} from "react-i18next";
 
 
 interface NotificationsFeatureProps {
@@ -13,6 +14,8 @@ interface NotificationsFeatureProps {
 }
 
 const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
+
+    const { t } = useTranslation();
 
     // Redux State
     const {notifications} = useTypedSelector(state => state.notifications)
@@ -58,7 +61,7 @@ const NotificationsBlock: React.FC<NotificationsFeatureProps> = () => {
                     <Button type='accent' size='lg' paddingX='full'>Очистить все</Button>
                 </>
                 :
-                <div className={s.noNotifications}><p>Новых уведомлений нет</p></div>
+                <div className={s.noNotifications}><p>{t('notificationFeature_noNotifications')}</p></div>
             }
         </div>
     );

@@ -1,10 +1,8 @@
+import defaults from "../../app/defaults.json"
 
-export const API_AUTH_SERVER_URI = 'http://localhost:9000';
-// export const API_AUTH_SERVER_URI = 'https:
-// id.storysphere.ru';
+export const API_AUTH_SERVER_URI = defaults.mode === "dev" ? 'http://localhost:9000' : 'https:// id.storysphere.ru';
+export const API_PUBLICATION_SERVICE_URI = defaults.mode === "dev" ? 'http://localhost:10000' : 'https://publish.storysphere.ru';
+export const REDIRECT_URI = defaults.mode === "dev" ? 'http://localhost:8000': 'https://storysphere.ru';
 
-export const API_PUBLICATION_SERVICE_URI = 'http://localhost:10000';
-// export const API_PUBLICATION_SERVICE_URI = 'https://publish.storysphere.ru';
 
-export const REDIRECT_URI = 'http://localhost:8000'
-// export const REDIRECT_URI = 'https://storysphere.ru'
+

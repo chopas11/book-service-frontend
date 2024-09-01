@@ -7,19 +7,25 @@ import {Link} from "react-router-dom";
 import {Button} from "../../../../../shared/ui";
 import BalanceCard from "../../../../../shared/ui/BalanceCard/BalanceCard.tsx";
 import {getAuthCode, logout} from "../../../../../entities/User/model/services/userService.ts";
-import {Checkbox, Col, Row} from "antd";
+import {Col, Row} from "antd";
 import {modalPath} from "../../../../modals/toggleModal/model/enums/modalPath.ts";
 import {toggle} from "../../../../modals/toggleModal/model/slice/toggleModalReducer.ts";
 import {changeRole} from "../../../../../entities/User/model/slice/userReducer.ts";
 import {navigate} from "@storybook/addon-links";
 import {addOrderAction} from "../../../../../entities/Global/model/slice/GlobalReducer.ts";
+import { useTranslation } from 'react-i18next';
 
 
 const MiniProfileBlock: React.FC = () => {
 
+    const { t, i18n } = useTranslation();
     const dispatch = useDispatch()
     const {isAuth, role, balance} = useTypedSelector(state => state.user)
     const {theme} = useTypedSelector(state => state.global)
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+    };
 
     const changeUserRole = (role) => {
         dispatch(changeRole(role));
@@ -44,8 +50,8 @@ const MiniProfileBlock: React.FC = () => {
                                             <img src={image} alt="Avatar"/>
                                         </div>
                                         <div className={s.profile_top_description}>
-                                            <p>С возвращением, Дарья</p>
-                                            <span>{role === 'author' ? "Автор" : "Читатель"}</span>
+                                            <p>{t('miniProfileBlock_welcome')}, Alexander</p>
+                                            <span>{role === 'author' ? t('author') : t('reader')}</span>
                                         </div>
                                     </div>
                                 </Link>
@@ -54,42 +60,32 @@ const MiniProfileBlock: React.FC = () => {
                     </div>
                     {role === 'author' ?
                         <ul>
-                            <li><Link to="/mybooks"><Button type='primary' size='md' paddingX='full'>Опубликованные
-                                книги</Button></Link></li>
-                            <li><Link to="/publish"><Button type='primary' size='md' paddingX='full'>Публикация
-                                книги</Button></Link></li>
-                            <li><Link to="/statistics"><Button type='primary' size='md' paddingX='full'>Статистика по
-                                книгам</Button></Link></li>
-                            <li><Link to="/publish"><Button type='primary' size='md' paddingX='full'>История
-                                заказов</Button></Link></li>
-                            <li><Link to="/statistics"><Button type='primary' size='md' paddingX='full'>Вывод
-                                средств</Button></Link></li>
-                            <li><Link to="/editprofile"><Button type='primary' size='md' paddingX='full'>Настройка
-                                профиля</Button></Link></li>
-                            <li><Link to="/faq"><Button type='primary' size='md' paddingX='full'>Частые вопросы</Button></Link>
+                            <li><Link to="/mybooks"><Button type='primary' size='md' paddingX='full'>{t('publishedBooks')}</Button></Link></li>
+                            <li><Link to="/publish"><Button type='primary' size='md' paddingX='full'>{t('publication')}</Button></Link></li>
+                            <li><Link to="/statistics"><Button type='primary' size='md' paddingX='full'>{t('statistics')}</Button></Link></li>
+                            <li><Link to="/history"><Button type='primary' size='md' paddingX='full'>{t('orderHistory')}</Button></Link></li>
+                            <li><Link to="/withdraw"><Button type='primary' size='md' paddingX='full'>{t('withdraw')}</Button></Link></li>
+                            <li><Link to="/editprofile"><Button type='primary' size='md' paddingX='full'>{t('profileSettings')}</Button></Link></li>
+                            <li><Link to="/faq"><Button type='primary' size='md' paddingX='full'>{t('faq')}</Button></Link>
                             </li>
                         </ul> :
                         <ul>
-                            <li><Link to="/mybooks"><Button type='primary' size='md' paddingX='full'>Купленные
-                                книги</Button></Link></li>
+                            <li><Link to="/mybooks"><Button type='primary' size='md' paddingX='full'>{t('boughtBooks')}</Button></Link></li>
                             <li><Link to="/catalog"><Button type='primary' size='md'
-                                                            paddingX='full'>Каталог</Button></Link></li>
-                            <li><Link to="/collections"><Button type='primary' size='md' paddingX='full'>Мои
-                                подборки</Button></Link></li>
-                            <li><Link to="/history"><Button type='primary' size='md' paddingX='full'>История
-                                покупок</Button></Link></li>
-                            <li><Link to="/editprofile"><Button type='primary' size='md' paddingX='full'>Настройка
-                                профиля</Button></Link></li>
-                            <li><Link to="/faq"><Button type='primary' size='md' paddingX='full'>Частые вопросы</Button></Link>
+                                                            paddingX='full'>{t('catalog')}</Button></Link></li>
+                            <li><Link to="/collections"><Button type='primary' size='md' paddingX='full'>{t('myCollections')}</Button></Link></li>
+                            <li><Link to="/history"><Button type='primary' size='md' paddingX='full'>{t('purchaseHistory')}</Button></Link></li>
+                            <li><Link to="/editprofile"><Button type='primary' size='md' paddingX='full'>{t('profileSettings')}</Button></Link></li>
+                            <li><Link to="/faq"><Button type='primary' size='md' paddingX='full'>{t('faq')}</Button></Link>
                             </li>
                         </ul>
                     }
                     <div className={s.profile_balance}>
-                        <div><p>Баланс</p></div>
+                        <div><p>{t('balance')}</p></div>
                         <div><BalanceCard balance={balance}/></div>
                     </div>
                     <div className={s.profile_balance}>
-                        <div><p>Режим затемнения</p></div>
+                        <div><p>{t('darkMode')}</p></div>
                         <div>
                             {
                                 theme === 'light' ?
@@ -109,7 +105,7 @@ const MiniProfileBlock: React.FC = () => {
                         </div>
                     </div>
                     <div className={s.profile_balance}>
-                        <div><p>Цветовая схема как в системе:</p></div>
+                        <div><p>{t('systemTheme')}</p></div>
                         <div>
                             <div className={s.checkbox_wrapper}>
                                 <input type="checkbox" id="toggle2" className={s.checkbox_input} />
@@ -117,17 +113,17 @@ const MiniProfileBlock: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <br/>
+                    <Button callback={() => changeLanguage('ru')}>Русский</Button>
+                    <Button callback={() => changeLanguage('en')}>English</Button>
+                    <Button callback={() => changeLanguage('rs')}>Srpski</Button>
+                    <br/>
 
-
-                    {/*<Checkbox onChange={() => changeTheme()} />*/}
-                    {/*<Button callback={() => changeTheme()}>Изменить тему</Button>*/}
                     <br/>
                     {role === "author" ?
-                        <Button type={'accent'} paddingX={'full'} callback={() => changeUserRole('reader')}>Сменить на
-                            читателя</Button>
+                        <Button type={'accent'} paddingX={'full'} callback={() => changeUserRole('reader')}>{t('changeToReader')}</Button>
                         :
-                        <Button type={'accent'} paddingX={'full'} callback={() => changeUserRole('author')}>Сменить на
-                            автора</Button>
+                        <Button type={'accent'} paddingX={'full'} callback={() => changeUserRole('author')}>{t('changeToAuthor')}</Button>
                     }
                 </div>
                 :
